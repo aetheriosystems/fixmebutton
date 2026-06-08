@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) return null;
+  return new Stripe(key);
+}
 
 const PRICES: Record<string, string> = {
   monthly: process.env.STRIPE_PRICE_MONTHLY || "price_monthly",
@@ -10,6 +14,11 @@ const PRICES: Record<string, string> = {
 };
 
 export async function POST(req: Request) {
+  const stripe = getStripe();
+  if (!stripe) {
+    return NextResponse.json({ error: "Stripe not configured" }, { status: 503 });
+  }
+
   const session = await auth();
   if (!session?.user?.email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

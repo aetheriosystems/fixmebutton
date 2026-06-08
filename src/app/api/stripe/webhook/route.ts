@@ -3,9 +3,18 @@ import { getDb, schema } from "@/db";
 import { eq } from "drizzle-orm";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_placeholder");
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) return null;
+  return new Stripe(key);
+}
 
 export async function POST(req: Request) {
+  const stripe = getStripe();
+  if (!stripe) {
+    return NextResponse.json({ error: "Stripe not configured" }, { status: 503 });
+  }
+
   const body = await req.text();
   const signature = req.headers.get("stripe-signature")!;
 
@@ -22,7 +31,6 @@ export async function POST(req: Request) {
 
   const db = getDb();
   if (!db) {
-    // No DB configured — acknowledge receipt but skip processing
     return NextResponse.json({ received: true, db: "unavailable" });
   }
 
@@ -33,7 +41,6 @@ export async function POST(req: Request) {
         const email = session.customer_email || session.metadata?.userId;
         if (!email) break;
 
-        // Upsert user
         await db
           .insert(schema.users)
           .values({ email, name: session.customer_details?.name || null })
@@ -42,7 +49,6 @@ export async function POST(req: Request) {
             set: { updatedAt: new Date() },
           });
 
-        // Get user ID
         const [user] = await db
           .select()
           .from(schema.users)
