@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server";
-import { getDb } from "@/db";
+import { neon } from "@neondatabase/serverless";
 
 export async function GET() {
-  const db = getDb();
-  if (!db) {
-    return NextResponse.json({ error: "No DB connection" }, { status: 503 });
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "No DATABASE_URL" }, { status: 503 });
   }
   try {
-    const result = await db.execute("SELECT 1 as test");
-    return NextResponse.json({ ok: true, result });
+    const sql = neon(process.env.DATABASE_URL);
+    const result = await sql`SELECT 1 as test`;
+    return NextResponse.json({ ok: true, result: result[0] });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message, stack: e.stack?.split("\n")[0] }, { status: 500 });
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
