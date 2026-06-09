@@ -1,18 +1,21 @@
 import { Router, type IRouter } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { eq } from "drizzle-orm";
+import { db, usersTable } from "@workspace/db";
 import { logger } from "../lib/logger";
 
 const router: IRouter = Router();
 
-const JWT_SECRET = process.env.JWT_SECRET || "fixmebutton-dev-secret-change-in-production";
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET environment variable must be set. Generate with: openssl rand -base64 64");
+}
+
 const JWT_EXPIRES_IN = "7d";
 
-// In-memory user store — replace with DB when DATABASE_URL is configured
-const userStore = new Map<string, { id: string; email: string; name: string | null; passwordHash: string; isPremium: boolean }>();
-
 function signToken(userId: string, email: string): string {
-  return jwt.sign({ sub: userId, email }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  return jwt.sign({ sub: userId, email }, JWT_SECRET!, { expiresIn: JWT_EXPIRES_IN });
 }
 
 router.post("/auth/signup", async (req, res) => {
@@ -29,20 +32,27 @@ router.post("/auth/signup", async (req, res) => {
 
   try {
     const normalizedEmail = String(email).toLowerCase().trim();
-    if (userStore.has(normalizedEmail)) {
+    const existing = await db.select({ id: usersTable.id }).from(usersTable).where(eq(usersTable.email, normalizedEmail)).limit(1);
+    if (existing.length > 0) {
       res.status(409).json({ error: "An account with this email already exists. Sign in instead." });
       return;
     }
 
     const passwordHash = await bcrypt.hash(password, 12);
     const id = `user_${Date.now()}`;
-    userStore.set(normalizedEmail, { id, email: normalizedEmail, name: name || null, passwordHash, isPremium: false });
+    const [user] = await db.insert(usersTable).values({
+      id,
+      email: normalizedEmail,
+      name: name || null,
+      passwordHash,
+      isPremium: false,
+    }).returning();
 
-    const token = signToken(id, normalizedEmail);
+    const token = signToken(user.id, user.email);
     res.status(201).json({
       success: true,
       token,
-      user: { id, email: normalizedEmail, name: name || null, isPremium: false },
+      user: { id: user.id, email: user.email, name: user.name, isPremium: user.isPremium },
     });
   } catch (err: unknown) {
     logger.error({ err }, "Signup error");
@@ -60,7 +70,7 @@ router.post("/auth/signin", async (req, res) => {
 
   try {
     const normalizedEmail = String(email).toLowerCase().trim();
-    const user = userStore.get(normalizedEmail);
+    const [user] = await db.select().from(usersTable).where(eq(usersTable.email, normalizedEmail)).limit(1);
     if (!user) {
       res.status(401).json({ error: "Invalid email or password" });
       return;
@@ -84,7 +94,7 @@ router.post("/auth/signin", async (req, res) => {
   }
 });
 
-router.get("/auth/me", (req, res) => {
+router.get("/auth/me", async (req, res) => {
   const auth = req.headers.authorization;
   if (!auth || !auth.startsWith("Bearer ")) {
     res.status(401).json({ error: "Unauthorized" });
@@ -92,14 +102,16 @@ router.get("/auth/me", (req, res) => {
   }
   const token = auth.slice(7).trim();
   try {
-    const payload = jwt.verify(token, JWT_SECRET) as { sub: string; email: string };
-    // Find user by email from token
-    const user = userStore.get(payload.email);
+    const payload = jwt.verify(token, JWT_SECRET!) as { sub: string; email: string };
+    const [user] = await db.select({ id: usersTable.id, email: usersTable.email, name: usersTable.name, isPremium: usersTable.isPremium })
+      .from(usersTable)
+      .where(eq(usersTable.id, payload.sub))
+      .limit(1);
     if (!user) {
       res.status(401).json({ error: "User not found" });
       return;
     }
-    res.json({ id: user.id, email: user.email, name: user.name, isPremium: user.isPremium });
+    res.json(user);
   } catch {
     res.status(401).json({ error: "Invalid or expired token" });
   }

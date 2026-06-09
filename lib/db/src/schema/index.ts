@@ -1,20 +1,29 @@
-// Export your models here. Add one export per file
-// export * from "./posts";
-//
-// Each model/table should ideally be split into different files.
-// Each model/table should define a Drizzle table, insert schema, and types:
-//
-//   import { pgTable, text, serial } from "drizzle-orm/pg-core";
-//   import { createInsertSchema } from "drizzle-zod";
-//   import { z } from "zod/v4";
-//
-//   export const postsTable = pgTable("posts", {
-//     id: serial("id").primaryKey(),
-//     title: text("title").notNull(),
-//   });
-//
-//   export const insertPostSchema = createInsertSchema(postsTable).omit({ id: true });
-//   export type InsertPost = z.infer<typeof insertPostSchema>;
-//   export type Post = typeof postsTable.$inferSelect;
+import { pgTable, text, boolean, timestamp, integer } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod/v4";
 
-export {}
+export const usersTable = pgTable("users", {
+  id: text("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  name: text("name"),
+  passwordHash: text("password_hash").notNull(),
+  isPremium: boolean("is_premium").notNull().default(false),
+  stripeCustomerId: text("stripe_customer_id"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const progressTable = pgTable("progress", {
+  userId: text("user_id").notNull().references(() => usersTable.id, { onDelete: "cascade" }),
+  slug: text("slug").notNull(),
+  currentStep: integer("current_step").notNull().default(1),
+  isCompleted: boolean("is_completed").notNull().default(false),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+export const insertUserSchema = createInsertSchema(usersTable).omit({ createdAt: true });
+export const insertProgressSchema = createInsertSchema(progressTable).omit({ updatedAt: true });
+
+export type User = typeof usersTable.$inferSelect;
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type Progress = typeof progressTable.$inferSelect;
+export type InsertProgress = z.infer<typeof insertProgressSchema>;

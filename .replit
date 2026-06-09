@@ -20,5 +20,14 @@ path = "scripts/post-merge.sh"
 timeoutMs = 20000
 
 [[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
 localPort = 23736
 externalPort = 80
+
+[userenv]
+
+[userenv.shared]
+JWT_SECRET = "ftV77fSGyD/XFSstl60b5Dh48e/grsJsA7afmW8JrFaB6WKhIQInmew1OpwOeDxy/ZtKrcUjCzLVbfhYMNNO+Q=="
