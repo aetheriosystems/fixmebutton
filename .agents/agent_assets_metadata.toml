@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "KhTYZb7qt3eJ6EMOte_Z2"
+uri = "file://docs/migration-vercel-to-replit.md"
+type = "text"
+title = "FixMeButton Migration Guide"
