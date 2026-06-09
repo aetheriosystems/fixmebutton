@@ -11,6 +11,26 @@ env = { "CI" = "true" }
 [workflows]
 runButton = "Project"
 
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/fixmebutton-mobile: FixMeButton Mobile"
+
+[[workflows.workflow]]
+name = "artifacts/fixmebutton-mobile: FixMeButton Mobile"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=8082 pnpm --filter @workspace/fixmebutton-mobile run dev"
+
 [agent]
 stack = "PNPM_WORKSPACE"
 expertMode = true
