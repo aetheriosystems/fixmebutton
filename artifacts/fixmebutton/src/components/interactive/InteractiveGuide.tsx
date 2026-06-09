@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ProgressBar } from "./ProgressBar";
 import { StepCard, type Step } from "./StepCard";
 import { BranchingHelp } from "./BranchingHelp";
 import { VoiceGuide } from "./VoiceGuide";
 
+const API_BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 interface Props {
   slug: string;
   steps: Step[];
+}
+
+interface ProgressData {
+  currentStep: number;
+  isCompleted: boolean;
 }
 
 export function InteractiveGuide({ slug, steps }: Props) {
@@ -18,16 +25,54 @@ export function InteractiveGuide({ slug, steps }: Props) {
   const totalSteps = steps.length;
   const step = steps[currentStep - 1];
 
+  // Load saved progress on mount
+  useEffect(() => {
+    const sessionToken = sessionStorage.getItem("fmb_session");
+    if (!sessionToken) return;
+    fetch(`${API_BASE}/api/guides/${slug}/progress`, {
+      headers: { "Authorization": `Bearer ${sessionToken}` },
+    })
+      .then((r) => r.ok ? r.json() as Promise<ProgressData> : null)
+      .then((data) => {
+        if (data) {
+          setCurrentStep(data.currentStep || 1);
+          setIsComplete(data.isCompleted || false);
+        }
+      })
+      .catch(() => {});
+  }, [slug]);
+
+  // Save progress after each step change
+  const saveProgress = useCallback((step: number, completed: boolean) => {
+    const sessionToken = sessionStorage.getItem("fmb_session");
+    if (!sessionToken) return;
+    fetch(`${API_BASE}/api/guides/${slug}/progress`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${sessionToken}`,
+      },
+      body: JSON.stringify({ currentStep: step, isCompleted: completed }),
+    }).catch(() => {});
+  }, [slug]);
+
   const goNext = () => {
     if (currentStep >= totalSteps) {
       setIsComplete(true);
+      saveProgress(currentStep, true);
     } else {
-      setCurrentStep(currentStep + 1);
+      const next = currentStep + 1;
+      setCurrentStep(next);
+      saveProgress(next, false);
     }
   };
 
   const goBack = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
+    if (currentStep > 1) {
+      const prev = currentStep - 1;
+      setCurrentStep(prev);
+      saveProgress(prev, false);
+    }
   };
 
   const handleVoiceCommand = (command: string) => {
@@ -43,7 +88,7 @@ export function InteractiveGuide({ slug, steps }: Props) {
         <h2 className="text-3xl font-bold text-gray-900 mb-2">All Done!</h2>
         <p className="text-lg text-gray-500 mb-8">You've completed all {totalSteps} steps. Great job!</p>
         <button
-          onClick={() => { setIsComplete(false); setCurrentStep(1); }}
+          onClick={() => { setIsComplete(false); setCurrentStep(1); saveProgress(1, false); }}
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors"
         >
           Start Over

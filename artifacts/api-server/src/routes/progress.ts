@@ -3,33 +3,46 @@ import { logger } from "../lib/logger";
 
 const router: IRouter = Router();
 
-// In-memory fallback (no persistent DB for now — replace with real DB when auth is wired)
+// In-memory store keyed by a hashed/opaque session token — no client-controlled user ID
 const progressStore = new Map<string, Record<string, unknown>>();
 
-function getKey(userId: string, slug: string) {
-  return `${userId}::${slug}`;
+function extractToken(req: import("express").Request): string | null {
+  const auth = req.headers.authorization;
+  if (!auth || !auth.startsWith("Bearer ")) return null;
+  const token = auth.slice(7).trim();
+  return token || null;
 }
 
-router.get("/guides/:slug/progress", async (req, res) => {
-  const userId = (req.headers["x-user-id"] as string) || "";
-  if (!userId) {
+function getKey(token: string, slug: string) {
+  return `${token}::${slug}`;
+}
+
+router.get("/guides/:slug/progress", (req, res) => {
+  const token = extractToken(req);
+  if (!token) {
     res.status(401).json({ error: "Unauthorized" });
     return;
   }
-  const key = getKey(userId, req.params.slug);
+  const key = getKey(token, req.params.slug);
   const progress = progressStore.get(key) || { currentStep: 1, completedSteps: [], isCompleted: false };
   res.json(progress);
 });
 
-router.put("/guides/:slug/progress", async (req, res) => {
-  const userId = (req.headers["x-user-id"] as string) || "";
-  if (!userId) {
+router.put("/guides/:slug/progress", (req, res) => {
+  const token = extractToken(req);
+  if (!token) {
     res.status(401).json({ error: "Unauthorized" });
     return;
   }
-  const key = getKey(userId, req.params.slug);
+  const key = getKey(token, req.params.slug);
   const existing = progressStore.get(key) || { currentStep: 1, completedSteps: [], isCompleted: false };
-  progressStore.set(key, { ...existing, ...req.body, updatedAt: new Date().toISOString() });
+  const { currentStep, isCompleted } = req.body || {};
+  progressStore.set(key, {
+    ...existing,
+    ...(currentStep !== undefined ? { currentStep: Number(currentStep) } : {}),
+    ...(isCompleted !== undefined ? { isCompleted: Boolean(isCompleted) } : {}),
+    updatedAt: new Date().toISOString(),
+  });
   res.json({ success: true });
 });
 

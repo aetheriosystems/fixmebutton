@@ -1,7 +1,13 @@
 import { Link } from "wouter";
 import { getGuideBySlug, getCategoryBySlug } from "@/lib/guides-data";
 import { InteractiveGuide } from "@/components/interactive/InteractiveGuide";
+import { PremiumGate } from "@/components/guides/PremiumGate";
 import type { Step } from "@/components/interactive/StepCard";
+
+// Stub: replace with real session check once auth is implemented
+function useIsPremium(): boolean {
+  return false;
+}
 
 function parseSteps(content: string): Step[] {
   const steps: Step[] = [];
@@ -48,6 +54,7 @@ export default function InteractiveGuidePage({
     );
   }
 
+  const isPremium = useIsPremium();
   const steps = parseSteps(guide.content);
 
   return (
@@ -78,7 +85,15 @@ export default function InteractiveGuidePage({
             {guide.meta.time_estimate && ` · ⏱ ${guide.meta.time_estimate}`}
           </p>
         </div>
-        <InteractiveGuide slug={slug} steps={steps} />
+
+        {isPremium ? (
+          <InteractiveGuide slug={slug} steps={steps} />
+        ) : (
+          <PremiumGate>
+            <InteractiveGuide slug={slug} steps={steps} />
+          </PremiumGate>
+        )}
+
         <div className="mt-12 p-6 bg-white border border-gray-200 rounded-xl text-center">
           <p className="text-sm text-gray-500 mb-3">Want to re-read the full guide?</p>
           <Link
