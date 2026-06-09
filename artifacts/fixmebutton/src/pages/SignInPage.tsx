@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { SITE_NAME } from "@/lib/constants";
-
-const API_BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+import { useAuth } from "@/lib/auth-context";
 
 export default function SignInPage() {
+  const { signIn } = useAuth();
   const [, navigate] = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,14 +16,9 @@ export default function SignInPage() {
     setError("");
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/auth/signin`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || "Sign in failed");
+      const result = await signIn(email, password);
+      if (result.error) {
+        setError(result.error);
       } else {
         navigate("/dashboard");
       }
@@ -94,6 +89,10 @@ export default function SignInPage() {
       <p className="mt-4 text-center text-sm text-gray-400">
         Don&apos;t have an account?{" "}
         <Link href="/auth/signup" className="text-blue-600 hover:underline">Sign up</Link>
+      </p>
+
+      <p className="mt-6 text-center text-xs text-gray-300">
+        {SITE_NAME} — Sign in to track your progress across devices
       </p>
     </div>
   );

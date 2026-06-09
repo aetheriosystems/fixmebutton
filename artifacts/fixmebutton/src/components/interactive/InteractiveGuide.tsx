@@ -3,6 +3,7 @@ import { ProgressBar } from "./ProgressBar";
 import { StepCard, type Step } from "./StepCard";
 import { BranchingHelp } from "./BranchingHelp";
 import { VoiceGuide } from "./VoiceGuide";
+import { useAuth } from "@/lib/auth-context";
 
 const API_BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -17,6 +18,7 @@ interface ProgressData {
 }
 
 export function InteractiveGuide({ slug, steps }: Props) {
+  const { token } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [isComplete, setIsComplete] = useState(false);
   const [showBranch, setShowBranch] = useState(false);
@@ -25,14 +27,13 @@ export function InteractiveGuide({ slug, steps }: Props) {
   const totalSteps = steps.length;
   const step = steps[currentStep - 1];
 
-  // Load saved progress on mount
+  // Load saved progress on mount (only when authenticated)
   useEffect(() => {
-    const sessionToken = sessionStorage.getItem("fmb_session");
-    if (!sessionToken) return;
+    if (!token) return;
     fetch(`${API_BASE}/api/guides/${slug}/progress`, {
-      headers: { "Authorization": `Bearer ${sessionToken}` },
+      headers: { Authorization: `Bearer ${token}` },
     })
-      .then((r) => r.ok ? r.json() as Promise<ProgressData> : null)
+      .then((r) => (r.ok ? (r.json() as Promise<ProgressData>) : null))
       .then((data) => {
         if (data) {
           setCurrentStep(data.currentStep || 1);
@@ -40,21 +41,23 @@ export function InteractiveGuide({ slug, steps }: Props) {
         }
       })
       .catch(() => {});
-  }, [slug]);
+  }, [slug, token]);
 
-  // Save progress after each step change
-  const saveProgress = useCallback((step: number, completed: boolean) => {
-    const sessionToken = sessionStorage.getItem("fmb_session");
-    if (!sessionToken) return;
-    fetch(`${API_BASE}/api/guides/${slug}/progress`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${sessionToken}`,
-      },
-      body: JSON.stringify({ currentStep: step, isCompleted: completed }),
-    }).catch(() => {});
-  }, [slug]);
+  // Save progress after each step change (only when authenticated)
+  const saveProgress = useCallback(
+    (step: number, completed: boolean) => {
+      if (!token) return;
+      fetch(`${API_BASE}/api/guides/${slug}/progress`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ currentStep: step, isCompleted: completed }),
+      }).catch(() => {});
+    },
+    [slug, token]
+  );
 
   const goNext = () => {
     if (currentStep >= totalSteps) {
@@ -86,9 +89,15 @@ export function InteractiveGuide({ slug, steps }: Props) {
       <div className="text-center py-16 px-4">
         <div className="text-6xl mb-4">🎉</div>
         <h2 className="text-3xl font-bold text-gray-900 mb-2">All Done!</h2>
-        <p className="text-lg text-gray-500 mb-8">You've completed all {totalSteps} steps. Great job!</p>
+        <p className="text-lg text-gray-500 mb-8">
+          You've completed all {totalSteps} steps. Great job!
+        </p>
         <button
-          onClick={() => { setIsComplete(false); setCurrentStep(1); saveProgress(1, false); }}
+          onClick={() => {
+            setIsComplete(false);
+            setCurrentStep(1);
+            saveProgress(1, false);
+          }}
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors"
         >
           Start Over

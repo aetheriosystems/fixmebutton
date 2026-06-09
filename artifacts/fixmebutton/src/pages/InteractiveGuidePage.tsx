@@ -2,12 +2,8 @@ import { Link } from "wouter";
 import { getGuideBySlug, getCategoryBySlug } from "@/lib/guides-data";
 import { InteractiveGuide } from "@/components/interactive/InteractiveGuide";
 import { PremiumGate } from "@/components/guides/PremiumGate";
+import { useAuth } from "@/lib/auth-context";
 import type { Step } from "@/components/interactive/StepCard";
-
-// Stub: replace with real session check once auth is implemented
-function useIsPremium(): boolean {
-  return false;
-}
 
 function parseSteps(content: string): Step[] {
   const steps: Step[] = [];
@@ -54,7 +50,8 @@ export default function InteractiveGuidePage({
     );
   }
 
-  const isPremium = useIsPremium();
+  const { user } = useAuth();
+  const isPremium = user?.isPremium ?? false;
   const steps = parseSteps(guide.content);
 
   return (

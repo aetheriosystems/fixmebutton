@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { SITE_NAME } from "@/lib/constants";
-
-const API_BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+import { useAuth } from "@/lib/auth-context";
 
 export default function SignUpPage() {
+  const { signUp } = useAuth();
   const [, navigate] = useLocation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,16 +17,11 @@ export default function SignUpPage() {
     setError("");
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/auth/signup`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, name }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || "Failed to create account");
+      const result = await signUp(email, password, name);
+      if (result.error) {
+        setError(result.error);
       } else {
-        navigate("/auth/signin");
+        navigate("/dashboard");
       }
     } catch {
       setError("Could not connect to the server. Please try again.");
