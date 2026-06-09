@@ -3,6 +3,7 @@ import { getDb } from "@/db";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
 
 export async function POST(req: Request) {
   const db = getDb();
@@ -25,46 +26,46 @@ export async function POST(req: Request) {
     const normalizedEmail = email.toLowerCase().trim();
 
     // Check if user already exists
-    try {
-      const existing = await db
-        .select({ id: users.id })
-        .from(users)
-        .where(eq(users.email, normalizedEmail))
-        .limit(1);
+    const existing = await db
+      .select({ id: users.id })
+      .from(users)
+      .where(eq(users.email, normalizedEmail))
+      .limit(1);
 
-      if (existing.length > 0) {
-        return NextResponse.json(
-          { error: "An account with this email already exists. Sign in instead." },
-          { status: 409 }
-        );
-      }
-    } catch (dbErr: any) {
-      console.error("DB check error:", dbErr.message, dbErr.stack);
-      return NextResponse.json({ error: "Database error checking email" }, { status: 500 });
+    if (existing.length > 0) {
+      return NextResponse.json(
+        { error: "An account with this email already exists. Sign in instead." },
+        { status: 409 }
+      );
     }
 
     // Hash password
-    let passwordHash: string;
-    try {
-      passwordHash = await bcrypt.hash(password, 12);
-    } catch (hashErr: any) {
-      console.error("Bcrypt error:", hashErr.message);
-      return NextResponse.json({ error: "Password hashing failed" }, { status: 500 });
-    }
+    const passwordHash = await bcrypt.hash(password, 12);
 
-    // Insert user
-    try {
-      await db.insert(users).values({
-        email: normalizedEmail,
-        name: name || null,
-        passwordHash,
-      });
-    } catch (insertErr: any) {
-      console.error("Insert error:", insertErr.message, insertErr.stack);
-      return NextResponse.json({ error: `Database insert failed: ${insertErr.message}` }, { status: 500 });
-    }
+    // Generate verification token
+    const verificationToken = crypto.randomUUID();
 
-    return NextResponse.json({ success: true }, { status: 201 });
+    // Insert user (unverified)
+    await db.insert(users).values({
+      email: normalizedEmail,
+      name: name || null,
+      passwordHash,
+      emailVerified: false,
+      verificationToken,
+    });
+
+    const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
+    const verifyUrl = `${baseUrl}/api/auth/verify?token=${verificationToken}`;
+
+    // Log for development (in production, send email)
+    console.log(`[SIGNUP] Verification URL for ${normalizedEmail}: ${verifyUrl}`);
+
+    return NextResponse.json({
+      success: true,
+      message: "Account created! Check your email for a verification link.",
+      // Include verification URL in dev so it can be tested
+      ...(process.env.NODE_ENV !== "production" ? { verificationUrl: verifyUrl } : {}),
+    }, { status: 201 });
   } catch (error: any) {
     console.error("Signup error:", error.message, error.stack);
     return NextResponse.json(

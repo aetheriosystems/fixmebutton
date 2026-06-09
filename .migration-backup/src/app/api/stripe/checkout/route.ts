@@ -8,9 +8,10 @@ function getStripe() {
   return new Stripe(key);
 }
 
-const PRICES: Record<string, string> = {
-  monthly: process.env.STRIPE_PRICE_MONTHLY || "price_monthly",
-  yearly: process.env.STRIPE_PRICE_YEARLY || "price_yearly",
+// Server-side allowlist — only these price IDs are valid
+const ALLOWED_PRICES: Record<string, string> = {
+  monthly: process.env.STRIPE_PRICE_MONTHLY || "",
+  yearly: process.env.STRIPE_PRICE_YEARLY || "",
 };
 
 export async function POST(req: Request) {
@@ -20,8 +21,31 @@ export async function POST(req: Request) {
   }
 
   const session = await auth();
-  const { priceId } = await req.json();
-  const stripePriceId = PRICES[priceId] || priceId;
+
+  let body: { priceId?: string };
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  const { priceId } = body;
+
+  // Only allow known price keys — never pass through raw client input
+  if (!priceId || !(priceId in ALLOWED_PRICES)) {
+    return NextResponse.json(
+      { error: "Invalid price selection" },
+      { status: 400 }
+    );
+  }
+
+  const stripePriceId = ALLOWED_PRICES[priceId];
+  if (!stripePriceId) {
+    return NextResponse.json(
+      { error: "Price not configured on server" },
+      { status: 500 }
+    );
+  }
 
   try {
     const stripeSession = await stripe.checkout.sessions.create({
@@ -31,7 +55,7 @@ export async function POST(req: Request) {
       success_url: `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/dashboard?checkout=success`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/pricing?checkout=cancelled`,
       metadata: {
-        userId: session?.user?.email || "guest",
+        userId: session?.user?.id || session?.user?.email || "guest",
       },
     });
 

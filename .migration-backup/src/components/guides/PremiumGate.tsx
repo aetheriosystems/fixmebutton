@@ -31,7 +31,7 @@ export async function PremiumGate({ children }: Props) {
     );
   }
 
-  // Check subscription — gracefully degrade if no DB
+  // Check subscription — use the actual user ID from the session
   const db = getDb();
   let isPremium = false;
 
@@ -42,7 +42,7 @@ export async function PremiumGate({ children }: Props) {
         .from(subscriptions)
         .where(
           and(
-            eq(subscriptions.userId, session.user.email), // TODO: use actual user ID
+            eq(subscriptions.userId, session.user.id),
             eq(subscriptions.status, "active")
           )
         )

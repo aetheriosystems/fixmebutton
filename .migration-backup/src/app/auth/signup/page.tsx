@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -11,7 +10,8 @@ export default function SignUpPage() {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [success, setSuccess] = useState(false);
+  const [verificationUrl, setVerificationUrl] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,18 +27,10 @@ export default function SignUpPage() {
       const data = await res.json();
 
       if (res.ok) {
-        // Auto sign-in after signup
-        const signInRes = await fetch("/api/auth/callback/credentials", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({
-            email,
-            password,
-            redirect: "false",
-          }),
-          redirect: "manual",
-        });
-        router.push("/dashboard");
+        setSuccess(true);
+        if (data.verificationUrl) {
+          setVerificationUrl(data.verificationUrl);
+        }
       } else {
         setError(data.error || "Something went wrong");
       }
@@ -48,6 +40,35 @@ export default function SignUpPage() {
       setLoading(false);
     }
   };
+
+  if (success) {
+    return (
+      <div className="max-w-md mx-auto px-4 py-20 text-center">
+        <div className="text-5xl mb-6">📧</div>
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">Check Your Email</h1>
+        <p className="text-gray-500 mb-6">
+          We sent a verification link to <strong>{email}</strong>. Click the link to activate your account, then sign in.
+        </p>
+        {verificationUrl && (
+          <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg mb-6 text-left">
+            <p className="text-xs text-yellow-700 font-medium mb-1">DEV MODE — Verification URL:</p>
+            <a
+              href={verificationUrl}
+              className="text-xs text-blue-600 break-all hover:underline"
+            >
+              {verificationUrl}
+            </a>
+          </div>
+        )}
+        <Link
+          href="/auth/signin"
+          className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Go to Sign In
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto px-4 py-20">

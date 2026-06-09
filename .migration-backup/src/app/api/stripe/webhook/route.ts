@@ -38,31 +38,63 @@ export async function POST(req: Request) {
     switch (event.type) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
-        const email = session.customer_email || session.metadata?.userId;
-        if (!email) break;
+        const userId = session.metadata?.userId;
+        const email = session.customer_email;
+        if (!userId || userId === "guest") break;
 
-        await db
-          .insert(schema.users)
-          .values({ email, name: session.customer_details?.name || null })
-          .onConflictDoUpdate({
-            target: schema.users.email,
-            set: { updatedAt: new Date() },
-          });
+        // Try to find user by ID first, fall back to email
+        let user: typeof schema.users.$inferSelect | undefined;
+        try {
+          [user] = await db
+            .select()
+            .from(schema.users)
+            .where(eq(schema.users.id, userId))
+            .limit(1);
+        } catch {
+          // Invalid UUID — try email lookup
+        }
 
-        const [user] = await db
-          .select()
-          .from(schema.users)
-          .where(eq(schema.users.email, email))
-          .limit(1);
+        if (!user && email) {
+          [user] = await db
+            .select()
+            .from(schema.users)
+            .where(eq(schema.users.email, email.toLowerCase().trim()))
+            .limit(1);
+        }
 
-        if (user && session.subscription) {
-          await db.insert(schema.subscriptions).values({
-            userId: user.id,
-            stripeCustomerId: session.customer as string,
-            stripeSubscriptionId: session.subscription as string,
-            stripePriceId: null,
-            status: "active",
-          });
+        if (!user) break;
+
+        const subId = session.subscription as string;
+        const priceId = session.line_items?.data?.[0]?.price?.id || null;
+
+        if (subId) {
+          // Check if subscription already exists
+          const [existing] = await db
+            .select({ id: schema.subscriptions.id })
+            .from(schema.subscriptions)
+            .where(eq(schema.subscriptions.stripeSubscriptionId, subId))
+            .limit(1);
+
+          if (existing) {
+            await db
+              .update(schema.subscriptions)
+              .set({
+                userId: user.id,
+                stripeCustomerId: session.customer as string,
+                stripePriceId: priceId,
+                status: "active",
+                updatedAt: new Date(),
+              })
+              .where(eq(schema.subscriptions.id, existing.id));
+          } else {
+            await db.insert(schema.subscriptions).values({
+              userId: user.id,
+              stripeCustomerId: session.customer as string,
+              stripeSubscriptionId: subId,
+              stripePriceId: priceId,
+              status: "active",
+            });
+          }
         }
         break;
       }
