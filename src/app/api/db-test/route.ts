@@ -2,9 +2,6 @@ import { NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 
 export async function GET() {
-  if (!process.env.DATABASE_URL) {
-    return NextResponse.json({ error: "No DATABASE_URL" }, { status: 503 });
-  }
   try {
     const result = await sql`SELECT 1 as test`;
     return NextResponse.json({ ok: true, test: result.rows[0].test });
