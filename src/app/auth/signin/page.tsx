@@ -18,7 +18,8 @@ export default async function SignInPage() {
         <p className="text-gray-500">Access your premium guides and saved progress</p>
       </div>
 
-      <div className="space-y-3">
+      {/* OAuth Buttons */}
+      <div className="space-y-3 mb-8">
         <form
           action={async () => {
             "use server";
@@ -56,6 +57,67 @@ export default async function SignInPage() {
           </button>
         </form>
       </div>
+
+      {/* Divider */}
+      <div className="relative mb-8">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-gray-200" />
+        </div>
+        <div className="relative flex justify-center text-sm">
+          <span className="px-3 bg-gray-50 text-gray-400">or sign in with email</span>
+        </div>
+      </div>
+
+      {/* Email + Password Form */}
+      <form
+        action={async (formData: FormData) => {
+          "use server";
+          const email = formData.get("email") as string;
+          const password = formData.get("password") as string;
+          await signIn("credentials", { email, password, redirectTo: "/dashboard" });
+        }}
+        className="space-y-4"
+      >
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+            Password
+          </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            placeholder="••••••••"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+        >
+          Sign In with Email
+        </button>
+      </form>
+
+      <p className="mt-4 text-center text-sm text-gray-400">
+        Don&apos;t have an account?{" "}
+        <a href="/auth/signup" className="text-blue-600 hover:underline">
+          Sign up
+        </a>
+      </p>
 
       <p className="mt-8 text-center text-sm text-gray-400">
         By signing in, you agree to our Terms of Service and Privacy Policy.
