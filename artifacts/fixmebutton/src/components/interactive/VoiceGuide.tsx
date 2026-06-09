@@ -11,7 +11,8 @@ export function VoiceGuide({ text, stepTitle, stepNumber, onCommand }: Props) {
   const [listening, setListening] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [speaking, setSpeaking] = useState(false);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
 
   const speak = useCallback((t: string) => {
     if (!("speechSynthesis" in window)) return;
@@ -28,13 +29,15 @@ export function VoiceGuide({ text, stepTitle, stepNumber, onCommand }: Props) {
   }, [stepNumber, stepTitle, speak]);
 
   const startListening = () => {
-    const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) { alert("Voice recognition isn't supported in this browser."); return; }
     const rec = new SpeechRecognition();
     rec.continuous = false;
     rec.interimResults = false;
     rec.lang = "en-US";
-    rec.onresult = (e) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rec.onresult = (e: any) => {
       const t = e.results[0][0].transcript.toLowerCase().trim();
       setTranscript(t);
       if (t.includes("next")) onCommand("next");

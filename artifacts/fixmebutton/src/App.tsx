@@ -10,6 +10,7 @@ import PricingPage from "@/pages/PricingPage";
 import SignInPage from "@/pages/SignInPage";
 import SignUpPage from "@/pages/SignUpPage";
 import DashboardPage from "@/pages/DashboardPage";
+import InteractiveGuidePage from "@/pages/InteractiveGuidePage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,11 @@ function GuideRoute() {
   return <GuidePage category={params.category} slug={params.slug} />;
 }
 
+function InteractiveGuideRoute() {
+  const params = useParams<{ category: string; slug: string }>();
+  return <InteractiveGuidePage category={params.category} slug={params.slug} />;
+}
+
 function Router() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -32,6 +38,7 @@ function Router() {
         <Switch>
           <Route path="/" component={HomePage} />
           <Route path="/guides" component={GuidesPage} />
+          <Route path="/guides/:category/:slug/interactive" component={InteractiveGuideRoute} />
           <Route path="/guides/:category/:slug" component={GuideRoute} />
           <Route path="/guides/:category" component={CategoryRoute} />
           <Route path="/about" component={AboutPage} />

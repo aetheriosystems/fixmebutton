@@ -2,20 +2,36 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { SITE_NAME } from "@/lib/constants";
 
+const API_BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export default function SignInPage() {
   const [, navigate] = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     setLoading(true);
-    // Auth is not wired to a backend yet — just show the form
-    setTimeout(() => {
+    try {
+      const res = await fetch(`${API_BASE}/api/auth/signin`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Sign in failed");
+      } else {
+        navigate("/dashboard");
+      }
+    } catch {
+      setError("Could not connect to the server. Please try again.");
+    } finally {
       setLoading(false);
-      alert("Auth is not yet configured. To enable sign-in, set up authentication.");
-    }, 500);
+    }
   };
 
   return (
@@ -51,14 +67,15 @@ export default function SignInPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {error && <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600">{error}</div>}
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)}
+          <input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
         </div>
         <div>
           <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-          <input id="password" name="password" type="password" required placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)}
+          <input id="password" name="password" type="password" required autoComplete="current-password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
         </div>
         <button type="submit" disabled={loading} className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50">

@@ -1,19 +1,14 @@
-"use client";
-
-import Script from "next/script";
+import { useEffect } from "react";
 
 export function PlausibleAnalytics() {
-  // Only load in production, not localhost
-  if (typeof window !== "undefined" && window.location.hostname === "localhost") {
-    return null;
-  }
-
-  return (
-    <Script
-      defer
-      data-domain="fixmebutton.com"
-      src="https://plausible.io/js/script.js"
-      strategy="afterInteractive"
-    />
-  );
+  useEffect(() => {
+    if (window.location.hostname === "localhost") return;
+    const script = document.createElement("script");
+    script.defer = true;
+    script.setAttribute("data-domain", "fixmebutton.com");
+    script.src = "https://plausible.io/js/script.js";
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
+  return null;
 }
