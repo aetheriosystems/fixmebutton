@@ -18,6 +18,10 @@ export default function PricingPage() {
       const data = await res.json();
       if (data.url) {
         window.location.href = data.url;
+      } else if (res.status === 401) {
+        window.location.href = "/auth/signin";
+      } else {
+        alert(data.error || "Something went wrong. Please try again.");
       }
     } catch {
       alert("Something went wrong. Please try again.");

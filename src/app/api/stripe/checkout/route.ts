@@ -20,22 +20,18 @@ export async function POST(req: Request) {
   }
 
   const session = await auth();
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const { priceId } = await req.json();
+  const stripePriceId = PRICES[priceId] || priceId;
 
   try {
-    const { priceId } = await req.json();
-    const stripePriceId = PRICES[priceId] || priceId;
-
     const stripeSession = await stripe.checkout.sessions.create({
       mode: "subscription",
-      customer_email: session.user.email,
+      ...(session?.user?.email ? { customer_email: session.user.email } : {}),
       line_items: [{ price: stripePriceId, quantity: 1 }],
       success_url: `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/dashboard?checkout=success`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/pricing?checkout=cancelled`,
       metadata: {
-        userId: session.user.email,
+        userId: session?.user?.email || "guest",
       },
     });
 
