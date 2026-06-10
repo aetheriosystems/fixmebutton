@@ -1,0 +1,171 @@
+---
+title: "How to Fix a Printer That Won't Print"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You hit **Print**, the computer says it sent the job, but nothing comes out of the printer — or you get an error message. This is one of the most common computer problems, and it's almost always fixable without buying anything or calling a technician.
+
+This guide covers both Windows and Mac. Work through the fixes in order — they go from quick checks to slightly deeper fixes. Most people have their printer working again by Fix 2 or 3.
+
+**What you'll need:**
+- Your computer and your printer
+- The printer's power cable and connection cable (USB) — if you use one
+- About 15 minutes
+
+> **Tip:** If your printer has a small screen, check it for error messages first. A flashing light or error code on the printer itself (like "Paper Jam," "Low Ink," or "Carriage Jam") tells you the problem is with the printer hardware, not your computer. Check the printer's manual for those specific codes.
+
+![A person looking frustrated at a printer that isn't printing](PLACEHOLDER)
+
+## Fix 1: Check the Simple Stuff First
+
+Before diving into computer settings, rule out the obvious causes. These basic checks fix about one-third of all "printer not printing" problems.
+
+**Fix 1 — Is the printer turned on and connected?**
+
+1. Look at the printer. Is there a power light on? If not, check the power cable is plugged into both the printer and the wall outlet.
+2. If it's a **USB printer**: make sure the USB cable is firmly plugged into both the printer and the computer. Try a different USB port on your computer.
+3. If it's a **wireless printer**: make sure the printer and computer are on the same WiFi network. On the printer's screen, find the network name (SSID) — it needs to match the WiFi your computer is connected to.
+
+**Fix 1 — Does the printer have paper and ink?**
+
+1. Open the paper tray. Is there paper? Even if there is, remove the stack, tap it on a flat surface to align the sheets, and put it back in. Paper sometimes gets stuck at an angle and the printer can't grab it.
+2. Check the ink or toner levels. Most printers show these on their built-in screen, or you can find them in the printer's software on your computer. If a cartridge is empty, replace it.
+
+**Fix 1 — Is there a paper jam?**
+
+1. Open every door, panel, and tray on the printer that you can find.
+2. Look for crumpled or torn paper inside. If you see any, gently pull it out — pull slowly and in the direction the paper normally travels.
+3. Check for tiny bits of torn paper left behind. Even a small scrap can block the sensor and stop the printer from working.
+
+![Opening the printer to check for a paper jam](PLACEHOLDER)
+
+**Common mistake:** Restarting the computer over and over without checking the printer itself. The printer is a separate device with its own power, paper, and ink — if it's turned off, out of paper, or has a paper jam, nothing you do on the computer will make it print. Always check the printer first.
+
+## Fix 2: Clear Stuck Print Jobs
+
+Sometimes a print job gets "stuck" — the computer thinks it sent the job, but it's stuck in a digital waiting line called the **print queue**. When one job gets stuck, everything behind it also gets stuck. Clearing this queue is the most common fix for "I clicked Print but nothing happens."
+
+**Windows:**
+
+1. Open **Settings** (press the Windows key and type "Settings") → **Bluetooth & devices** → **Printers & scanners**
+2. Click on your printer's name in the list
+3. Click **Open print queue**
+4. You'll see a list of documents waiting to print. Click the first one, then hold **Shift** and click the last one to select them all. Right-click any selected job and choose **Cancel**
+5. If a job won't cancel or says "Deleting - Printing" forever, move on to Fix 4 (restarting the Print Spooler)
+
+![The Windows print queue window showing stuck print jobs](PLACEHOLDER)
+
+**Mac:**
+
+1. Click the **Apple menu** (top-left corner) → **System Settings** → **Printers & Scanners**
+2. Click your printer in the list on the left
+3. Click the **Print Queue** button
+4. You'll see any stuck print jobs. Click the small **X** button next to each job to cancel it. Or click **Cancel All Jobs** (the X button at the top of the window) to clear everything at once
+
+![The Mac print queue window with jobs waiting to print](PLACEHOLDER)
+
+> **Tip:** After clearing the queue, try printing a simple one-page document (like a text file) instead of whatever you were printing before. Sometimes the original document is corrupted and was causing the problem.
+
+**Common mistake:** Clicking Print 5 or 10 times because nothing came out. Each click adds another copy of the same job to the queue. When the printer finally starts working, it prints ALL of them — wasting paper and ink. If nothing prints the first time, check the queue before trying again.
+
+## Fix 3: Take the Printer Offline → Back Online (Windows) / Reset Printing System (Mac)
+
+On Windows, printers sometimes get stuck in "Offline" mode — the computer thinks the printer is disconnected even when it's not. On Mac, the entire printing system can get confused after a macOS update or when switching between multiple printers.
+
+**Windows — Uncheck "Use Printer Offline":**
+
+1. Open **Settings** → **Bluetooth & devices** → **Printers & scanners**
+2. Click your printer's name, then click **Open print queue**
+3. In the print queue window, click the **Printer** menu at the top-left
+4. Look for **Use Printer Offline** — if it has a checkmark next to it, click it to **uncheck** it
+5. Also check that **Pause Printing** is not checked. Click it to uncheck if needed
+
+![The Printer menu showing Use Printer Offline unchecked](PLACEHOLDER)
+
+**Mac — Reset the Printing System:**
+
+> **Warning:** Resetting the printing system removes ALL printers from your Mac. You'll need to add them back afterward. Your saved print settings (like default paper size) will also be lost. This is safe, but it means a few extra steps.
+
+1. Click the **Apple menu** → **System Settings** → **Printers & Scanners**
+2. Hold down the **Control** key on your keyboard (not the Command key) and click anywhere in the printer list on the left
+3. A menu will appear — click **Reset printing system...**
+4. A popup will ask you to confirm. Click **Reset** (or **OK**)
+5. After the reset, your printer list will be empty. Click the **Add Printer, Scanner, or Fax** button to add your printer back. It should appear in the list automatically — select it and click **Add**
+
+![The Mac reset printing system confirmation dialog](PLACEHOLDER)
+
+> **Tip:** After resetting the printing system, your printer usually reappears in the list within a few seconds. If it doesn't, make sure the printer is turned on and connected to the same WiFi network as your Mac.
+
+**Common mistake:** On Windows, people open the print queue, see the "Printer" menu, but don't realize "Use Printer Offline" is a toggle. If it has a checkmark, the printer is in offline mode — clicking it removes the checkmark and brings it back online. Also, "Pause Printing" is a separate setting right below it — both need to be unchecked.
+
+## Fix 4: Restart the Print Spooler (Windows Only)
+
+The **Print Spooler** is a background program on Windows that manages all print jobs. When it crashes or gets stuck, nothing can print — even if your printer is perfectly fine. Restarting it is like giving the printing system a fresh start.
+
+1. Press the **Windows key** on your keyboard and type **Services**
+2. Click the **Services** app that appears (it has a gear icon)
+3. A big list opens — scroll down until you find **Print Spooler**
+4. Right-click **Print Spooler** and select **Restart**
+5. Wait about 10 seconds, then try printing again
+
+![The Windows Services window with Print Spooler highlighted](PLACEHOLDER)
+
+If restarting doesn't work, try stopping it completely and then starting it:
+
+1. Right-click **Print Spooler** → **Stop**
+2. Wait 10 seconds
+3. Right-click **Print Spooler** → **Start**
+4. Try printing again
+
+> **Tip:** Restarting the Print Spooler automatically clears the print queue — any stuck jobs will disappear. If a particular document keeps causing problems, restart the spooler, then try printing a different document to confirm the printer itself is working.
+
+**Common mistake:** The Services window shows dozens of items and looks intimidating. **Only touch "Print Spooler."** Stopping or disabling other services — especially ones with similar-sounding names — can cause other parts of Windows to stop working. Find Print Spooler, restart it, and close the window.
+
+## Fix 5: Set the Correct Default Printer and Reinstall the Printer
+
+Your computer might be sending print jobs to the wrong printer — especially common if you've ever used "Print to PDF," "Microsoft Print to PDF," "Fax," or "OneNote" as printer options. These are virtual printers that don't produce paper. Your computer might have set one of them as the default without you noticing.
+
+**Windows — Set the correct default printer:**
+
+1. Open **Settings** → **Bluetooth & devices** → **Printers & scanners**
+2. Scroll down and find **"Let Windows manage my default printer"** — turn this **Off** (click the toggle so it's not blue)
+3. Now scroll back up to your printer list, click your real printer's name, and click the **Set as default** button
+4. A "Default" label should now appear under your printer's name
+
+![The Windows Printers and scanners page showing the Set as default button](PLACEHOLDER)
+
+**Windows — Reinstall the printer if it still doesn't work:**
+
+1. In the same **Printers & scanners** page, click your printer's name
+2. Click the **Remove** button. Confirm by clicking **Yes**
+3. Restart your computer
+4. After restart, go back to **Settings** → **Bluetooth & devices** → **Printers & scanners**
+5. Click the **Add device** button at the top. Windows will search for your printer. When it appears, click **Add device**
+
+![The Add a printer or scanner button in Windows settings](PLACEHOLDER)
+
+**Mac — Remove and re-add the printer:**
+
+1. **Apple menu** → **System Settings** → **Printers & Scanners**
+2. Click your printer in the list, then click the **Remove Printer** button (the minus **-** icon or the **Remove** button)
+3. Click the **Add Printer, Scanner, or Fax** button
+4. Select your printer from the list and click **Add**
+
+![The Mac Printers and Scanners settings page](PLACEHOLDER)
+
+**Common mistake:** People see "Microsoft Print to PDF" or "Fax" set as the default printer and don't realize these aren't real printers. "Microsoft Print to PDF" saves a file to your computer — it will never produce paper. Always make sure the default printer is the physical printer sitting on your desk. Also, when reinstalling, people skip the restart step. Restarting clears any leftover printer files — skip it and the old, broken configuration might come back.
+
+## Still Stuck?
+
+- **Printer works on another computer but not yours?** The problem is definitely with your computer's configuration, not the printer. Try Fix 5 (reinstall the printer) again, and make sure your computer and printer are on the same WiFi network.
+- **Printer worked before a recent Windows or macOS update?** Updates sometimes break printer drivers. Go to your printer manufacturer's website (HP, Canon, Epson, Brother, etc.), search for your printer model, and download the latest driver. Installing the newest driver from the manufacturer's website often fixes update-related issues.
+- **Wireless printer keeps disconnecting?** Printers that go to sleep to save power sometimes drop their WiFi connection. On the printer's built-in screen, look for a **Power Management** or **Energy Saving** setting and turn it off. Also, make sure your router isn't too far from the printer — WiFi printers need a strong signal just like any other wireless device.
+- **Is your printer very old (8+ years)?** Older printers may not have drivers that work with the latest versions of Windows or macOS. Check the manufacturer's website to see if your model is still supported. If not, the printer may have reached the end of its supported life.
+- **Tried everything and still nothing?** Try connecting the printer with a USB cable (if it supports one) instead of wirelessly. If USB printing works but wireless doesn't, the issue is specifically with the wireless connection — you can keep using USB or troubleshoot the WiFi.
