@@ -1,0 +1,229 @@
+---
+title: "How to Fix iMessage Not Working, Stuck on 'Waiting for Activation', or Activation Failed"
+category: smartphones
+devices: ["iPhone"]
+difficulty: intermediate
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 7
+---
+
+## Before You Start
+
+You just got a new iPhone, switched carriers, or updated iOS — and now iMessage won't work. Instead of blue bubbles, your messages are sending as green SMS texts. When you go to Settings, you see one of these messages: **"Waiting for activation,"** **"Activation unsuccessful,"** **"An error occurred during activation,"** or **"Could not sign in, please check your network connection."** You've toggled iMessage off and on, restarted your phone, and it still won't activate. You're stuck sending green bubbles while your friends with iPhones keep asking why your messages look different.
+
+iMessage activation problems are some of the most common iPhone issues — especially after switching carriers, updating iOS, or setting up a new device. The activation process relies on a hidden SMS message that your iPhone sends to Apple's servers to verify your phone number. If that SMS can't get through — because of a network glitch, carrier block, or settings problem — iMessage gets stuck.
+
+This guide walks you through seven fixes, starting with the fastest checks and working up to more involved solutions. Most people get iMessage working again by Step 3 or 4.
+
+**What you'll need:**
+- Your iPhone with the phone number you want to activate
+- A working internet connection (Wi-Fi or cellular data)
+- Your Apple Account (Apple ID) email and password
+- Access to send at least one SMS text message (standard green-bubble text — not iMessage)
+
+> **Work through the steps in order.** Steps 1–3 fix the problem for most people. Jump to Step 5 if you recently switched carriers. Step 7 is the last resort before contacting Apple Support.
+
+> **Android users:** iMessage is an Apple-only service. If you switched from iPhone to Android and are having trouble receiving texts from iPhone users, the problem is different — you need to deregister your phone number from iMessage at [selfsolve.apple.com/deregister-imessage](https://selfsolve.apple.com/deregister-imessage). This guide is for iPhone users trying to activate iMessage on their device.
+
+![An iPhone screen showing the Settings app open to the Messages page, with the iMessage toggle on and a "Waiting for activation" message displayed underneath](PLACEHOLDER)
+
+## Step 1: Check Your Internet Connection and Date & Time
+
+iMessage activation requires two things to work before anything else: a stable internet connection (so your iPhone can talk to Apple's servers) and the correct date and time (so the security certificates match). If either one is off, activation fails before it even starts.
+
+**Fix 1a — Make sure you're connected to the internet:**
+
+1. Open **Safari** and try loading any website (like google.com). If it loads, your internet works — skip to Fix 1b
+2. If pages don't load, toggle your connection: open **Settings → Wi-Fi**, turn Wi-Fi **Off**, wait 5 seconds, turn it back **On**
+3. If Wi-Fi still doesn't work, try switching to cellular data: open **Control Center** (swipe down from the top-right corner), tap the Wi-Fi icon to turn it off (it'll turn gray), and make sure the Cellular Data icon is green. Try loading a website again
+4. If neither works, restart your Wi-Fi router and try again. If you're on a public or work Wi-Fi network, some networks block the ports Apple uses — try a different network or use cellular data
+
+**Fix 1b — Verify your date and time are correct:**
+
+1. Open **Settings → General → Date & Time**
+2. Make sure **Set Automatically** is turned **On** (the toggle should be green)
+3. If it was already on, toggle it **Off**, wait 10 seconds, then toggle it back **On** — this forces your iPhone to re-sync with Apple's time servers
+4. Check that the time zone shown matches your actual location. If it doesn't, turn off Set Automatically, manually select your time zone, then turn Set Automatically back on
+
+![An iPhone screen showing the Settings app on the Date & Time page, with the Set Automatically toggle in the on position](PLACEHOLDER)
+
+> **Common mistake:** Assuming your Wi-Fi works because the icon is visible in the status bar. The Wi-Fi icon only means you're connected to a network — not that the network has internet access. Always test by loading a website. Also, if you recently traveled across time zones, your iPhone may not have updated automatically — this is a surprisingly common cause of activation failures that looks like a network problem.
+
+## Step 2: Turn iMessage and FaceTime Off, Restart, and Turn Them Back On
+
+This is the classic "turn it off and back on again" fix — but with a specific order that matters. Simply toggling iMessage off and on without a restart in between often doesn't work because the stuck activation process keeps running in the background. You need to fully stop both services, restart the phone to clear any stuck processes, and then re-enable them fresh.
+
+1. Open **Settings → Apps → Messages** (on older iOS versions: **Settings → Messages**)
+2. Tap the **iMessage** toggle to turn it **Off** (it'll turn gray)
+3. Go back to **Settings**, then open **Apps → FaceTime** (or **Settings → FaceTime**)
+4. Tap the **FaceTime** toggle to turn it **Off**
+5. Now restart your iPhone:
+   - **iPhone X and newer:** Press and hold the side button and either volume button until the "slide to power off" slider appears. Slide it to turn off. Wait 30 seconds, then press and hold the side button until the Apple logo appears
+   - **iPhone SE and iPhone 8 and older:** Press and hold the top (or side) button until the slider appears. Slide to turn off, wait 30 seconds, then press and hold the top/side button until the Apple logo appears
+6. After your iPhone turns back on, go to **Settings → Apps → Messages** and turn **iMessage** back **On**
+7. Go to **Settings → Apps → FaceTime** and turn **FaceTime** back **On**
+8. Wait 2–5 minutes. Go back to Messages settings and check if it says "iMessage" with no error underneath
+
+![An iPhone screen showing the Messages settings page with the iMessage toggle in the off position, grayed out](PLACEHOLDER)
+
+> **Common mistake:** Skipping the full restart. Many people toggle iMessage off, toggle it right back on, and wonder why nothing changed. The activation process runs as a background service that only stops when the phone fully shuts down. You must turn both services off, do a complete restart (not just locking and unlocking the screen), and then turn them back on. Also: don't keep toggling iMessage on and off repeatedly — each toggle triggers a new SMS to Apple's servers, which can flag your number for spam-like behavior and delay activation further.
+
+> **WARNING:** If you see a pop-up that says **"Your network provider may charge for SMS messages used to activate iMessage and FaceTime,"** tap **"Turn On"** or **"OK."** This is a required step — iMessage activation sends a hidden SMS to Apple's servers to verify your phone number. If you tap "Cancel," activation will fail. The SMS is usually free, but some carriers (especially international or prepaid plans) may charge a small fee.
+
+## Step 3: Check Your SMS and Carrier Settings
+
+iMessage activation depends on a hidden SMS message that your iPhone sends to Apple's servers to confirm your phone number. If your phone can't send SMS messages — or your carrier is blocking international SMS — activation will fail silently. This step verifies that SMS is working and that your carrier isn't getting in the way.
+
+**Fix 3a — Send a test SMS:**
+
+1. Open **Settings → Apps → Messages** and turn **iMessage Off** temporarily
+2. Open the **Messages** app and send a regular text message to a friend or family member (it'll be a green bubble — that's what you want)
+3. If the message sends successfully, your SMS is working — proceed to Fix 3b. If it fails with "Not Delivered," there's an SMS problem your carrier needs to fix
+4. Turn iMessage back on after testing
+
+**Fix 3b — Check for a carrier settings update:**
+
+Carrier settings are small configuration files your carrier pushes to your iPhone to keep calls, SMS, and data working properly. An outdated carrier settings file can block iMessage activation.
+
+1. Open **Settings → General → About**
+2. Wait 30 seconds on this screen. If a carrier settings update is available, a pop-up will appear asking if you want to update
+3. Tap **Update** if prompted. If nothing appears after 60 seconds, your carrier settings are current
+4. Also check under **Carrier** on this screen — it should show your carrier's name (e.g., "T-Mobile 58.0"). If it says "Not Available," your SIM may not be properly activated
+
+**Fix 3c — Make sure international SMS is allowed:**
+
+iMessage activation sends its verification SMS to Apple's servers (which may be located internationally). Some carriers block international SMS by default.
+
+1. Contact your carrier's customer support (dial 611 from your iPhone for most US carriers)
+2. Ask: "Is international SMS enabled on my line? I need it for iMessage activation."
+3. If they say it's blocked, ask them to enable it. In some cases, you can enable it yourself through your carrier's app or website
+4. After enabling, wait 15–30 minutes, then try activating iMessage again
+
+![An iPhone screen showing the Settings app on the General > About page, with the carrier name visible and a potential carrier settings update pop-up](PLACEHOLDER)
+
+> **Common mistake:** Assuming SMS works because you normally text with iMessage. iMessage uses blue bubbles and sends messages over the internet — SMS is completely different and uses green bubbles that go through your carrier's cellular network. You need to test with a green-bubble SMS, not a blue-bubble iMessage. If you never see green bubbles because all your contacts have iPhones, turn iMessage off temporarily (Step 2) and send any message — it'll go as a green SMS.
+
+> **Tip:** If you recently switched carriers but kept the same phone number (ported your number), iMessage activation can take longer than normal — sometimes up to 24 hours. This is because Apple's servers need to confirm with your new carrier that you now own that number. If it's been less than 24 hours since you switched, complete Steps 1–3 and then wait before trying more involved fixes.
+
+## Step 4: Check for VPN and Content Blocker Interference
+
+VPNs (Virtual Private Networks) and content blockers route your internet traffic through third-party servers. Sometimes those servers are located in countries where Apple's activation servers aren't accessible, or the VPN's security features accidentally block the specific network ports that iMessage uses for activation.
+
+1. Open **Settings → General → VPN & Device Management**
+2. If you see **VPN** with a status of "Connected," tap it and toggle **Status** to **Not Connected**
+3. Also check if **Connect On Demand** is turned on — if so, turn it off (this setting automatically reconnects the VPN whenever your phone uses the internet, which can interfere with activation even if you manually disconnect)
+4. If you use a content blocker or ad blocker app (like 1Blocker, AdGuard, or similar), open **Settings → Safari → Extensions** and temporarily turn off any content blockers
+5. If you use iCloud Private Relay (an Apple feature that hides your IP address), go to **Settings → [Your Name] → iCloud → Private Relay** and turn it **Off** temporarily
+6. After disabling all of these, restart your iPhone (see Step 2 for restart instructions), then try activating iMessage again
+
+![An iPhone screen showing the Settings app on the VPN page with the Status toggle set to Not Connected](PLACEHOLDER)
+
+> **Common mistake:** Disconnecting a VPN but leaving "Connect On Demand" enabled. With Connect On Demand on, the VPN reconnects automatically within seconds — so turning it off manually does nothing. Always check and disable Connect On Demand first, then disconnect. Also, uninstalling a VPN app without first disconnecting it can leave behind VPN configuration profiles that continue to interfere. To clean those up: Settings → General → VPN & Device Management → tap the VPN profile → Remove VPN.
+
+## Step 5: Sign Out of Your Apple Account and Sign Back In
+
+Your Apple Account (Apple ID) is what ties your phone number to iMessage. If there's a problem with how your account is configured — an unverified email, a payment method issue, or a Terms & Conditions update you haven't accepted — iMessage activation can get stuck. Signing out and back in forces your iPhone to refresh all account-linked services.
+
+**Before you sign out (important):**
+
+Signing out of your Apple Account will temporarily remove Apple Pay cards, and you'll need to re-enter passwords for some apps. Your photos, contacts, and files will NOT be deleted — they stay in iCloud and come back when you sign in.
+
+1. Open **Settings** and tap your name at the very top
+2. Scroll all the way down and tap **Sign Out**
+3. If asked, enter your Apple Account password to turn off **Find My iPhone** (this is required — you can't sign out with Find My turned on)
+4. On the next screen, you'll be asked what data to keep on your iPhone. Choose to **keep** data for things you want locally (contacts, calendars, etc.). Your safest choice: keep everything checked
+5. Tap **Sign Out** in the top-right corner, then tap **Sign Out** again to confirm
+6. After signing out, **restart your iPhone** (see Step 2)
+7. After the restart, go back to **Settings** and tap **Sign in to your iPhone** at the top
+8. Enter your Apple Account email and password. If prompted for two-factor authentication, enter the code sent to your trusted device or phone number
+9. After signing in, wait a few minutes for everything to sync, then go to **Settings → Apps → Messages** and turn iMessage on
+
+![An iPhone screen showing the Apple ID settings page with the Sign Out button visible at the bottom after scrolling down](PLACEHOLDER)
+
+> **Common mistake:** Panicking when Apple Pay cards disappear. Signing out of your Apple Account temporarily removes your Apple Pay cards — they'll come back automatically when you sign back in (you may need to re-verify some cards with your bank). Your photos, contacts, notes, and iCloud files are NOT deleted — they're just temporarily unavailable on this device. They all return when you sign back in. Also: make sure you know your Apple Account password before signing out. If you've forgotten it, reset it at [iforgot.apple.com](https://iforgot.apple.com) before proceeding.
+
+> **WARNING:** Do not sign out if you don't know your Apple Account password and can't reset it. You won't be able to sign back in, and you'll be locked out of your own phone for anything that requires your Apple Account. If you're unsure about your password, test it first: go to [appleid.apple.com](https://appleid.apple.com) in Safari and try signing in there.
+
+## Step 6: Reset Network Settings
+
+If nothing has worked so far, your iPhone's network configuration may be corrupted — especially if you've used multiple SIM cards, switched carriers, or traveled internationally. Resetting network settings clears all saved Wi-Fi networks, Bluetooth connections, VPN configurations, and cellular settings back to factory defaults. This often fixes activation problems that are caused by a hidden network configuration conflict.
+
+**What this does (and what you'll lose):**
+- Deletes ALL saved Wi-Fi networks and passwords — you'll need to reconnect to Wi-Fi and re-enter passwords
+- Deletes ALL paired Bluetooth devices — you'll need to re-pair your headphones, speakers, watch, etc.
+- Resets cellular settings to default — your carrier settings will auto-update after the reset
+- Removes any VPN profiles and configurations
+- Does NOT delete your photos, apps, contacts, messages, or any personal data
+
+1. Open **Settings → General → Transfer or Reset iPhone**
+2. Tap **Reset**
+3. Tap **Reset Network Settings** (NOT "Reset All Settings" or "Erase All Content and Settings")
+4. Enter your iPhone passcode when prompted
+5. Tap **Reset Network Settings** again to confirm
+6. Your iPhone will restart automatically. The Apple logo will appear, and the restart may take 2–3 minutes
+7. After restarting, reconnect to your Wi-Fi network (open Settings → Wi-Fi, select your network, enter the password)
+8. Try activating iMessage again: **Settings → Apps → Messages → turn iMessage On**
+
+![An iPhone screen showing the Reset options menu with Reset Network Settings highlighted](PLACEHOLDER)
+
+> **Common mistake:** Choosing "Erase All Content and Settings" instead of "Reset Network Settings." The reset menu has multiple options — make sure you pick the right one. "Erase All Content and Settings" wipes your entire phone. "Reset Network Settings" only clears network configurations. Triple-check before you tap. Also, after the reset, iMessage activation may take 5–15 minutes on the first try because your phone needs to re-establish communication with your carrier's network from scratch.
+
+> **If you use an eSIM:** Resetting network settings does NOT delete your eSIM — your phone number and cellular plan stay intact. However, if you have multiple eSIMs, they'll all remain but may need a moment to reconnect after the reset.
+
+## Step 7: Activate Through Apple's Website and Wait 24 Hours
+
+If you've tried everything and iMessage still won't activate, there are two final approaches: use Apple's web-based activation tool, and — if you recently switched carriers — simply wait.
+
+**Fix 7a — Use Apple's web activation page:**
+
+Apple provides a website specifically for activating iMessage and FaceTime when on-device activation fails.
+
+1. On your iPhone (or any device), open Safari and go to **[apple.co/IMFT-mac](https://apple.co/IMFT-mac)**
+2. Under "Enable Apple Account," tap **Get Started**
+3. Sign in with your Apple Account (the same one used on your iPhone)
+4. On the next screen, under "Add a phone number for iMessage and FaceTime," enter the phone number you're trying to activate
+5. Apple's system will send a verification to your phone. Follow the on-screen steps to complete it
+6. You'll receive a confirmation email once your number is activated. This can take anywhere from a few minutes to a few hours
+7. Once you get the email, go back to your iPhone: **Settings → Apps → Messages → turn iMessage On.** Your number should appear under "Send & Receive"
+
+**Fix 7b — Use your email address as a temporary workaround:**
+
+While waiting for phone number activation, you can still use iMessage with your email address.
+
+1. Go to **Settings → Apps → Messages → Send & Receive**
+2. Under "You can receive iMessages to and reply from," check your Apple Account email address
+3. Under "Start new conversations from," select your email address
+4. iMessage will now work using your email instead of your phone number. Your contacts can still reach you — their messages will come to your email-based iMessage
+5. Note: if you do this, existing conversations that used your phone number may split into separate threads. You can [set a primary contact method](https://support.apple.com/101744) to avoid confusion
+
+**Fix 7c — Wait up to 24 hours (for new carrier switches):**
+
+If you recently switched carriers (ported your number), iMessage activation can take up to 24 hours. This is not a bug — it's the normal time for Apple's servers to confirm your number with your new carrier.
+
+1. Make sure iMessage is turned **On** in Settings (even if it says "Waiting for activation")
+2. Connect to Wi-Fi and leave your iPhone plugged in (activation is faster when the phone isn't in low-power mode)
+3. Do NOT repeatedly toggle iMessage off and on — each toggle sends a new SMS verification, which can reset the waiting period and potentially flag your number as suspicious
+4. Check back after 8–12 hours. If it's been more than 24 hours with no activation, continue to the Still Stuck section below
+
+![An iPhone screen showing the Apple iMessage activation web page with "Enable Apple Account" and a Get Started button](PLACEHOLDER)
+
+> **Common mistake:** Repeatedly toggling iMessage off and on while waiting. Every time you toggle iMessage on, your iPhone sends a new hidden SMS to Apple's servers. If you do this dozens of times in a few hours, Apple's spam-detection may temporarily block your number, making activation take even longer. Set it to On once, leave it alone, and let the process complete. If you're worried it's not working, check once every 4–6 hours — not every 5 minutes.
+
+## Still Stuck?
+
+- **Getting a specific error message?**
+  - **"Waiting for activation" for more than 24 hours** — Contact your carrier and confirm: (1) your account is fully active, (2) international SMS is enabled, (3) there are no blocks on premium SMS or short codes. Then go to apple.co/IMFT-mac and try the web activation (Step 7a)
+  - **"Activation unsuccessful" after switching carriers** — Your old carrier may not have released your number yet. Contact your OLD carrier and ask them to "release your number for porting." Once they confirm it's released, wait 2–4 hours and try again
+  - **"Could not sign in, please check your network connection"** — Even though you have internet, Apple's activation servers may be temporarily unreachable on your current network. Try: (1) a different Wi-Fi network, (2) cellular data instead of Wi-Fi, or (3) a friend's Wi-Fi. You can check Apple's server status at [apple.com/support/systemstatus](https://www.apple.com/support/systemstatus) — look for a green dot next to "iMessage"
+  - **"An error occurred during activation"** — This generic error usually means the hidden SMS to Apple failed. Turn iMessage off, go to Step 3 (send a test SMS to make sure SMS works), and try again. If SMS works but activation still fails, your carrier may be blocking the specific short code Apple uses. Call your carrier and ask them to "unblock short code SMS and international SMS for iMessage activation"
+
+- **Did you just get a new SIM card?** If your carrier gave you a brand new SIM (not the same one from your old phone), iMessage activation can take longer. New SIM cards sometimes take 2–24 hours to fully provision SMS services. Contact your carrier and ask if your SIM is "fully provisioned for SMS."
+
+- **Using an eSIM that you activated recently?** With iOS 26, if you add an eSIM AFTER initial setup, iMessage may not activate automatically. Go to Settings → Apps → Messages, turn iMessage off, restart your iPhone, turn iMessage back on. This forces a fresh activation with the new eSIM.
+
+- **Messages showing as green bubbles but you expected blue?** First, check if the person you're texting also has an iPhone with iMessage turned on — blue bubbles only work between two iMessage users. If they do have an iPhone, the problem may be on their end, not yours. Also, if you're in an area with poor cellular data, iMessage falls back to SMS (green) automatically. Try connecting to Wi-Fi.
+
+- **Nothing works, and your phone number still won't activate?** As a last resort, you can use iMessage with just your email address (Step 7b) while waiting for phone number activation. Your contacts with iPhones can still reach you at your email-based iMessage. To let them know: send a text (green bubble) saying "Hey, my iMessage is temporarily using my email — [youremail@example.com] — until my number activates. You can still iMessage me there!"
+
+- **Contact Apple Support:** If you've tried every step and waited 24+ hours, Apple Support can manually check your activation status on their servers. Go to **[getsupport.apple.com](https://getsupport.apple.com)**, select **iPhone → Messages → iMessage not working**, and choose **Chat** or **Call**. They can see things on the server side that you can't — including whether your number is flagged, blocked, or stuck in a pending state. Support is free for iMessage activation issues.
