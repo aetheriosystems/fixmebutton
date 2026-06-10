@@ -1,0 +1,213 @@
+---
+title: "How to Fix 'WiFi Connected But No Internet'"
+category: internet-wifi
+devices: ["Windows 10", "Windows 11", "macOS", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "10 minutes"
+last_verified: "2026-06-09"
+steps: 7
+---
+
+## Before You Start
+
+Your device says it's connected to WiFi, but websites won't load, apps can't refresh, and you see a "No Internet" or "Connected, no internet" message with a yellow warning triangle. This is different from slow internet — your connection is completely dead even though the WiFi signal looks fine.
+
+This guide walks you through the most common fixes, starting with the fastest and easiest. Most people solve this by Step 2 or 3.
+
+**What you'll need:**
+- Your device (phone, laptop, or computer)
+- Access to your WiFi router
+- Your WiFi password
+
+> **Work through the steps in order.** If one step doesn't fix the problem, move to the next. Don't skip ahead — the early steps fix the majority of cases.
+
+![A phone screen showing full WiFi bars with a yellow "No Internet" warning](PLACEHOLDER)
+
+## Step 1: Check If the Problem Is Just One Device
+
+Before changing any settings, find out if the internet is down for everyone or just your device. This tells you whether the problem is with your device or your whole network.
+
+**Fix 1 — Test another device**
+1. Grab another phone, tablet, or computer connected to the same WiFi
+2. Try loading a website (like google.com) on that device
+3. If other devices work fine, the problem is with **your device only** — skip to Step 3
+4. If no device can access the internet, the problem is with your **router, modem, or internet provider** — go to Step 2
+
+> **Common mistake:** People restart their computer three times without checking if their phone can get online. If every device is down, no amount of fixing your laptop will help — the issue is upstream.
+
+![Two phones side by side: one showing a website, the other showing "No Internet"](PLACEHOLDER)
+
+## Step 2: Restart Your Modem and Router
+
+This is the single most effective fix for "connected but no internet." It forces your modem to grab a fresh connection from your internet provider and clears temporary glitches in the router.
+
+1. Unplug the power cable from your **modem** (the box connected to the cable/phone line coming out of your wall)
+2. Unplug the power cable from your **WiFi router** (the box with antennas)
+3. Wait **a full 60 seconds** — set a timer on your phone. This matters because the modem needs time to fully power down and clear its internal memory
+4. Plug the **modem** back in first. Wait until all its lights are steady — usually 1-2 minutes. Don't rush this
+5. Plug the **router** back in. Wait another 1-2 minutes for it to fully boot
+6. Reconnect your device to WiFi and try loading a website
+
+> **What's happening:** The modem is the translator between your home and your internet provider. When it gets stuck, it can still broadcast WiFi (so your devices "connect") but it can't pass internet traffic through. Restarting resets the connection from scratch.
+
+![A person unplugging the power cable from a modem and router setup](PLACEHOLDER)
+
+> **Common mistake:** People unplug and immediately plug back in without waiting. The modem's internal memory doesn't clear in 5 seconds — capacitors inside hold a charge much longer. Wait the full 60 seconds. If you don't, the problem often survives the restart.
+
+## Step 3: Forget the Network and Reconnect
+
+Sometimes your device remembers a bad connection setting from a previous session. "Forgetting" the network wipes that memory so your device can start fresh.
+
+**iPhone/iPad:**
+1. Open **Settings** → **Wi-Fi**
+2. Tap the blue **ⓘ (information)** icon next to your WiFi network name
+3. Tap **Forget This Network** → tap **Forget** to confirm
+4. Restart your iPhone (hold the side button → slide to power off → turn back on)
+5. Go back to **Settings** → **Wi-Fi**, tap your network, and enter the password
+
+**Android:**
+1. Open **Settings** → **Connections** → **Wi-Fi** (or **Network & Internet** → **Wi-Fi**, depending on your phone)
+2. Tap the **gear icon (⚙)** next to your network name
+3. Tap **Forget** (or the **trash icon** at the top)
+4. Restart your phone
+5. Reconnect to the network with your password
+
+**Windows:**
+1. Click the **WiFi icon** in the taskbar (bottom-right)
+2. Click the **arrow (>) or settings gear** next to your network name
+3. Right-click your network and select **Forget**
+4. Restart your computer
+5. Reconnect by clicking the WiFi icon and selecting your network
+
+**Mac:**
+1. Click the **Apple menu ()** → **System Settings** → **Wi-Fi**
+2. Click **Details** next to your network name
+3. Click **Forget This Network** → confirm
+4. Restart your Mac
+5. Reconnect to the network from the WiFi menu
+
+> **Common mistake:** People forget to restart their device after forgetting the network. The bad settings can stay in temporary memory even after the network profile is deleted. Always restart before reconnecting.
+
+## Step 4: Check Your IP Address Settings
+
+Every device on WiFi needs a valid IP address — a unique "house number" that lets the router send internet data to the right device. "No internet" often means your device didn't get a proper IP address.
+
+**Windows:**
+1. Press the **Windows key** and type **cmd**, then press Enter to open Command Prompt
+2. Type this exactly and press Enter:
+   ```
+   ipconfig
+   ```
+3. Look for the section labeled **Wireless LAN adapter Wi-Fi** (or similar)
+4. Find the line **IPv4 Address**. It should start with **192.168.** or **10.0.** or **172.16.**
+5. If the IPv4 Address says **169.254.x.x** — that's a self-assigned "failed" address. It means your device couldn't reach the router to get a real address
+
+**Mac:**
+1. Click the **Apple menu ()** → **System Settings** → **Wi-Fi**
+2. Click **Details** next to your connected network
+3. Under **TCP/IP**, look at **IP address**
+4. Same rule: it should start with 192.168, 10.0, or 172.16. If it starts with 169.254, the connection is broken
+
+> **What a 169.254 address means:** Your device tried to get an IP from the router and failed, so it made up its own — one that doesn't actually work for internet access. This is a clear sign the device and router aren't communicating properly.
+
+![Windows Command Prompt showing ipconfig output with a 169.254 address highlighted](PLACEHOLDER)
+
+## Step 5: Flush DNS and Renew Your IP Address (Windows/Mac)
+
+If your IP address is wrong (see Step 4), or you just want to force a fresh connection, these commands reset your device's network identity.
+
+**Windows:**
+1. Press the **Windows key**, type **cmd**, right-click **Command Prompt**, and select **Run as administrator**
+2. Type each command below, pressing Enter after each line:
+   ```
+   ipconfig /release
+   ```
+   (This tells the router "I'm letting go of my old address")
+   ```
+   ipconfig /renew
+   ```
+   (This asks the router for a brand-new address)
+   ```
+   ipconfig /flushdns
+   ```
+   (This clears your device's stored internet address book)
+3. Close Command Prompt and try loading a website
+
+**Mac:**
+1. Open **Terminal** (search in Spotlight with **Cmd+Space**, type "Terminal")
+2. Type this and press Enter:
+   ```
+   sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+   ```
+3. Type your Mac password (you won't see letters appear — this is normal) and press Enter
+4. Try loading a website
+
+> **What these commands do:** `/release` and `/renew` force your device to get a fresh IP address from the router. `/flushdns` clears your DNS cache — a stored list of website-to-number translations that can get corrupted. On Mac, `dscacheutil -flushcache` and `killall mDNSResponder` do the same thing.
+
+> **Common mistake:** Opening Command Prompt without Administrator rights. The `/release` and `/renew` commands need admin permission to work. If you just double-click cmd, you'll get an "Access denied" or "requires elevation" error. Always right-click and choose **Run as administrator**.
+
+## Step 6: Turn Off Your VPN (Temporarily)
+
+VPNs (Virtual Private Networks) route your internet traffic through a remote server for privacy. When a VPN connection breaks or gets stuck, it can block ALL internet access — even though your WiFi says it's connected.
+
+1. Open your VPN app (NordVPN, ExpressVPN, Surfshark, ProtonVPN, or any VPN you have installed)
+2. Tap or click the **Disconnect** or **Power button**
+3. Wait 5 seconds, then try loading a website
+
+If the internet comes back after disconnecting the VPN:
+- Your VPN is the cause. It may have lost connection to its server, or a "kill switch" feature is blocking your internet because the VPN tunnel dropped
+- To fix permanently: reconnect the VPN to a different server location, or check the VPN settings for a **Kill Switch** option and temporarily disable it
+
+> **Also check:** iPhones can have VPN profiles installed in **Settings** → **General** → **VPN & Device Management** even if you don't have a VPN app. Schools and workplaces sometimes install these. If a profile called "VPN" is there, try toggling **Status** to **Not Connected**.
+
+![A VPN app showing the Disconnect button with the kill switch warning highlighted](PLACEHOLDER)
+
+> **Common mistake:** People forget they even have a VPN running. Many VPN apps auto-connect on startup and run silently in the background. Check your system tray (Windows, bottom-right) or menu bar (Mac, top-right) for a VPN icon you forgot about.
+
+## Step 7: Reset Your Network Settings (Last Resort)
+
+If nothing above worked, this is the nuclear option. It wipes ALL saved WiFi networks, Bluetooth pairings, and custom network settings on your device — then rebuilds everything from scratch.
+
+**iPhone/iPad:**
+1. Open **Settings** → **General** → **Transfer or Reset iPhone** (at the very bottom)
+2. Tap **Reset** → **Reset Network Settings**
+3. Enter your passcode if asked, then confirm
+4. Your phone will restart. When it comes back, go to **Settings** → **Wi-Fi** and reconnect to your network
+
+**Android:**
+1. Open **Settings** → **General management** → **Reset** (or **System** → **Reset options**)
+2. Tap **Reset network settings** (or **Reset Wi-Fi, mobile & Bluetooth**)
+3. Tap **Reset settings** and confirm with your PIN/password
+4. Your phone restarts. Reconnect to WiFi afterward
+
+**Windows:**
+1. Open **Settings** (Windows key + I) → **Network & internet** → **Advanced network settings**
+2. Click **Network reset**
+3. Click **Reset now** → confirm **Yes**
+4. Your computer will restart in 5 minutes (or restart it manually)
+
+**Mac:**
+1. Open **Finder** → **Go** menu (top of screen) → **Go to Folder**
+2. Type this path and press Enter:
+   ```
+   /Library/Preferences/SystemConfiguration/
+   ```
+3. Find and delete these five files (select them all and drag to Trash):
+   - `com.apple.airport.preferences.plist`
+   - `com.apple.network.identification.plist`
+   - `com.apple.wifi.message-tracer.plist`
+   - `NetworkInterfaces.plist`
+   - `preferences.plist`
+4. Restart your Mac. macOS will recreate these files fresh on startup.
+
+> **Warning:** Resetting network settings deletes ALL saved WiFi passwords, Bluetooth pairings, and VPN configurations. After the reset, you'll need to re-enter your WiFi password and re-pair Bluetooth devices like headphones and smartwatches. Only do this if you're truly stuck.
+
+![An iPhone Settings screen showing the Reset Network Settings option](PLACEHOLDER)
+
+## Still Stuck?
+
+- **Still getting "Connected, no internet" on ALL devices after restarting the modem/router?** The issue is with your internet provider, not your home network. Call your provider and say: "All my devices connect to WiFi but can't access the internet, even after restarting the modem and router." They can run a line test and tell you if there's an outage in your area.
+- **Only one device affected after trying everything above?** Try connecting that device to a DIFFERENT WiFi network — a friend's house, a coffee shop, or a phone hotspot. If your device gets internet on other networks, the problem is your home router's compatibility with that specific device. Try updating the router's firmware (search "[router brand] firmware update" for instructions).
+- **Problem comes back every few hours or days?** This could be an IP address conflict — two devices on your network fighting over the same address. Log into your router (usually 192.168.0.1 or 192.168.1.1 in a browser) and look for a setting called **DHCP Reservation** or **Address Reservation** to give your device a permanent, unchanging IP address.
+- **Using a public WiFi network (hotel, airport, coffee shop)?** These networks often have a "captive portal" — a login page that must open before internet works. Try going to **neverssl.com** in your browser. This site forces the login page to appear when it didn't pop up automatically.
+- **DNS might be the culprit.** Try changing your DNS to Google's public servers: 8.8.8.8 and 8.8.4.4. On Windows, go to **Settings → Network & internet → Wi-Fi → your network → Edit** next to DNS server assignment. On Mac, go to **System Settings → Wi-Fi → Details → DNS**. On iPhone/Android, this setting is under your WiFi network's advanced options.
