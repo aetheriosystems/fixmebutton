@@ -234,7 +234,127 @@ Verify Photos, Contacts, Messages, Notes, and Passwords all transferred.
 
 Go to **Settings → General → Transfer or Reset iPhone → Erase All Content and Settings** on your old iPhone.
 
-## Still Stuck?\n\nIf the transfer didn't work: restart both iPhones and try again, or use an iCloud backup instead.`,\n  },\n  {\n    meta: {\n      slug: "free-up-android-storage",\n      category: "smartphones",\n      title: "How to Free Up Storage Space on Android",\n      devices: ["Samsung Galaxy", "Google Pixel", "OnePlus", "Motorola", "Any Android phone"],\n      difficulty: "beginner",\n      time_estimate: "10 minutes",\n      last_verified: "2026-06-09",\n      steps: 7,\n    },\n    content: \`## Before You Start\n\nRunning out of storage on your Android phone? Photos, videos, and apps are usually the biggest space-hogs. This guide works for Samsung Galaxy, Google Pixel, OnePlus, Motorola, and most other Android phones.\n\nTo check how much space you have left: go to **Settings → Storage** (on Samsung, it's **Settings → Device Care → Storage**). You'll see a breakdown showing what's using your space.\n\n## Step 1: Delete Apps You Don't Use\n\nAndroid phones can pile up unused apps over time. Some of them can be surprisingly large — games especially can take up 1-5 GB each.\n\n1. Go to **Settings → Storage → Apps** (or **Settings → Apps**)\n2. You'll see your apps listed by how much space they use, biggest first\n3. Tap an app you don't use anymore\n4. Tap **Uninstall**\n5. Repeat for any other apps you haven't opened in months\n\n> **Common Mistake:** Don't uninstall system apps like "Google Play Services," "Android System WebView," or "SIM Toolkit." These are part of Android and removing them can cause problems. Only uninstall apps you downloaded yourself from the Play Store.\n\n## Step 2: Clear App Caches\n\nApps store temporary files called "cache" to load faster. Over time, cache files can build up and eat several gigabytes of space — and clearing them is totally safe.\n\n1. Go to **Settings → Storage**\n2. Look for a button that says **Free Up Space** or **Clean Up** (most Android phones have this built in)\n3. Tap it, and your phone will show temporary files you can delete\n4. Check the boxes for cached data, then tap **Free Up** or **Delete**\n\nIf your phone doesn't have a built-in cleaner, clear cache for individual apps:\n1. Go to **Settings → Apps**\n2. Tap the app (start with Chrome, YouTube, Instagram, TikTok — these build up the most cache)\n3. Tap **Storage & cache**\n4. Tap **Clear Cache** (NOT "Clear Storage" — that would log you out)\n\n> **Common Mistake:** Tapping "Clear Storage" instead of "Clear Cache" will erase your login info, saved settings, and downloaded content inside that app. Only tap the button that says "Clear Cache."\n\n## Step 3: Delete Large Files with Files by Google\n\nMost Android phones come with a file manager app called **Files** (or **Files by Google**). It can find large files, duplicate photos, and unused downloads.\n\n1. Open the **Files** app (if you don't have it, download **Files by Google** from the Play Store — it's free)\n2. Tap the **Clean** button at the bottom\n3. You'll see suggestions like: delete old screenshots, duplicate photos, large files over 100 MB, and downloaded files from your Downloads folder\n4. Tap each suggestion, review what it found, then tap **Delete**\n\n## Step 4: Back Up and Remove Photos and Videos\n\nPhotos and videos are almost always the biggest storage consumer. Instead of deleting them forever, back them up to Google Photos first.\n\n1. Open the **Google Photos** app (comes pre-installed on most Android phones)\n2. Tap your profile picture in the top right corner\n3. Tap **Photos settings → Backup**\n4. Make sure **Backup** is turned on\n5. Choose **Storage saver** quality (compresses photos slightly but looks great on a phone screen)\n6. Wait for your photos to finish backing up\n7. Once backed up, tap your profile picture again and select **Free up space**\n8. Google Photos will find photos already backed up and offer to delete them from your phone\n\n> **Note:** As of 2026, Google Photos no longer offers completely free unlimited storage. The storage saver option compresses your photos and counts toward your free 15 GB of Google account storage. If you need more, 100 GB costs $1.99/month.\n\n## Step 5: Remove Downloaded Music, Podcasts, and Streaming Content\n\nStreaming apps often download content for offline listening or watching. Those downloads eat up storage fast.\n\n**Spotify:** Open Spotify → Your Library → tap Downloaded filter → tap the green download arrow to remove downloads.\n\n**YouTube / YouTube Music:** Open YouTube → Library → Downloads → tap the three-dot menu → Delete from device.\n\n**Netflix:** Open Netflix → Downloads tab → tap the download icon → Delete Download. Also turn off Smart Downloads to stop auto-downloading new episodes.\n\n**Podcasts:** Open your podcast app → find Downloaded or Downloaded Episodes → delete episodes you've already listened to.\n\n## Step 6: Empty the Trash in Photos and Files\n\nWhen you delete photos or files on Android, they move to a Trash or Recycle Bin folder — and stay there for 30 days, still taking up space.\n\n1. Open the **Google Photos** app → **Library** → **Trash**\n2. Tap the three-dot menu → **Empty trash** → confirm\n\nAlso check the Files app:\n1. Open the **Files** app → hamburger menu → **Trash** or **Recycle bin**\n2. Tap **Empty trash**\n\n> **Common Mistake:** Photos in the Trash still count against your storage until the trash is emptied or 30 days pass. If you're desperate for space now, empty the trash manually instead of waiting.\n\n## Step 7: Restart Your Phone\n\nSometimes Android misreports how much storage is available. A restart forces it to recalculate.\n\n1. Press and hold the **power button** until the power menu appears\n2. Tap **Restart**\n3. Wait 30-60 seconds for your phone to fully restart\n\nGo back to **Settings → Storage** — you may see slightly more free space than before.\n\n## Still Stuck?\n\nIf you're still running out of space after all seven steps:\n\n- **Consider a microSD card:** Many Android phones (especially Samsung Galaxy and Motorola) have a microSD card slot. A 128 GB card costs around $15. Insert the card and go to **Settings → Storage → SD Card** to move files.\n- **Use Google Photos auto-management:** In Google Photos settings, enable automatic "Free up device storage" so it regularly removes backed-up photos.\n- **Factory reset as a last resort:** Go to **Settings → System → Reset options → Erase all data (factory reset)**. **Warning:** This erases everything. Back up photos, contacts, and messages first.\n- **Your phone may just be too old:** If your phone has only 16 GB or 32 GB of storage and you've tried everything, it may be time for a phone with more storage. Modern Android phones start at 128 GB.\`,\n  },\n  {\n    meta: {\n      slug: "speed-up-slow-computer",
+## Still Stuck?
+
+If the transfer didn't work: restart both iPhones and try again, or use an iCloud backup instead.`,
+  },
+  {
+    meta: {
+      slug: "free-up-android-storage",
+      category: "smartphones",
+      title: "How to Free Up Storage Space on Android",
+      devices: ["Samsung Galaxy", "Google Pixel", "OnePlus", "Motorola", "Any Android phone"],
+      difficulty: "beginner",
+      time_estimate: "10 minutes",
+      last_verified: "2026-06-09",
+      steps: 7,
+    },
+    content: `## Before You Start
+
+Running out of storage on your Android phone? Photos, videos, and apps are usually the biggest space-hogs. This guide works for Samsung Galaxy, Google Pixel, OnePlus, Motorola, and most other Android phones.
+
+To check how much space you have left: go to **Settings → Storage** (on Samsung, it's **Settings → Device Care → Storage**). You'll see a breakdown showing what's using your space.
+
+## Step 1: Delete Apps You Don't Use
+
+Android phones can pile up unused apps over time. Some of them can be surprisingly large — games especially can take up 1-5 GB each.
+
+1. Go to **Settings → Storage → Apps** (or **Settings → Apps**)
+2. You'll see your apps listed by how much space they use, biggest first
+3. Tap an app you don't use anymore
+4. Tap **Uninstall**
+5. Repeat for any other apps you haven't opened in months
+
+> **Common Mistake:** Don't uninstall system apps like "Google Play Services," "Android System WebView," or "SIM Toolkit." These are part of Android and removing them can cause problems. Only uninstall apps you downloaded yourself from the Play Store.
+
+## Step 2: Clear App Caches
+
+Apps store temporary files called "cache" to load faster. Over time, cache files can build up and eat several gigabytes of space — and clearing them is totally safe.
+
+1. Go to **Settings → Storage**
+2. Look for a button that says **Free Up Space** or **Clean Up** (most Android phones have this built in)
+3. Tap it, and your phone will show temporary files you can delete
+4. Check the boxes for cached data, then tap **Free Up** or **Delete**
+
+If your phone doesn't have a built-in cleaner, clear cache for individual apps:
+1. Go to **Settings → Apps**
+2. Tap the app (start with Chrome, YouTube, Instagram, TikTok — these build up the most cache)
+3. Tap **Storage & cache**
+4. Tap **Clear Cache** (NOT "Clear Storage" — that would log you out)
+
+> **Common Mistake:** Tapping "Clear Storage" instead of "Clear Cache" will erase your login info, saved settings, and downloaded content inside that app. Only tap the button that says "Clear Cache."
+
+## Step 3: Delete Large Files with Files by Google
+
+Most Android phones come with a file manager app called **Files** (or **Files by Google**). It can find large files, duplicate photos, and unused downloads.
+
+1. Open the **Files** app (if you don't have it, download **Files by Google** from the Play Store — it's free)
+2. Tap the **Clean** button at the bottom
+3. You'll see suggestions like: delete old screenshots, duplicate photos, large files over 100 MB, and downloaded files from your Downloads folder
+4. Tap each suggestion, review what it found, then tap **Delete**
+
+## Step 4: Back Up and Remove Photos and Videos
+
+Photos and videos are almost always the biggest storage consumer. Instead of deleting them forever, back them up to Google Photos first.
+
+1. Open the **Google Photos** app (comes pre-installed on most Android phones)
+2. Tap your profile picture in the top right corner
+3. Tap **Photos settings → Backup**
+4. Make sure **Backup** is turned on
+5. Choose **Storage saver** quality (compresses photos slightly but looks great on a phone screen)
+6. Wait for your photos to finish backing up
+7. Once backed up, tap your profile picture again and select **Free up space**
+8. Google Photos will find photos already backed up and offer to delete them from your phone
+
+> **Note:** As of 2026, Google Photos no longer offers completely free unlimited storage. The storage saver option compresses your photos and counts toward your free 15 GB of Google account storage. If you need more, 100 GB costs $1.99/month.
+
+## Step 5: Remove Downloaded Music, Podcasts, and Streaming Content
+
+Streaming apps often download content for offline listening or watching. Those downloads eat up storage fast.
+
+**Spotify:** Open Spotify → Your Library → tap Downloaded filter → tap the green download arrow to remove downloads.
+
+**YouTube / YouTube Music:** Open YouTube → Library → Downloads → tap the three-dot menu → Delete from device.
+
+**Netflix:** Open Netflix → Downloads tab → tap the download icon → Delete Download. Also turn off Smart Downloads to stop auto-downloading new episodes.
+
+**Podcasts:** Open your podcast app → find Downloaded or Downloaded Episodes → delete episodes you've already listened to.
+
+## Step 6: Empty the Trash in Photos and Files
+
+When you delete photos or files on Android, they move to a Trash or Recycle Bin folder — and stay there for 30 days, still taking up space.
+
+1. Open the **Google Photos** app → **Library** → **Trash**
+2. Tap the three-dot menu → **Empty trash** → confirm
+
+Also check the Files app:
+1. Open the **Files** app → hamburger menu → **Trash** or **Recycle bin**
+2. Tap **Empty trash**
+
+> **Common Mistake:** Photos in the Trash still count against your storage until the trash is emptied or 30 days pass. If you're desperate for space now, empty the trash manually instead of waiting.
+
+## Step 7: Restart Your Phone
+
+Sometimes Android misreports how much storage is available. A restart forces it to recalculate.
+
+1. Press and hold the **power button** until the power menu appears
+2. Tap **Restart**
+3. Wait 30-60 seconds for your phone to fully restart
+
+Go back to **Settings → Storage** — you may see slightly more free space than before.
+
+## Still Stuck?
+
+If you're still running out of space after all seven steps:
+
+- **Consider a microSD card:** Many Android phones (especially Samsung Galaxy and Motorola) have a microSD card slot. A 128 GB card costs around $15. Insert the card and go to **Settings → Storage → SD Card** to move files.
+- **Use Google Photos auto-management:** In Google Photos settings, enable automatic "Free up device storage" so it regularly removes backed-up photos.
+- **Factory reset as a last resort:** Go to **Settings → System → Reset options → Erase all data (factory reset)**. **Warning:** This erases everything. Back up photos, contacts, and messages first.
+- **Your phone may just be too old:** If your phone has only 16 GB or 32 GB of storage and you've tried everything, it may be time for a phone with more storage. Modern Android phones start at 128 GB.`,
+  },
+  {
+    meta: {
+      slug: "speed-up-slow-computer",
       category: "computers",
       title: "How to Speed Up a Slow Computer",
       devices: ["Windows 10", "Windows 11", "macOS"],
