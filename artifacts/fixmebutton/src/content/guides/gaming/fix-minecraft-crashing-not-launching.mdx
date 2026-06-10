@@ -1,0 +1,248 @@
+---
+title: "How to Fix Minecraft Crashing or Not Launching"
+category: gaming
+devices: ["Windows 10", "Windows 11", "Mac"]
+difficulty: beginner
+time_estimate: "25 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You double-click the Minecraft Launcher, press Play, and... the game crashes. Or the launcher itself won't open. Or you see a mysterious error message like **"An unexpected error occurred and the game has crashed"** or **"Exit Code: 1."** Meanwhile, your friends are all online playing on the same server. It's one of the most frustrating things that can happen to a Minecraft player — especially because the error messages tell you almost nothing about what's actually wrong.
+
+The good news: Minecraft crashing or refusing to launch is almost always caused by one of a small handful of problems — outdated Java, a mismatched mod, graphics driver issues, or corrupted game files. And most of these fixes take just a few minutes each.
+
+This guide walks you through the five most effective fixes, starting with the fastest and easiest. Work through them in order — most players are back in their world by Fix 2 or 3. 
+
+**What you'll need:**
+- Your computer (Windows or Mac)
+- A stable internet connection
+- About 25 minutes
+- If you play with mods: know which ones you have installed
+
+> **Before you do anything else:** Check if Minecraft's servers are having problems. Go to [downdetector.com/status/minecraft](https://downdetector.com/status/minecraft) on your phone or another device. If you see a huge spike in outage reports, the problem is on Mojang's end — not your computer. Also, if this started right after a brand-new Minecraft update dropped, wait a few hours and try again. Sometimes Mojang releases updates with bugs that they patch quickly.
+
+![The Minecraft Launcher showing a crash error message with Exit Code 1](PLACEHOLDER)
+
+## Fix 1: Restart the Launcher and Your Computer
+
+It sounds too obvious, but simply restarting the launcher — and if that doesn't work, your entire computer — fixes about one-third of all Minecraft crash problems. Here's why: the Minecraft launcher is a separate program from the game itself. Sometimes the launcher gets stuck in a bad state, or a background process from a previous play session is still running and blocking a new one. A clean restart wipes all of that.
+
+**Fix 1a — Close and reopen the Minecraft Launcher:**
+
+1. Close Minecraft completely. Don't just click the X — make sure it's actually gone.
+2. **On Windows:** Press **Ctrl + Shift + Esc** to open Task Manager. Look for anything with "Minecraft" or "Java" in the name. If you see "Minecraft Launcher," "Minecraft," or "Java(TM) Platform SE binary," click it and then click **End Task**. Do this for EVERY Minecraft or Java process you see.
+3. **On Mac:** Press **Command + Option + Escape** to open the Force Quit window. Select "Minecraft" or "Minecraft Launcher" and click **Force Quit**. Do this for both if both are listed.
+4. Wait 10 seconds, then reopen the Minecraft Launcher and try again.
+
+**Fix 1b — Restart your entire computer:**
+
+If closing and reopening the launcher didn't help, do a full computer restart. This clears temporary system glitches, frees up memory, and stops any hidden processes that might be interfering with Minecraft.
+
+1. **On Windows:** Click the **Start** button (Windows icon, bottom-left corner), click the **Power** icon, and choose **Restart** — NOT "Shut down." (Windows 10 and 11 have a "Fast Startup" feature that makes Shut Down act like a deep sleep; only Restart does a true clean boot.)
+2. **On Mac:** Click the **Apple menu ()** in the top-left corner and choose **Restart**. Uncheck "Reopen windows when logging back in" if that option appears.
+3. After your computer restarts, open ONLY the Minecraft Launcher — don't open browsers, Discord, or anything else yet — and try launching the game.
+
+![Windows Task Manager showing Minecraft and Java processes being ended](PLACEHOLDER)
+
+**Common mistake:** People close the launcher window and assume the program is fully shut down, but the Minecraft launcher keeps running in the background — you can see its icon in the system tray (bottom-right corner of the screen, near the clock). Right-click the Minecraft icon in the system tray and choose **Quit** or **Exit** to fully close it. On Windows, always check Task Manager for leftover Java or Minecraft processes. A hidden Java process from a crashed session is one of the most common reasons Minecraft won't launch again.
+
+## Fix 2: Update or Reinstall Java
+
+Minecraft: Java Edition runs on — you guessed it — Java. If your version of Java is missing, outdated, or corrupted, Minecraft will crash before it even loads a world. This is especially common after a Minecraft update, because newer versions of Minecraft often require newer versions of Java.
+
+**Which version of Java do you need?**
+
+- **Minecraft 1.18 and newer** requires **Java 17** or later.
+- **Minecraft 1.17 and older** works with **Java 8**.
+- If you're not sure, install Java 17 — it's the safe choice for recent versions. If you later find you need Java 8 for an older modpack, you can install both. They won't conflict with each other.
+
+**Fix 2a — Install or update Java (Windows):**
+
+1. First, check if Java is already installed. Press the **Windows key**, type **cmd**, and press Enter to open Command Prompt. Type `java -version` and press Enter. If you see a version number (like "17.0.9"), Java is installed. If you see "'java' is not recognized," you need to install it.
+2. Go to the official Java download page: [java.com/download](https://www.java.com/download) — or for Java 17 specifically, go to [oracle.com/java/technologies/downloads/#java17](https://www.oracle.com/java/technologies/downloads/#java17) and download the **Windows x64 Installer**.
+3. Run the installer you downloaded. Click **Yes** when Windows asks if you want to allow changes. Follow the installation steps (the default options are fine — just click **Next** through each screen).
+4. When the installation finishes, **restart your computer**. Java won't work correctly until you restart.
+5. After restarting, open the Minecraft Launcher and make sure it knows where Java is:
+   - In the launcher, click the **Installations** tab at the top.
+   - Hover over the profile you use (usually "Latest release") and click the three dots (**•••**), then click **Edit**.
+   - Scroll down and click **More Options**.
+   - In the **Java Executable** field, click **Browse** and navigate to `C:\Program Files\Java\jre-1.8\bin\java.exe` (for Java 8) or `C:\Program Files\Java\jdk-17\bin\java.exe` (for Java 17). The exact path depends on where Java was installed.
+   - Click **Save** and try launching again.
+
+**Fix 2b — Install or update Java (Mac):**
+
+1. Open **Terminal** (find it in Applications > Utilities, or press Command-Space and type "Terminal"). Type `java -version` and press Enter. If you see a version number, Java is installed.
+2. If Java isn't installed, go to [java.com/download](https://www.java.com/download) and download the **macOS installer**. Run the downloaded file and follow the on-screen instructions.
+3. After installation, restart your Mac.
+
+**Fix 2c — Uninstall and clean-reinstall Java (if updating didn't work):**
+
+If Java is already installed but Minecraft still crashes, your Java installation might be corrupted. A clean reinstall fixes this.
+
+1. **On Windows:** Open **Settings** (Windows key + I) > **Apps** > **Installed apps** (or "Apps & features"). Search for **Java**. Click the three dots next to each Java entry and select **Uninstall**. Remove ALL Java versions you find.
+2. **On Mac:** Java on Mac is managed differently, but you can remove old versions by opening **Terminal** and following Oracle's Java uninstall guide for Mac. This is more technical — if you're not comfortable with Terminal, skip to installing the latest version on top (it usually works).
+3. After uninstalling, restart your computer.
+4. Download and install the latest Java 17 from java.com as described in Fix 2a/2b.
+5. Restart your computer again, then try Minecraft.
+
+![The official Java download page with the Windows installer download button](PLACEHOLDER)
+
+**Common mistake:** People download Java and don't restart their computer afterward. Java requires a system restart to fully register with Windows or macOS. Without the restart, Minecraft may still think Java is missing even though it's installed. Also, many people install Java from random third-party download sites that bundle adware or malware. Only download Java from **java.com** or **oracle.com** — these are the official, safe sources.
+
+## Fix 3: Check Your Mods and Match Versions
+
+If you play Minecraft with mods, this is the single most common cause of crashes — by far. Mods are created by community developers, not Mojang. When Minecraft updates (even a tiny update like 1.20.1 to 1.20.2), mods built for the old version often break. Even if your mods were working perfectly yesterday and you didn't change anything, a Minecraft launcher auto-update can suddenly make all your mods incompatible.
+
+**Fix 3a — Check if mods are the problem:**
+
+The fastest way to find out if mods are causing the crash is to temporarily remove ALL of them and see if Minecraft launches without them. Don't worry — you won't lose your mods. You're just moving them out of the way.
+
+1. Open your Minecraft game folder:
+   - **On Windows:** Press **Windows key + R**, type `%appdata%\.minecraft`, and press Enter.
+   - **On Mac:** Open **Finder**, click **Go** in the top menu bar, hold the **Option (⌥) key**, click **Library** (which appears while holding Option), then open **Application Support > minecraft**.
+2. Look for a folder called **mods**. If you don't see one, you don't have any mods installed — skip to Fix 4.
+3. **Create a new folder on your Desktop** called "Minecraft Mods Backup."
+4. **Move EVERYTHING** from the mods folder into that backup folder. Don't delete — move. The mods folder should now be empty.
+5. Launch Minecraft. Does it work?
+   - **If YES:** One or more of your mods was causing the crash. Go to Fix 3b to find the bad mod.
+   - **If NO:** Mods aren't the problem. Move your mods back from the backup folder into the mods folder, and go to Fix 4.
+
+**Fix 3b — Find which mod is causing the crash:**
+
+1. With the mods folder empty (and Minecraft confirmed working), add back HALF of your mods to the mods folder.
+2. Launch Minecraft. If it crashes, the bad mod is in that half. If it works, the bad mod is in the other half.
+3. Keep splitting the crashing half in half and testing — this is called a "binary search" and will find the bad mod in just a few launches.
+4. Once you find the bad mod, go to [CurseForge](https://www.curseforge.com/minecraft) or [Modrinth](https://modrinth.com) and download a version that matches your Minecraft version exactly. Replace the old mod file with the new one.
+
+**Fix 3c — Match mod loader and Minecraft versions:**
+
+If you use Forge, Fabric, or another mod loader, the loader version must also match your Minecraft version. A Forge version built for 1.20.1 will crash with Minecraft 1.20.4.
+
+1. In the Minecraft Launcher, go to the **Installations** tab.
+2. Find the profile you use for modded Minecraft and note the version number (it should say something like "forge-47.2.0" or "fabric-loader-0.15.7").
+3. Go to the mod loader's website: [files.minecraftforge.net](https://files.minecraftforge.net) for Forge or [fabricmc.net](https://fabricmc.net) for Fabric.
+4. Make sure you have a mod loader version that matches your Minecraft version. If not, download the correct version and create a new installation.
+
+**Fix 3d — Check mod dependencies:**
+
+Many mods require OTHER mods to work. For example, many mods require a library mod like "Cloth Config" or "Architectury API." If you installed a mod but forgot to install its required library, Minecraft will crash.
+
+1. Go back to the page where you downloaded each mod. Look for a section labeled "Dependencies," "Required Mods," or "Relations."
+2. If a mod requires another mod, the download page will list it (with a link). Download and install the required mod too.
+3. Mod files ending in `.jar` go directly into your mods folder. Do NOT unzip them — Minecraft reads them as-is.
+
+![The Minecraft mods folder being emptied with files moved to a backup folder on the Desktop](PLACEHOLDER)
+
+**Common mistake:** Players download mods for "the latest version" without checking what their actual Minecraft version is. Go to the Minecraft Launcher > **Installations** tab > look at the version number under your profile. That number (like "1.20.4") MUST match the version listed on the mod's download page. Even a difference as small as 1.20.1 vs 1.20.2 can crash the game. Also, never download mods from sites like "9minecraft" or "minecraftmods.com" — these sites often distribute outdated, broken, or malware-infected mod files. Only use CurseForge or Modrinth.
+
+## Fix 4: Update Your Graphics Drivers
+
+Minecraft might not look like a demanding game, but its Java-based graphics engine relies heavily on your computer's graphics driver — the software that lets your computer talk to its graphics hardware. An outdated or corrupted graphics driver is one of the top causes of Minecraft crashes, especially crashes that happen right when a world starts to load or when you see the message "The game crashed whilst rendering overlay."
+
+**Fix 4a — Update graphics drivers on Windows:**
+
+1. Right-click the **Start** button and select **Device Manager**.
+2. Click the little arrow next to **Display adapters** to expand it. You'll see your graphics hardware — usually **Intel HD Graphics**, **NVIDIA GeForce**, or **AMD Radeon**.
+3. Right-click the name of your graphics card and choose **Update driver**.
+4. Select **Search automatically for drivers**. Windows will check for a newer version.
+5. If Windows finds an update, let it install, then restart your computer.
+6. If Windows says "The best drivers are already installed," don't stop there — Windows Update often has older driver versions. Go directly to the manufacturer's website:
+   - **NVIDIA:** Open the **NVIDIA GeForce Experience** app (if installed) or go to [nvidia.com/download](https://www.nvidia.com/download)
+   - **AMD:** Go to [amd.com/support](https://www.amd.com/support)
+   - **Intel:** Go to [intel.com/support](https://www.intel.com/support) and use the "Intel Driver & Support Assistant"
+7. Download the latest driver, install it, and restart your computer. Then try Minecraft again.
+
+**Fix 4b — Update graphics drivers on Mac:**
+
+On Mac, graphics drivers are included with macOS updates. You can't update them separately.
+
+1. Click the **Apple menu ()** > **System Settings** > **General** > **Software Update**.
+2. If a macOS update is available, click **Update Now** and let it install.
+3. After updating, restart your Mac and try Minecraft again.
+
+**Fix 4c — Switch Minecraft to use the right graphics card (Windows laptops only):**
+
+Many gaming laptops have TWO graphics cards — a power-saving Intel card and a powerful NVIDIA or AMD card. Sometimes Minecraft accidentally uses the weak Intel card, which can cause crashes or terrible performance.
+
+1. Press the **Windows key**, type **Graphics Settings**, and press Enter.
+2. Click **Browse**, navigate to where Minecraft is installed (usually `C:\Program Files (x86)\Minecraft Launcher\`), and select **MinecraftLauncher.exe**. Click **Add**.
+3. Once added, click on Minecraft in the list, then click **Options**.
+4. Select **High performance** (your NVIDIA or AMD card) and click **Save**.
+5. Also open the **NVIDIA Control Panel** (right-click your desktop and look for it). Go to **Manage 3D Settings > Program Settings**, add **javaw.exe** (the Java runtime), and set it to use the **High-performance NVIDIA processor**.
+
+![Windows Device Manager showing the Display Adapters section with the update driver option](PLACEHOLDER)
+
+**Common mistake:** People check Windows Update for driver updates, see "You're up to date," and assume their graphics drivers are current. Windows Update often distributes drivers that are months old. The latest drivers on NVIDIA, AMD, or Intel's website can be several versions newer and include specific fixes for Minecraft crashes. This is especially important if you have an older graphics card. Also, laptop users often don't realize their laptop has two graphics cards and Minecraft is using the wrong one — the NVIDIA Control Panel check (Fix 4c) is critical for gaming laptops.
+
+## Fix 5: Allocate More RAM and Do a Clean Reinstall
+
+If Minecraft is still crashing after trying the first four fixes, the problem is either insufficient memory or corrupted game files that go deeper than what a normal fix can reach. This last fix covers both.
+
+**Fix 5a — Give Minecraft more RAM:**
+
+By default, Minecraft: Java Edition uses only 2 GB of RAM (memory). That's enough for basic vanilla Minecraft, but if you play with mods, shaders, texture packs, or larger worlds, 2 GB is nowhere near enough — and the game will crash with an "Out of Memory" error.
+
+1. Open the **Minecraft Launcher** and click the **Installations** tab at the top.
+2. Hover over your profile (usually "Latest release") and click the three dots (**•••**), then **Edit**.
+3. Click **More Options** to reveal advanced settings.
+4. Find the box labeled **JVM Arguments**. It contains a long string of text. Somewhere in that text, you'll see `-Xmx2G` (or a similar number like `-Xmx1G` or `-Xmx4G`). This number sets the maximum RAM Minecraft can use.
+5. Change ONLY that number. For example, change `-Xmx2G` to **`-Xmx4G`** to give Minecraft 4 GB of RAM. Do NOT give Minecraft ALL of your computer's RAM — leave at least 2 GB for Windows/macOS. For example:
+   - If your computer has **8 GB total RAM**, set `-Xmx4G`
+   - If your computer has **16 GB total RAM**, set `-Xmx6G` or `-Xmx8G`
+6. Click **Save** and launch Minecraft.
+
+**Fix 5b — Clean reinstall of Minecraft (last resort):**
+
+If nothing else has worked, your Minecraft installation itself is probably corrupted. A clean reinstall removes EVERY trace of Minecraft and lets you start completely fresh. 
+
+> **⚠️ WARNING — BACK UP YOUR WORLDS FIRST.** When you delete the `.minecraft` folder, you delete all your single-player worlds, screenshots, resource packs, and settings. Your worlds are stored locally on your computer — they are NOT saved to your Minecraft account. You MUST copy them somewhere safe before continuing, or you will lose them forever.
+
+**Step 1 — Back up your worlds:**
+
+1. Open your Minecraft folder:
+   - **Windows:** Press **Windows key + R**, type `%appdata%\.minecraft`, and press Enter.
+   - **Mac:** Finder > **Go** (menu bar) > hold **Option** > click **Library** > **Application Support** > **minecraft**.
+2. Find the folder called **saves**. This contains every single-player world you've ever created.
+3. Copy the entire **saves** folder to your **Desktop** (or another location you'll remember). Do NOT move it — copy it, so you have a backup.
+4. Also copy these folders if you want to keep them: **screenshots**, **resourcepacks**, **screenshots**, and **options.txt** (your settings file).
+
+**Step 2 — Uninstall Minecraft completely:**
+
+1. **On Windows:**
+   - Open **Settings** > **Apps** > **Installed apps** (or "Apps & features").
+   - Search for **Minecraft Launcher**. Click the three dots and select **Uninstall**.
+   - After uninstalling, press **Windows key + R**, type `%appdata%`, and press Enter.
+   - Find the **.minecraft** folder, right-click it, and choose **Delete**. (You already backed up your saves, right?)
+   - Press **Windows key + R** again, type `%localappdata%`, and press Enter. Look for any folder with "Minecraft" in the name and delete it too.
+2. **On Mac:**
+   - Open **Finder > Applications**. Drag the **Minecraft** app to the **Trash**.
+   - Open Finder, click **Go > Go to Folder**, type `~/Library/Application Support/`, and press Enter. Find and delete the **minecraft** folder.
+   - Go to **Go > Go to Folder** again, type `~/Library/Caches/`, and delete any folder with "minecraft" in its name.
+   - Empty the **Trash**.
+3. **Restart your computer.**
+4. Go to [minecraft.net/download](https://www.minecraft.net/en-us/download) and download a fresh copy of the Minecraft Launcher. Install it.
+5. Before launching, move your backed-up **saves** folder back into the new `.minecraft` folder. (Launch Minecraft once first — it creates a fresh `.minecraft` folder. Then close the launcher, open the folder, and paste your saves inside.)
+6. Launch Minecraft and sign in. Your worlds should be back, and the game should launch without crashing.
+
+![The Minecraft Launcher installation settings showing the JVM Arguments field with -Xmx4G highlighted](PLACEHOLDER)
+
+**Common mistake:** The most heartbreaking mistake players make is deleting the `.minecraft` folder without backing up their saves folder first. Single-player worlds are NOT stored in the cloud — they live only on your computer. Copy the saves folder to your Desktop or an external drive BEFORE deleting anything. Also, people sometimes change the JVM arguments and accidentally delete other text in that field. Do NOT delete anything except the `-Xmx2G` number — change ONLY the number, leave all other text exactly as it is. And never set `-Xmx` to a number higher than your total RAM minus 2 GB — doing so can make your entire computer freeze.
+
+## Still Stuck?
+
+- **Getting a specific exit code?** Write down the exact code. **Exit Code 0** usually means the game closed normally but something went wrong with the launcher. **Exit Code 1 / -1** usually means a mod mismatch or corrupted Java installation. **Exit Code -805306369** or **Exit Code -1073740791** usually means the game ran out of memory (try Fix 5a). Search online for "[your exit code] Minecraft fix" for solutions specific to that code.
+
+- **Does Minecraft crash only on servers, not in single-player?** The server may have incompatible plugins, or your internet connection may be dropping packets. Try a different server. If other servers work, the problem is with that specific server — contact the server admin.
+
+- **Does Minecraft crash only with certain shaders or texture packs?** Some shader packs are extremely demanding and will crash on older graphics cards. Turn off shaders (Options > Video Settings > Shaders > OFF) and try running the game with default textures. If it works, your graphics card can't handle that particular shader pack.
+
+- **Did Minecraft start crashing immediately after installing OptiFine?** OptiFine is great for performance, but it's picky about versions. Make sure you downloaded the exact OptiFine version that matches your Minecraft version. Also, OptiFine sometimes conflicts with other mods — try removing other mods and running just OptiFine alone.
+
+- **Using a third-party launcher like CurseForge, Prism, or MultiMC?** Third-party launchers have their own settings, Java paths, and mod management. The same principles from this guide apply — update Java, check mods, update drivers — but the exact steps may be different inside your launcher. Check that launcher's specific help documentation.
+
+- **Does Minecraft crash with "Pixel format not accelerated" or OpenGL errors?** This is a graphics driver problem. Go back to Fix 4 and make sure your graphics drivers are completely up to date from the manufacturer's website (not just Windows Update). On very old computers, the graphics hardware may simply not support the version of OpenGL that modern Minecraft requires — in that case, you may need to play an older version of Minecraft (like 1.12.2) that has lower graphics requirements.
+
+- **Tried absolutely everything and still can't play?** Post on the official [Minecraft Help Center](https://help.minecraft.net) or the [r/MinecraftHelp](https://reddit.com/r/MinecraftHelp) subreddit. When you post, include: your operating system (Windows 10, Windows 11, Mac), your Minecraft version, whether you use mods, the exact error message or exit code, and what you've already tried. The community is very active and can usually help within a few hours.
