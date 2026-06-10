@@ -1,0 +1,214 @@
+---
+title: "How to Fix a USB Device That's Not Recognized"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You plug in a USB flash drive, external hard drive, mouse, keyboard, or phone — and instead of opening, you get the dreaded error: **"USB device not recognized"** or **"The last USB device you connected to this computer malfunctioned."** Sometimes nothing happens at all — no popup, no error, the device just sits there dead.
+
+This is one of the most common Windows problems, and it's almost never a broken device. Usually, Windows just got confused. This guide walks you through the fixes in order — from quick checks to slightly deeper solutions. Most people have their USB device working by Fix 2 or 3.
+
+**What you'll need:**
+- Your computer
+- The USB device that isn't working
+- If it's a device that uses a cable (like a phone or external hard drive): try a different cable if you have one
+- About 15 minutes
+
+> **Quick test first:** Plug the USB device into a different computer. If it works there, the problem is with your computer — keep reading. If it doesn't work on any computer, the device itself is probably broken.
+
+![A person looking at a "USB device not recognized" error message on their screen](PLACEHOLDER)
+
+## Fix 1: Try Different Ports and Restart
+
+Before touching any settings, rule out the simplest causes. These quick checks fix about 40% of USB recognition problems.
+
+**Fix 1 — Try every USB port on your computer:**
+
+1. Unplug the device and plug it into a different USB port. Try them all — front ports, back ports, every single one.
+2. If your computer has both **blue USB ports** (USB 3.0, faster) and **black USB ports** (USB 2.0), try both colors. Some older devices don't like USB 3.0 ports.
+3. If you're using a **USB hub** (a splitter that gives you extra ports), unplug the device from the hub and plug it directly into the computer. USB hubs — especially cheap, unpowered ones — are a major cause of "not recognized" errors. A device that works fine directly in the computer might not get enough power through a hub.
+
+**Fix 1 — Restart with all USB devices unplugged:**
+
+1. Unplug **all** USB devices from your computer — flash drives, external hard drives, mice, keyboards, everything.
+2. Shut down your computer completely (not "Sleep" or "Restart" — choose **Shut down**).
+3. Wait 30 seconds. This lets any leftover power drain from the USB ports.
+4. Turn the computer back on.
+5. Once Windows is fully loaded, plug in ONLY the device that wasn't working. Try it now.
+
+**Fix 1 — Check the cable (for devices that use one):**
+
+If your USB device uses a separate cable (like an external hard drive, phone, or printer):
+
+1. Look at the cable closely. Are there any kinks, frays, or exposed wires?
+2. Try a different USB cable if you have one. Many "device not recognized" problems are actually just bad cables.
+3. For external hard drives: some larger drives come with a special **Y-shaped USB cable** that plugs into two USB ports for extra power. If yours came with one of these, make sure both ends are plugged in.
+
+> **Tip:** The front USB ports on desktop computers are often connected to the motherboard by a thin internal cable that can come loose. If front ports don't work but back ports do, the front port connector may be loose inside the case. This is a hardware issue — but you can just use the back ports instead.
+
+**Common mistake:** People see the error message once, assume the device is broken, and stop trying. USB ports can be picky — a device that fails in one port often works fine in the very next port over. Always try every single port before moving on to other fixes.
+
+## Fix 2: Update or Reinstall the USB Drivers (Windows)
+
+USB drivers are the software that lets Windows talk to your USB ports. A corrupted or outdated driver is the most common cause of "USB device not recognized" — and fixing it takes about 2 minutes.
+
+**Step 1 — Open Device Manager:**
+
+1. Right-click the **Start button** (Windows logo, bottom-left corner) and select **Device Manager**. Or press the **Windows key**, type "Device Manager," and press Enter.
+
+**Step 2 — Find the problem device:**
+
+1. In Device Manager, look for a category called **Universal Serial Bus controllers**. Click the small arrow (>) next to it to expand the list.
+2. Scan the list for anything with a **yellow triangle with an exclamation mark (!)**. This is Windows telling you something is wrong.
+3. If you don't see a yellow triangle, look for a device called **"Unknown Device"** — this is often your unrecognized USB device showing up under a different name.
+
+![Device Manager showing a USB device with a yellow warning triangle](PLACEHOLDER)
+
+**Step 3 — Update the driver:**
+
+1. Right-click the device with the yellow triangle (or the Unknown Device) and select **Update driver**.
+2. Choose **Search automatically for drivers**. Windows will look online for a newer driver.
+3. If Windows finds one, it installs it. Restart your computer and test the USB device.
+
+**Step 4 — If updating doesn't work, uninstall and reinstall:**
+
+1. Right-click the problematic device again and select **Uninstall device**.
+2. A confirmation box appears. **Do NOT check** the box that says "Delete the driver software from this device" — just click **Uninstall**.
+3. After it's uninstalled, restart your computer. When Windows starts up, it will automatically detect the USB controller and reinstall a fresh driver.
+4. Plug in your USB device and test it.
+
+**Step 5 — If you STILL don't see the device in Device Manager:**
+
+1. In Device Manager, click the **Action** menu at the top of the window.
+2. Select **Scan for hardware changes**. Windows will re-check all connected hardware.
+3. Look again for any yellow triangles or "Unknown Device" entries.
+
+![The Device Manager Action menu showing Scan for hardware changes](PLACEHOLDER)
+
+**Common mistake:** People expand "Universal Serial Bus controllers," see a long list of similar-looking entries, and get overwhelmed. You don't need to touch everything in the list — **only look for entries with a yellow warning triangle or called "Unknown Device."** Leave everything else alone. Also, the "Delete the driver software" checkbox during uninstall sounds scary — don't check it. Windows keeps a copy of the driver and will reinstall it automatically on restart.
+
+## Fix 3: Turn Off USB Power Saving (Windows)
+
+Windows has a power-saving feature called **USB Selective Suspend** that turns off USB ports to save battery. This is great for laptops — but sometimes Windows turns off a port while a device is still using it, causing the "not recognized" error. Disabling this feature is safe and often fixes the problem permanently.
+
+1. Open the **Control Panel**. You can do this by pressing the **Windows key**, typing "Control Panel," and pressing Enter.
+2. In the top-right corner, make sure **View by** is set to **Small icons** or **Large icons** (not "Category").
+3. Click **Power Options**.
+4. Next to your current power plan (it has a blue dot), click **Change plan settings**.
+5. On the next screen, click **Change advanced power settings**. A new window opens with a long list of settings.
+6. Scroll down and find **USB settings**. Click the small **+** next to it to expand.
+7. Click the **+** next to **USB selective suspend setting**.
+8. You'll see options for **On battery** and **Plugged in**. Click each one and change them both to **Disabled**.
+9. Click **Apply**, then **OK**.
+10. Restart your computer and test the USB device.
+
+![The Windows Power Options window showing USB selective suspend setting](PLACEHOLDER)
+
+> **What this does:** USB Selective Suspend tells Windows: "If a USB port isn't being used, turn it off to save power." The problem is that Windows sometimes gets confused about what "not being used" means and shuts off a port that has a device in it. Disabling this setting just means your USB ports stay powered on all the time — the power difference is tiny (less than 1% battery life on a laptop).
+
+**Common mistake:** The "Change advanced power settings" window shows dozens of settings and looks intimidating. The only one you need to change is **USB settings → USB selective suspend setting**. Don't change anything else in this window — other settings control things like when your screen turns off and when your computer goes to sleep. Changing the wrong setting here can cause unexpected behavior.
+
+## Fix 4: Run the Hardware Troubleshooter and System File Checker (Windows)
+
+If the USB device still isn't recognized, there may be a deeper system issue — a corrupted system file, a stuck hardware detection service, or a conflict from a recent Windows update.
+
+**Fix 4 — Run the Windows Hardware Troubleshooter:**
+
+1. Press the **Windows key**, type **Command Prompt**, and when it appears in the search results, right-click it and select **Run as administrator**. Click **Yes** when prompted.
+2. In the black Command Prompt window, type this command exactly and press Enter:
+   ```
+   msdt.exe -id DeviceDiagnostic
+   ```
+3. The **Hardware and Devices troubleshooter** window opens. Click **Next**.
+4. Windows will scan for hardware problems. If it finds any, it will attempt to fix them automatically. Follow any on-screen instructions.
+5. After it finishes, restart your computer.
+
+**Fix 4 — Check for corrupted system files:**
+
+Sometimes Windows system files get corrupted after an update, crash, or improper shutdown — and this can break USB detection. Windows has a built-in repair tool:
+
+1. Open **Command Prompt as administrator** again (Windows key → type "cmd" → right-click → Run as administrator).
+2. Type this command exactly and press Enter:
+   ```
+   sfc /scannow
+   ```
+3. The System File Checker will scan Windows for corruption. This takes 5-15 minutes. Let it finish — don't close the window.
+4. When it's done, you'll see one of these messages:
+   - **"Windows Resource Protection did not find any integrity violations"** — no corrupted files found. Move on.
+   - **"Windows Resource Protection found corrupt files and successfully repaired them"** — good, files were fixed. Restart and test your USB device.
+   - **"Windows Resource Protection found corrupt files but was unable to fix some of them"** — some files couldn't be repaired. Run the next command below.
+
+5. If files couldn't be repaired, type this command and press Enter:
+   ```
+   DISM /Online /Cleanup-Image /RestoreHealth
+   ```
+   This downloads clean copies of system files from Microsoft's servers. It takes 10-20 minutes. After it finishes, restart your computer.
+
+![Command Prompt running sfc /scannow](PLACEHOLDER)
+
+> **What these commands do:** `sfc /scannow` is like a spell-checker for Windows system files — it scans every important file, checks if it's correct, and replaces any that are broken. `DISM /RestoreHealth` is a deeper repair that downloads fresh files from Microsoft when the local copies are too damaged to fix. Think of SFC as fixing small typos and DISM as replacing entire damaged pages.
+
+**Common mistake:** People close the Command Prompt window while `sfc /scannow` or `DISM` is still running because it looks like nothing is happening. The percentage counter moves slowly and sometimes appears to be stuck — that's normal. Let it run to 100%. Closing it early can leave system files in a partially-repaired state, which can cause new problems.
+
+## Fix 5: Check Disk Management for Drives / Reset SMC and NVRAM (Mac)
+
+If your USB device is a **flash drive or external hard drive** and it's still not showing up, it might be recognized by Windows but not assigned a drive letter — so File Explorer can't show it. On a **Mac**, USB problems usually have simpler causes but can be fixed with a system controller reset.
+
+**Windows — Assign a drive letter in Disk Management:**
+
+1. Right-click the **Start button** and select **Disk Management**.
+2. In the bottom half of the window, look for your USB drive. It might show up as **"Removable"** with no drive letter, or as **"Unallocated"** or **"Not Initialized."**
+3. If you see your drive but it has no drive letter (like D: or E:):
+   - Right-click the drive's rectangle and select **Change Drive Letter and Paths**.
+   - Click **Add**, pick a letter from the dropdown (any letter is fine), and click **OK**.
+4. If the drive says **"Unallocated"** or **"Not Initialized"**:
+   - **Warning:** Initializing or formatting a drive **erases everything on it**. If the drive has important files, skip this step and try data recovery software or a professional service instead.
+   - Right-click and select **New Simple Volume**. Follow the wizard, assign a letter, and format it as **NTFS** (for Windows) or **exFAT** (for both Windows and Mac).
+
+![Windows Disk Management showing a USB drive without a drive letter](PLACEHOLDER)
+
+**Mac — Reset the SMC and NVRAM (for built-in USB ports):**
+
+On a Mac, USB devices that aren't recognized are often fixed by resetting two low-level system controllers — the SMC (System Management Controller, which handles power and ports) and NVRAM (which stores hardware settings).
+
+**Reset NVRAM (Intel Macs only):**
+
+1. Shut down your Mac completely.
+2. Turn it on and immediately press and hold **Option + Command + P + R** all at the same time.
+3. Keep holding all four keys for about 20 seconds. On some Macs, you'll hear a second startup chime or see the Apple logo appear and disappear. On Macs with a T2 security chip, release the keys after the Apple logo appears and disappears for the second time.
+4. Release the keys and let your Mac start normally.
+
+**Reset SMC (Intel Macs only):**
+
+The SMC reset method depends on your Mac model:
+
+- **MacBooks with a T2 chip (most 2018-2020 models):** Shut down. Press and hold **Control + Option + Shift** on the left side of the keyboard for 7 seconds. Then, while still holding those three keys, also press and hold the **power button**. Hold all four keys for 7 more seconds, then release everything. Wait a few seconds, then press the power button to turn on.
+- **MacBooks with a removable battery (older models):** Shut down, remove the battery, press and hold the power button for 5 seconds, reinstall the battery, and turn on.
+- **Desktop Macs (iMac, Mac Mini, Mac Pro):** Shut down, unplug the power cord, wait 15 seconds, plug it back in, wait 5 seconds, and turn on.
+- **Apple Silicon Macs (M1/M2/M3):** There is no separate SMC reset — shutting down and restarting performs the equivalent function. If your Apple Silicon Mac has USB issues, simply shut down, wait 30 seconds, and restart.
+
+> **Note:** Resetting NVRAM/SMC doesn't delete any of your files, apps, or settings. It only resets low-level hardware settings like screen brightness, time zone, and speaker volume. You may need to re-adjust those after the reset.
+
+![A Mac keyboard showing the Option + Command + P + R keys to hold for NVRAM reset](PLACEHOLDER)
+
+**Common mistake:** People try to reset NVRAM on Apple Silicon Macs (M1/M2/M3) and get confused when nothing happens — these Macs don't use the Option+Command+P+R key combination. Apple Silicon Macs automatically check NVRAM on every startup and reset it if needed. Also, people in Disk Management accidentally right-click the wrong drive (like their main C: drive) and format it. **Be 100% sure you're clicking on your USB drive** — it says "Removable" and its size matches your USB drive's size (like 16 GB, 32 GB, etc.).
+
+## Still Stuck?
+
+- **USB device works on another computer but not yours?** The problem is with your computer, not the device. Go back to Fix 2 and make sure you've tried uninstalling and reinstalling all USB controllers in Device Manager. Also check if the problem started after a recent Windows update — go to **Settings → Windows Update → Update history → Uninstall updates** and remove the most recent update to see if that fixes it.
+
+- **USB ports on one side of your laptop don't work?** This can be a hardware issue — the internal ribbon cable connecting those ports to the motherboard may be loose or damaged. This requires opening the laptop, so if you're not comfortable with that, a repair shop can fix it. In the meantime, just use the ports on the other side.
+
+- **Device worked fine until a Windows update?** Updates sometimes break USB drivers. Go to your computer or motherboard manufacturer's website (Dell, HP, Lenovo, ASUS, etc.), look up your specific model, and download the latest **chipset drivers** and **USB drivers**. Installing the manufacturer's drivers often fixes what Windows Update broke.
+
+- **"Power surge on the USB port" error?** A device is drawing more power than the USB port can provide. This usually happens with external hard drives on unpowered USB hubs. Plug the device directly into the computer, or use a **powered USB hub** (one that plugs into a wall outlet). Also try a different cable — damaged cables can cause power surges.
+
+- **Using USB-C?** USB-C ports are more complex than older USB-A ports. A cable that charges your phone might not support data transfer. Try a cable that you know supports data (like one that came with an external hard drive). Also, some USB-C ports on laptops only support charging, not data — check your laptop's manual.
+
+- **Tried everything and still nothing?** If the device works on other computers and you've tried all the fixes above, there may be a deeper hardware issue with your USB controller. A computer repair shop can diagnose whether the USB ports themselves are failing. For laptops, USB ports are often part of the motherboard and can be expensive to replace — a cheaper workaround is using a USB hub that connects via a different type of port (like USB-C or Thunderbolt).
