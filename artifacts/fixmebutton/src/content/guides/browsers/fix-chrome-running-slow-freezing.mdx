@@ -1,0 +1,224 @@
+---
+title: "How to Fix Google Chrome Running Slow or Freezing"
+category: browsers
+devices: ["Windows 10", "Windows 11", "macOS", "Linux", "Chromebook"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You open Chrome to check something quickly, but the browser takes forever to load. Pages load in slow motion. Videos stutter. Tabs freeze and show the dreaded **"Page Unresponsive"** dialog. Sometimes Chrome stops responding entirely, and you have to force-close it. When Chrome is slow, everything you do on the web becomes painful.
+
+Chrome is notorious for being a memory-hungry browser — but a slow or freezing Chrome is usually fixable. Extensions run wild, cached data piles up, hardware acceleration conflicts, and hidden settings get misconfigured. This guide walks you through the fixes in order, from the fastest one-click solutions to deeper cleanups. Most people see a dramatic improvement by Fix 2 or 3.
+
+**What you'll need:**
+- Your computer
+- Google Chrome installed
+- About 15 minutes
+- Your Chrome sync passphrase (if you use one) — in case you need to sign back into Chrome
+
+> **Work through the steps in order.** The fixes in Steps 1-3 solve over 80% of Chrome slowness and freezing. Don't jump to the nuclear option (Step 5) until you've tried the simpler ones.
+
+![A laptop screen showing Google Chrome frozen with the "Page Unresponsive" error dialog box](PLACEHOLDER)
+
+## Fix 1: Quick Restart and Update
+
+Before digging into settings, rule out the most basic causes: Chrome just needs a fresh start, or you're running an outdated version with known bugs. These checks take under two minutes.
+
+**Fix 1a — Restart Chrome properly:**
+
+1. Click the **three-dot menu** (⋮) in the top-right corner of Chrome.
+2. Click **Exit** (Windows/Linux) or **Quit Google Chrome** (Mac). Do NOT just click the red X button — that closes the window but keeps Chrome running in the background.
+3. Wait 10 full seconds. This ensures all background processes fully shut down.
+4. Reopen Chrome and test if it's faster now.
+
+**Fix 1b — Force-quit lingering Chrome processes:**
+
+Sometimes Chrome's processes get stuck even after you "exit." Check for these ghosts:
+
+1. **On Windows:** Press **Ctrl + Shift + Esc** to open Task Manager. Scroll through the **Processes** tab. If you see any "Google Chrome" entries even after closing Chrome, right-click each one and select **End task**.
+2. **On Mac:** Press **Command + Option + Esc** to open the Force Quit menu. If Google Chrome is listed, select it and click **Force Quit**.
+3. Once all processes are dead, reopen Chrome.
+
+**Fix 1c — Update Chrome to the latest version:**
+
+An outdated version of Chrome can have memory leaks, security bugs, and performance problems that Google fixed in newer releases.
+
+1. Click the **three-dot menu** (⋮) > **Help** > **About Google Chrome**.
+2. Chrome automatically checks for updates. If an update is available, it downloads and installs it.
+3. If you see a **Relaunch** button, click it. Chrome reopens with all your tabs restored and the latest version installed.
+4. If you see "Google Chrome is up to date," you're already on the latest version.
+
+> **Common mistake:** People click the X to close Chrome and think it's fully shut down. On both Windows and Mac, Chrome keeps background processes running by default (for notifications, extensions, and faster relaunch). You can verify this: after closing Chrome, open Task Manager (Windows) or Activity Monitor (Mac) — you'll probably still see Chrome processes. Use the three-dot menu > Exit to actually quit everything.
+
+> **Tip:** You can disable Chrome's background processes permanently. Go to **three-dot menu > Settings > System** and turn OFF **"Continue running background apps when Google Chrome is closed."** This frees up memory when Chrome isn't in use and forces a truly clean start every time you open it.
+
+![The Chrome three-dot menu with Exit / Quit Google Chrome highlighted](PLACEHOLDER)
+
+## Fix 2: Tame Your Tabs and Extensions
+
+Chrome's two biggest performance killers are too many open tabs and too many extensions. Each tab runs its own process, and each extension injects code into every page you visit. Together, they can bring even a powerful computer to its knees.
+
+**Fix 2a — Close tabs you don't need:**
+
+1. Look at your tab bar. How many tabs are open? If it's more than 10-15, that's a lot. Each tab consumes RAM — sometimes 100-300 MB per tab for heavy sites like YouTube, Gmail, or Google Docs.
+2. Close any tabs you're not actively using. If you want to save them for later, **right-click a tab > Add tab to reading list** or **bookmark all tabs** (right-click any tab > Bookmark All Tabs, or press Ctrl+Shift+D / Cmd+Shift+D).
+3. A quick way to see which tabs are eating the most memory: press **Shift + Esc** (Windows/Linux) or go to **Window > Task Manager** (Mac) to open Chrome's built-in Task Manager. It shows exactly how much memory and CPU each tab and extension is using. Close the biggest offenders.
+
+**Fix 2b — Use Memory Saver (built into Chrome):**
+
+Chrome now has a built-in feature that automatically frees memory from inactive tabs:
+
+1. Go to **three-dot menu > Settings > Performance**.
+2. Turn ON **Memory Saver**. Chrome will automatically free up memory from tabs you haven't used in a while. Those tabs stay in your tab bar but reload when you click them.
+3. You can optionally add sites to the **"Always keep these sites active"** list — good for things like music streaming or live dashboards that you want running in the background.
+
+**Fix 2c — Audit and remove extensions:**
+
+Extensions are the #1 hidden cause of Chrome slowdowns. Many people install extensions years ago and forget about them. Each one adds overhead, and some are poorly coded or even malicious.
+
+1. Type **chrome://extensions/** in the address bar and press Enter.
+2. You'll see every extension installed in Chrome. For each extension, ask yourself: *"Have I used this in the last month?"*
+3. **Remove** any extension you don't recognize or no longer use: click **Remove** on its card, then confirm.
+4. For extensions you're unsure about, toggle them OFF (the blue slider) instead of removing. Restart Chrome and see if performance improves. If it does, you know one of the disabled extensions was causing the problem. Turn them back on one by one to find the culprit.
+5. Pay special attention to: coupon finders, shopping assistants, download managers, VPN extensions, and any extension that promises to "speed up Chrome" — these are the most common offenders.
+
+![The Chrome Extensions page showing multiple installed extensions with the Remove button highlighted](PLACEHOLDER)
+
+> **Common mistake:** People keep extensions because they "might need them someday." If you haven't used an extension in a month, remove it. You can always reinstall it in 10 seconds from the Chrome Web Store if you need it again. Another common trap: extensions that were useful when you installed them but the website or service they worked with no longer exists — these dead extensions still consume resources on every page load.
+
+> **Tip:** A clean Chrome has 0-5 extensions. If you have more than 10, performance is almost certainly suffering. Do an extension audit every few months — it's the single most impactful thing you can do for Chrome speed.
+
+## Fix 3: Clear Cache, Cookies, and Browsing Data
+
+Chrome stores copies of websites locally (called "cache") so they load faster next time. But over weeks and months, this cache grows huge, fills with corrupted files, and can actually slow Chrome down instead of speeding it up. Cookies and site data can also accumulate to the point where they drag on performance.
+
+**Fix 3 — Clear browsing data:**
+
+1. Click the **three-dot menu** (⋮) > **Delete browsing data** (or press **Ctrl+Shift+Del** on Windows/Linux, **Cmd+Shift+Del** on Mac).
+2. In the dialog that appears, click the **Advanced** tab.
+3. Set **Time range** to **All time**.
+4. Check these three boxes:
+   - **Browsing history** (optional — won't affect login/passwords)
+   - **Cookies and other site data** (you'll be signed out of most websites — have your passwords ready)
+   - **Cached images and files**
+5. **Do NOT** check "Passwords and other sign-in data" unless you want to lose all saved passwords.
+6. Click **Delete data**.
+7. Restart Chrome and test performance.
+
+**If you don't want to sign out of everything:**
+
+1. Instead of clearing "All time," set **Time range** to **Last 7 days** or **Last 4 weeks**. You'll stay signed in to sites you haven't visited recently.
+2. Or, clear ONLY **Cached images and files** (uncheck Cookies and Browsing history). The cache alone is responsible for a lot of Chrome slowness, and clearing it never signs you out of anything.
+
+**Fix 3b — Preload pages setting (turn it off if it's causing slowness):**
+
+Chrome has a feature that preloads pages it predicts you might visit. This speeds up browsing — but on slower computers or connections, it can backfire and make everything feel sluggish.
+
+1. Go to **three-dot menu > Settings > Performance** (or **Privacy and security > Third-party cookies** on some versions).
+2. Scroll to **Preload pages** and change it to **No preloading**. This tells Chrome not to download pages before you actually click links.
+3. Restart Chrome and test.
+
+![The Chrome Clear Browsing Data dialog with Advanced tab and checkboxes selected](PLACEHOLDER)
+
+> **Common mistake:** People clear their cache and then are surprised when websites load slightly slower the first time. This is normal — the cache was built to make repeat visits faster. After clearing it, the first visit to each site rebuilds the cache, and subsequent visits will be fast again. If Chrome feels slower right after a cache clear, give it a few minutes of browsing and it'll return to normal — and often faster than before because the corrupted cache files are gone.
+
+> **Tip:** If your Chrome cache is over 1 GB, it's way too big. You can check: type **chrome://settings/clearBrowserData** in the address bar, and before deleting, look at the estimate. Make clearing your cache a monthly habit — it prevents problems instead of just fixing them.
+
+## Fix 4: Reset Chrome Settings and Scan for Unwanted Software
+
+If Chrome is still slow or freezing after cleaning up tabs, extensions, and cache, the problem may be deeper: corrupted settings, a misconfigured search engine, or even malware that hijacked your browser.
+
+**Fix 4a — Reset Chrome settings to default:**
+
+This resets your startup page, new tab page, search engine, pinned tabs, and disables all extensions. It does NOT delete your bookmarks, history, or saved passwords.
+
+1. Go to **three-dot menu > Settings**.
+2. Scroll to the bottom and click **Reset settings** (or search "reset" in the settings search bar).
+3. Click **Restore settings to their original defaults**.
+4. A confirmation dialog appears. Read what gets reset. Click **Reset settings** to confirm.
+5. Chrome restarts. All extensions are now disabled (not removed — you can re-enable them). Test if Chrome is faster. If it is, one of your old settings or extensions was the cause. Re-enable extensions one by one to identify the culprit.
+
+**Fix 4b — Reset and clean up your computer (Chrome's built-in tool):**
+
+Chrome has a tool that finds and removes software that causes problems:
+
+1. Go to **three-dot menu > Settings > Reset settings** (or type **chrome://settings/cleanup** in the address bar).
+2. Click **Clean up computer**.
+3. Click the **Find** button. Chrome scans for harmful software.
+4. If Chrome finds anything, it lists the offending software. Click **Remove** to get rid of it.
+5. Restart your computer after cleanup.
+
+> **Note for Mac and Linux users:** The "Clean up computer" tool is only available on Windows. On Mac, Chrome automatically checks for harmful software. On Linux, use your distribution's package manager or a tool like ClamAV if you suspect malware.
+
+**Fix 4c — Check for conflicting software:**
+
+Some third-party software hooks into Chrome and causes conflicts:
+
+1. Type **chrome://conflicts/** in the address bar and press Enter.
+2. This page lists any third-party modules loaded into Chrome. Look for anything suspicious — especially modules from software you don't remember installing.
+3. If you see a module from an unknown or suspicious source, uninstall that software from your computer (Windows: Settings > Apps > Apps & features; Mac: Finder > Applications > drag to Trash).
+
+![The Chrome Reset Settings page with Restore settings to their original defaults button highlighted](PLACEHOLDER)
+
+> **Common mistake:** People are afraid that resetting Chrome settings will delete their bookmarks and saved passwords. It won't. The reset only changes: your default search engine, homepage, startup tabs, new tab page, pinned tabs, content settings (like camera/microphone permissions), cookies and site data, and extensions (disables them, doesn't delete them). Your bookmarks, history, and saved passwords are completely safe. If you're still nervous, you can export your bookmarks first: three-dot menu > Bookmarks and lists > Bookmark Manager > three-dot menu > Export Bookmarks.
+
+> **Tip:** If resetting Chrome settings fixes the problem, be careful about what you re-enable. Don't just turn all your old extensions back on — add them back one at a time, testing Chrome speed after each one. This way you'll know exactly which extension or setting was causing the slowdown. It takes an extra 10 minutes but saves you from ending up back in the same situation.
+
+## Fix 5: Disable Hardware Acceleration and Check Advanced Flags
+
+When none of the simpler fixes work, the problem is likely something deeper: Chrome's hardware acceleration conflicting with your graphics drivers, or an experimental flag that got turned on accidentally.
+
+**Fix 5a — Toggle hardware acceleration:**
+
+Chrome uses hardware acceleration to offload graphics-heavy tasks (video playback, animations, WebGL) to your GPU. This usually makes things faster — but on some computers, especially those with older or buggy graphics drivers, hardware acceleration causes freezing, black screens, or extreme slowness.
+
+1. Go to **three-dot menu > Settings > System**.
+2. Find **Use graphics acceleration when available** (or "Use hardware acceleration when available").
+3. **If it's ON:** Turn it OFF. Restart Chrome. Test if Chrome is faster and stops freezing. If hardware acceleration was causing the freezes, Chrome should now feel stable.
+4. **If it's OFF:** Turn it ON. Restart Chrome. On most modern computers with updated graphics drivers, hardware acceleration improves performance. Try it both ways and see which works better for your machine.
+5. After changing this setting, also update your graphics drivers — old drivers are the #1 cause of hardware acceleration conflicts. On Windows, download the latest drivers from NVIDIA, AMD, or Intel's website. On Mac, system updates include graphics driver updates.
+
+**Fix 5b — Reset Chrome flags to default:**
+
+Chrome has hidden experimental settings called "flags" at **chrome://flags/**. If you (or a tech-savvy friend, or a tutorial you followed) ever changed any flags, they could be causing performance issues. Flags are experimental for a reason — they can be buggy.
+
+1. Type **chrome://flags/** in the address bar and press Enter.
+2. At the top of the page, click the **Reset all** button (or "Reset all to default").
+3. Chrome prompts you to relaunch. Click **Relaunch**.
+4. After Chrome restarts, all experimental features are back to default. Test performance.
+
+**Fix 5c — Create a fresh Chrome profile:**
+
+Sometimes your Chrome user profile itself gets corrupted. This is rarer but devastating when it happens — Chrome will be slow and buggy no matter what you try.
+
+1. Click your **profile icon** in the top-right corner of Chrome (the circle with your picture or initial).
+2. Click **Add** (or "Manage people" > "Add person").
+3. Give the new profile a name (like "Test Profile") and pick an avatar. Click **Add**.
+4. A fresh Chrome window opens with no extensions, no old settings, no corrupted profile data.
+5. Use this fresh profile for a few minutes. Is Chrome fast now?
+   - **If yes:** Your old profile was corrupted. Migrate to the new profile: sign in to Chrome in the new profile to sync your bookmarks, passwords, and extensions. Then delete the old, slow profile: click the profile icon > gear icon next to "Other profiles" > three-dot menu on the old profile > Delete.
+   - **If no:** The problem is with Chrome itself or your computer, not your profile. Try uninstalling and reinstalling Chrome.
+
+![The Chrome Settings System page showing the hardware acceleration toggle](PLACEHOLDER)
+
+> **Common mistake:** People go into chrome://flags and enable a bunch of cool-sounding experimental features, then forget about them. Months later, Chrome is slow and freezing and they can't figure out why. Flags change between Chrome versions — a flag that worked perfectly in Chrome 120 might cause crashes in Chrome 130. Always reset flags to default before trying other fixes, especially if you remember "tweaking" Chrome in the past.
+
+> **Tip:** After disabling hardware acceleration, video playback (YouTube, Netflix, etc.) might use slightly more CPU. This is normal — your CPU is now doing the work that your GPU used to do. If your computer has a decent CPU, you probably won't notice the difference. If videos become choppy, re-enable hardware acceleration and focus on updating your graphics drivers instead.
+
+## Still Stuck?
+
+- **Chrome is slow but other browsers (Edge, Firefox, Safari) are fast?** The problem is definitely with Chrome, not your computer or internet. Do the full nuclear option: export your bookmarks (three-dot menu > Bookmarks and lists > Bookmark Manager > three-dot menu > Export Bookmarks), then completely uninstall Chrome, restart your computer, download a fresh copy from **google.com/chrome**, and reinstall. After reinstalling, import your bookmarks but avoid reinstalling all your old extensions at once.
+
+- **Chrome uses too much RAM and slows down your whole computer?** This is Chrome's infamous memory hunger. Besides Memory Saver (Fix 2b), you can: (a) consider switching to a lighter Chromium-based browser like Brave or Edge for daily browsing, keeping Chrome only for Google services; (b) add more RAM to your computer if you have an upgradeable desktop or laptop — Chrome runs much better with 16 GB or more; (c) use Chrome's built-in Task Manager (Shift+Esc) to identify and close memory-heavy tabs.
+
+- **Chrome freezes specifically on YouTube or video sites?** This often points to a graphics driver issue with hardware acceleration. Try Fix 5a (disable hardware acceleration) AND update your graphics drivers. Also, check if the problem happens in Incognito mode (Ctrl+Shift+N / Cmd+Shift+N) — if videos work fine in Incognito, an extension is causing the conflict. Disable extensions one by one to find the guilty one.
+
+- **Chrome is slow only on one specific website?** That website might have a heavy script or ad network that Chrome is struggling with. Try: (a) enabling Chrome's built-in ad blocker (Settings > Privacy and security > Site settings > Additional content settings > Intrusive ads — make sure ads are blocked on sites that show intrusive ads); (b) using Reader Mode on article-heavy sites (click the reader icon in the address bar); (c) reporting the issue to the website owner.
+
+- **Chrome was fast until a recent Chrome update?** Google occasionally ships updates that introduce performance regressions. Check **Reddit /r/chrome** or the **Google Chrome Help forum** to see if others are reporting the same issue after the same update. If it's a known bug, Google usually releases a fix within days. In the meantime, you can temporarily switch to Chrome Beta or Chrome Dev (separate installs that don't replace your main Chrome) to see if the fix is already in a pre-release version.
+
+- **Tried absolutely everything and Chrome is still slow?** Consider that your computer itself might be the bottleneck — especially if it's older than 5 years, has less than 8 GB of RAM, or uses a traditional hard drive (HDD) instead of an SSD. Chrome is a modern, resource-intensive browser, and it struggles on underpowered hardware. Consider: (a) upgrading to an SSD if you're still on a spinning hard drive — this is the single biggest speed improvement for any computer; (b) using a lightweight browser like Firefox or Brave for everyday browsing; (c) using Chrome's "Lite mode" features where available (like the Reading List for saving articles without keeping tabs open).
