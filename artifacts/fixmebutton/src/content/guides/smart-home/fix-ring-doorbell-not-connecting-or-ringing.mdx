@@ -1,0 +1,245 @@
+---
+title: "How to Fix Ring Doorbell Not Connecting to WiFi or Not Ringing"
+category: smart-home
+devices: ["Ring Video Doorbell (All Models)", "Ring Doorbell Wired", "Ring Doorbell Pro", "Ring Doorbell 2/3/4", "Android", "iPhone"]
+difficulty: beginner
+time_estimate: "25 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+Your Ring doorbell is supposed to give you peace of mind — but instead it's giving you a headache. Maybe you're stuck in setup and it won't connect to WiFi. Maybe it was working fine for months and now it's suddenly offline. Or maybe the doorbell rings on your phone but your actual house chime stays silent, so you keep missing visitors.
+
+These are the three most common Ring doorbell problems, and they're almost always fixable at home without calling a professional or replacing the device. This guide walks you through every fix that real Ring users and support technicians have confirmed works — from the 30-second checks to the deeper router and wiring fixes.
+
+**What you'll need:**
+- Your Ring doorbell
+- The Ring app on your phone (free from the App Store or Google Play)
+- Your WiFi password
+- A small screwdriver (if your doorbell is hardwired)
+- About 25 minutes
+
+> **Work through the fixes in order.** Fixes 1 and 2 solve over 70% of Ring connection and ringing problems. Don't jump to the factory reset (Fix 5) until you've tried the simpler ones — a factory reset wipes all your settings and you'll have to set everything up from scratch.
+
+![A Ring Video Doorbell mounted next to a front door, with the circular button and blue status light visible](PLACEHOLDER)
+
+## Fix 1: Do the Quick Power and Connectivity Checks
+
+Before diving into settings and router configurations, rule out the simplest causes. These five quick checks take about 3 minutes and solve a surprising number of Ring problems.
+
+**Fix 1 — Check if the doorbell has power:**
+
+1. Press the doorbell button. Does the white circle light up? If nothing happens, the doorbell has no power.
+2. **For battery-powered models (Ring 2, 3, 4, Battery Doorbell):** Open the Ring app, tap your doorbell, then tap **Device Health**. Look at the battery percentage. If it's below 20%, the doorbell doesn't have enough power to stay connected to WiFi. Remove the doorbell from its mount, bring it inside, and charge it fully using the included USB cable. A full charge takes 4-6 hours.
+3. **For hardwired models (Ring Pro, Pro 2, Wired):** If the doorbell has no power, your doorbell transformer or wiring may have failed. Check your home's doorbell transformer (usually in the garage, basement, or near the electrical panel). Ring doorbells need a transformer that supplies **16-24 volts AC**. Older homes often have 10-volt transformers that can't power a Ring. If your transformer is old or below 16V, you'll need to replace it — this costs about $20 and takes 15 minutes if you're comfortable with basic electrical work, or about $75-150 to hire an electrician.
+
+**Fix 1 — Check your WiFi is actually working:**
+
+1. Stand at your front door with your phone. Open a web browser and try loading a website. If your phone can't load a page at the front door, your WiFi signal isn't reaching the doorbell either. Skip ahead to Fix 3 (signal strength).
+2. Also check: open the Ring app and look at your doorbell on the dashboard. If it says **"Offline"** in red or orange, it's not connected to WiFi. If it says **"Online"** but features don't work, the connection is weak or intermittent.
+
+**Fix 1 — Check if Ring's servers are down:**
+
+1. Rarely, the problem isn't your doorbell or your WiFi — it's Ring's servers. Open a browser on your phone (using mobile data, not WiFi, so you're not depending on the same network) and go to **downdetector.com/status/ring**.
+2. If you see a spike in reported problems, Ring is having an outage. There's nothing you can do except wait — usually outages last 30 minutes to a few hours.
+
+**Fix 1 — Power cycle the doorbell and your router:**
+
+1. Remove the doorbell from its mount (use the included security screwdriver to loosen the security screw at the bottom, then lift up and out).
+2. If your model has a removable battery, take the battery out for 30 seconds, then put it back in.
+3. Unplug your **WiFi router** from the wall outlet. Wait **30 full seconds** (count slowly — this waiting period is critical for clearing the router's memory).
+4. Plug the router back in. Wait 2 full minutes for all its lights to stabilize.
+5. Remount the doorbell. Wait 1 minute for it to boot up and reconnect.
+6. Check the Ring app — does the doorbell show "Online"?
+
+> **Common mistake:** People press the doorbell button, see no light, and immediately assume the doorbell is broken. On battery-powered models, the button light only works when the doorbell has enough charge. A completely dead battery looks exactly like a broken doorbell. Always check the battery level in the Ring app first. Also, if your doorbell is hardwired and the button light works but the doorbell is offline, the hardwiring is providing power but the WiFi connection is the problem — keep reading.
+
+![The Ring app Device Health screen showing battery percentage and WiFi signal strength](PLACEHOLDER)
+
+## Fix 2: Fix WiFi Connection Issues During Setup or After Working
+
+The #1 reason Ring doorbells fail to connect is a mismatch between your phone's WiFi and what the doorbell can see. Most Ring doorbells can ONLY connect to **2.4 GHz WiFi**, but modern routers broadcast both 2.4 GHz and 5 GHz — and your phone is probably connected to 5 GHz.
+
+**Fix 2 — Make sure your phone is on 2.4 GHz WiFi during setup:**
+
+Ring doorbells create their own temporary WiFi network during setup (called "Ring-xxxxxx"). Your phone needs to connect to this temporary network, but if your phone is locked onto 5 GHz, the Ring app can't find the doorbell. You'll see the setup spinner spin forever or get stuck at a percentage (often 95%).
+
+1. Before starting setup, open your phone's **WiFi settings**.
+2. Look at the name of the WiFi network your phone is connected to. Does it have "5G" or "5GHz" in the name? If so, you're on the 5 GHz band.
+3. Look for the **same network name without** "5G" or "5GHz" — that's the 2.4 GHz version. Connect to it. If your router combines both bands under one name, you'll need to separate them. Log into your router's admin panel (usually by typing **192.168.0.1** or **192.168.1.1** into a web browser — the login info is usually on a sticker on the bottom of the router). Find the **Wireless** or **WiFi Settings** section and look for an option called "Band Steering," "Smart Connect," or "Same SSID." Turn it OFF so your 2.4 GHz and 5 GHz networks have different names. Save the settings.
+4. Now reconnect your phone to the 2.4 GHz network and try setting up the Ring doorbell again.
+
+**Fix 2 — Check your WiFi password for special characters:**
+
+Ring doorbells sometimes reject WiFi passwords that contain certain special characters. The characters known to cause problems are: `!` `@` `#` `$` `%` `^` `&` `*` `(` `)` and spaces.
+
+1. If your WiFi password contains any of these characters, try this test: temporarily change your WiFi password to something simple — only lowercase letters and numbers, at least 8 characters. (You'll change it back later.)
+2. Log into your router's admin panel → **Wireless Settings** → change the password to a simple one.
+3. Reconnect your phone to WiFi using the new simple password.
+4. Set up your Ring doorbell with the simple password.
+5. Once the doorbell is successfully connected, go back into your router and change the WiFi password back to your original one.
+6. In the Ring app, go to **Devices** → select your doorbell → **Device Health** → **Change WiFi Network**. Reconnect the doorbell using the original password. The doorbell is now past the initial setup hurdle and usually handles special characters in passwords fine after initial setup.
+
+**Fix 2 — Change your router's security type to WPA2:**
+
+Many newer routers default to **WPA3** security — but Ring doorbells do NOT support WPA3. If your router is set to WPA3-only, the doorbell simply cannot connect.
+
+1. Log into your router's admin panel (type **192.168.0.1** or **192.168.1.1** in a web browser).
+2. Navigate to **Wireless Settings** or **WiFi Security**.
+3. Look for a setting labeled **Security Mode**, **Encryption**, or **Authentication**.
+4. Change it to **WPA2-PSK (AES)**. This is the security type that Ring doorbells support and is still very secure. If WPA2-only isn't an option, **WPA2/WPA3 Transitional** or **WPA/WPA2 Mixed Mode** usually work too.
+5. Save the settings. Your router may restart. After it's back up, reconnect your phone to WiFi and try setting up the Ring doorbell again.
+
+> **Important:** Do NOT set your router to "Open" (no password) or "WEP" (very old, insecure). WPA2-PSK (AES) is the correct, secure setting that works with Ring.
+
+![A phone screen showing WiFi settings with separate 2.4GHz and 5GHz network names](PLACEHOLDER)
+
+**Fix 2 — If setup fails at 95%:**
+
+This is a famously frustrating problem specific to Ring Doorbell 2nd Generation models. The doorbell almost finishes setup but fails right at the end. The fix that works for most people:
+
+1. Factory reset the doorbell: press and hold the **setup button** (the orange button on the back or side of the doorbell) for **20 seconds**. The light on the front will flash. When it stops flashing, release the button.
+2. Unplug your internet modem and router from power. Wait 1 full minute. Plug the modem back in first, wait 2 minutes, then plug the router back in.
+3. Unplug any Ethernet cables from your router except the one connecting the modem to the router.
+4. Make absolutely sure your phone is connected to your router's **2.4 GHz** WiFi (not 5 GHz).
+5. Open the Ring app and set up the doorbell as a new device. Most people report the setup completes successfully after this combination of steps.
+
+> **Common mistake:** People see their Ring doorbell listed as supporting "5 GHz" (newer models like Ring Doorbell 3, 4, Pro, and Pro 2 do) and assume they should use 5 GHz during setup. Even on dual-band models, **always use 2.4 GHz for initial setup**. 2.4 GHz penetrates walls better and is more reliable at longer distances — and your front door is almost always far from your router. After initial setup, you can switch to 5 GHz if you want, but most people get better performance on 2.4 GHz anyway.
+
+![The back of a Ring doorbell showing the orange setup button being pressed with a finger](PLACEHOLDER)
+
+## Fix 3: Improve Your WiFi Signal Strength at the Front Door
+
+Your front door is often the worst place in your house for WiFi. It's the farthest point from the router, separated by the most walls, and the exterior wall may contain materials that block WiFi signals (brick, stucco, metal mesh, foil-backed insulation). If the signal is too weak, your Ring doorbell will constantly go offline, miss motion events, show choppy video, or drain its battery in days instead of weeks.
+
+**Fix 3 — Check your actual signal strength:**
+
+1. Open the Ring app → **Devices** → select your doorbell → **Device Health**.
+2. Look for **Network** → **Signal Strength** (shown as RSSI — Received Signal Strength Indicator).
+3. Here's what the numbers mean:
+   - **-40 to -55:** Excellent signal. WiFi is not your problem — look at other causes.
+   - **-56 to -65:** Good. Should work reliably for live view and motion alerts.
+   - **-66 to -75:** Fair. You'll get intermittent disconnects, delayed notifications, and choppy video. The doorbell "works" but not reliably.
+   - **-76 or worse (higher negative number):** Poor. The doorbell will constantly go offline. You MUST improve the signal.
+
+**Fix 3 — Move your router (if possible):**
+
+1. Move the router to a more central location in your home — out of cabinets, off the floor, away from metal objects (filing cabinets, mirrors, refrigerators).
+2. Place it as high as possible — on a shelf or mounted on the wall. WiFi signals travel downward and outward.
+3. Even moving the router 3-5 feet can dramatically improve the signal at your front door.
+
+**Fix 3 — Get a WiFi extender or mesh system:**
+
+If you can't move the router, add a device that extends your WiFi signal:
+
+1. **Best option for Ring: Ring Chime Pro.** It's a WiFi extender AND an indoor chime in one device. Plug it into a wall outlet roughly halfway between your router and the front door. The Ring app walks you through connecting it to your doorbell. Cost: about $50.
+2. **Budget option: Any WiFi extender.** Brands like TP-Link, Netgear, and Linksys make extenders for $20-40. Plug it in halfway between the router and front door, set it up using its app, and then reconnect your Ring doorbell through the extender's network.
+3. **Best overall: Mesh WiFi system.** If you have a larger home (2,000+ square feet) or thick walls, a mesh system (eero, Google Nest WiFi, Netgear Orbi) replaces your single router with multiple units that blanket your whole house in WiFi. This fixes not just your Ring doorbell but every WiFi problem in your home. Cost: $150-300.
+
+**Fix 3 — Check for WiFi interference:**
+
+1. Other electronics can interfere with WiFi signals. Is your router next to a microwave, baby monitor, cordless phone base, or large Bluetooth speaker? Move them apart — at least 3 feet.
+2. If you live in an apartment or dense neighborhood, your neighbors' WiFi networks may be crowding the same channel as yours. Log into your router's admin panel, find the **Wireless Channel** setting (usually under Advanced WiFi Settings), and change it from "Auto" to a specific channel. For 2.4 GHz, channels 1, 6, and 11 are best (they don't overlap). Try each one and see which gives the best RSSI in the Ring app.
+
+> **Common mistake:** People buy a WiFi extender and plug it in right next to the Ring doorbell. This does almost nothing — the extender can only repeat the signal it receives. If the signal at the doorbell is already weak, an extender at the doorbell receives a weak signal and just repeats a weak signal. Place the extender **halfway between the router and the doorbell** — where the signal is still strong enough for the extender to catch and boost it.
+
+![A diagram showing ideal WiFi extender placement: router → extender halfway → doorbell at the end](PLACEHOLDER)
+
+## Fix 4: Fix Your In-Home Chime Not Ringing
+
+Your Ring doorbell is online, sends you phone notifications, and records video — but when someone presses the button, the actual chime inside your house stays silent. This problem has several causes, and the fix depends on whether your doorbell is battery-powered or hardwired.
+
+**Fix 4 — Check In-Home Chime settings in the Ring app:**
+
+1. Open the Ring app → tap the **menu icon** (☰, top left) → **Devices** → select your doorbell.
+2. Tap **Device Settings** (you may need to tap it twice if the app doesn't respond the first time).
+3. Tap **In-Home Chime Settings**.
+4. Make sure **"Ring my in-home chime"** is toggled ON. If it's off, turn it on, tap **Save**, wait 2 minutes, and test by pressing the doorbell button.
+5. If it's already on, run **Automatic Chime Detection**. The app will test different chime configurations and ask you to press the doorbell button. Follow the on-screen prompts. When it asks if the chime rang, tap "My chime rang" if it worked, or "My chime didn't ring" if it didn't — the app will try a different configuration.
+6. If automatic detection doesn't work, go into **Advanced Settings** in the same menu. Try the different **Chime Type** options one at a time:
+   - **Mechanical** — for traditional "ding-dong" chimes with a physical bell and hammer
+   - **Digital Type 1** — for electronic chimes that play a tone through a speaker
+   - **Digital Type 2** — an alternate setting for digital chimes
+   - **None** — if you have no physical chime (use this if you only want phone notifications)
+7. After each change, wait 2 minutes, then press the doorbell button to test. Keep trying different types until one works.
+
+**Fix 4 — Check the physical wiring (hardwired doorbells only):**
+
+If your Ring is hardwired to your existing doorbell wiring and the chime settings above don't fix it, there may be a wiring issue.
+
+1. First, check which Ring model you have. Some models do NOT support an in-home chime at all: **Ring Video Doorbell Wired**, **Wired Doorbell Plus**, and **Wired Doorbell Pro** require a separate Ring Chime or Alexa device to ring inside. Check your model in the Ring app: tap the menu (☰) → **Devices** → your doorbell → **Device Health** → look for the model name.
+2. If your model does support an in-home chime: remove the doorbell from the wall. You'll see two wires connected to the back of the doorbell.
+3. **Quick test:** With the doorbell removed, briefly touch the two doorbell wires together (or touch a screwdriver across the two screw terminals on the mounting bracket). If the chime rings, the wiring and chime are good — the problem is with the doorbell's chime settings (go back to Fix 4, Step 1). If the chime does NOT ring when you touch the wires together, the problem is with your wiring, transformer, or chime box itself.
+4. Go to your chime box (the box on the wall inside your house that makes the sound). Remove the cover. Check that all wires are securely connected and nothing looks burned, corroded, or loose. Look for the small **Ring Diode** or **Pro Power Kit** that should have been installed when the doorbell was set up — if this small device is missing, disconnected, or installed incorrectly, the chime won't work.
+5. Check your doorbell transformer voltage. The transformer is a small metal box usually in the garage, basement, attic, or near the electrical panel. It should be rated for **16-24 volts AC** and at least **30 VA** (volt-amps). If your transformer is rated lower (many older homes have 10V or 16V 10VA transformers), it can't power both the Ring doorbell and the chime. Replace it with a compatible transformer ($15-25 at hardware stores, or hire an electrician for about $100).
+
+**Fix 4 — Use a Ring Chime or Alexa as your indoor ringer:**
+
+If your doorbell model doesn't support a traditional chime, or if fixing the wiring is too complicated, the easiest solution is a wireless indoor chime:
+
+1. **Ring Chime:** A small plugin device ($25-35) that rings inside your house when someone presses the doorbell. Plug it into any wall outlet, connect it in the Ring app, and choose from multiple ringtones.
+2. **Ring Chime Pro:** Same as the Chime but also works as a WiFi extender ($50).
+3. **Amazon Echo / Alexa:** If you have an Alexa device, you can set it up as your doorbell chime for free. Open the **Alexa app** → **Devices** → **+** → **Add Device** → search for your Ring doorbell and link it. Then go to **Devices** → **All Devices** → select your Ring doorbell → tap the gear icon ⚙️ → **Doorbell Press Announcements** → turn it ON and select which Echo devices should announce.
+
+![The Ring app In-Home Chime Settings screen showing Chime Type options](PLACEHOLDER)
+
+> **Common mistake:** People install a hardwired Ring doorbell and remove the old doorbell chime box entirely (or bypass it during installation), then wonder why the in-home chime setting doesn't work. If you bypassed or removed the physical chime during installation, the doorbell can't make it ring — there's nothing connected. In this case, set **Chime Type** to **None** in the Ring app and use a Ring Chime or Alexa device instead. Also, digital chimes sometimes need a few minutes after changing settings before they work — people change the chime type, immediately press the doorbell, hear nothing, and assume it didn't work. Wait 2-3 minutes after changing chime settings, then test.
+
+## Fix 5: Factory Reset and Set Up from Scratch
+
+If you've tried everything above and your Ring doorbell still won't connect to WiFi or ring your chime, a factory reset wipes the doorbell completely — clearing any corrupted settings, stuck software, or setup glitches — and lets you start fresh.
+
+**Fix 5 — Factory reset your Ring doorbell:**
+
+1. Remove the doorbell from its mount (unscrew the security screw at the bottom and lift up).
+2. Find the **setup button** — it's the orange button, usually on the back or right side of the doorbell.
+3. Press and **hold** the setup button. The light on the front of the doorbell will start flashing. **Keep holding.** After about 15 seconds, the light pattern changes. **Keep holding.** After 20-25 seconds total, the light will turn off and the doorbell may make a sound or announcement. Release the button.
+4. The doorbell is now factory reset. The front light should be spinning white or blue, indicating it's in setup mode.
+5. If the light isn't spinning, press and release the setup button once to enter setup mode.
+
+**Fix 5 — Set up the doorbell as a brand new device:**
+
+1. Before setting up, do a full network restart:
+   - Unplug your modem and router from power. Wait 60 seconds.
+   - Plug the modem back in. Wait until all lights are stable (1-2 minutes).
+   - Plug the router back in. Wait another 1-2 minutes.
+2. On your phone, go to **WiFi settings**, "Forget" your home WiFi network, then reconnect to it. This ensures your phone has a fresh connection.
+3. Open the Ring app. If your doorbell still appears in the app from the old setup, remove it: tap **Devices** → select the doorbell → **Device Settings** (gear icon) → **Remove Device** → confirm.
+4. Tap **Set Up a Device** → **Doorbells** → follow the in-app instructions. The app will ask you to scan the QR code (on the back of the doorbell or in the original packaging).
+5. During setup, make absolutely sure your phone is connected to your router's **2.4 GHz** network.
+6. If the doorbell's temporary WiFi network ("Ring-xxxxxx") doesn't appear in your phone's WiFi list during setup:
+   - Make sure the doorbell is in setup mode (spinning white light).
+   - Turn your phone's WiFi off and back on.
+   - Move your phone within 12 inches of the doorbell.
+   - Try using a different phone or tablet if available.
+
+![A person holding the setup button on the back of a Ring doorbell for a factory reset](PLACEHOLDER)
+
+**Fix 5 — Update the doorbell's firmware:**
+
+After a factory reset and fresh setup, your Ring doorbell may need a firmware update. Ring devices update automatically at night, but you can speed this up:
+
+1. In the Ring app, go to **Devices** → your doorbell → **Device Health** → scroll down to **Firmware**. If it says "Up to date," you're good. If it shows an available update, the doorbell should install it.
+2. To force an update: make sure the doorbell is online, then don't touch it for 30-60 minutes. Ring devices check for updates during idle periods. After an hour, check the firmware status again.
+
+> **Common mistake:** People factory reset their doorbell and then panic when their old videos and settings disappear. A factory reset wipes **everything** — all WiFi settings, chime configurations, motion zones, linked accounts, and recorded videos stored on the device. You'll need to reconfigure everything from scratch. This is why a factory reset is the last step. Also, people sometimes press and hold the setup button for 5-10 seconds, see the light flash, and think the reset is complete. A quick press-and-release enters setup mode (for WiFi changes) — it does NOT factory reset. You must hold for the full 20-25 seconds until the light turns off and back on.
+
+> **Tip:** After a successful factory reset and setup, take a photo of your doorbell's QR code and store it somewhere safe (like a notes app or cloud storage). If you ever need to factory reset again, you won't have to remove the doorbell from the wall to scan the code.
+
+## Still Stuck?
+
+- **Doorbell was working but suddenly went offline and won't reconnect?** If you didn't change anything and the doorbell just disconnected, your router may have pushed a firmware update that changed settings. Log into your router's admin panel and check: (a) that WPA2 security is still enabled, (b) that MAC address filtering isn't blocking the doorbell, (c) that the 2.4 GHz band is still broadcasting, and (d) if your router has an "auto-update" feature, check what changed recently.
+
+- **Doorbell connects to WiFi but live view never loads?** This is usually a signal strength issue (go back to Fix 3) or an upload speed problem. Ring cameras need about 2 Mbps upload speed per device. Run a speed test on your phone at the front door (speedtest.net). If your upload speed is below 2 Mbps, contact your internet service provider — you may need a faster plan. Also check if other devices in your home are using all your upload bandwidth (like cloud backups, large file uploads, or video calls).
+
+- **Doorbell works but drains its battery in days instead of weeks?** Three main causes: (1) Weak WiFi signal — the doorbell uses extra power constantly trying to reconnect (Fix 3). (2) Too many motion events — adjust motion sensitivity and zones in the Ring app (**Devices** → your doorbell → **Motion Settings** → reduce sensitivity or narrow the motion zone). (3) Cold weather — battery performance drops significantly below 32°F (0°C). If you live in a cold climate, consider upgrading to a hardwired model that doesn't depend on battery.
+
+- **Hardwired doorbell shows "Battery" as power source instead of "Hardwired"?** Your doorbell isn't getting power from the wires. Check the transformer voltage (Fix 4), check that the wires are securely connected to the back of the doorbell, and check that the breaker for the doorbell circuit hasn't tripped. A hardwired Ring doorbell that runs on battery alone will eventually die and go offline.
+
+- **Tried every single fix and the doorbell still won't work?** The doorbell itself may be defective. Ring devices come with a 1-year limited warranty. Contact Ring support at **ring.com/support** or through the Ring app (**menu** ☰ → **Contact Us**). Before contacting support, have this information ready: your doorbell model (check in Device Health), the RSSI signal strength reading, a list of everything you've already tried, and your proof of purchase. Ring support can run remote diagnostics and often sends a free replacement if the device is under warranty.
+
+- **Is your home older than 20-30 years and the doorbell wiring isn't working?** Many older homes weren't designed to power smart doorbells. You can bypass the old wiring entirely by using a **Plug-In Adapter** ($25 from Ring) that powers the doorbell from an indoor wall outlet, combined with a Ring Chime for indoor ringing. This completely avoids dealing with old transformers and chime boxes.
+
+- **Using a VPN on your phone?** VPNs can interfere with the Ring app during setup because the app needs to communicate with both Ring's servers and the doorbell's local WiFi network simultaneously. Temporarily disconnect your VPN during setup (and for the first hour after setup to let the doorbell download any updates). You can reconnect the VPN afterward.
