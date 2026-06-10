@@ -1,0 +1,183 @@
+---
+title: "How to Fix the Blue Screen of Death (BSOD) on Windows"
+category: computers
+devices: ["Windows 10", "Windows 11"]
+difficulty: intermediate
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 6
+---
+
+## Before You Start
+
+The Blue Screen of Death (BSOD) — that scary blue screen with a sad face and a wall of white text — means Windows hit a problem it couldn't recover from. Your computer restarts, and you might lose unsaved work. But here's the good news: the blue screen itself tells you exactly what went wrong, and most BSODs are fixable without paying for repairs.
+
+**What you'll need:**
+- Your Windows computer (even if it keeps restarting — there are workarounds)
+- A phone or another device to look up error codes (in case your screen won't stay on long enough)
+
+> **Don't panic!** A single blue screen is rarely a sign of permanent damage. If it only happened once and your computer is working fine now, you can skip to Step 5 (Windows Updates) to prevent future crashes. If it keeps happening, work through every step below in order.
+
+> **Mac users:** Macs don't get the Blue Screen of Death — instead they show a **kernel panic** message (a gray screen with "Your computer restarted because of a problem" in multiple languages). The troubleshooting steps are different. Search for "Mac kernel panic fix" or contact Apple Support.
+
+![A Windows blue screen showing a sad face emoticon and a stop code error message](PLACEHOLDER)
+
+## Step 1: Write Down the Stop Code
+
+Every blue screen displays a **stop code** — a short phrase in ALL_CAPS_WITH_UNDERSCORES near the bottom of the screen. This code is the single most important clue for fixing your problem.
+
+**What to look for:**
+When the blue screen appears, find the text that looks like `DRIVER_IRQL_NOT_LESS_OR_EQUAL` or `MEMORY_MANAGEMENT` or `CRITICAL_PROCESS_DIED`. Write it down or take a photo with your phone before the computer restarts.
+
+**Common stop codes and what they usually mean:**
+
+| Stop Code | Most Likely Cause |
+|-----------|-------------------|
+| **MEMORY_MANAGEMENT** | Faulty RAM or a driver writing to the wrong memory location |
+| **DRIVER_IRQL_NOT_LESS_OR_EQUAL** | A driver tried to access memory it shouldn't — usually graphics, network, or audio drivers |
+| **CRITICAL_PROCESS_DIED** | A core Windows process crashed — often from corrupted system files |
+| **PAGE_FAULT_IN_NONPAGED_AREA** | Windows couldn't find data it expected in memory — RAM issues or corrupted files |
+| **SYSTEM_SERVICE_EXCEPTION** | A driver or system service caused an exception — commonly graphics drivers |
+| **VIDEO_TDR_FAILURE** | Your graphics card driver crashed and couldn't recover |
+| **WHEA_UNCORRECTABLE_ERROR** | A hardware-level error — often overheating, failing CPU, or power issues |
+| **INACCESSIBLE_BOOT_DEVICE** | Windows can't read your hard drive or SSD during startup |
+| **DPC_WATCHDOG_VIOLATION** | A driver took too long to respond — often SSD or storage drivers |
+| **KMODE_EXCEPTION_NOT_HANDLED** | A kernel-mode program (usually a driver) caused a crash |
+
+> **If your computer restarts too fast** to read the code: restart your computer, and as soon as it turns on, repeatedly press **F8** (or hold **Shift** while clicking Restart). This opens the Advanced Startup menu. Go to **Troubleshoot → Advanced Options → Startup Settings → Restart**, then press **F8** for "Disable automatic restart on system failure." Now the blue screen will stay on screen until you manually restart.
+
+![A close-up of a BSOD screen highlighting the stop code text near the bottom](PLACEHOLDER)
+
+**Common mistake:** Restarting over and over without ever writing down the stop code. Without that code, you're guessing. The stop code narrows down the problem from "anything" to "probably a graphics driver" or "probably faulty RAM." Always write it down first.
+
+## Step 2: Disconnect All External Devices
+
+New or faulty hardware is one of the most common BSOD triggers. Before diving into software fixes, rule out the easy stuff.
+
+**Fix 1 — Unplug everything except the essentials**
+1. Shut down your computer completely (hold the power button for 10 seconds if it won't shut down normally)
+2. Unplug EVERY external device: USB drives, printers, webcams, external hard drives, game controllers, microphones, drawing tablets — everything
+3. Leave only your keyboard and mouse plugged in
+4. Turn the computer back on
+
+**Fix 2 — Remove any recently added internal hardware**
+If you installed new RAM, a new graphics card, or any other internal component right before the BSODs started:
+1. Turn off and unplug the computer
+2. Remove the new hardware
+3. Try starting the computer without it
+
+If the BSODs stop after unplugging something, that device or its driver is the problem. Plug devices back in one at a time to find the culprit, then update that device's driver (see Step 4).
+
+![A person unplugging USB devices from the side of a laptop](PLACEHOLDER)
+
+> **Common mistake:** Forgetting about a tiny Bluetooth adapter or a USB hub that's buried behind the desk. These count as external devices. Unplug literally everything except your main keyboard and mouse.
+
+## Step 3: Boot Into Safe Mode
+
+Safe Mode starts Windows with only the bare-minimum drivers and programs. If your computer works fine in Safe Mode but blue-screens in normal mode, you know a third-party driver or program is the cause.
+
+**How to enter Safe Mode (when Windows still boots):**
+1. Click the **Start** button, then click the **Power** icon
+2. Hold down the **Shift** key on your keyboard and click **Restart**
+3. After your computer restarts, you'll see a blue "Choose an option" screen
+4. Click **Troubleshoot → Advanced Options → Startup Settings → Restart**
+5. After restarting, press **4** or **F4** for regular Safe Mode (press **5** or **F5** for Safe Mode with Networking if you need internet)
+
+**How to enter Safe Mode (when Windows won't boot at all):**
+1. Turn on your computer — as soon as you see the Windows logo, press and hold the power button until it shuts off
+2. Repeat this two more times (turn on, force off when logo appears)
+3. On the third startup, Windows will display "Preparing Automatic Repair" and then the "Choose an option" screen
+4. Follow **Troubleshoot → Advanced Options → Startup Settings → Restart**, then press **4** or **F4**
+
+![The Windows "Choose an option" blue screen with Troubleshoot and other options](PLACEHOLDER)
+
+> **Tip:** In Safe Mode, your screen will look different — lower resolution, black desktop background, and the words "Safe Mode" in all four corners. This is normal! Don't panic — just move on to Step 4.
+
+## Step 4: Update or Roll Back Problem Drivers
+
+Outdated, corrupted, or incompatible drivers are the #1 cause of blue screens. This step covers three ways to fix them.
+
+**Fix 1 — Update your graphics driver (the most common culprit)**
+1. In Safe Mode, right-click the **Start** button and select **Device Manager**
+2. Expand the **Display adapters** category
+3. Right-click your graphics card (NVIDIA, AMD, or Intel) and select **Update driver**
+4. Choose **Search automatically for drivers**
+5. Let Windows find and install the latest driver, then restart your computer
+
+**Fix 2 — Roll back a recently updated driver**
+If the BSODs started right after you updated a driver, rolling back to the previous version may fix it:
+1. In **Device Manager**, right-click the problem device
+2. Select **Properties → Driver** tab
+3. Click **Roll Back Driver** (if the button is grayed out, there's no previous version to roll back to)
+4. Follow the prompts and restart
+
+**Fix 3 — Check for devices with warning symbols**
+In Device Manager, look for any device with a **yellow triangle with an exclamation mark** (!). This means Windows is having trouble with that device:
+1. Right-click the flagged device
+2. Select **Update driver → Search automatically for drivers**
+3. If updating doesn't work, try **Uninstall device**, then restart — Windows will attempt to reinstall the driver automatically
+
+![Windows Device Manager showing a device with a yellow warning triangle next to it](PLACEHOLDER)
+
+> **Common mistake:** Only checking "Display adapters" and ignoring other categories. Network adapters, audio devices, and storage controllers can all cause blue screens. Look for warning symbols across ALL categories in Device Manager.
+
+## Step 5: Repair Corrupted System Files
+
+Corrupted Windows system files can cause repeated blue screens. Windows has two built-in tools that can find and fix these files automatically.
+
+**Run these commands in order — DISM first, then SFC:**
+
+1. Click **Start**, type **cmd**, right-click **Command Prompt**, and select **Run as administrator**. Click **Yes** on the pop-up.
+2. First, run DISM to repair the system image (this needs an internet connection):
+   ```
+   DISM.exe /Online /Cleanup-image /Restorehealth
+   ```
+3. Wait patiently — DISM may appear to stall at 62.3% or another percentage for several minutes. This is completely normal. Do not close the window. The whole process can take 10–30 minutes.
+4. After DISM finishes, run the System File Checker:
+   ```
+   sfc /scannow
+   ```
+5. Wait for SFC to complete (5–15 minutes). When it finishes, it will tell you one of three things:
+   - **"Windows Resource Protection did not find any integrity violations"** — Your system files are fine
+   - **"Windows Resource Protection found corrupt files and successfully repaired them"** — It fixed something! Restart your computer
+   - **"Windows Resource Protection found corrupt files but was unable to fix some of them"** — Some files couldn't be repaired. See the "Still Stuck?" section below
+
+![Windows Command Prompt showing SFC scan reaching 100% verification complete](PLACEHOLDER)
+
+> **Common mistake:** Running SFC before DISM, or running only SFC and skipping DISM entirely. DISM repairs the master copy of system files that SFC uses as a reference. If the master copy itself is damaged, SFC can't fix anything. Always run DISM first, then SFC.
+
+## Step 6: Install Windows Updates and Check Your Disk
+
+Old Windows versions and disk errors are two more common BSOD causes — and both are easy to check.
+
+**Windows Update:**
+1. Open **Settings** (press **Windows key + I**)
+2. Go to **Windows Update** (Windows 11) or **Update & Security → Windows Update** (Windows 10)
+3. Click **Check for updates**
+4. Install ALL available updates, including optional driver updates
+5. Restart your computer when prompted
+
+**Check your hard drive for errors:**
+1. Open **Command Prompt as administrator** (same as Step 5)
+2. Type this command and press Enter:
+   ```
+   chkdsk C: /f /r
+   ```
+3. It will say the drive is in use and ask if you want to schedule it for the next restart. Type **Y** and press Enter.
+4. Restart your computer. The scan runs automatically before Windows loads — it may take 20 minutes to over an hour depending on your drive size. Do not interrupt it.
+
+> **Common mistake:** Typing CHKDSK without the `/f` or `/r` flags (or typing them lowercase — they must be with a forward slash and lowercase letters). CHKDSK with no flags only scans for problems but doesn't fix anything. Always use `chkdsk C: /f /r`.
+
+## Still Stuck?
+
+- **BSOD only happens when playing games or watching videos?** Your graphics card is the likely culprit. Download the latest driver directly from **NVIDIA, AMD, or Intel's website** instead of using Windows Update. The manufacturer's website often has newer drivers than Windows Update provides.
+
+- **Same stop code keeps appearing even after all fixes?** Search the exact stop code plus your computer model (e.g., "DRIVER_IRQL_NOT_LESS_OR_EQUAL Dell Inspiron 15") — you might find a specific fix for your exact hardware.
+
+- **Computer is more than 5 years old and BSODs are getting worse?** Failing RAM sticks or a dying hard drive become more common as computers age. A repair shop can run memory diagnostics and test your hard drive's health. Replacing RAM or switching from an old hard drive to an SSD often solves the problem.
+
+- **SFC reported "unable to fix some files"?** This means some system files are too damaged for SFC to repair. The most reliable fix is a **Windows repair install** (also called an "in-place upgrade"): download the Windows Media Creation Tool from Microsoft's website, run it, and choose "Upgrade this PC now" — it reinstalls Windows while keeping your personal files and apps.
+
+- **Do you see the blue screen flash and then your computer restarts immediately with NO time to read it?** Disable automatic restart so you can actually read the stop code. Open **Control Panel → System and Security → System → Advanced system settings** (on the left) → **Startup and Recovery** settings → uncheck **"Automatically restart."** Now the BSOD stays on screen until you manually restart.
+
+- **Using a work or school computer?** Ask your IT department before running system repair tools like DISM or CHKDSK — managed devices often have their own repair and update processes that could conflict.
