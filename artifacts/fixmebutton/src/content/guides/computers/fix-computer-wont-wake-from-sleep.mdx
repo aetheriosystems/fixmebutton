@@ -1,0 +1,143 @@
+---
+title: "How to Fix a Computer That Won't Wake From Sleep"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "10 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You try to wake your computer — you press keys, wiggle the mouse, tap the power button — but the screen stays black. Maybe the fans spin up but nothing appears. Maybe it's completely dead. Whatever the symptom, a computer that won't wake from sleep is scary, but it's usually fixable. This guide walks you through the fixes that work, from the simplest to ones that prevent it from happening again.
+
+**What you'll need:**
+- Your computer
+- Your keyboard and mouse
+- A few minutes for each step
+
+> **Work through the steps in order.** The first fix wakes the computer right now. Later fixes stop the problem from repeating.
+
+![A person pressing keys on a keyboard next to a computer with a black screen](PLACEHOLDER)
+
+## Fix 1: Wake the Computer Up (Right Now)
+
+Before changing any settings, try these three things. One of them almost always works when a computer is simply "stuck" in sleep.
+
+1. **Tap the keyboard and mouse** — Press the **Spacebar** or **Enter** key a few times. Wiggle your mouse or tap your trackpad. Sometimes the computer is awake but takes a few seconds to reconnect to its displays.
+2. **Press the power button briefly** — Tap the power button once (do NOT hold it down). On many computers, a single tap tells it to wake up. On a Mac laptop, press any key or tap the **Touch ID** button.
+3. **Check if the computer is actually on** — Look for glowing lights on the case, listen for fans spinning, or check if your keyboard's lights (like Caps Lock) respond. If the Caps Lock light turns on and off when you press it, the computer is awake — the screen might be the problem, not sleep itself.
+
+> **Common mistake:** Pressing and holding the power button forces a shutdown, not a wake-up. A single short tap is all you need to try waking it. Only hold the button if nothing else works (see Fix 3).
+
+If none of these work and the computer seems completely dead, your battery might be drained or the power cable might be loose. Plug in your charger, wait 5 minutes, and try again.
+
+![Close-up of a finger tapping the power button on a laptop](PLACEHOLDER)
+
+## Fix 2: Let Your Keyboard and Mouse Wake the Computer (Windows)
+
+Windows decides which devices are allowed to wake the computer. If your keyboard or mouse lost permission — often after a driver update or Windows update — they can't wake the computer anymore.
+
+1. Right-click the **Start button** (Windows logo, bottom-left corner) and select **Device Manager**
+2. Find **Keyboards** in the list and click the small arrow next to it to expand
+3. Right-click your keyboard (usually called "HID Keyboard Device" or your brand name) and select **Properties**
+4. Click the **Power Management** tab at the top
+5. **Check the box** that says **"Allow this device to wake the computer"**
+6. Click **OK**
+7. Now do the same for your mouse: expand **Mice and other pointing devices**, right-click your mouse, click **Properties** → **Power Management**, and check **"Allow this device to wake the computer"**
+
+![Windows Device Manager showing the Power Management tab with the wake checkbox](PLACEHOLDER)
+
+> **Note:** If you don't see a Power Management tab for your keyboard or mouse, the device doesn't support waking the computer. Try a different keyboard or mouse — wired ones are more likely to support wake than wireless ones.
+
+> **Common mistake:** People check the wrong device. If you use a wireless keyboard with a USB dongle, you might need to enable wake on both the keyboard entry AND on the USB receiver entry (found under **Universal Serial Bus controllers**).
+
+Test the fix: put your computer to sleep (Start → Power → Sleep), wait 10 seconds, then press a key. If it wakes up, you're all set!
+
+## Fix 3: Force a Restart When It's Stuck
+
+If the computer is frozen in sleep and nothing else responds, you need to force it off and back on. This clears whatever glitch locked it up.
+
+1. Press and **hold** the power button for **10–15 seconds** — keep holding until the screen goes completely black and all lights and fans stop
+2. Release the button and wait **30 seconds** (this lets any leftover electricity drain from the parts)
+3. Press the power button normally to turn the computer back on
+4. If the computer turns on but the screen stays black, the problem may be the screen, not the sleep function. See the **Still Stuck?** section at the bottom.
+
+> **Warning:** A force restart closes all your open programs and you'll lose any unsaved work. This is a last resort for getting unstuck — not something to do every day.
+
+**For Mac laptops with Apple Silicon (M1, M2, M3, M4):**
+- Press and hold the **power/Touch ID button** until the screen goes black (about 10 seconds)
+- Wait 30 seconds, then press it again to start up
+
+**For Intel Macs, also try resetting the SMC:**
+1. Shut down your Mac completely
+2. Press and hold **Shift + Control + Option** on the left side of the keyboard, then also press and hold the **power button**
+3. Hold all four keys for **10 seconds**, then release
+4. Press the power button normally to turn it on
+
+> **What is the SMC?** The System Management Controller handles power, battery, and sleep behavior on Intel Macs. Resetting it clears any power-related glitches. Apple Silicon Macs don't have an SMC — they handle this automatically on restart.
+
+![A finger holding down the power button on a desktop computer](PLACEHOLDER)
+
+## Fix 4: Turn Off Fast Startup (Windows)
+
+Fast Startup is a Windows feature that saves part of your system to the hard drive when you shut down, so your computer boots faster next time. But it's one of the biggest causes of wake-from-sleep problems — especially when combined with Windows updates.
+
+1. Open the **Control Panel** — press the **Windows key**, type **Control Panel**, and click it
+2. Click **Hardware and Sound**, then **Power Options**
+3. On the left side, click **Choose what the power buttons do**
+4. Click the blue link at the top that says **Change settings that are currently unavailable**
+5. Scroll down and **uncheck** the box that says **Turn on fast startup (recommended)**
+6. Click **Save changes**
+
+![Windows Power Options with Fast Startup checkbox highlighted](PLACEHOLDER)
+
+If the Fast Startup checkbox is missing, it might already be off. To double-check:
+1. Press the **Windows key**, type **cmd**, right-click **Command Prompt**, and select **Run as administrator**
+2. Type this command and press Enter:
+   ```
+   powercfg -h off
+   ```
+3. This disables hibernation, which also disables Fast Startup. Type `powercfg -h on` to turn it back on if you change your mind.
+
+> **Common mistake:** People open the wrong Power Options menu. Make sure you go through **Control Panel**, not the Windows **Settings** app. The Settings app doesn't have the "Choose what the power buttons do" link.
+
+Test by putting your computer to sleep and waking it a few times over the next day. If the problem is fixed, you can leave Fast Startup off permanently — your computer might take a few seconds longer to start up, but sleep should work reliably.
+
+## Fix 5: Disable Hybrid Sleep and Check Your Power Plan (Windows)
+
+Hybrid Sleep saves your open work to the hard drive like hibernation, then puts the computer into a light sleep. It's meant to protect your work if the power goes out, but it often causes the computer to get stuck between "sleep" and "off."
+
+1. Open **Control Panel** → **Hardware and Sound** → **Power Options**
+2. Next to your current power plan (it says "Balanced" or "Recommended" with a selected dot), click **Change plan settings**
+3. Click **Change advanced power settings**
+4. In the box that opens, scroll down and find **Sleep**
+5. Click the **+** next to Sleep to expand it, then click the **+** next to **Allow hybrid sleep**
+6. Change **Setting** to **Off** for both "On battery" and "Plugged in"
+7. Click **Apply**, then **OK**
+
+![Windows Advanced Power Settings dialog with Hybrid Sleep expanded](PLACEHOLDER)
+
+Also check which power plan you're using:
+- If your computer brand (Dell, HP, Lenovo, Acer, etc.) has its own power plan, try switching to **Balanced** instead
+- Or if you're on Balanced and having problems, try your manufacturer's plan
+- To switch: just click the dot next to a different plan on the Power Options page
+
+> **Why this works:** Some manufacturer power plans are tuned for older sleep modes that don't play well with modern Windows. Switching plans — even temporarily — can break the cycle of bad settings.
+
+> **Common mistake:** Clicking through Advanced Power Settings too fast and changing the wrong thing. Only change items under the **Sleep** section. Leave everything else alone unless you know what it does.
+
+## Still Stuck?
+
+- **Screen stays black but computer is on?** Try pressing **Windows key + Ctrl + Shift + B** all at once. This resets your graphics driver. The screen may flash or beep — that's normal. If you see the screen after this, your graphics driver, not sleep, was the problem.
+
+- **Computer wakes itself up at night?** This is a different problem, but related. Open **Command Prompt as administrator** and type `powercfg -lastwake` to see what device woke your computer. Common culprits: network cards, scheduled updates, and wireless mice that detect tiny movements.
+
+- **Mac still won't wake after all steps?** Try resetting the **NVRAM** (Intel Macs only): shut down, then turn on and immediately hold **Option + Command + P + R** for about 20 seconds. The Mac will restart — let go when you hear the startup chime a second time.
+
+- **Does your Mac have Apple Silicon (M1/M2/M3/M4)?** These Macs don't use SMC or NVRAM resets. Instead, just shut down (Apple menu → Shut Down), wait 30 seconds, and turn on. This does the same thing.
+
+- **Computer won't sleep at all?** If your computer never goes to sleep in the first place, check for programs keeping it awake. Open **Command Prompt as administrator** and type `powercfg -requests` to see which programs are blocking sleep.
+
+- **Tried everything and it's still happening?** If your computer is under warranty, contact the manufacturer. If it's older, a repair shop can test the power supply and motherboard — both can cause sleep failures when they start to fail.
