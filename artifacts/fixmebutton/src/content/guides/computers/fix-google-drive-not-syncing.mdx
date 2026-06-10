@@ -1,0 +1,231 @@
+---
+title: "How to Fix Google Drive Not Syncing on Windows and Mac"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 6
+---
+
+## Before You Start
+
+You're staring at a file in your Google Drive folder on your computer, but the little green checkmark never shows up. Or someone shared a file with you, it's visible on drive.google.com in your browser, but it won't appear on your desktop. Or — worst of all — you added three hours of work to a document, and now you're not sure if those changes actually made it to the cloud.
+
+Google Drive for desktop sync failures are surprisingly common, but they're almost always fixable without reinstalling anything or contacting support. The sync engine can get "stuck" for dozens of reasons: a corrupted local cache, a lost internet connection, a file name that Google Drive doesn't accept, or even another app on your computer blocking the sync.
+
+This guide covers both Windows and Mac. The steps are ordered from the quickest fix to the nuclear option — most people solve the problem by Step 1 or Step 2.
+
+**What you'll need:**
+- Your computer (Windows or Mac) with Google Drive for desktop installed
+- A stable internet connection
+- Your Google account email and password
+- About 20 minutes
+
+> **Work through the steps in order.** Step 1 takes under a minute and fixes the problem for most people. Don't jump straight to reinstalling — the later steps take longer and force a full resync, which can eat up bandwidth and time if your Drive is large.
+
+![A person looking at their computer screen showing the Google Drive desktop app with files stuck on "Syncing"](PLACEHOLDER)
+
+## Step 1: Check the Connection and Restart
+
+Before touching any settings, rule out the simplest causes. Google Drive for desktop is just an app — it can get stuck the same way any other app can, and it can't sync without a working internet connection.
+
+### Fix 1 — Quit and reopen Google Drive for desktop
+
+1. **Windows:** Find the Google Drive icon in the system tray (bottom-right corner of the screen, near the clock — you may need to click the small arrow to reveal hidden icons). Click the Drive icon, then click the **gear icon (⚙)** → **Quit**.
+2. **Mac:** Find the Google Drive icon in the menu bar (top-right corner of the screen). Click it, then click the **gear icon (⚙)** → **Quit**.
+3. Wait about 10 seconds for the app to fully close.
+4. Reopen Google Drive from your Start menu (Windows) or Applications folder (Mac).
+5. Wait a minute and check if syncing resumes. Look for the sync status in the Drive menu — if it says "All files are up to date," you're done.
+
+### Fix 2 — Restart your computer
+
+If quitting and reopening didn't work, restart the whole machine. A restart clears temporary operating system caches that can interfere with Drive's sync engine.
+
+1. **Windows:** Click the Start button → Power icon → **Restart**.
+2. **Mac:** Click the Apple menu (top-left corner) → **Restart**.
+3. After your computer restarts, Google Drive for desktop should launch automatically. Let it run for 2-3 minutes, then check if files are syncing.
+
+### Fix 3 — Check your internet connection
+
+Google Drive can't sync without internet. Even if your web browser loads pages, Drive for desktop might be blocked by a firewall, VPN, or proxy.
+
+1. Open a browser and go to **drive.google.com**. Can you see your files? If not, your internet connection or Google's servers may be the issue.
+2. If you're using a **VPN**, pause or disconnect it temporarily. VPNs sometimes route traffic in ways that break Drive's sync connection. After pausing, restart Drive for desktop (Fix 1).
+3. If you're on a **work or school network**, your organization's firewall may block Google Drive. Try connecting from a different network (like a mobile hotspot) to confirm.
+4. **Windows only:** If your computer's clock is wrong (off by more than a few minutes), Google's servers may reject the sync connection. Right-click the clock in the taskbar → **Adjust date/time** → make sure "Set time automatically" is ON.
+
+![The Google Drive for desktop system tray menu showing the Quit option](PLACEHOLDER)
+
+> **Common mistake:** People see the Google Drive icon in the system tray and assume it's running, but the app can be frozen without showing any visible sign. The icon might still be there, but the sync engine behind it has crashed. Always do a proper Quit and reopen — don't just look at the icon.
+
+## Step 2: Pause and Resume Syncing
+
+Sometimes the Drive sync engine encounters a file it can't handle and gets stuck trying over and over. Pausing syncing — then resuming it — is like telling the app to take a breath and try again. It often clears the bottleneck without any deeper intervention.
+
+1. Click the **Google Drive icon** in your system tray (Windows) or menu bar (Mac).
+2. Click the **gear icon (⚙)**.
+3. Click **Pause Syncing**.
+4. Wait 30 seconds.
+5. Click the gear icon again and click **Resume Syncing**.
+6. Watch the sync status for a minute. Does it start moving again?
+
+If the sync gets stuck again on a specific file — you may see a notification like "Upload failed" or "Can't sync [filename]" — that specific file is probably the problem. See Step 4 for file-specific issues.
+
+> **Common mistake:** Clicking "Pause Syncing" and then immediately clicking "Resume" without waiting. Give Drive at least 30 seconds paused so the sync engine fully releases whatever file it's stuck on. If you resume too fast, it picks up right where it left off — still stuck.
+
+![Google Drive menu showing the Pause Syncing option highlighted](PLACEHOLDER)
+
+## Step 3: Disconnect and Reconnect Your Account
+
+If restarting and pausing didn't work, the connection between your computer and your Google account may have become corrupted. Disconnecting and reconnecting forces a fresh authorization handshake with Google's servers.
+
+> **Before you disconnect:** Any files in your local Google Drive folder that haven't been synced yet WILL remain on your computer — disconnecting doesn't delete local files. But files in the **Lost & Found** folder will be removed, so copy anything important out of there first.
+
+1. Click the **Google Drive icon** in your system tray (Windows) or menu bar (Mac).
+2. Click the **gear icon (⚙)** → **Preferences**.
+3. In the Preferences window, click the **gear icon (⚙)** again (top-right) → **Disconnect account**.
+4. Confirm by clicking **Disconnect**.
+5. Google Drive for desktop will close. Reopen it from your Start menu or Applications folder.
+6. Click **Sign in with browser** and log into your Google account.
+7. When prompted, choose a location for your Google Drive folder. You can either:
+   - Select the **same folder** you were using before (Drive will scan existing files instead of re-downloading everything), OR
+   - Select a **new, empty folder** to start fresh (Drive will download everything from the cloud).
+8. Choose your sync settings — "Stream files" (files stay in the cloud and download on demand, saves disk space) or "Mirror files" (files are stored both on your computer and in the cloud, uses more disk space but you can access them offline).
+9. Wait while Drive reconnects. Depending on how many files you have, it may take a few minutes to several hours to fully check everything.
+
+![Google Drive Preferences window showing the gear icon with Disconnect account option](PLACEHOLDER)
+
+> **Common mistake:** Choosing "Mirror files" on a laptop with limited storage. Mirroring downloads EVERY file from your Google Drive to your computer's hard drive. If you have 200 GB of files on Drive and only 100 GB of free space on your computer, mirroring will fail. Choose "Stream files" instead — it keeps files in the cloud until you open them, using almost no local storage.
+
+> **Tip:** If reconnecting to the SAME folder, Drive won't re-download files it already has — it compares the local folder to the cloud and only syncs what's different. This is much faster and won't eat your bandwidth. But if your sync cache is corrupted (Step 5), reconnecting to the same folder might not fix the problem — you'll need to rename the cache folder and start fresh.
+
+## Step 4: Check for Problem Files
+
+Some files simply cannot be synced by Google Drive due to naming, size, or permission restrictions. Drive won't always show you a clear error message — it might just silently get stuck. Here are the most common file-level issues and how to fix them.
+
+### File name problems
+
+Google Drive rejects file and folder names that contain certain characters or exceed length limits:
+
+1. **Forbidden characters:** `* . " / \ [ ] : ; | ,` — any file or folder with these characters in the name will fail to sync. Rename the file to remove them.
+2. **Trailing spaces or periods:** A file named `"report .docx"` or `"report.docx."` will sync in some places but not others. Remove spaces before the extension and trailing periods.
+3. **Names too long:** Windows limits the full file path (including all folder names) to 260 characters. If your Google Drive folder is already at `C:\Users\YourName\Google Drive\...` and you nest a file 10 folders deep with a long name, it can exceed the limit. Move the file to a shallower folder.
+4. **Duplicate names in the same folder:** You can't have `report.docx` and `Report.docx` in the same folder on Windows — the file system treats them as the same name. Rename one of them.
+
+### File size problems
+
+Google Drive has file size limits:
+
+- **Uploaded files (created by you):** Maximum 5 TB.
+- **Converted files (Google Docs, Sheets, Slides when you upload a non-Google format):** Documents max 1.02 million characters; spreadsheets max 10 million cells; presentations max 100 MB.
+- **Files that fail:** If a file is stuck on "Uploading" forever and it's very large (over 5 TB), it's too big. Compress it, split it into smaller parts, or use Google Drive's web upload (drive.google.com) instead of the desktop app.
+
+### Permission problems
+
+If you can see a file on drive.google.com but it won't sync to your computer:
+
+1. Right-click the file on drive.google.com and click **Share**.
+2. Check that you have at least "Viewer" access. If you see "Request access," you don't have permission to sync the file.
+3. If the file is in a **shared drive** and the shared drive admin has disabled downloads/sync, you can only view it in the browser — it will never sync to your desktop.
+4. **Windows:** Right-click the file or folder in File Explorer → **Properties** → **Security** tab. Make sure your user account has "Read" and "Write" permissions.
+5. **Mac:** Right-click the file or folder in Finder → **Get Info**. Under "Sharing & Permissions," make sure your user has "Read & Write."
+
+![A file in File Explorer with a sync error icon next to it](PLACEHOLDER)
+
+> **Common mistake:** Renaming a file to remove a forbidden character, but the file still won't sync. After renaming, you sometimes need to move the file OUT of the Google Drive folder and then move it back in. This forces Drive to treat it as a brand new file and re-attempt the upload.
+
+> **Tip:** Google Drive for desktop shows a small sync status icon on each file and folder in File Explorer (Windows) or Finder (Mac). A **green checkmark** means synced. A **cloud icon** means the file is only in the cloud (streamed). A **rotating blue arrows** means syncing in progress. A **red X** means sync failed — right-click and look for an error message.
+
+## Step 5: Clear the Local Sync Cache (Advanced Reset)
+
+Google Drive for desktop stores a local cache of sync data on your computer. When this cache file becomes corrupted — which can happen after a crash, forced shutdown, or disk error — syncing breaks completely. No amount of restarting will fix it. You have to delete the cache and let Drive rebuild it.
+
+This is the most reliable fix for stubborn sync problems, but it forces Drive to recheck ALL your files, which can take a while if you have a lot of data.
+
+### Windows — Clear the DriveFS cache
+
+1. **Quit Google Drive for desktop** completely (Step 1, Fix 1).
+2. Open File Explorer and paste this path into the address bar (press Enter after):
+   ```
+   %USERPROFILE%\AppData\Local\Google
+   ```
+3. Find the folder named **`DriveFS`**.
+4. **Rename** it to `DriveFS_Old` (right-click → Rename). Do NOT delete it yet — renaming keeps a backup in case something goes wrong.
+5. **Restart your computer.**
+6. After restart, open Google Drive for desktop. It will create a fresh `DriveFS` folder and begin re-scanning all your files against the cloud. This can take anywhere from 10 minutes to several hours depending on how many files you have.
+7. Once you've confirmed everything is syncing correctly (files show green checkmarks), you can delete the `DriveFS_Old` folder to reclaim disk space.
+
+### Mac — Clear the DriveFS cache
+
+1. **Quit Google Drive for desktop** completely (Step 1, Fix 1).
+2. Open Finder. In the menu bar at the top, click **Go** → **Go to Folder** (or press **Cmd + Shift + G**).
+3. Paste this path and click **Go**:
+   ```
+   ~/Library/Application Support/Google/
+   ```
+4. Find the folder named **`DriveFS`**.
+5. **Rename** it to `DriveFS_Old` (right-click → Rename).
+6. **Restart your Mac.**
+7. After restart, open Google Drive for desktop. It will rebuild the cache from scratch.
+8. Once syncing is confirmed, delete `DriveFS_Old`.
+
+![The Windows File Explorer showing the Google folder with DriveFS highlighted and being renamed](PLACEHOLDER)
+
+> **Warning:** Renaming `DriveFS` forces Drive for desktop to re-scan every single file and compare it to the cloud. If you have hundreds of thousands of files on a slow hard drive, this can take several hours. Your files are safe — nothing gets deleted — but Drive will be busy during this time. Don't do this right before you need to access an important file quickly.
+
+> **Common mistake:** Deleting `DriveFS` instead of renaming it. Renaming first gives you a backup — if the rename somehow causes a worse problem (extremely rare), you can rename it back and you're back where you started. Once you delete it, there's no undo.
+
+## Step 6: Reinstall Google Drive for Desktop
+
+If none of the previous steps worked — including the cache reset — your installation of Google Drive for desktop may be damaged. A clean reinstall gives you a fresh copy of the app with all its components intact.
+
+### Windows — Uninstall and reinstall
+
+1. First, **quit Google Drive for desktop**.
+2. Open **Settings** → **Apps** → **Installed apps** (or **Apps & features** on Windows 10).
+3. Search for "Google Drive" in the list.
+4. Click the three dots next to Google Drive and select **Uninstall** → confirm by clicking **Uninstall** again.
+5. Restart your computer (important — this clears leftover files that the uninstaller might miss).
+6. Go to **drive.google.com** in your browser.
+7. Click the **gear icon (⚙)** in the top-right → **Download Drive for desktop** (or go directly to: **google.com/drive/download/**).
+8. Run the downloaded `GoogleDriveSetup.exe` file and follow the installation steps.
+9. Sign in with your Google account and set up your sync preferences.
+
+### Mac — Uninstall and reinstall
+
+1. **Quit Google Drive for desktop**.
+2. Open **Finder** → **Applications**.
+3. Find **Google Drive** and drag it to the **Trash** (or right-click → Move to Trash).
+4. Also remove leftover support files. In Finder, click **Go** → **Go to Folder** (Cmd + Shift + G) and paste each of these paths one at a time, dragging any Google Drive-related files to the Trash:
+   - `~/Library/Application Support/Google/DriveFS/`
+   - `~/Library/Preferences/com.google.drivefs.plist`
+   - `~/Library/Caches/com.google.drivefs/`
+5. **Empty the Trash** (right-click the Trash icon in the Dock → Empty Trash).
+6. **Restart your Mac.**
+7. Go to **drive.google.com** in your browser.
+8. Click the **gear icon (⚙)** → **Download Drive for desktop**.
+9. Open the downloaded `GoogleDrive.dmg` file and drag the Google Drive app into your Applications folder.
+10. Launch Google Drive, sign in, and set up your sync preferences.
+
+![Google Drive download page with the Download for desktop button highlighted](PLACEHOLDER)
+
+> **Common mistake:** Skipping the restart after uninstalling. Old background processes and temporary files can survive an uninstall and interfere with the fresh installation. Always restart between uninstalling and reinstalling.
+
+> **Tip:** If you're concerned about bandwidth or time when reconnecting after a reinstall, choose "Stream files" instead of "Mirror files." Your files won't download until you actually open them, so you can get back to work immediately instead of waiting for a massive download.
+
+## Still Stuck?
+
+- **Google Drive syncs but is extremely slow?** Check your internet upload speed (fast.com or speedtest.net). Sync speed is limited by your upload bandwidth — large files will take a long time on a slow connection. Also, Drive for desktop limits upload speed to avoid overwhelming your connection, but you can adjust this: click the Drive icon → **gear (⚙)** → **Preferences** → **gear (⚙)** → **Settings** → under "Upload rate," choose "Don't limit" (or set a custom limit). Be aware that maxing out your upload will slow down everything else on your network.
+
+- **Google Drive for desktop keeps crashing or quitting unexpectedly?** System cleaner apps like CCleaner, Advanced SystemCare, or MacKeeper can delete or modify Drive's configuration files, causing crashes. Exclude Google Drive from these apps, or uninstall the cleaner entirely. Also check that your computer meets the minimum system requirements: Windows 10 or newer, macOS 12 (Monterey) or newer.
+
+- **Syncing stops when your computer goes to sleep?** This is normal — Drive can't sync while the computer is asleep. On a laptop, keep it plugged in and adjust your power settings to prevent sleep during long syncs. **Windows:** Settings → System → Power → Screen and sleep → set "On battery power, put my device to sleep after" to "Never" temporarily. **Mac:** System Settings → Battery → Options → enable "Prevent automatic sleeping on power adapter when the display is off."
+
+- **Getting "Storage full" errors even though your computer has plenty of space?** Your Google account storage (shared across Gmail, Drive, and Photos) may be full. Go to **drive.google.com** — look at the storage bar on the bottom-left. If it's full or nearly full, Google Drive can't sync new or changed files because there's no room in the cloud. Delete old files from Drive (especially large videos and email attachments), empty the Trash on drive.google.com, or buy more storage through Google One (starting at $1.99/month for 100 GB at **one.google.com**).
+
+- **Using a work or school (Google Workspace) account?** Your organization's admin may have disabled desktop sync for your account or for certain shared drives. Contact your IT department and ask them to verify that Drive for desktop is enabled for your account. They can check this in the Google Admin console under Apps → Google Workspace → Drive and Docs → Features.
+
+- **Nothing works, and you need to access your files NOW?** Google Drive's web interface at **drive.google.com** works independently of the desktop app. You can always upload, download, and edit files through the browser while you troubleshoot the desktop sync. It's less convenient, but it works 100% of the time as long as you have internet access.
+
+- **Considering a different cloud storage service?** If Google Drive's sync problems are persistent and you've exhausted all fixes, alternatives like Dropbox, OneDrive (built into Windows), and iCloud Drive (for Apple users) offer similar functionality. Before switching, use Google Takeout (**takeout.google.com**) to download a complete copy of all your Google Drive files.
