@@ -23,7 +23,7 @@ Vault: `~/hermes-workspace/Umbrella Corp/`
 - Troubleshooting: `02 - Knowledge/Troubleshooting.md` (FixMeButton section)
 - Agent profiles: `03 - Agents/`
 
-## Guides Published: 8
+## Guides Published: 36
 
 ## Cron Notes
 
