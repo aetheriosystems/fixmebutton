@@ -1,0 +1,302 @@
+---
+title: "How to Fix Discord Voice Chat Not Connecting (No Route Error)"
+category: gaming
+devices: ["Windows 10", "Windows 11", "Mac", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You click to join a voice channel, and instead of hearing your friends, you see "RTC Connecting" for a few seconds... then the dreaded message: **"No Route."** No matter how many times you disconnect and reconnect, Discord won't let you into the voice chat. You can still see text messages, but voice calls are completely broken.
+
+The "No Route" error means Discord found the voice server but can't establish a connection to it. Something between your device and Discord's voice servers is blocking the path. The good news: in most cases, it's a setting on your device or router — not a problem with Discord itself. This guide covers the five most effective fixes that real users have confirmed work.
+
+**What you'll need:**
+- Your computer or phone
+- Access to your router (for network fixes)
+- Administrator access on your computer (for some steps)
+- About 20 minutes
+
+> **Before you do anything else:** Check if Discord's voice servers are down. Go to [discordstatus.com](https://discordstatus.com) on your phone or another device. Look for the **Voice** section — if it shows anything other than "Operational" (like "Partial Outage" or "Major Outage"), Discord's voice servers are having trouble and the problem is NOT on your end. All you can do is wait. You can also check sites like [downdetector.com/status/discord](https://downdetector.com/status/discord) for live outage reports from other users.
+
+![Discord desktop app showing a voice channel with the error message "No Route" displayed where the connection status should be](PLACEHOLDER)
+
+## Step 1: Restart Discord and Your Entire Network
+
+It sounds too simple, but restarting your network equipment fixes the "No Route" error more often than any other solution. Here's why: your modem and router are small computers that run 24/7. Over time, their memory fills up, their routing tables get confused, and the tunnel they create for Discord's voice traffic (called UDP) can collapse. A full power cycle clears all of this.
+
+**Fix 1a — Fully restart Discord**
+
+1. Don't just close the Discord window — it keeps running in the background. On Windows, look for the Discord icon in your **system tray** (the small icons near the clock in the bottom-right corner). Right-click the Discord icon and select **Quit Discord**.
+2. On Mac, click the Discord icon in the menu bar (top-right) or right-click the Dock icon and select **Quit**.
+3. On iPhone or Android, swipe Discord away from your recent apps list to fully close it. Don't just go to your home screen — that keeps Discord running in the background.
+4. Wait 10 seconds, then reopen Discord and try joining a voice channel.
+
+![The Windows system tray showing the Discord icon being right-clicked with the Quit Discord option highlighted](PLACEHOLDER)
+
+**Fix 1b — Power cycle your modem and router (this is the BIG one)**
+
+1. Close Discord completely on all your devices.
+2. Find your **modem** and **router**. They might be one combined box or two separate boxes. The modem is the one connected to the cable or phone line coming out of your wall. The router is connected to the modem.
+3. Unplug the **power cord** from BOTH devices. Don't just press a power button — physically unplug them from the wall outlet.
+4. Wait **a full 2 minutes**. Set a timer on your phone. This waiting period is critical — it gives the capacitors inside the devices time to fully drain, which clears all temporary memory. Skipping the wait is the #1 reason this fix fails.
+5. Plug the **modem** back in first. Wait for all its lights to stabilize — usually 1–2 minutes. You should see a solid "Online" or "Internet" light.
+6. Plug the **router** back in. Wait another 1–2 minutes for its lights to stabilize.
+7. Turn on your computer (or reconnect your phone to WiFi). Open Discord and try a voice channel.
+
+![Hands unplugging a router's power cord from a wall outlet, with the modem visible beside it](PLACEHOLDER)
+
+> **Common mistake:** People press the power button on their router or modem and think that counts as a restart. It doesn't. The power button on most network equipment puts it into a "standby" mode that keeps the memory powered — the same corrupted routing tables are still there when it wakes up. You MUST physically unplug the power cord from the wall. Also, many people only restart their router but not their modem. If you have two separate boxes, both need a full power cycle. Restarting only the router leaves the modem's old connection state intact, and the problem usually comes right back.
+
+> **Tip:** Make this a monthly habit. Just like your phone runs better after a restart, your home network performs better with a monthly power cycle. It prevents not just Discord problems but also slow WiFi, random disconnects, and buffering on streaming apps.
+
+**Fix 1c — Switch from WiFi to wired (desktop/laptop only)**
+
+If you're on WiFi, try connecting your computer directly to your router with an Ethernet cable. Discord voice traffic is very sensitive to WiFi interference and packet loss. Even if your WiFi "works fine for everything else," Discord's real-time voice connection needs a much more stable connection than web browsing or video streaming. If Discord works on a wired connection but not WiFi, you've found the problem — your WiFi signal is dropping too many packets for voice chat.
+
+## Step 2: Disable VPNs, Check Your Firewall, and Turn Off QoS
+
+Three things commonly sit between Discord and the internet, and any one of them can cause the "No Route" error: VPNs, firewalls, and Discord's own Quality of Service (QoS) setting. We'll check all three.
+
+**Fix 2a — Disconnect your VPN (or switch to one that supports UDP)**
+
+1. If you use a VPN app on your computer or phone, open the VPN and **disconnect** it completely. Don't just pause it — fully disconnect.
+2. Force-close Discord (Step 1, Fix 1a). Reopen Discord and try a voice channel.
+3. If Discord works without the VPN, your VPN is the problem. Discord voice chat uses a protocol called **UDP** (User Datagram Protocol). Many VPNs — especially free ones or school VPNs — only support TCP, not UDP. Without UDP, Discord can't establish a voice connection and throws the "No Route" error.
+4. If you must use a VPN while on Discord, switch to a VPN provider that explicitly supports UDP. Most major paid VPNs (NordVPN, ExpressVPN, ProtonVPN) support UDP. Look for a "UDP" or "OpenVPN UDP" option in your VPN's settings.
+
+![A VPN app on a Windows desktop showing the Disconnect button, with the VPN status changing from Connected to Disconnected](PLACEHOLDER)
+
+> **Common mistake:** People disable their VPN app but forget that some antivirus programs include a built-in VPN that runs silently in the background. Programs like Norton 360, McAfee Total Protection, and Avast often bundle a "Secure VPN" or "WiFi Privacy" feature. Check your antivirus settings and disable any VPN features. Also, if you're on a school, library, or office network, the network itself may use a VPN or proxy that blocks UDP traffic — in that case, you won't be able to fix this on your end. Try Discord on a different network (like your phone's mobile data hotspot) to confirm.
+
+**Fix 2b — Make sure your firewall allows Discord**
+
+On Windows, the built-in Windows Defender Firewall sometimes blocks Discord's voice traffic after an update, or if you accidentally clicked "Block" when a Discord popup appeared.
+
+1. Press the **Windows key** on your keyboard, type `firewall`, and click **Windows Defender Firewall**.
+2. In the left sidebar, click **Allow an app or feature through Windows Defender Firewall**.
+3. Click the **Change settings** button (you may need administrator permission).
+4. Scroll through the list and find **Discord**. Make sure BOTH checkboxes are checked — **Private** AND **Public**.
+5. If Discord isn't in the list at all, click **Allow another app** → **Browse** → navigate to where Discord is installed (usually `C:\Users\[YourName]\AppData\Local\Discord\app-[version]\Discord.exe`) → select it → click **Add**.
+6. Make sure both Private and Public boxes are checked for the newly added Discord entry. Click **OK**.
+7. Restart Discord and test a voice channel.
+
+**Mac firewall check:**
+1. Open **System Settings** → **Network** → **Firewall**.
+2. If the firewall is on, click **Options** and make sure Discord is in the list of allowed apps. If it's not there, click the **+** button, find Discord in your Applications folder, and add it.
+
+![The Windows Defender Firewall "Allowed apps" window showing Discord with both Private and Public checkboxes checked](PLACEHOLDER)
+
+> **Common mistake:** People add Discord to the firewall's allowed list but only check the "Private" box, thinking "Public" is unsafe. Discord needs BOTH checked because it uses different types of connections for text chat vs. voice chat. If Public is unchecked and your network is marked as "Public" in Windows (which is the default for most home networks Windows doesn't recognize), Discord's voice traffic gets blocked. If you're not sure which type your network is, just check both boxes — it's safe for an app like Discord.
+
+**Fix 2c — Disable Discord's Quality of Service (QoS)**
+
+QoS is a Discord setting that marks its voice traffic as "high priority" so your router gives it special treatment. On paper, this should make voice chat better. In reality, many home routers and internet service providers don't handle these priority tags correctly — they see the tags, get confused, and drop the connection entirely. This causes the "No Route" error.
+
+1. In Discord, click the **gear icon** (User Settings) next to your username in the bottom-left corner.
+2. Scroll down the left sidebar to **Voice & Video** (under App Settings).
+3. Scroll down to the **Quality of Service** section.
+4. Turn **OFF** the toggle for **"Enable Quality of Service High Packet Priority"** — it should be gray, not green.
+5. Restart Discord completely (quit from system tray, then reopen) and test a voice channel.
+
+![Discord Voice & Video settings showing the Quality of Service High Packet Priority toggle in the OFF position](PLACEHOLDER)
+
+> **Common mistake:** People turn off QoS then immediately try a voice channel without restarting Discord. The QoS change requires a full Discord restart to take effect — just closing the settings window isn't enough. Quit Discord completely from the system tray, wait a few seconds, and reopen it. Also, some people have QoS turned off in Discord but their ROUTER has its own QoS feature enabled in the router's admin settings. If turning off Discord's QoS doesn't fix the problem, log into your router (usually by typing `192.168.0.1` or `192.168.1.1` into your web browser) and look for a "QoS" or "Quality of Service" setting — disable it there too, then restart both your router and Discord.
+
+## Step 3: Change Voice Region, Audio Subsystem, and Device Settings
+
+Sometimes Discord gets stuck communicating with a specific voice server that's having problems, or an audio setting is interfering with the connection. These three setting changes force Discord to re-establish its voice connection from scratch.
+
+**Fix 3a — Change the voice channel's region (server admin required)**
+
+This fix requires you to be a server admin or have the "Manage Channels" permission. If you're not an admin, ask someone who is to do this for you.
+
+1. On the Discord desktop app, find the voice channel that's giving you the "No Route" error.
+2. Hover over the voice channel name and click the **gear icon** (Edit Channel) that appears on the right.
+3. Scroll down to **Region Override**. By default, it's set to "Automatic."
+4. Click the dropdown and select a **different region** — pick one that's geographically close to you but not the same as your automatic region. For example, if you're in the US, try "US East" instead of "US Central," or vice versa.
+5. Click **Save Changes** at the bottom.
+6. Now go back, change the region BACK to **Automatic**, and click **Save Changes** again.
+7. Try joining the voice channel. This region flip forces Discord to find a fresh route to its voice servers, which often bypasses whatever was causing the "No Route."
+
+![Discord channel settings window showing the Region Override dropdown with a different region selected](PLACEHOLDER)
+
+> **Common mistake:** People change the region and leave it on the manual setting, then wonder why Discord later has high ping or lag. After the region change fixes the problem, always switch it back to **Automatic**. Discord's automatic selection usually picks the best server for your location. The manual override is just a tool to force a reconnection — not a permanent setting.
+
+**Fix 3b — Switch Discord's audio subsystem (Windows only)**
+
+Discord has two audio engines: "Standard" (the newer one) and "Legacy" (the older one). If your audio driver or hardware doesn't work well with the Standard subsystem, it can interfere with voice connections.
+
+1. Open Discord **User Settings** (gear icon) → **Voice & Video**.
+2. Scroll all the way down to the **Audio Subsystem** dropdown.
+3. If it's set to **Standard**, switch it to **Legacy**. If it's on Legacy, switch to Standard.
+4. Discord will prompt you to restart. Click **Okay** to restart.
+5. After Discord restarts, try a voice channel.
+
+![Discord Voice & Video settings scrolled to the bottom showing the Audio Subsystem dropdown set to Legacy](PLACEHOLDER)
+
+> **Common mistake:** People switch to Legacy and leave it there permanently, not realizing that the Legacy subsystem has fewer features — it doesn't support some newer noise suppression and echo cancellation features. If Legacy fixes your connection, that's great, but try switching back to Standard after a few days or after a Discord update. Often, the problem is with a specific version of the Standard subsystem, and a future update will resolve it. If you leave it on Legacy forever, you're missing out on audio quality improvements.
+
+**Fix 3c — Verify your input and output devices are correct**
+
+A misconfigured audio device can sometimes cause Discord's voice connection to fail before it even starts. This happens most often after plugging in a new headset, after a Windows update, or after installing audio software.
+
+1. Open Discord **User Settings** → **Voice & Video**.
+2. Under **Input Device**, click the dropdown. Make sure your actual microphone or headset mic is selected — NOT something like "Default," "Stereo Mix," or a webcam microphone you didn't intend to use.
+3. Under **Output Device**, click the dropdown. Make sure your actual headphones, speakers, or headset is selected — NOT something like "Default" or a monitor speaker.
+4. Speak into your mic. You should see the **Input Sensitivity** bar light up green as you talk. If it stays gray, Discord isn't hearing your microphone at all.
+5. Click **Let's Check** under "Mic Test" to record a short clip and play it back. This confirms your input and output devices are both working.
+6. Try joining a voice channel now.
+
+![Discord Voice & Video settings showing the Input Device and Output Device dropdowns with a specific headset selected in both](PLACEHOLDER)
+
+> **Common mistake:** After plugging in a USB headset or Bluetooth headphones, people assume Discord will automatically switch to the new device. Discord does NOT auto-switch audio devices — if you plugged in a headset, you need to manually select it in Discord's Voice & Video settings. The "Default" option uses whatever Windows or macOS thinks is the default — which is often the wrong device. Always pick your specific device by name from the dropdown. Also, on Windows, some headsets show up as TWO separate devices: "Headphones (Your Headset Name)" for output and "Headset Microphone (Your Headset Name)" for input. Make sure the correct one is selected for each.
+
+## Step 4: Flush DNS, Change DNS Server, and Reset Your IP
+
+The "No Route" error is essentially a networking problem — Discord knows where the voice server IS, but can't find a path to reach it. Your computer's DNS cache (which translates website names into IP addresses) and your local IP address can both become stale or corrupted, causing routing failures. These three network resets are fast, safe, and fix a surprising number of "No Route" cases.
+
+**Fix 4a — Flush your DNS cache**
+
+1. **Windows:** Press the **Windows key**, type `cmd`, right-click **Command Prompt**, and select **Run as administrator**. In the black window, type exactly:
+   ```
+   ipconfig /flushdns
+   ```
+   Press **Enter**. You should see: "Successfully flushed the DNS Resolver Cache."
+
+2. **Mac:** Open **Terminal** (search in Spotlight with Command+Space). Type:
+   ```
+   sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+   ```
+   Press **Enter**. Type your Mac password (you won't see it as you type — that's normal) and press Enter again.
+
+3. After flushing DNS on either system, fully quit Discord from the system tray and reopen it. Test a voice channel.
+
+![A Windows Command Prompt window showing the ipconfig /flushdns command and the success message](PLACEHOLDER)
+
+> **Common mistake:** People flush their DNS but don't restart Discord afterward. Discord keeps its own internal DNS cache separate from your system's. Restarting Discord forces it to build a fresh DNS cache from your newly-flushed system cache. Also, some people run the command in a regular Command Prompt window (not as administrator) — if you don't see "Successfully flushed," you weren't running as admin. Right-click Command Prompt and specifically choose "Run as administrator."
+
+**Fix 4b — Change your DNS server to Google DNS or Cloudflare**
+
+Your internet service provider's DNS servers are often slow, overloaded, or misconfigured. Switching to a fast, reliable public DNS server like Google (8.8.8.8) or Cloudflare (1.1.1.1) can fix Discord voice routing issues.
+
+**Windows:**
+1. Press **Windows key + R**, type `ncpa.cpl`, and press **Enter**. This opens the Network Connections window.
+2. Right-click your active network adapter — it's usually named "Wi-Fi" or "Ethernet" — and select **Properties**.
+3. Scroll down and double-click **Internet Protocol Version 4 (TCP/IPv4)**.
+4. Select **"Use the following DNS server addresses"**.
+5. Enter these values:
+   - **Preferred DNS server:** `8.8.8.8`
+   - **Alternate DNS server:** `8.8.4.4`
+   (Or for Cloudflare: `1.1.1.1` and `1.0.0.1`)
+6. Click **OK**, then **Close**. Restart Discord and test.
+
+**Mac:**
+1. Open **System Settings** → **Network**.
+2. Click your active network (Wi-Fi or Ethernet).
+3. Click **Details** → **DNS**.
+4. Click the **+** button and add `8.8.8.8`, then add `8.8.4.4`.
+5. Remove any existing DNS servers by selecting them and clicking the **–** button (optional, but recommended).
+6. Click **OK** → **Apply**. Restart Discord and test.
+
+![The Windows IPv4 Properties window showing Google's DNS servers entered in the Preferred and Alternate fields](PLACEHOLDER)
+
+> **Common mistake:** People type `8.8.8.8.8` or `8.8.88` or `8888` — DNS addresses are four numbers separated by three dots. Triple-check that you've typed exactly `8.8.8.8` and `8.8.4.4`. A single wrong digit will break your internet for ALL apps, not just Discord. If your internet stops working after this change, you made a typo — go back and re-enter the numbers carefully. Also, write down your original DNS settings before changing them, so you can switch back if needed.
+
+**Fix 4c — Release and renew your IP address (Windows)**
+
+If your computer has an old or conflicting IP address, Discord can fail to route voice traffic correctly.
+
+1. Open **Command Prompt as administrator** (Windows key, type `cmd`, right-click, Run as administrator).
+2. Type the following commands one at a time, pressing **Enter** after each:
+   ```
+   ipconfig /release
+   ```
+   (Your screen will go blank for the IP address — this is normal.)
+   ```
+   ipconfig /renew
+   ```
+   (Your computer will request a fresh IP address from your router. Wait until it completes.)
+   ```
+   ipconfig /flushdns
+   ```
+3. Close Command Prompt, fully quit Discord, reopen Discord, and test a voice channel.
+
+![A Command Prompt window showing the ipconfig /release, ipconfig /renew, and ipconfig /flushdns commands being run in sequence](PLACEHOLDER)
+
+> **Common mistake:** People run `ipconfig /release` and then panic when their internet stops working. Yes, the /release command temporarily disconnects you from the network — that's what it's supposed to do. The /renew command right after it reconnects you with a fresh IP address. If you run /release and then close Command Prompt without running /renew, your internet will stay disconnected until you restart your computer (which automatically runs /renew at boot). Always run all three commands in order: /release, /renew, /flushdns.
+
+## Step 5: Clean Reinstall Discord and Update Network Drivers
+
+If you've tried everything so far and still get "No Route," the problem is likely deeper — a corrupted Discord installation, conflicting leftover files from an old version, or an outdated network driver. The clean reinstall removes every trace of Discord so nothing old can interfere, and updating network drivers ensures your computer can properly handle Discord's voice traffic.
+
+**Fix 5a — Fully uninstall Discord (Windows)**
+
+1. Close Discord completely — quit from the system tray (bottom-right near the clock).
+2. Open **Settings** → **Apps** → **Installed apps** (Windows 11) or **Apps & features** (Windows 10).
+3. Search for **Discord** in the list. Click the three dots (or the entry) and select **Uninstall**.
+4. After Windows finishes uninstalling, you need to manually delete Discord's leftover folders. This is the step most people skip — and it's the most important one.
+5. Press **Windows key + R**, type `%appdata%`, and press **Enter**.
+6. Find the **discord** folder and **delete it entirely**. Don't just open it — right-click and delete the whole folder.
+7. Press **Windows key + R** again, type `%localappdata%`, and press **Enter**.
+8. Find the **Discord** folder here too and **delete it entirely**.
+9. **Restart your computer** — don't skip this. The restart clears any Discord background processes that survived the uninstall.
+10. After restarting, go to [discord.com/download](https://discord.com/download) and download a fresh copy. Install it and try a voice channel.
+
+**Fix 5a — Fully uninstall Discord (Mac)**
+
+1. Quit Discord completely (Command+Q, then check the menu bar to make sure it's gone).
+2. Open **Finder** → **Applications**. Drag the **Discord** app to the **Trash**.
+3. Open **Finder**, click **Go** in the top menu → **Go to Folder** (or press Command+Shift+G).
+4. Type `~/Library/Application Support` and press Enter. Find and delete the **discord** folder.
+5. Go to **Go → Go to Folder** again and type `~/Library/Caches`. Find and delete the **com.hnc.Discord** folder (and any other Discord-related folders).
+6. Go to **Go → Go to Folder** and type `~/Library/Preferences`. Find and delete **com.hnc.Discord.plist** and any other Discord .plist files.
+7. **Empty the Trash**, restart your Mac, and download a fresh copy from [discord.com/download](https://discord.com/download).
+
+**Fix 5a — Reinstall on iPhone/iPad and Android**
+
+1. Press and hold the Discord app icon on your home screen. Tap **Remove App** → **Delete App** (iPhone) or **Uninstall** (Android).
+2. **Restart your phone** — don't skip this. Power off completely, wait 30 seconds, turn back on.
+3. Open the **App Store** (iPhone) or **Google Play Store** (Android), search for Discord, and install.
+4. Sign back in and test a voice channel.
+
+![A Windows File Explorer window showing the %appdata% folder with the discord folder selected, about to be deleted](PLACEHOLDER)
+
+> **Common mistake:** People uninstall Discord through Windows Settings but never delete the leftover folders in `%appdata%` and `%localappdata%`. These leftover folders contain Discord's cache, settings, and stored data — including whatever corrupted file is causing the "No Route" error. When you reinstall Discord, it finds these old folders and uses them again, bringing the problem right back. You MUST manually delete those folders after uninstalling. Also, many people uninstall and immediately reinstall without restarting their computer in between. The restart clears Discord background processes that keep running even after uninstall. Without the restart, you risk reinstalling the same broken state.
+
+**Fix 5b — Update your network adapter driver (Windows)**
+
+An outdated or corrupted network driver can cause Discord to fail at routing voice traffic even when everything else works fine.
+
+1. Right-click the **Start button** (Windows logo) and select **Device Manager**.
+2. Expand the **Network adapters** category by clicking the arrow.
+3. Look for your main network adapter — it's usually named something like "Intel(R) Wi-Fi 6," "Realtek PCIe GbE," "Killer Ethernet," or similar. The one you use (WiFi or Ethernet) is the one to update.
+4. Right-click it and select **Update driver** → **Search automatically for drivers**.
+5. If Windows finds an update, let it install and restart your computer.
+6. If Windows doesn't find anything, visit your computer or motherboard manufacturer's website directly and search for your model's latest network driver. Download and install it manually.
+7. After updating the driver, restart your computer and test Discord.
+
+![Windows Device Manager showing Network adapters expanded with a network adapter right-clicked and the Update driver option visible](PLACEHOLDER)
+
+> **Common mistake:** People update their graphics driver but never think about their network driver. Most people don't even know network drivers exist! But a network driver is what lets your computer talk to the internet — if it's years out of date, it may not properly handle the WebRTC protocol that Discord voice chat depends on. Check the date of your network driver in Device Manager (right-click → Properties → Driver tab → Driver Date). If it's more than 2 years old, updating it is worth trying. Also, some gaming laptops come with "Killer" or "Gaming" network adapters that have their own control panels with aggressive bandwidth management — open that control panel and make sure Discord is set to "High Priority" or disable any bandwidth-limiting features.
+
+> **Tip:** If you use a VPN or network-boosting software (like ExitLag, WTFast, or similar "gaming VPNs"), they install their own virtual network adapters that show up in Device Manager. These virtual adapters can conflict with Discord. Temporarily disable them by right-clicking → **Disable device**, restart Discord, and test. You can re-enable them afterward.
+
+## Still Stuck?
+
+- **Discord works on your phone's mobile data but not on your home WiFi?** This means your home network — specifically your router or ISP — is blocking Discord's voice traffic. Log into your router's admin panel (usually `192.168.0.1` or `192.168.1.1` in your browser — the login info is usually on a sticker on the bottom of the router) and look for settings like "SIP ALG," "UPnP," or "NAT filtering." Try disabling SIP ALG and enabling UPnP. If you can't find these settings, contact your ISP and ask if they block or throttle UDP traffic (that's what Discord voice uses).
+
+- **Does the "No Route" error only happen in a specific server or channel?** The server's voice region might be having problems. Ask the server owner to change the voice region (Step 3, Fix 3a). If you're the server owner: Server Settings → Overview → Server Region → change to a different region. This affects ALL voice channels in that server. If you only have problems in ONE server but others work fine, the server's region is the issue.
+
+- **Getting "ICE Checking" or "Connecting" forever before "No Route"?** This usually means a firewall or NAT issue. Double-check Step 2 (firewall and VPN). Also try: in Discord Voice & Video settings, scroll to the bottom and click **"Reset Voice Settings"** — this resets ALL voice settings to default, which can clear a misconfigured option you didn't realize was set wrong.
+
+- **Using Discord on a school, library, or workplace network?** These networks almost always block UDP traffic and peer-to-peer connections, which Discord voice chat requires. Unfortunately, there's usually nothing you can do on your device — the network itself is blocking Discord. Try using Discord on your phone's mobile data hotspot instead. Some schools specifically block Discord's voice ports (typically UDP 50000–65535), and no amount of device settings will get around that.
+
+- **Did the "No Route" error start right after a Discord update?** If lots of users report the same problem on [Reddit r/discordapp](https://www.reddit.com/r/discordapp/) or the [Discord Testers server](https://discord.gg/discord-testers), it's probably a bug in the update itself. Check [discordstatus.com](https://discordstatus.com) for any ongoing incidents. In these cases, Discord usually releases a fix within a day or two. You can also try installing the **Discord PTB** (Public Test Build) or **Canary** (alpha) version from [discord.com/download](https://discord.com/download) — these versions sometimes have different code that doesn't have the bug.
+
+- **Is your computer more than 6-7 years old?** Older network hardware may not support the latest WebRTC protocols Discord uses. If you've tried every single fix in this guide and still get "No Route" on this computer but not on other devices, your network adapter's hardware may simply be too old. A USB WiFi adapter (around $15-20) or USB Ethernet adapter can give your computer modern networking capabilities without replacing the whole computer.
+
+- **None of the above works — how do I contact Discord?** Discord doesn't offer phone support, but you can submit a ticket at [dis.gd/contact](https://dis.gd/contact). Before submitting, gather this information to make their job faster: your operating system and version, a screenshot of the "No Route" error, a screenshot of your Voice & Video settings, and a list of everything you've already tried from this guide (so they don't suggest things you've already done). You can also open Discord's developer console (Ctrl+Shift+I on Windows, Opt+Cmd+I on Mac), go to the **Console** tab, and screenshot any red error messages — these help Discord's support team pinpoint the exact problem.
