@@ -1,0 +1,251 @@
+---
+title: "How to Fix a Webcam Not Working on Windows and Mac"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You open Zoom or Teams for an important call, and your camera shows nothing — just a black screen, a "No camera detected" message, or a crossed-out camera icon. Maybe it worked yesterday and now it doesn't. Maybe your laptop's built-in camera has never worked right since a recent update.
+
+The good news: webcam problems are almost never hardware failures. Most of the time, it's a settings switch that got flipped, a privacy lock, or a driver that needs a refresh. This guide walks you through the fixes that solve the problem for the vast majority of people — starting with the fastest, easiest checks first.
+
+**What you'll need:**
+- Your computer (laptop with built-in camera, or desktop with external USB webcam)
+- If you're using an external webcam: the webcam and its USB cable
+- About 15 minutes
+
+> **Work through the steps in order.** Start with Step 1 — the physical camera switch is the #1 cause and takes 10 seconds to check. You probably won't need all five steps.
+
+![A person looking frustrated at a laptop screen showing a black camera preview window](PLACEHOLDER)
+
+## Step 1: Check the Physical Camera Switch and Privacy Shutter
+
+Many laptops have a hardware switch or shutter that physically disables the camera. If this is engaged, NO software — not Zoom, not the Camera app, not your browser — can see the camera. It's completely cut off at the hardware level.
+
+**Fix 1 — Look for a physical camera switch on your laptop**
+
+1. Check the **top edge** of your screen (above the camera lens). Is there a small sliding tab? It may be labeled with a camera icon or a lock symbol.
+2. Check the **sides** of your laptop for a physical switch — some Lenovo, HP, and Dell laptops have a sliding switch on the right or left edge.
+3. Check your keyboard's **top row of function keys** (F1–F12). Look for a key with a **camera icon** or a **camera with a line through it**. You may need to press it along with the **Fn key** (bottom-left of the keyboard) to toggle the camera on or off.
+4. If you see an orange or red dot next to the camera lens, or a small plastic cover has slid over it — slide it back to reveal the lens.
+
+**Fix 2 — Check the privacy shutter**
+
+Some laptops (especially recent HP, Dell, and Lenovo models) have a tiny sliding privacy shutter built directly into the bezel over the camera lens. It's so small you can easily miss it:
+
+1. Look closely at your laptop's camera lens. Is there a thin plastic slide covering it?
+2. If yes, gently slide it to the side to uncover the camera lens.
+3. You should see a green reflection from the lens when light hits it — if it's totally flat black, the shutter is still closed.
+
+**Fix 3 — For external USB webcams: check the connection**
+
+1. Unplug the webcam's USB cable from your computer and plug it back in firmly.
+2. Try a **different USB port** — preferably one on the back of the computer (front ports can be underpowered).
+3. If your webcam has a privacy cover built into the webcam itself (a physical lens cap or swivel cover), make sure it's open.
+4. If possible, test the webcam on a different computer. If it doesn't work there either, the webcam itself may be broken.
+
+> **Common mistake:** People spend 20 minutes digging through settings and uninstalling drivers, only to realize a physical privacy shutter was covering the camera lens the whole time. Always check the hardware shutter FIRST — it takes 10 seconds and is the single most common cause.
+
+![A close-up of a laptop screen bezel with a small sliding privacy shutter over the camera lens](PLACEHOLDER)
+
+## Step 2: Give Apps Permission to Use Your Camera
+
+Both Windows and Mac have privacy settings that can block your camera from being used by any app. If these permissions got turned off — often after a system update — every app will show a black screen or say "No camera found," even though the camera itself is fine. This is the #1 software cause of camera problems.
+
+### On Windows 11
+
+1. Click **Start** (Windows logo, bottom-left) and select **Settings** (the gear icon — or press **Windows key + I**).
+2. Click **Privacy & security** from the left sidebar.
+3. Scroll down and click **Camera** under "App permissions."
+4. At the top, make sure **Camera access** is turned **On**. If it's off and greyed out, you're not signed in as an administrator — you'll need an admin to turn it on.
+5. Below that, make sure **Let apps access your camera** is turned **On**.
+6. Scroll down to **Let desktop apps access your camera** and make sure it's turned **On**. This setting controls "classic" desktop apps like Zoom, Teams, Google Chrome, Firefox, and OBS — the apps most people actually use for video calls. This is the one most people miss.
+7. Under **Choose which Microsoft Store apps can access your camera**, turn on the Camera app itself and any other Store apps you use.
+
+### On Windows 10
+
+1. Click **Start → Settings → Privacy**.
+2. In the left sidebar, click **Camera**.
+3. Under **Allow access to the camera on this device**, click the **Change** button and turn on **Camera access for this device**.
+4. Turn on **Allow apps to access your camera**.
+5. Under **Choose which Microsoft Store apps can access your camera**, turn on the Camera app and any apps you want to use.
+6. Scroll down and make sure **Allow desktop apps to access your camera** is turned **On**.
+
+> **Important:** Some recent Windows updates (especially Windows 11 24H2 updates in 2025–2026) have been known to silently reset camera permissions. If your camera worked fine before an update and stopped right after, check these privacy settings first — they're often the culprit.
+
+### On Mac (macOS)
+
+1. Click the **Apple menu ()** in the top-left corner and select **System Settings** (or **System Preferences** on older macOS).
+2. Click **Privacy & Security** (or just **Privacy** on older macOS).
+3. Click **Camera** in the list on the left.
+4. You'll see a list of apps that have requested camera access. Make sure the toggle is **ON** for any app you want to use your camera with — Zoom, Google Chrome, Safari, FaceTime, Microsoft Teams, etc.
+5. If an app you want isn't listed, open that app and try to use the camera — macOS will automatically prompt you to grant permission. Click **Allow**.
+
+**Also check Screen Time settings (macOS Catalina and later):**
+
+1. In **System Settings**, click **Screen Time**.
+2. Click **Content & Privacy**, then click **App Restrictions** (or **Apps** on older macOS).
+3. Make sure the checkbox next to **Camera** is enabled (checked). If it's unchecked, Screen Time is blocking the camera system-wide.
+4. If you use **App Limits** in Screen Time, make sure the app you're trying to use isn't being time-restricted — an app that's hit its time limit loses camera access.
+
+> **Common mistake:** People check the app-specific toggles but miss the master switch — "Camera access" at the top of the Windows settings page or the Screen Time camera restriction on Mac. If the master switch is off, turning on individual apps does nothing. Always check the master switch first, then the individual apps.
+
+![The Windows 11 camera privacy settings page showing the Camera access toggle and app permission list](PLACEHOLDER)
+
+## Step 3: Test Your Camera in a Different App
+
+If your camera works in one app but not another, the problem is with the specific app — not your camera or your computer. This step narrows down where the issue lives.
+
+**Fix 1 — Open the built-in Camera app**
+
+1. **Windows:** Click the **Start** button, type **Camera**, and open the Camera app. If you see a live preview of yourself, your camera hardware is working perfectly — skip to Step 5 for app-specific fixes.
+2. **Mac:** Open **Photo Booth** (find it in your Applications folder or search with Spotlight — press **Cmd+Space** and type "Photo Booth"). If you see a live preview, your camera is working — skip to Step 5.
+
+**Fix 2 — If the Camera app shows a black screen or an error**
+
+1. On Windows, the Camera app might show: "No cameras attached," "We can't find your camera," "Camera is used by another app," or just a black screen. Note the exact message — it tells you what's wrong.
+2. On Mac, Photo Booth might show: "There is no connected camera" or a black window. Note this.
+
+> **"Camera is used by another app" error on Windows:** This means another program has grabbed your camera and won't let go. Close ALL apps that might use the camera — Zoom, Teams, Skype, Discord, Google Meet in any browser tab, OBS Studio, Snap Camera, and any video recording software. After closing everything, open the Camera app again. If it works now, one of those apps was holding the camera hostage. Reopen them one at a time to find the culprit.
+
+**Fix 3 — If the Camera app works but Zoom/Teams/your browser doesn't**
+
+The problem is inside that specific app. Try these quick fixes:
+
+- **Zoom:** Open Zoom settings → **Video** — is the correct camera selected in the dropdown? If it says "No camera" or a different device, click the dropdown and select your built-in or USB webcam.
+- **Google Chrome / Edge / Firefox:** Type `chrome://settings/content/camera` into the address bar (for Edge, use `edge://settings/content/camera`). Make sure your camera is not blocked and the correct camera is selected. Delete any entries for sites you've accidentally blocked.
+- **Microsoft Teams:** Click the **three dots (⋯)** at the top → **Settings → Devices** — is the correct camera selected under "Camera"?
+- **Any browser:** Check if there's a camera icon in the address bar that you need to click and grant permission. Browsers ask for permission the first time you use your camera on a site — if you accidentally clicked "Block," the site can never access your camera again until you change it in browser settings.
+
+![The Windows Camera app showing a live preview feed from the webcam](PLACEHOLDER)
+
+> **Common mistake:** People test their camera in one app, see it doesn't work, and assume the camera is broken — without testing in a DIFFERENT app. This leads to unnecessary driver reinstalls and settings changes when the fix might just be a permission inside the one app. Always test in at least TWO different apps before blaming the hardware.
+
+## Step 4: Update or Reinstall Your Camera Driver (Windows) / Restart Your Mac (macOS)
+
+If you've ruled out physical switches (Step 1), privacy settings (Step 2), and app-specific problems (Step 3), the next layer is the camera driver on Windows or the hardware controller on Mac.
+
+### Windows: Check and Fix Camera Drivers
+
+**Fix 1 — Look for your camera in Device Manager**
+
+1. Right-click the **Start button** (Windows logo) and select **Device Manager**.
+2. Look for a category called **Cameras**, **Imaging devices**, or **Sound, video and game controllers**. Click the arrow to expand it.
+3. If you see your camera listed (it might be called "Integrated Camera," "USB Camera," "HD Webcam," or your laptop brand's camera name), right-click it and see the next fix.
+4. If you do NOT see any camera listed at all, click **Action** in the top menu bar and select **Scan for hardware changes**. Windows will re-scan and should detect your camera.
+5. If it still doesn't appear after scanning, look under a category called **Other devices** or **Unknown devices** — your camera might show up there with a yellow warning triangle, which means Windows knows something is connected but doesn't have the right driver.
+
+**Fix 2 — Update the camera driver**
+
+1. Right-click your camera in Device Manager and select **Update driver**.
+2. Choose **Search automatically for drivers**. Windows will look for a newer driver online.
+3. If Windows finds one, let it install, then restart your computer and test the camera.
+4. If Windows says "The best drivers for your device are already installed," don't stop there — try Fix 3.
+
+**Fix 3 — Uninstall the camera driver and let Windows reinstall it**
+
+This is often more effective than updating because it clears out any corrupted driver settings:
+
+1. Right-click your camera in Device Manager and select **Uninstall device**.
+2. In the confirmation popup, check the box that says **"Attempt to remove the driver for this device"** (on Windows 10, it says "Delete the driver software for this device"). Then click **Uninstall**.
+3. After it's uninstalled, click **Action** in the top menu bar and select **Scan for hardware changes**.
+4. Windows will detect the camera again and automatically reinstall a fresh copy of the driver.
+5. **Restart your computer** and test the camera in the Camera app.
+
+**Fix 4 — Roll back the driver if the problem started after a Windows update**
+
+If your camera worked perfectly until a recent Windows update:
+
+1. Right-click your camera in Device Manager and select **Properties**.
+2. Click the **Driver** tab.
+3. Click the **Roll Back Driver** button. If the button is greyed out, there's no previous driver version to go back to — skip to Fix 3 (uninstall and reinstall) instead.
+4. Follow the prompts, restart, and test.
+
+> **Common mistake:** People see their camera in Device Manager with no warning symbol and assume the driver is fine. A driver can be installed correctly but still be buggy or the wrong version. If your camera isn't working and you've done Steps 1–3, always try the uninstall-and-reinstall driver trick — it fixes a surprising number of "mystery" camera problems that have no other explanation.
+
+![Windows Device Manager showing the Cameras category expanded with the integrated camera selected](PLACEHOLDER)
+
+### Mac: Restart Your Mac or Reset the System Controller
+
+On Macs, there are no separate camera drivers to install or update — the camera is managed by macOS itself. So the fixes are different.
+
+**For Apple Silicon Macs (M1, M2, M3, M4 — 2020 and later):**
+1. Click the **Apple menu ()** → **Restart**. A simple full restart often clears whatever background process was hogging the camera.
+2. If restarting doesn't work, [update macOS](https://support.apple.com/en-us/108382): go to **System Settings → General → Software Update** and install any available updates. Apple bundles camera fixes into macOS updates.
+3. After updating, test with Photo Booth.
+
+**For Intel-based Macs (2019 and earlier): Reset the SMC**
+
+The System Management Controller (SMC) handles low-level hardware including the camera. If it gets confused, the camera may stop being recognized:
+
+1. Shut down your Mac completely (Apple menu → **Shut Down**).
+2. For **MacBooks with the T2 chip** (2018–2020 models): press and hold the **Control + Option + Shift** keys on the left side of the keyboard for 7 seconds. Then, while still holding those keys, press and hold the **power button (Touch ID button)** for another 7 seconds. Release all keys and wait a few seconds, then press the power button to turn your Mac on.
+3. For **older Intel MacBooks (pre-2018):** press and hold **Shift + Control + Option** on the left side and the **power button** simultaneously for 10 seconds. Release and turn on normally.
+4. For **Intel iMac and Mac Mini desktops:** simply unplug the power cord, wait 15 seconds, plug it back in, wait 5 seconds, then turn it on.
+5. Test the camera in Photo Booth after restarting.
+
+> **What SMC reset does:** Think of the SMC like a traffic cop for your Mac's hardware — it manages power, lights, fans, and the camera controller. If it gets into a bad state, the camera stops being recognized even though nothing is physically wrong. Resetting the SMC is like sending the traffic cop on a coffee break and getting a fresh one. On Apple Silicon Macs, the SMC equivalent is automatically reset by a normal shutdown and restart — no special key combination needed.
+
+> **Common mistake:** Mac users skip the restart because "I never restart my Mac — I just close the lid." If you haven't fully restarted your Mac in weeks, background processes that manage the camera can pile up glitches. A full restart (Apple menu → Restart, not just closing and opening the lid) fixes more camera problems on Mac than any other single step.
+
+## Step 5: Check Antivirus Software and Run the Troubleshooter
+
+Sometimes the problem comes from security software blocking your camera, or from Windows itself needing to run its built-in diagnostic tool. This is the last software layer before we conclude it might be a hardware problem.
+
+**Fix 1 — Temporarily check if your antivirus is blocking the camera**
+
+Some antivirus programs — especially third-party ones like Norton, McAfee, Bitdefender, Kaspersky, and AVG — include "webcam protection" or "privacy protection" features that block your camera from being used by any app. These features are well-intentioned (they prevent malware from secretly spying on you), but they often block legitimate apps too.
+
+1. Open your antivirus software and look for a **Webcam Protection**, **Privacy**, or **Camera Protection** setting.
+2. Temporarily disable this feature, then test your camera in the Camera app (Windows) or Photo Booth (Mac).
+3. If your camera works after disabling the antivirus camera protection, you've found the culprit. Most antivirus programs let you add exceptions (called "trusted apps" or "allowed apps") — add Zoom, Teams, and your browser to the exception list so your camera works without fully disabling protection.
+4. **Re-enable the webcam protection** after testing — don't leave it off permanently.
+
+> **Warning:** Only temporarily disable antivirus camera protection for testing. Do not fully disable your entire antivirus — just the camera-specific feature. Re-enable it after testing, and use the exception list for your trusted apps instead.
+
+**Fix 2 — Run the Windows Camera Troubleshooter**
+
+Windows has a built-in diagnostic tool specifically for camera problems:
+
+1. Open **Settings** (press **Windows key + I**).
+2. **Windows 11:** Click **System** → **Troubleshoot** → **Other troubleshooters**. Find **Camera** in the list and click the **Run** button next to it.
+3. **Windows 10:** Click **Update & Security** → **Troubleshoot** → **Additional troubleshooters**. Find **Camera** and click **Run the troubleshooter**.
+4. Follow the on-screen prompts. The troubleshooter checks for driver issues, privacy settings, and Windows service problems — it may find and fix something you missed.
+5. Restart and test your camera after it finishes.
+
+**Fix 3 — Install Windows optional updates (especially driver updates)**
+
+Windows often hides camera driver updates inside "optional updates":
+
+1. Open **Settings → Windows Update** (Windows 11) or **Settings → Update & Security** (Windows 10).
+2. Click **Check for updates**.
+3. After it checks, look for a link that says **"Optional updates"** or **"View optional updates"** (it may appear below the main update list).
+4. Click it and look under **Driver updates** for anything related to your camera — it might say "Camera," "Imaging device," or your laptop manufacturer's name plus "Camera driver."
+5. Check the box next to any camera-related updates and click **Download & install**.
+6. Restart your computer when prompted.
+
+> **Common mistake:** People run Windows Update, see "You're up to date," and stop — without clicking into "Optional updates." Critical camera driver updates are often listed as optional and won't install unless you specifically select them. Always check Optional updates after a main Windows Update check.
+
+![The Windows 11 Optional Updates screen showing camera driver updates available](PLACEHOLDER)
+
+## Still Stuck?
+
+- **Camera shows a green light but the screen is black?** This usually means the camera hardware is powered on (the light is proof of that), but something is intercepting the video feed. Check that no other app is using the camera (close everything — Zoom, Teams, browsers, even apps running in the background tray). On Windows, also check your antivirus webcam protection settings.
+
+- **Camera shows a blurry or distorted image?** This is a different problem from "not working at all." Try cleaning the camera lens with a soft microfiber cloth — smudges and dust cause most blurry-camera complaints. If it's still blurry, update your camera driver (Windows) or check for macOS updates (Mac). Some older external webcams also have a manual focus ring around the lens that you can rotate to sharpen the image.
+
+- **Using an external USB webcam and it's still not detected after trying all steps?** Try these additional checks:
+  1. Test the webcam on a **different computer** entirely. If it works there, the problem is your computer — not the webcam.
+  2. Try a **different USB cable** if your webcam uses a detachable cable. USB cables fail more often than webcams do.
+  3. Plug the webcam directly into your computer — not through a USB hub. Some USB hubs don't provide enough power for webcams.
+
+- **"We can't find your camera" error with error code 0xA00F4244 on Windows?** This specific error usually means the camera driver is missing or the camera is disabled in Device Manager. Go to Device Manager → **Cameras** → right-click your camera → **Enable device** (if it's disabled). If there's no camera listed at all, try Step 4 (scan for hardware changes).
+
+- **Camera worked before a specific Windows update and you know the date?** You can uninstall the problematic update: go to **Settings → Windows Update → Update history → Uninstall updates**. Look for updates installed around the date your camera stopped working, select the most likely one, and click **Uninstall**. Restart and test. Windows may try to reinstall the update later — you can [pause updates temporarily](https://support.microsoft.com/en-us/windows/pause-updates-in-windows-2998663a-3f2b-bb6e-bcc2-e1b63bf654ea) while you wait for a fix from Microsoft.
+
+- **Is your built-in camera still not working after every step?** It's possible the camera hardware has failed — but this is genuinely rare. Before you pay for a repair, try one more thing: create a new user account on your computer and test the camera there. If the camera works in the new account, the problem is a corrupted user setting in your main account — not the hardware. You can [migrate your files](https://support.microsoft.com/en-us/windows/create-a-local-user-or-administrator-account-in-windows-20de74e0-ac7f-3502-a866-32915af2a34d) to the new account without losing anything.
