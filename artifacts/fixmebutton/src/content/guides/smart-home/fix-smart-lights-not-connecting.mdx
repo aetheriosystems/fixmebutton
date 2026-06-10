@@ -1,0 +1,309 @@
+---
+title: "How to Fix Smart Lights Not Connecting or Not Responding"
+category: smart-home
+devices: ["Philips Hue", "TP-Link Kasa", "TP-Link Tapo", "LIFX", "Wyze Bulb", "Feit Electric", "Sengled", "Wiz", "Govee", "Generic Tuya / Smart Life bulbs", "Any WiFi smart bulb"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 6
+---
+
+## Before You Start
+
+You screwed in a new smart bulb, opened the app, and... nothing. The app can't find it. Or maybe it was working fine for months and now it won't respond to the app, Alexa, or Google Assistant — it's stuck on some random color, won't turn off, or shows as "unreachable" or "offline."
+
+Smart lights not connecting is the single most common smart home problem. The good news: the bulb itself is almost never broken. The most common cause is a WiFi issue — specifically, your phone and the bulb being on different WiFi bands. This guide shows you exactly how to fix it, covering all the major smart bulb brands: Philips Hue (with and without a Bridge), TP-Link Kasa/Tapo, LIFX, Wyze, Feit, Sengled, Wiz, Govee, and generic Tuya/Smart Life bulbs.
+
+**What you'll need:**
+- Your smartphone with the bulb's app installed
+- Access to your WiFi router (name and password)
+- The physical light switch that controls the bulb
+- About 15 minutes
+
+> **Work through the steps in order.** Step 2 alone fixes the problem for about half of all people. If you recently changed your WiFi router or password, jump to Step 3 first.
+
+![A person looking at a smart bulb in a lamp while holding their phone, looking frustrated that the bulb won't connect](PLACEHOLDER)
+
+## Step 1: Do the Quick Checks First
+
+Before diving into WiFi settings, check these basics. People skip them all the time and spend an hour troubleshooting a bulb that was physically turned off.
+
+### Fix 1 — Is the physical light switch turned ON?
+
+This sounds ridiculously obvious, but it's the #1 reason smart bulbs "stop working." Someone flipped the wall switch off — and a smart bulb with no power is just a dead piece of glass.
+
+1. Go to the room where the bulb is installed.
+2. Check the wall switch. Is it in the ON position?
+3. If the switch is OFF, the bulb has no power at all. Flip it ON and wait 10-15 seconds for the bulb to reconnect to WiFi.
+4. After flipping it ON, watch the bulb. Does it light up at all? If it lights up (even dimly, or in a weird color), it has power — the problem is connectivity, not electricity.
+
+> **Tip:** If you live with other people, they will flip the switch off. It's a fact of smart home life. Consider getting a switch guard (a small plastic cover that keeps the switch in the ON position) or replacing the switch with a smart switch that can't be accidentally turned off. Some people also put a piece of tape over the switch as a reminder.
+
+### Fix 2 — Is the bulb getting power at all?
+
+1. Double-check that the bulb is screwed in all the way. Unscrew it and screw it back in firmly.
+2. Try the bulb in a different lamp or socket — ideally one you know works. If the bulb doesn't light up in a working socket, the bulb itself may be dead.
+3. Try a regular (non-smart) bulb in the same socket. If the regular bulb lights up but the smart bulb doesn't, the smart bulb may have failed.
+
+### Fix 3 — If you have a hub or bridge, check its lights
+
+If your smart lights use a hub (Philips Hue Bridge, Sengled hub, Zigbee coordinator, etc.):
+
+1. Look at the hub itself. It should have at least one solid (not blinking) light indicating it's powered and connected.
+2. **Philips Hue Bridge:** Three solid blue lights = everything is good. If the third light (internet) is off, the Bridge lost its connection to your router. Check the Ethernet cable between the Bridge and your router — unplug it and plug it back in firmly at both ends.
+3. Restart the hub: unplug its power cable, wait 30 seconds, and plug it back in. Wait until all the lights stabilize (1-2 minutes), then try controlling your lights again.
+
+![A Philips Hue Bridge with three solid blue lights, indicating it's working properly](PLACEHOLDER)
+
+### Fix 4 — Does the bulb's own app see it?
+
+1. Open the bulb's official app (not Alexa, Google Home, or Apple Home).
+2. Look at the device list. Does the bulb appear at all?
+3. If it appears but says "Unreachable," "Offline," or "No Response," the bulb is in the app's memory but can't currently be reached. Continue to Step 2.
+4. If it doesn't appear in the app at all and you're setting it up for the first time, the bulb may need to be in pairing mode. Most bulbs enter pairing mode automatically the first time they're powered on — they'll blink rapidly or pulse. If the bulb is just glowing steadily, try turning it off and on (using the physical switch) a few times until it blinks.
+
+> **Common mistake:** People check the Alexa or Google Home app instead of the bulb's own app. Third-party apps (Alexa, Google Home, Apple Home) only show what the bulb's app tells them. If the bulb is offline in its own app, it will show offline everywhere. Always troubleshoot from the bulb's official app first — fixing it there usually fixes it everywhere.
+
+## Step 2: Make Sure Your Phone Is on the 2.4 GHz WiFi Band (The #1 Fix)
+
+This is the single most common reason smart bulbs won't connect — and it catches almost everyone the first time. Nearly all smart bulbs **only work on 2.4 GHz WiFi. They cannot see or connect to 5 GHz networks.**
+
+Modern routers broadcast both 2.4 GHz and 5 GHz. If your phone is connected to the 5 GHz band during setup, the app can't pass the 2.4 GHz network credentials to the bulb — and the bulb can't join.
+
+### How to check and fix this
+
+**Step A: Check what WiFi band your phone is currently on.**
+
+- **iPhone:** Go to **Settings → Wi-Fi** and tap the blue **(i)** next to your network name. Look for the line that says "Band" (iOS 18+). It will say either "2.4 GHz" or "5 GHz."
+- **Android:** Go to **Settings → Connections → Wi-Fi**, tap the gear icon next to your network name, and look for "Frequency" or "Band." It will show "2.4 GHz" or "5 GHz."
+- If your phone doesn't show the band: check your router. Many routers name the two bands differently — for example, "MyNetwork" (may be 2.4 GHz or combined) and "MyNetwork-5G" (definitely 5 GHz). If you see two network names and one has "5G" or "5" in it, connect to the one WITHOUT the "5."
+
+**Step B: If your phone is on 5 GHz, switch to 2.4 GHz.**
+
+1. Go to your phone's WiFi settings.
+2. Look for a network name with **2.4**, **24G**, or **24** in the name. Or, if your router gives the bands different names, connect to the one WITHOUT "5" in the name.
+3. Once connected to the 2.4 GHz network, try setting up the bulb again in the app.
+
+**Step C: What if your router uses one combined name for both bands?**
+
+Many modern routers and mesh systems (Eero, Google Nest WiFi, Netgear Orbi, TP-Link Deco) combine both bands under a single network name. The router decides which band to put each device on. This is convenient — except when it puts your phone on 5 GHz during smart bulb setup.
+
+You have three options:
+
+1. **Temporarily walk farther away from your router.** 5 GHz has shorter range. If you take your phone 40-50 feet away from the router (out of 5 GHz range), it will automatically drop to 2.4 GHz. Once your phone is on 2.4 GHz, start the bulb setup. (Yes, this is silly — but it works.)
+
+2. **Create a temporary guest network on 2.4 GHz only.** Log into your router's admin page (usually at 192.168.0.1 or 192.168.1.1 — the address is printed on a sticker on the router). Find the Guest Network settings and create a guest network. Set the band to "2.4 GHz Only." Connect your phone to that guest network, set up the bulb, then switch your phone back to your main network. The bulb will stay connected to whatever network you set it up on.
+
+3. **Temporarily turn off 5 GHz on your router.** In your router's admin settings, under Wireless or WiFi, you can usually temporarily disable the 5 GHz band. Turn it off, set up the bulb (your phone will be forced to 2.4 GHz), then turn 5 GHz back on.
+
+> **Common mistake:** People assume that because their phone is on WiFi and the app "sees" the internet, the bulb should connect too. But the app connects to the bulb using a local WiFi communication method — and if your phone is on 5 GHz while the bulb only speaks 2.4 GHz, they're literally on different radio frequencies and can't hear each other. It's like trying to tune into an FM radio station with an AM radio.
+
+> **Tip for the future:** When shopping for smart bulbs, look for ones that support **Bluetooth setup** (Philips Hue with Bluetooth, newer LIFX bulbs, some Govee models) or **Matter/Thread** compatibility. These don't depend on the 2.4 GHz WiFi band for initial setup and avoid this headache entirely.
+
+![A smartphone WiFi settings screen highlighting the difference between a 2.4 GHz network and a 5 GHz network](PLACEHOLDER)
+
+## Step 3: Power-Cycle and Factory Reset the Bulb
+
+If the bulb was previously set up but stopped responding — or if it's stuck in a state where the app can't find it — a factory reset wipes the bulb's memory and lets you start fresh. This is also the required step if you changed your WiFi password or got a new router.
+
+### Universal power-cycle reset (works on most bulbs)
+
+Most smart bulbs use the same basic reset method: turn the power on and off in a specific pattern.
+
+1. Turn the bulb ON using the physical wall switch or lamp switch.
+2. Wait 2-3 seconds.
+3. Turn the bulb OFF.
+4. Wait 2-3 seconds.
+5. Repeat this ON-OFF cycle **3 to 5 times** (check your bulb's manual for the exact number — most use 3, some use 5).
+6. Leave the bulb ON after the last cycle.
+7. The bulb should flash, blink, or pulse — this confirms it has been reset and is in pairing mode.
+8. Now open the app and set up the bulb as if it were brand new.
+
+**Important timing:** Turn the switch on and off rhythmically — about 2-3 seconds on, 2-3 seconds off. Going too fast (flicking rapidly) or too slow (waiting 10 seconds between) won't trigger the reset on most bulbs.
+
+### Brand-specific reset methods
+
+**Philips Hue (with Bridge):**
+1. Open the Philips Hue app → **Settings** → **Lights**.
+2. Tap the light you want to reset.
+3. Tap **Delete** and follow the on-screen instructions.
+4. To re-add: **Settings** → **Lights** → tap the **+** button → **Search**.
+5. If the app can't find the bulb, use the serial number method: **Settings** → **Lights** → **+** → **Use serial number** → enter the 6-character code printed on the bulb itself.
+
+**Philips Hue (Bluetooth, no Bridge):**
+1. In the Hue Bluetooth app: **Settings** → **Lights** → **Add lights**.
+2. Follow the on-screen instructions to add the bulb.
+3. Once added, go to **Settings** → **Lights** → tap the bulb → **Reset**.
+
+**TP-Link Kasa / Tapo:**
+1. Turn the bulb ON.
+2. Turn it OFF for 2 seconds, ON for 2 seconds. Repeat this 5 times.
+3. After the 5th ON, the bulb will flash three times, indicating the reset is complete.
+4. Open the Kasa or Tapo app and add the bulb as a new device.
+
+**LIFX:**
+1. Turn the bulb OFF and ON 5 times in a row (about 1 second per switch).
+2. The bulb will cycle through red, green, and blue, then settle on white — this means it's reset.
+3. Open the LIFX app and tap the **+** button to add a new light.
+
+**Wyze Bulb:**
+1. Turn the bulb OFF and ON 3 times (wait about 1 second between each switch).
+2. The bulb will pulse slowly, indicating pairing mode.
+3. Open the Wyze app → tap the **+** button → **Add Device** → **Wyze Bulb** → follow instructions.
+
+**Feit Electric:**
+1. Turn the bulb ON → OFF → ON → OFF → ON in quick succession.
+2. The bulb will flash or pulse to confirm the reset.
+
+**Sengled (WiFi bulbs):**
+1. Turn the bulb OFF and ON 10 times in a row (this is more than most brands — follow the exact count).
+2. After the 10th ON, the bulb will blink three times.
+
+**Wiz:**
+1. Turn the bulb OFF for 2 seconds, then ON for 2 seconds. Repeat this 3-5 times.
+2. When the bulb pulses blue, it's in pairing mode.
+3. Open the Wiz app and tap **Add new light**.
+
+> **Common mistake:** People reset the bulb but forget they also need to remove it from the app before adding it again. If the bulb still shows up in the app's device list after a reset, delete it from the app first (**Settings** → find the bulb → **Delete** or **Remove device**), then add it as new. Otherwise, the app gets confused and may try to reconnect to the bulb's old identity.
+
+![A hand turning a lamp switch on and off repeatedly to reset a smart bulb](PLACEHOLDER)
+
+## Step 4: Delete the Bulb from the App and Re-Add It
+
+If the bulb shows up in the app but won't respond, the pairing data between your phone and the bulb may be corrupted. Deleting and re-adding forces a clean connection.
+
+1. Open the bulb's official app (not Alexa or Google Home).
+2. Find the bulb in the device list.
+3. Look for a **Delete**, **Remove**, or **Reset** option — it's usually under the bulb's settings (tap the bulb's name, then look for a gear icon, three dots, or an edit button).
+4. Confirm you want to delete/remove the device.
+5. Close the app completely (swipe it away from your recent apps list).
+6. Reopen the app.
+7. Follow the app's instructions to add a new device. Most apps have a **+** button or an **Add Device** button on the main screen.
+8. Put the bulb in pairing mode (see Step 3 above for your specific brand).
+9. The app should detect the bulb and walk you through setup.
+
+**Crucial: Also remove the bulb from Alexa, Google Home, or Apple Home if it's in there.** If you only delete it from the bulb's app, the voice assistant may still hold onto the old pairing and cause conflicts. After removing it everywhere and re-adding it in the bulb's app, re-link it to your voice assistant.
+
+**iPhone users — check Apple Home too:** If you added the bulb to Apple Home (HomeKit), deleting it from the bulb's app might not remove it from the Home app. Open the **Home app**, find the bulb, long-press it, scroll down, and tap **Remove Accessory**. Then re-add it through the bulb's app first, and HomeKit will usually detect it automatically.
+
+> **Common mistake:** People tap the bulb's icon in the app repeatedly, hoping it'll reconnect. If the pairing data is corrupted, no amount of tapping will fix it. Delete and re-add. It takes 2 minutes and virtually guarantees a clean start.
+
+![A smartphone screen showing the device list in a smart home app with a "Delete" or "Remove" option highlighted](PLACEHOLDER)
+
+## Step 5: Check Your Router Settings
+
+Sometimes the problem isn't the bulb — it's your router refusing to let the bulb connect. Smart bulbs are low-power devices, and some router security settings accidentally block them.
+
+### Fix 1 — Check if your router has reached its device limit
+
+Some routers (especially ISP-provided ones) have a maximum number of devices they'll allow to connect — often 25, 32, or 50 devices. If you've added a lot of smart home gear, you may have hit the cap.
+
+1. Log into your router's admin page (the address is printed on a sticker on the router — usually 192.168.0.1 or 192.168.1.1).
+2. Look for a **Device List**, **Connected Devices**, or **DHCP Client List**.
+3. Count how many devices are connected. If you're near or at the limit, the router may be refusing new connections.
+4. If needed, remove old devices you no longer use, or upgrade to a router that supports more simultaneous connections.
+
+### Fix 2 — Temporarily disable AP/client isolation
+
+**AP Isolation** (also called **Client Isolation** or **Wireless Isolation**) is a router security setting that prevents devices on the same WiFi network from talking to each other. This is great for public WiFi — but it blocks your phone from communicating with the smart bulb during setup.
+
+1. Log into your router's admin page.
+2. Look under **Wireless**, **WiFi Settings**, or **Advanced Wireless**.
+3. Find a setting called **AP Isolation**, **Client Isolation**, **Wireless Isolation**, or **Enable Wireless Isolation**.
+4. If it's turned ON, turn it OFF.
+5. Save your settings and try the bulb setup again.
+6. After the bulb is set up, you can turn AP Isolation back ON — once connected to the internet, the bulb talks through the cloud, not directly to your phone.
+
+### Fix 3 — Disable WPA3 or use WPA2-only mode
+
+Some smart bulbs (especially older or budget models) don't support the latest WiFi security standard, WPA3. If your router is set to WPA3-only mode, the bulb won't be able to connect.
+
+1. Log into your router's admin page.
+2. Look under **Wireless Security**, **WiFi Security**, or **Encryption**.
+3. Check the security mode. If it's set to **WPA3-Personal** only, change it to **WPA2-Personal** or **WPA2/WPA3 Mixed** (also called "Transition Mode").
+4. Save your settings. Your router may restart briefly.
+5. Try the bulb setup again.
+
+> **Note:** WPA2 is still secure for home use. WPA2/WPA3 Mixed mode lets newer devices use WPA3 while older devices (like smart bulbs) fall back to WPA2. This is the recommended setting for smart homes.
+
+### Fix 4 — Check if MAC address filtering is blocking the bulb
+
+MAC address filtering is a security feature that only allows specific devices (identified by their MAC address) to connect to your WiFi. If it's enabled, any new device — including your smart bulb — will be blocked.
+
+1. In your router's admin page, look for **MAC Filtering**, **Access Control**, or **MAC Address Filter** (often under Wireless or Security).
+2. If it's enabled, either:
+   - Turn it OFF temporarily while you set up the bulb (then turn it back on and add the bulb's MAC address to the allowed list), OR
+   - Find the bulb's MAC address (it's printed on the bulb itself or on the box) and add it to the allowed list.
+
+> **Common mistake:** People change router security settings, get the bulb working, but forget to save/document what they changed. Six months later they reset their router for an unrelated reason, the bulb stops working again, and they can't remember what setting fixed it. Take a screenshot or write down any router settings you change.
+
+![A web browser showing a router's admin page with the Wireless Security settings section visible](PLACEHOLDER)
+
+## Step 6: Fix Interference, Range Issues, and Hub/Bridge Problems
+
+If the bulb connects but keeps dropping offline, or it works when you're next to it but not from across the house, you're dealing with range or interference.
+
+### Fix 1 — Move the bulb closer during setup
+
+Smart bulbs have smaller WiFi antennas than your phone or laptop. During initial setup, they're especially sensitive to weak signals.
+
+1. If possible, move the lamp with the smart bulb to within 15-20 feet of your router during setup. This eliminates range as a variable.
+2. Set up the bulb while it's close to the router.
+3. After setup is complete, move the lamp back to its original location. The bulb only needs a strong signal during the initial pairing — once connected, it can usually maintain a weaker connection.
+4. If the bulb drops offline after you move it back, range is the problem. Consider a WiFi extender or mesh node in that area.
+
+### Fix 2 — Identify and remove sources of WiFi interference
+
+The 2.4 GHz band (which smart bulbs use) is crowded. These common household items can interfere:
+
+- **Microwave ovens** (when running — they blast 2.4 GHz energy)
+- **Cordless phones** (especially older 2.4 GHz models)
+- **Baby monitors**
+- **Bluetooth devices** (Bluetooth also uses 2.4 GHz)
+- **Thick walls** (concrete, brick, metal studs)
+- **Large metal objects** (refrigerators, filing cabinets, mirrors)
+- **Fish tanks** (water absorbs 2.4 GHz signals)
+- **Other WiFi networks** (apartment buildings where 20 neighbors all have routers)
+
+If your bulb is near any of these, try moving it — or moving the interfering object. Even shifting the lamp a few feet can make a difference.
+
+### Fix 3 — Add a WiFi extender or mesh node
+
+If the bulb's location is far from your router and there's no way to move either one closer, you need to extend your WiFi coverage:
+
+1. A basic WiFi range extender costs $20-40 and plugs into a wall outlet halfway between your router and the dead zone.
+2. If you have a mesh system (Eero, Google Nest WiFi, Netgear Orbi, etc.), add a mesh node in or near the room with the smart bulb.
+3. Some smart bulb brands (Philips Hue, IKEA TRÅDFRI, Sengled) create their own mesh network through the bulbs themselves — each bulb acts as a repeater for the next one. If you have Zigbee bulbs with a hub, adding more bulbs actually IMPROVES the network range.
+
+### Fix 4 — For Philips Hue: Restart and update the Bridge
+
+The Philips Hue Bridge is the most common hub for smart lights. Here's the complete troubleshooting sequence:
+
+1. **Check the lights on the Bridge:** Three solid blue lights = everything is working. The third light (globe icon) must be on — if it's off, the Bridge has no internet connection.
+2. **Check the Ethernet cable:** The Bridge must be connected to your router with an Ethernet cable (not WiFi). Unplug the cable from both ends and plug it back in firmly.
+3. **Power-cycle the Bridge:** Unplug the Bridge's power cable, wait 30 seconds, plug it back in. Wait until all three blue lights are solid (1-2 minutes).
+4. **Update the Bridge:** Open the Hue app → **Settings** → **Software update** → check for and install any available updates. An outdated Bridge can lose connectivity.
+5. **Check the Bridge's IP address:** In the Hue app, go to **Settings** → **Hue Bridges** → tap your Bridge → look for the IP address. If it says "No IP address" or shows 0.0.0.0, the Bridge can't get an IP from your router. Restart your router, then restart the Bridge.
+6. **Factory reset the Bridge (last resort):** Flip the Bridge over and find the small pinhole button labeled "Restore factory settings." Use a paperclip to press and hold it for 5 seconds. The lights will blink. After the Bridge resets, you'll need to re-add all your lights and set up your rooms/scenes again — this is the nuclear option. Only do this if nothing else has worked.
+
+![The back of a Philips Hue Bridge showing the Ethernet port and the small factory reset pinhole button](PLACEHOLDER)
+
+> **Common mistake:** People forget that the Hue Bridge needs an Ethernet connection to the router. It doesn't connect over WiFi — it uses a physical cable. If your router is in a different room than where you want to place the Bridge, you need a long Ethernet cable or to move either the router or the Bridge. The Bridge can be placed anywhere within Ethernet cable range of your router — it doesn't need to be in the same room as the lights (it communicates with the lights over Zigbee, which has much longer range than WiFi).
+
+> **Tip:** If you have a lot of WiFi smart bulbs (10, 20, 30+), they can collectively slow down your WiFi network. Each bulb is an always-connected device that periodically pings the cloud server. This is one of the biggest advantages of hub-based systems like Philips Hue — the hub connects to your router via Ethernet, and the bulbs communicate with the hub over Zigbee, keeping them entirely off your WiFi. If you're building a large smart lighting setup, seriously consider a hub-based system.
+
+## Still Stuck?
+
+- **Bulb connects but shows as "Local Only" or "No Internet"?** Some bulbs can connect to WiFi but can't reach the manufacturer's cloud server. Check if the manufacturer is having an outage (search "[brand name] server status" on Google). Also check your router's firewall — it may be blocking the outgoing connection the bulb needs. Try temporarily disabling the router's firewall to test.
+
+- **Bulb works in its own app but not in Alexa/Google Home?** The integration between the bulb's app and the voice assistant may be broken. Open the Alexa or Google Home app, find the integration/skill for your bulb brand, and tap **Disable** or **Unlink**. Then re-enable or re-link it. You'll need to sign into your bulb brand's account again. After re-linking, say "Alexa, discover devices" or "Hey Google, sync my devices."
+
+- **Changed your WiFi password or got a new router and now nothing works?** Every WiFi smart bulb stores your old WiFi credentials. When you change the router or password, every single bulb needs to be reset and reconnected to the new network. This is tedious — but there's no shortcut. Work through your bulbs one by one using Step 3 (factory reset) and Step 4 (re-add in the app). Pro tip for the future: if you're getting a new router, set its network name (SSID) and password to be IDENTICAL to your old router. All your smart devices will reconnect automatically, and you'll save hours of re-pairing.
+
+- **Bulb is more than 3-4 years old and stopped working?** Older smart bulbs (especially early WiFi models from 2016-2020) may not support modern WiFi security standards (WPA3, WPA2-Enterprise) or may have reached their firmware end-of-life. Check the manufacturer's website to see if your model still receives updates. If the bulb is unsupported, it's time to replace it — modern smart bulbs are more reliable, use less power, and support Matter/Thread for better compatibility.
+
+- **Multiple bulbs stopped working at the same time?** This points to a network-level problem, not individual bulbs. If ALL your smart bulbs went offline simultaneously, your router probably restarted, updated, or changed settings. Check your router's uptime (admin page → Status → System Uptime). If it restarted recently, the bulbs may need a few minutes to reconnect. If they don't reconnect after 15-20 minutes, power-cycle your router, then power-cycle the bulbs (turn the physical switch off, wait 30 seconds, turn back on). Most bulbs will reconnect automatically once the network is stable.
+
+- **Is your router the problem?** ISP-provided routers are notorious for being unreliable with smart home devices — they're built to be cheap, not good. They have limited device capacity, weaker antennas, and buggy firmware. If you have 15+ smart home devices and experience frequent disconnections, consider upgrading to a dedicated router (TP-Link Archer, ASUS, Netgear Nighthawk) or a mesh system (Eero, Google Nest WiFi, TP-Link Deco). The difference in smart home reliability is dramatic. A good router pays for itself in frustration saved.
+
+- **Tried absolutely everything and the bulb still won't connect?** Very rarely, a smart bulb is genuinely defective. If the bulb is new (within the return window), exchange it. Most manufacturers also offer a 1-2 year warranty. Contact the manufacturer's support with your proof of purchase — they'll often send a replacement. Before concluding it's defective, test the bulb in a completely different location (friend's house, different router) to confirm the problem follows the bulb and isn't your network.
