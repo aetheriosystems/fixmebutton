@@ -1,0 +1,131 @@
+---
+title: "How to Fix No Sound on Your Computer"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "10 minutes"
+last_verified: "2026-06-09"
+steps: 6
+---
+
+## Before You Start
+
+No sound coming from your computer? Don't worry — this is almost always fixable in a few minutes. This guide walks you through the most common causes, from the simplest to the trickier ones.
+
+**What you'll need:**
+- Your computer
+- If using external speakers: the speakers and their cable
+- If using headphones: your headphones
+
+> **Work through the steps in order.** Each step fixes the problem for most people — you probably won't need all of them.
+
+![A person looking at a silent computer screen with a confused expression](PLACEHOLDER)
+
+## Step 1: Check the Obvious Stuff First
+
+Before diving into settings, rule out the simple things that cause most "no sound" problems.
+
+**Fix 1 — Is the volume muted?**
+1. Look at your screen. Is there a speaker icon with an **X** next to it in the bottom-right corner (Windows) or top-right corner (Mac)?
+2. **Windows**: Click the speaker icon in the taskbar. If there's an X, click it to unmute. Slide the volume bar to at least 50%.
+3. **Mac**: Click the Control Center icon (two sliders, top-right) and look under **Sound**. Make sure the volume slider isn't all the way to the left.
+
+**Fix 2 — Are external speakers turned on and plugged in?**
+1. If you use external speakers, check they're plugged into a power outlet and turned on.
+2. Check the speaker cable is firmly plugged into the computer's headphone jack (usually a green circle) or USB port.
+3. Many speakers have a volume knob on them — make sure it's turned up.
+
+**Fix 3 — Are headphones plugged in?**
+If headphones are plugged into your computer, sound goes to the headphones, not the speakers. Unplug them and listen again.
+
+> **Common mistake:** Many keyboards have a mute button (often on the top row, with a speaker icon). Accidentally pressing it mutes everything — even if the on-screen volume looks fine. Press it again to unmute.
+
+## Step 2: Pick the Right Sound Output Device
+
+Your computer might be sending sound to the wrong place — like HDMI to a monitor that doesn't have speakers.
+
+**Windows:**
+1. Click the **speaker icon** in the bottom-right corner of the taskbar
+2. Click the small **arrow (>) or the output name** next to the volume slider
+3. You'll see a list of output devices. The correct one is usually called **Speakers**, **Realtek Audio**, or your speaker brand name
+4. Click the correct device to select it
+
+![The Windows sound output menu showing multiple device options](PLACEHOLDER)
+
+**Mac:**
+1. Click the **Apple menu** (top-left) → **System Settings** → **Sound**
+2. Under **Output**, you'll see a list of devices
+3. Click the one you want — usually **Internal Speakers** for built-in speakers, or your speaker brand name
+
+> **Tip:** If you see "HDMI" or your monitor's name selected, sound is being sent to your monitor, not your speakers. Switch to "Speakers" or "Internal Speakers."
+
+## Step 3: Restart the Audio Service (Windows)
+
+Sometimes Windows' sound system gets stuck. Restarting it often fixes the problem.
+
+1. Press the **Windows key** on your keyboard and type **Services**
+2. Click the **Services** app that appears (it has a gear icon)
+3. In the list that opens, scroll down and find **Windows Audio**
+4. Right-click **Windows Audio** and select **Restart**
+5. Wait 5 seconds, then try playing sound again
+
+![The Windows Services window with Windows Audio highlighted](PLACEHOLDER)
+
+> **Common mistake:** Opening Services shows a big, confusing list. The only one you need is "Windows Audio." Don't change anything else in this window.
+
+## Step 4: Check the App's Own Volume Settings
+
+Sometimes the problem isn't your computer — it's just one program.
+
+1. Open the app where you expect sound (YouTube in your browser, Spotify, a video player, a game)
+2. Look for a **volume control inside the app**:
+   - **YouTube/Web videos**: Check the speaker icon on the video player itself. Click it if it shows an X.
+   - **Spotify**: Look for the volume slider in the bottom-right corner
+   - **Zoom/Meet/Teams**: Check the microphone and speaker icons in the meeting controls
+3. Also check your **browser tabs**: In Chrome or Edge, right-click a tab and look for **Mute site**. If the tab is muted, sound won't play from that website.
+
+> **Tip:** Try playing sound from a different app. If Spotify is silent but YouTube works, the problem is in Spotify, not your computer.
+
+## Step 5: Update or Reinstall Your Sound Driver (Windows)
+
+Sound drivers are the software that lets Windows talk to your speakers. A bad or missing driver can kill sound completely.
+
+1. Right-click the **Start button** (Windows logo, bottom-left) and select **Device Manager**
+2. Find **Sound, video and game controllers** and click the arrow to expand it
+3. Look for your sound device — it usually has "Realtek," "High Definition Audio," or "Intel" in the name
+4. Right-click it and select **Update driver**
+5. Choose **Search automatically for drivers**
+6. Windows will look for a new driver and install it if found
+
+If updating doesn't work:
+1. Right-click the sound device again and select **Uninstall device**
+2. **Do NOT check** the box that says "Delete the driver software" — just uninstall
+3. Restart your computer. Windows will reinstall the driver automatically on startup.
+
+![Device Manager showing the Sound, video and game controllers section](PLACEHOLDER)
+
+> **Common mistake:** People sometimes uninstall the wrong device. Only uninstall items under "Sound, video and game controllers" — leave everything else alone.
+
+## Step 6: Test on Mac with CoreAudio
+
+On a Mac, sound problems are usually fixed by steps 1 and 2. But if you're still stuck, reset the Mac's sound system.
+
+1. Open **Terminal** (find it in Applications → Utilities, or search with Spotlight — press **Cmd+Space** and type "Terminal")
+2. Type this command exactly and press Enter:
+   ```
+   sudo killall coreaudiod
+   ```
+3. Type your Mac password (you won't see the letters appear — that's normal) and press Enter
+4. Wait 5 seconds. The sound system will restart itself.
+
+> **What this does:** CoreAudio is the program that handles all sound on a Mac. Killing and restarting it clears any glitches — it's like restarting just the sound part of your computer.
+
+![The Mac Terminal window with the command typed in](PLACEHOLDER)
+
+## Still Stuck?
+
+- **No sound from one specific program?** Try reinstalling that program. If it's a web browser issue, try a different browser.
+- **Sound is crackly or distorted?** This is different from "no sound." Check that your speaker cable isn't damaged and isn't wrapped around power cables, which can cause electrical interference.
+- **Using Bluetooth speakers or headphones?** Bluetooth adds its own layer of potential problems. Try unpairing and re-pairing: go to **Settings → Bluetooth**, find your device, click **Forget/Remove**, then pair it again.
+- **Sound worked yesterday but not today?** A recent Windows update might have changed your sound settings. Go to **Settings → Windows Update → Update history** and look for any updates installed around the time the problem started. You can try uninstalling the most recent update.
+- **Still nothing?** Try a different pair of headphones or speakers to rule out broken hardware. If different speakers work, your original speakers or cables may be damaged.
