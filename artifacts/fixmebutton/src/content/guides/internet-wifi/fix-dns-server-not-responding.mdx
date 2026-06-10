@@ -1,0 +1,207 @@
+---
+title: "How to Fix 'DNS Server Not Responding'"
+category: internet-wifi
+devices: ["Windows 10", "Windows 11", "macOS", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "12 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You open your browser, type in a website, and instead of the page loading, you see an error: **"DNS server not responding"** or **"DNS server isn't responding."** Your WiFi bars look full. Other apps might even work. But websites just won't load.
+
+**What's happening:** DNS (Domain Name System) is the internet's phonebook. When you type "google.com," a DNS server translates that name into a numeric IP address that your computer can actually connect to. When the DNS server stops responding, your computer can't look up any website — so nothing loads, even though your internet connection itself is fine.
+
+This guide walks you through the most effective fixes, from fastest to most involved. Most people solve this by Fix 2 or Fix 3.
+
+**What you'll need:**
+- Your device (computer or phone)
+- Access to your WiFi router (for Fix 1)
+- Administrator access on your computer (for Fixes 2, 3, and 4)
+
+> **Work through the fixes in order.** If one fix doesn't solve the problem, move to the next. Don't skip ahead — the early fixes solve most cases.
+
+![A browser window showing the "DNS server not responding" error message with a sad face icon](PLACEHOLDER)
+
+## Fix 1: Restart Your Router and Device
+
+This is the simplest fix and it works surprisingly often. DNS problems are frequently caused by temporary glitches in your router's memory — a quick restart clears everything and forces a fresh connection.
+
+1. Unplug the power cable from your **router** (and your **modem**, if they're separate boxes)
+2. **Restart your computer or phone** too — don't skip this. On Windows, go to **Start** → **Power** → **Restart**. On Mac, go to **Apple menu ()** → **Restart**
+3. Wait **a full 60 seconds** while everything is off. Set a timer on your phone
+4. Plug the modem back in first (if separate). Wait until all lights stop blinking
+5. Plug the router back in. Wait 2 minutes for it to fully boot
+6. Once your device restarts, open a browser and try loading a website
+
+> **What's happening:** Your router stores DNS server addresses in its temporary memory. When that memory gets corrupted — which happens naturally over time — the router points your devices to a DNS server that doesn't work. Power-cycling wipes that memory and forces the router to fetch fresh, working DNS settings from your internet provider.
+
+![A person unplugging the power cable from a router with a timer set to 60 seconds](PLACEHOLDER)
+
+> **Common mistake:** People restart just the computer or just the router — not both. The corrupted DNS settings can live on either device. Restart both at the same time to make sure you're starting completely fresh.
+
+If restarting fixes the problem but it comes back after a few hours or days, jump to Fix 3 — your internet provider's DNS servers may be unreliable, and switching to a public DNS server will give you a permanent fix.
+
+## Fix 2: Flush Your DNS Cache
+
+Your computer saves (caches) DNS lookups so it doesn't have to look up the same website over and over. But sometimes those cached entries become outdated or corrupted. Flushing the cache forces your computer to do fresh lookups.
+
+**Windows:**
+1. Press the **Windows key**, type **cmd**, then right-click **Command Prompt** and select **Run as administrator**
+2. In the black window that opens, type this exactly and press Enter:
+   ```
+   ipconfig /flushdns
+   ```
+3. You should see: "Successfully flushed the DNS Resolver Cache"
+4. Close Command Prompt and try loading a website
+
+**Mac:**
+1. Open **Terminal** (press **Cmd+Space**, type "Terminal", press Enter)
+2. Type this command and press Enter:
+   ```
+   sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+   ```
+3. Type your Mac password (you won't see letters appear — this is normal) and press Enter
+4. Try loading a website
+
+> **What these commands do:** On Windows, `ipconfig /flushdns` wipes the stored DNS cache. On Mac, `dscacheutil -flushcache` clears the system DNS cache and `killall -HUP mDNSResponder` restarts the DNS service so it picks up the changes. Together they force your computer to start fresh.
+
+![Windows Command Prompt showing "Successfully flushed the DNS Resolver Cache" message](PLACEHOLDER)
+
+> **Common mistake:** On Windows, people open Command Prompt normally instead of as Administrator. The flush command needs admin rights to work. If you see "The requested operation requires elevation," you opened it without admin privileges. Close it, right-click Command Prompt, and choose **Run as administrator**.
+
+## Fix 3: Switch to a Public DNS Server
+
+If Fixes 1 and 2 didn't work, the problem is likely with your internet provider's DNS servers. They might be overloaded, down, or just slow. Switching to a free public DNS server — like Google's or Cloudflare's — bypasses your provider's DNS entirely and often fixes the problem permanently.
+
+**Recommended public DNS servers:**
+- **Google DNS:** Primary `8.8.8.8`, Secondary `8.8.4.4`
+- **Cloudflare DNS:** Primary `1.1.1.1`, Secondary `1.0.0.1` (Cloudflare is usually the fastest)
+
+**Windows 10 / 11:**
+1. Press **Windows key + R**, type **ncpa.cpl**, and press Enter. This opens the Network Connections window
+2. Right-click your active connection (Wi-Fi or Ethernet) and select **Properties**
+3. In the list, find and double-click **Internet Protocol Version 4 (TCP/IPv4)**
+4. Select **Use the following DNS server addresses**
+5. In **Preferred DNS server**, type: `8.8.8.8`
+6. In **Alternate DNS server**, type: `8.8.4.4`
+7. Click **OK**, then **Close**
+8. Open a browser and try loading a website
+
+**Mac:**
+1. Click the **Apple menu ()** → **System Settings** → **Wi-Fi**
+2. Click **Details** next to your connected network
+3. Click **DNS** in the left sidebar
+4. Click the **+** button under "DNS Servers"
+5. Type `8.8.8.8` and press Enter
+6. Click **+** again, type `8.8.4.4`, press Enter
+7. Click **OK**. Try loading a website
+
+**iPhone / iPad:**
+1. Open **Settings** → **Wi-Fi**
+2. Tap the blue **ⓘ** icon next to your WiFi network
+3. Scroll down and tap **Configure DNS**
+4. Change from **Automatic** to **Manual**
+5. Tap the red **minus (–)** button next to any existing DNS servers to remove them
+6. Tap **Add Server**, type `8.8.8.8`, and tap the back arrow
+7. Tap **Add Server** again, type `8.8.4.4`
+8. Tap **Save** in the top-right corner. Test a website
+
+**Android:**
+1. Open **Settings** → **Connections** → **Wi-Fi** (or **Network & Internet** → **Wi-Fi**)
+2. Tap the **gear icon (⚙)** next to your connected network
+3. Tap **View more** (or **Advanced**) to expand all options
+4. Tap **IP settings** and change it from **DHCP** to **Static**
+5. Scroll down to **DNS 1** and type: `8.8.8.8`
+6. In **DNS 2**, type: `8.8.4.4`
+7. Tap **Save**. Test a website
+
+> **What's happening:** Your internet provider automatically assigns DNS servers when you connect. When those servers have problems, every device in your house is affected. By manually setting DNS on your device, you're telling it "ignore the provider's DNS and use Google's instead." Google and Cloudflare run massive, highly reliable DNS infrastructure that rarely goes down.
+
+![The Windows IPv4 Properties window with "Use the following DNS server addresses" selected and 8.8.8.8 / 8.8.4.4 filled in](PLACEHOLDER)
+
+> **Common mistake:** People type the DNS addresses into the IP address field instead of the DNS fields. These are different things — make sure you're editing the **DNS server** fields, not the **IP address** field. On Windows, check that "Obtain an IP address automatically" is still selected above the DNS section. On Android, don't change the IP address when switching to Static — only fill in DNS 1 and DNS 2.
+
+> **Tip:** If switching to public DNS fixes the problem on one device but not others, repeat Fix 3 on every device — or better yet, log into your router's settings (usually at 192.168.0.1 or 192.168.1.1 in a browser) and set the DNS servers there. That way every device on your WiFi gets the new DNS automatically.
+
+![An iPhone screen showing Configure DNS set to Manual with Google's DNS servers entered](PLACEHOLDER)
+
+## Fix 4: Reset Your Network Stack (Windows)
+
+If you're on Windows and the DNS error persists after changing DNS servers, something deeper in your network configuration may be corrupted. This fix resets Windows' entire networking system — wiping all network settings and rebuilding them from scratch.
+
+1. Press the **Windows key**, type **cmd**, right-click **Command Prompt**, and select **Run as administrator**
+2. Type each command below, pressing **Enter** after each one. Wait for each to finish before typing the next:
+   ```
+   netsh winsock reset
+   ```
+   (Resets the Windows Sockets catalog — the system that programs use to talk to the network)
+   ```
+   netsh int ip reset
+   ```
+   (Resets your TCP/IP stack — the core internet protocol settings)
+   ```
+   ipconfig /release
+   ```
+   (Tells your router "I'm letting go of my current IP address")
+   ```
+   ipconfig /renew
+   ```
+   (Asks your router for a brand-new IP address)
+   ```
+   ipconfig /flushdns
+   ```
+   (Clears your DNS cache — same as Fix 2)
+3. After all five commands finish, restart your computer
+4. After restarting, try loading a website
+
+> **What these commands do:** `netsh winsock reset` and `netsh int ip reset` are the heavy hitters. They reset Windows' networking components to their factory-default state. If a misbehaving program, a bad Windows update, or malware corrupted your network settings, these commands undo the damage. The `/release`, `/renew`, and `/flushdns` commands then give you a completely fresh connection.
+
+![Windows Command Prompt running as administrator, showing the output of all five netsh and ipconfig commands](PLACEHOLDER)
+
+> **Common mistake:** People run only one or two of the commands. All five work together — each fixes a different layer of the networking stack. Skipping one can leave the corruption in place. Run all five, in order, then restart.
+
+> **Warning:** After running these commands, any custom network settings you configured (like a static IP address or custom DNS) will be lost. Windows returns to automatic/default settings. You may need to re-enter DNS server addresses from Fix 3 after the restart.
+
+## Fix 5: Check for Software Conflicts
+
+Sometimes the problem isn't your network at all — it's a program on your computer that's interfering with DNS. The most common culprits are VPNs, antivirus software, and firewalls.
+
+**Check your VPN first:**
+1. Look for a VPN icon in your system tray (Windows, bottom-right near the clock) or menu bar (Mac, top-right). Common VPN apps: NordVPN, ExpressVPN, Surfshark, ProtonVPN, Windscribe
+2. Open the VPN app and click **Disconnect** or the **power button** icon
+3. Wait 10 seconds, then try loading a website
+4. If websites load after disconnecting, your VPN is the cause. Reconnect to a different server, or check the VPN settings for a feature called **Kill Switch** and temporarily turn it off
+
+**Check your antivirus or firewall:**
+1. Temporarily disable your third-party antivirus (Norton, McAfee, Bitdefender, Avast, Kaspersky, etc.). Look for the antivirus icon in your system tray, right-click it, and look for a **Disable** or **Pause protection** option
+2. Try loading a website. If it works, your antivirus is blocking DNS traffic
+3. Re-enable your antivirus immediately — don't leave it off
+4. To fix permanently: open your antivirus settings and look for a **Web Shield**, **Network Protection**, or **Firewall** section. Add an exception for DNS traffic or switch to a less aggressive protection mode
+
+> **What's happening:** VPNs route all your internet traffic through their own servers, including DNS. When the VPN connection breaks or its DNS server goes down, your computer can't reach any DNS server — even though your WiFi is connected. Many VPNs also have a **Kill Switch** feature that deliberately blocks all internet if the VPN drops, to prevent data leaks. Antivirus programs can similarly intercept and block DNS requests if they mistakenly flag the traffic as suspicious.
+
+![A VPN app window showing the Disconnect button with a Kill Switch option visible](PLACEHOLDER)
+
+> **Common mistake:** People forget they even have a VPN or antivirus running. Many VPN apps auto-connect on startup and run silently in the background with no visible window. Check your system tray carefully. Also, iPhones can have VPN profiles in **Settings** → **General** → **VPN & Device Management** even if you don't have a visible VPN app.
+
+**Also check your browser extensions:**
+1. Open your browser in **Incognito** or **Private** mode (Ctrl+Shift+N in Chrome/Edge, Cmd+Shift+N in Safari)
+2. Try loading a website. If it works in incognito but not in normal mode, a browser extension is causing the problem
+3. Disable all extensions (**Settings** → **Extensions** or **Add-ons**) and re-enable them one by one until you find the culprit
+
+## Still Stuck?
+
+- **DNS errors on ALL devices even after trying Fix 3 (public DNS)?** The problem is with your router or internet provider, not any single device. Log into your router (usually at 192.168.0.1 or 192.168.1.1 in a browser) and change the DNS servers there — this fixes DNS for every device on your network at once. Look for settings under **Internet**, **WAN**, or **DNS**. If your router doesn't allow DNS changes, call your internet provider and say: "I'm getting DNS errors on every device in my house, even after using Google's DNS servers. Can you check your DNS infrastructure?"
+
+- **Problem comes and goes throughout the day?** This is a classic sign of overloaded ISP DNS servers — they work fine during off-peak hours but slow down or fail when everyone in your neighborhood is online. Switch to Google DNS (8.8.8.8) or Cloudflare DNS (1.1.1.1) at the router level (see above) for a permanent fix.
+
+- **Only one specific website won't load while everything else works?** That website's DNS records may have changed recently and your DNS cache still has the old address. Run the flush command from Fix 2, or wait 24-48 hours for the change to propagate.
+
+- **DNS error appears alongside a "Your connection is not private" warning?** Your computer's date and time might be wrong — check your clock. If the date is off by more than a few minutes, security certificates fail and DNS errors can appear as a side effect. Go to **Settings** → **Time & Language** → **Date & time** (Windows) or **System Settings** → **General** → **Date & Time** (Mac) and turn on **Set time automatically**.
+
+- **Using a work or school computer?** Many organizations force specific DNS servers through group policies or mobile device management (MDM). If you're on a managed device, you may not be allowed to change DNS settings. Contact your IT department and tell them you're getting DNS errors.
+
+- **Consider switching to DNS-over-HTTPS for better reliability.** Modern browsers (Chrome, Firefox, Edge) have a built-in feature that encrypts DNS requests and sends them directly to a public DNS provider, bypassing your system and router DNS entirely. In Chrome/Edge, go to **Settings** → **Privacy and security** → **Security** → turn on **Use secure DNS** and pick Cloudflare or Google. In Firefox, go to **Settings** → **Privacy & Security** → scroll to **DNS over HTTPS** and turn it on.
