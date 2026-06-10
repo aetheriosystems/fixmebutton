@@ -1,0 +1,268 @@
+---
+title: "How to Fix a Windows Update That's Stuck, Failing, or Won't Install"
+category: computers
+devices: ["Windows 10", "Windows 11"]
+difficulty: intermediate
+time_estimate: "25 minutes"
+last_verified: "2026-06-10"
+steps: 7
+---
+
+## Before You Start
+
+You click "Check for updates," and Windows says there's an important update waiting. You click "Download and install" — and nothing happens. Or the download gets stuck at 47% for hours. Or it downloads fine, tries to install, fails, and rolls back with a cryptic error code like `0x8007000d` or `0x800f0922`. You try again, and the same thing happens. Maybe you've been ignoring it for weeks, and now the red update warning is permanently stuck in your taskbar.
+
+Windows Update problems are frustratingly common — and they can block security patches, new features, and even other app updates. But the vast majority of update failures are caused by corrupted cache files, stuck services, or minor system file problems — all of which you can fix yourself without reinstalling Windows.
+
+This guide walks you through seven fixes, starting with the one-click built-in tool and working up to a full manual reset of the Windows Update system. Work through them in order.
+
+**What you'll need:**
+- Your Windows computer (Windows 10 or 11)
+- Administrator access (you'll need to run some tools as admin)
+- A stable internet connection
+- At least 20 GB of free disk space (you'll check this in Step 2)
+
+> **Work through the steps in order.** Fixes 1–3 solve the problem for most people. Skip to Step 6 only if you've tried everything else — it's powerful but takes the longest.
+
+> **Mac users:** macOS updates work differently and don't have the same cache or service architecture. If your Mac update is stuck, the equivalent steps are: restart, boot into Safe Mode (hold Shift during startup), run Disk Utility First Aid, and if all else fails, reinstall macOS from Recovery (Command+R at startup) — which keeps your files intact if you don't erase the disk first.
+
+![A Windows computer screen showing a Windows Update page with an error message and a stuck progress bar](PLACEHOLDER)
+
+## Step 1: Run the Built-In Windows Update Troubleshooter
+
+Windows includes a dedicated troubleshooter that can automatically detect and fix common update problems — stuck services, corrupted cache, missing files, and permission issues. It's one-click, takes about 2 minutes, and fixes the problem surprisingly often.
+
+**Windows 11:**
+1. Open **Settings** (press **Windows key + I**)
+2. Go to **System** → **Troubleshoot** → **Other troubleshooters**
+3. Find **Windows Update** in the list and click the **Run** button next to it
+4. The troubleshooter will scan for problems and attempt to fix them automatically
+5. When it finishes, it'll tell you what it found and whether it fixed anything
+6. Restart your computer, then try Windows Update again: **Settings → Windows Update → Check for updates**
+
+**Windows 10:**
+1. Open **Settings** → **Update & Security** → **Troubleshoot**
+2. Click **Additional troubleshooters**
+3. Select **Windows Update** and click **Run the troubleshooter**
+4. Follow the same steps as above
+
+![The Windows 11 Settings app open to System > Troubleshoot > Other troubleshooters, showing the Windows Update troubleshooter with the Run button](PLACEHOLDER)
+
+> **Common mistake:** Closing the troubleshooter halfway through because it looks like it's not doing anything. The scan can pause for 30–60 seconds at certain stages — that's normal. Let it run completely. Also, the troubleshooter sometimes says "fixed" but the problem persists after restart. That's okay — move on to Step 2.
+
+## Step 2: Free Up Disk Space and Check Your Internet Connection
+
+Windows Updates need two things to succeed: enough free disk space (Windows won't even try if you're below the minimum) and a stable internet connection (a momentary drop can corrupt the download).
+
+**Fix 2a — Check your free disk space:**
+
+Windows 11 requires at least 20 GB of free space for a 64-bit installation; Windows 10 requires 16 GB for 32-bit or 20 GB for 64-bit. But in practice, major feature updates can need 30 GB or more.
+
+1. Open **File Explorer** (press **Windows key + E**)
+2. Click **This PC** in the left sidebar
+3. Look at your **C: drive** — if the bar is red or shows less than 25 GB free, you need to clear space
+4. To free space quickly: open **Settings → System → Storage**, then click **Temporary files**. Check the boxes for "Windows Update Cleanup," "Delivery Optimization Files," "Temporary files," and "Recycle Bin." Click **Remove files**
+5. Also check **Storage Sense** — turn it on to let Windows automatically clean up temp files
+6. If you're still low on space, uninstall large apps you don't use (Settings → Apps → Installed apps, sort by size)
+
+**Fix 2b — Make sure your internet is stable:**
+
+1. If you're on Wi-Fi, move closer to your router or plug in with an Ethernet cable if possible. Wi-Fi dropouts during a multi-gigabyte download are a common cause of update corruption
+2. Disconnect from any VPN — VPNs can interfere with Microsoft's update servers
+3. If you're on a metered connection (mobile hotspot, limited data plan), Windows may pause updates automatically. Go to **Settings → Network & internet → Wi-Fi → [Your network name]** and make sure **Metered connection** is turned **Off**
+4. Temporarily disable any third-party firewall or antivirus — they can sometimes block Windows Update from downloading files (Windows Defender is fine — it's built by Microsoft and won't interfere)
+
+![File Explorer showing the C: drive with low disk space, the red bar indicating less than 10% free](PLACEHOLDER)
+
+> **Common mistake:** Thinking you have enough space because you have a 1 TB drive. Windows needs *contiguous* free space — if your drive is fragmented or has lots of small files, the available free space might not be usable for a large update file. Running Disk Cleanup (search for "Disk Cleanup" in the Start menu, select C:, click "Clean up system files") often recovers 5–15 GB of space you didn't know was taken.
+
+## Step 3: Restart the Windows Update Service and Clear Its Cache
+
+The Windows Update service (`wuauserv`) and its related services can get stuck in a loop — trying and failing the same update over and over. Restarting these services and clearing the download cache forces Windows Update to start fresh, which fixes most "stuck downloading" and "error code" problems.
+
+**Stop the Windows Update services:**
+
+1. Press **Windows key + R**, type `services.msc`, and press Enter
+2. In the Services window, scroll down and find **Windows Update** in the list
+3. Right-click **Windows Update** and select **Stop** (if it's already stopped, that's fine — leave it)
+4. Do the same for these two services: **Background Intelligent Transfer Service** (BITS) and **Cryptographic Services**
+5. Leave the Services window open — you'll come back to it
+
+**Clear the SoftwareDistribution folder:**
+
+The `SoftwareDistribution` folder is where Windows stores downloaded update files. Corrupted files in this folder are the #1 cause of update failures.
+
+1. Press **Windows key + R**, type `C:\Windows\SoftwareDistribution`, and press Enter
+2. This opens the folder where Windows caches updates. Select **everything** inside (press Ctrl+A), then press **Delete** (or right-click and select Delete). If Windows asks for administrator permission, click **Continue**
+3. If any files refuse to delete because they're "in use," skip them — it's fine. The important files will be removed
+4. **Do NOT delete the SoftwareDistribution folder itself** — only its contents. Windows will recreate the necessary files
+
+**Restart the services:**
+
+1. Go back to the Services window
+2. Right-click **Windows Update** and select **Start**
+3. Right-click **Background Intelligent Transfer Service** and select **Start**
+4. Right-click **Cryptographic Services** and select **Start**
+5. Close the Services window, restart your computer, and try Windows Update again
+
+![The Windows Services window showing the Windows Update service highlighted, with the right-click menu showing Stop/Start options](PLACEHOLDER)
+
+> **Common mistake:** Deleting the `SoftwareDistribution` folder itself instead of its contents. Delete what's *inside* the folder, not the folder itself. Windows needs the folder to exist — it recreates subfolders and files automatically. Also, if you see a `DataStore` folder inside SoftwareDistribution, deleting it **will erase your Windows Update history** (the list of previously installed updates). That's harmless, but if you care about the history, keep the DataStore folder and only delete the `Download` folder.
+
+## Step 4: Run SFC and DISM to Repair Corrupted System Files
+
+Sometimes Windows Update fails because the system files it's trying to patch are already corrupted. The System File Checker (SFC) scans your Windows installation for damaged files and repairs them. The Deployment Image Servicing and Management tool (DISM) can fix deeper problems that SFC can't reach — including the Windows Update system itself.
+
+**Important:** Run DISM first, then SFC. DISM repairs the *source* that SFC uses to fix files. Running them in the wrong order means SFC might not be able to fix what it finds.
+
+**Step 4a — Run DISM:**
+
+1. Click the **Start** button, type `cmd`, right-click **Command Prompt**, and select **Run as administrator**. Click **Yes** on the UAC pop-up
+2. Type the following command exactly and press Enter:
+   ```
+   DISM /Online /Cleanup-Image /RestoreHealth
+   ```
+3. The scan will run for 5–30 minutes. The progress bar may appear to freeze at 62.3% — this is completely normal. Do NOT close the window
+4. When it finishes, you'll see a message saying either "The restore operation completed successfully" or "The restore operation failed"
+5. If it completed successfully, proceed to Step 4b. If it failed, try again — a second run sometimes succeeds after the first one partially repairs things
+
+**Step 4b — Run SFC:**
+
+1. In the same Administrator Command Prompt window (or open a new one), type:
+   ```
+   sfc /scannow
+   ```
+2. Press Enter. The scan takes 5–20 minutes
+3. When it finishes, you'll see one of three messages:
+   - **"Windows Resource Protection did not find any integrity violations"** — your system files are fine
+   - **"Windows Resource Protection found corrupt files and successfully repaired them"** — problem fixed! Restart and retry the update
+   - **"Windows Resource Protection found corrupt files but was unable to fix some of them"** — SFC couldn't fix everything. This is usually fixed by running DISM first (which you already did). If SFC still reports this after DISM succeeded, the corruption may be in a non-critical file. Continue to Step 5
+
+![The Administrator Command Prompt window showing the DISM /Online /Cleanup-Image /RestoreHealth command running with a progress bar at 62.3%](PLACEHOLDER)
+
+> **Common mistake:** Running SFC before DISM. Always run DISM first. SFC uses a local cache of healthy system files to repair corrupted ones. If that local cache is itself corrupted (which often happens alongside update problems), SFC won't be able to fix anything. DISM downloads fresh, healthy copies from Microsoft's servers so SFC has something to work with.
+
+> **Tip:** If DISM fails with an error like "The source files could not be found," you can point it at a Windows ISO or USB install drive as an alternative source. The command is: `DISM /Online /Cleanup-Image /RestoreHealth /Source:WIM:X:\Sources\install.wim:1 /LimitAccess` — replace `X:` with the drive letter of your Windows install media.
+
+## Step 5: Check and Fix Date, Time, and Driver Issues
+
+Two less-obvious causes of update failures: incorrect system time (Windows Update uses security certificates that reject requests from computers with the wrong date/time) and outdated or incompatible drivers (especially graphics and storage drivers).
+
+**Fix 5a — Sync your date and time:**
+
+1. Open **Settings** → **Time & language** → **Date & time**
+2. Make sure **Set time automatically** is turned **On**
+3. Make sure **Set time zone automatically** is turned **On**
+4. Scroll down to **Additional settings** and click **Sync now**
+5. If the time was wrong, restart your computer and retry the update
+
+**Fix 5b — Disconnect non-essential hardware:**
+
+External devices can confuse the update process — especially during major feature updates like the annual Windows 11 version upgrades.
+
+1. Unplug everything from your computer except your mouse, keyboard, and monitor:
+   - External hard drives and USB flash drives
+   - Printers and scanners
+   - Webcams and microphones
+   - Docking stations and USB hubs
+   - Secondary monitors (if practical — just one monitor is ideal during a major update)
+   - Game controllers and other peripherals
+2. Restart your computer with only the essentials connected
+3. Try Windows Update again
+
+**Fix 5c — Update your drivers (especially graphics and storage):**
+
+An outdated driver can cause the `0xC1900101` error, which is the most common driver-related update failure.
+
+1. Open **Settings → Windows Update → Advanced options → Optional updates**
+2. If you see any **Driver updates** listed, check them all and click **Download & install**
+3. Also manually update your graphics driver: for NVIDIA, download from [nvidia.com/drivers](https://www.nvidia.com/drivers); for AMD, [amd.com/support](https://www.amd.com/support); for Intel, use the [Intel Driver & Support Assistant](https://www.intel.com/content/www/us/en/support/detect.html)
+4. For storage drivers (NVMe, SATA), check your PC or motherboard manufacturer's support website
+
+![Windows Settings showing the Date & time page with Set time automatically toggled on and the Sync now button](PLACEHOLDER)
+
+> **Common mistake:** Only updating graphics drivers and ignoring storage drivers. Storage controller drivers (Intel RST, AMD SATA, Samsung NVMe) can cause update failures just as often as graphics drivers. If you see a `0xC1900101` error, check your PC manufacturer's website (Dell, HP, Lenovo, ASUS) for ALL driver updates — not just graphics.
+
+## Step 6: Reset Windows Update Components Completely
+
+If nothing has worked so far, it's time for the nuclear option: a complete reset of every Windows Update component and policy. This stops all related services, deletes the entire update cache and database, resets security permissions, re-registers all the DLL files that Windows Update depends on, and clears any group policies that might be blocking updates.
+
+This step uses a batch script created and maintained by the Windows community. It automates a process that would take 30+ manual steps into a single click.
+
+1. Go to **[elevenforum.com/t/reset-windows-update-in-windows-11.3808/](https://www.elevenforum.com/t/reset-windows-update-in-windows-11.3808/)** (this is a trusted, Microsoft MVP-maintained tutorial that works for both Windows 10 and 11)
+2. Download the **Reset_Reregister_Windows_Update_Components_for_Windows11.zip** file attached to the first post (it's a small ZIP, about 2 KB)
+3. **Unblock the ZIP:** right-click the downloaded ZIP file → **Properties** → check **Unblock** → **OK** (Windows sometimes blocks downloaded scripts for security)
+4. Extract the `.bat` file from the ZIP to your desktop
+5. Right-click the `.bat` file and select **Run as administrator**. Click **Yes** on the UAC prompt
+6. The script will stop several services, clear all update-related folders, reset policies, and re-register DLLs. You'll see a lot of text scroll by — that's expected
+7. When the script finishes, it will prompt you to restart. Save any open work and press any key to restart immediately
+8. After restarting, open Windows Update and try again. The first check for updates may take longer than usual (5–10 minutes) because Windows is rebuilding its update database from scratch — **this is normal**
+
+![A File Explorer window showing the downloaded ZIP file being extracted, with the batch file visible on the desktop](PLACEHOLDER)
+
+> **What this script does (simplified):** Stops the Windows Update, BITS, and Cryptographic services → flushes DNS → deletes old update logs → backs up and removes stuck pending updates → renames the SoftwareDistribution and Catroot2 folders (forcing Windows to recreate them fresh) → deletes any registry policies that might be blocking updates → re-registers 30+ system DLL files that Windows Update depends on → resets service permissions to default → restarts all services → forces a reboot.
+
+> **Common mistake:** Running the BAT file from inside the ZIP instead of extracting it first. Windows runs extracted files differently from compressed ones. Always extract first. Also: don't panic if Windows Update shows "Updates failed" in history after this reset — the history was cleared on purpose. New updates will install normally.
+
+> **Alternative (manual method):** If you prefer not to run a downloaded script, you can do the manual equivalent by opening an Administrator Command Prompt and running the following commands one at a time (press Enter after each):
+> ```
+> net stop wuauserv
+> net stop bits
+> net stop cryptsvc
+> ren C:\Windows\SoftwareDistribution SoftwareDistribution.old
+> ren C:\Windows\System32\catroot2 Catroot2.old
+> net start wuauserv
+> net start bits
+> net start cryptsvc
+> ```
+> Then restart your computer. This is a simplified version that fixes most problems, but it doesn't reset policies or re-register DLLs like the full script does.
+
+## Step 7: Install the Update Manually from the Microsoft Update Catalog
+
+If Windows Update itself is broken beyond what the previous steps can fix, you can bypass it entirely. Microsoft publishes every Windows Update as a standalone installer file on the **Microsoft Update Catalog** website. You can download the exact update that's failing and install it manually — no Windows Update required.
+
+**Find the update's KB number:**
+
+1. Go to **Settings → Windows Update → Update history**
+2. Look under **Quality Updates** or **Feature Updates** for the update that's failing. Each update has a **KB number** (for example, `KB5039212`). Write this number down
+3. If you don't see it there, look for an error code or KB number in the Windows Update main page — it's usually displayed next to the failed update
+
+**Download and install from the Microsoft Update Catalog:**
+
+1. Go to **[catalog.update.microsoft.com](https://www.catalog.update.microsoft.com)** (this only works in Microsoft Edge or Internet Explorer — Chrome and Firefox can't access it directly)
+2. In the search box, type the KB number (e.g., `KB5039212`) and click **Search**
+3. You'll see a list of matching updates. You need to pick the right one for your system:
+   - Look for **Windows 10** or **Windows 11** in the title
+   - Check **x64-based** (64-bit, most modern computers) or **x86-based** (32-bit, older computers) in the title
+   - The file size is usually 600 MB – 1.5 GB for cumulative updates
+4. Click the **Download** button next to the correct entry
+5. In the pop-up window, click the `.msu` file link to download it
+6. Once downloaded, double-click the `.msu` file to run the installer
+7. Follow the prompts — the installer will check if the update applies to your system and install it. This may take 10–30 minutes
+8. Restart when prompted
+
+![The Microsoft Update Catalog website with a search result showing a list of Windows 11 cumulative updates with Download buttons](PLACEHOLDER)
+
+> **Common mistake:** Downloading the wrong architecture version. Most modern computers are **x64-based** (64-bit). If you're not sure, right-click the Start button → **System** → look next to "System type." If it says "64-bit operating system," download the x64 version. If it says "32-bit," download the x86 version. Installing the wrong one will give you an error saying "The update is not applicable to your computer."
+
+> **Tip:** If you can't use Microsoft Edge to access the Update Catalog, you can use the direct download links from the Microsoft Update Catalog by installing the [Microsoft Update Catalog extension](https://chromewebstore.google.com/detail/microsoft-update-catalog/jliidkkflkdegjgadelhgimamobjpdcm) for Chrome, or use the [Microsoft Update Catalog PowerShell module](https://www.powershellgallery.com/packages/MicrosoftUpdateCatalog/) (advanced users).
+
+## Still Stuck?
+
+- **Getting a specific error code?** Look it up directly. The most common ones:
+  - `0x8007000d` or `0x800705b4` — Corrupted update files. Re-run Step 3 (clear SoftwareDistribution) and Step 7 (manual install)
+  - `0x800f0922` — Not enough disk space or .NET Framework issue. Free up at least 25 GB and re-run Step 2. Update .NET Framework from [dotnet.microsoft.com](https://dotnet.microsoft.com/download)
+  - `0xC1900101` — Driver incompatibility. Re-run Fix 5c (update all drivers) and disconnect external hardware (Fix 5b)
+  - `0x80070005` — Permission denied. Make sure you're using an administrator account. Consider creating a new administrator account and trying from there
+  - `0x80070422` — Windows Update service is disabled. Open Services (`services.msc`), find Windows Update, set its Startup type to "Automatic," start it, and try again
+  - `0x80070002` or `0x80070003` — Missing files. Run Step 4 (DISM and SFC) again
+
+- **Update gets stuck at a specific percentage (like 91% or 99%) and never moves?** This usually means the update is actually finished but the progress indicator is frozen. Wait at least 2 hours before forcing a restart (hold the power button down for 10 seconds). When your computer reboots, Windows will usually continue or roll back the update automatically. If it rolls back, start again from Step 3.
+
+- **Computer keeps restarting during the update?** This can be normal — major feature updates restart your computer 2–4 times. But if it restarts more than 5 times or gets stuck in a restart loop, boot into Safe Mode (during startup, hold Shift while clicking Restart, then choose Troubleshoot → Advanced options → Startup Settings → Restart → press 4 for Safe Mode). From Safe Mode, run Step 4 (DISM and SFC).
+
+- **Update installed but your computer is acting strange afterward?** New updates can reset some settings. Check if your default apps, privacy settings, or taskbar layout changed. A common post-update fix: open an Administrator Command Prompt and run `DISM /Online /Cleanup-Image /RestoreHealth` followed by `sfc /scannow` to clean up any leftover file issues.
+
+- **Nothing works, and you're considering reinstalling Windows?** Before you do, try a **repair upgrade** (also called an in-place upgrade). This reinstalls Windows while keeping all your apps, files, and settings. Download the Windows 11 Installation Assistant from [microsoft.com/software-download/windows11](https://www.microsoft.com/software-download/windows11) and run it — it will download the latest version and install it over your current system. This fixes deeply corrupted update systems while preserving everything on your computer. It takes 1–2 hours but is much less disruptive than a clean install.
+
+- **Still can't fix it?** Microsoft offers free support for Windows Update problems. Go to **[support.microsoft.com/contactus](https://support.microsoft.com/contactus)**, select **Windows**, describe your update problem, and choose **Contact Support** to chat with a Microsoft support agent. They can remotely diagnose update failures and have access to tools that aren't publicly available.
