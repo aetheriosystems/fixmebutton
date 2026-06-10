@@ -1,0 +1,183 @@
+---
+title: "How to Fix a Router That Keeps Restarting"
+category: internet-wifi
+devices: ["Any WiFi Router", "Windows PC", "Mac", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+Your internet cuts out — suddenly and without warning. The lights on your router blink off, then slowly come back on one by one. A minute later, the WiFi network reappears on your phone and laptop. Then it happens again 20 minutes later. And again. And again.
+
+**What's happening:** Your router is restarting itself — a reboot loop. Every time it restarts, every device in your house loses internet for 1-3 minutes. If this happens once a month, it's probably normal. But if it's happening every hour (or every few minutes), something is wrong.
+
+A router that keeps restarting is almost always caused by one of four things: a bad power connection, overheating, outdated firmware with bugs, or a misconfigured auto-reboot setting. This guide walks you through each fix, from fastest to most involved.
+
+**What you'll need:**
+- Access to your router
+- Your router's power adapter (the one that came in the box)
+- Your router's admin password (usually printed on a sticker on the router)
+- A phone or computer connected to the router
+
+> **Work through the fixes in order.** If one fix doesn't stop the restarts, move to the next. Most people solve this by Fix 1 or Fix 2.
+
+![A router with all lights off, mid-restart, with a frustrated person looking at a "No Internet" screen on their laptop](PLACEHOLDER)
+
+## Fix 1: Check the Power Outlet and Adapter
+
+The single most common cause of random router restarts is unstable power. If your router loses power for even half a second — from a loose outlet, a failing power adapter, or a bent cable — it reboots. This is the easiest thing to check and the most likely culprit.
+
+1. Unplug the router's power adapter from the wall outlet
+2. Plug the router into a **completely different wall outlet** — preferably in another room. Don't use a power strip or extension cord for this test; plug directly into the wall
+3. Wait 2 minutes for the router to fully boot up
+4. Use your internet normally for 30-60 minutes. Did the router restart again?
+
+If the router stays stable on the new outlet, your original outlet is faulty. Have an electrician check it, or permanently move the router to the new outlet.
+
+**If the router still restarts, check the power adapter next:**
+
+1. Look at the adapter (the black box on the power cord). Is it the **original adapter** that came with the router, or a replacement?
+2. If it's a replacement, compare the numbers printed on the adapter to the numbers printed on the router's label. They must match. Look for **Voltage (V)** and **Amperage (A or mA)**. Using a 9V adapter on a 12V router will cause constant restarts
+3. Inspect the power cord for damage: kinks, frayed spots, or a loose connection where the cord meets the plug or the adapter box. Wiggle the cord gently while the router is on — if the lights flicker, the cord is broken internally
+4. If you have a spare adapter with matching specs, try it. If not, you can buy a replacement online — search for "[router brand] [model number] power adapter"
+
+> **What's happening:** Routers need steady, uninterrupted power to stay running. Even a split-second power drop — called a "brownout" — causes the router's internal computer to crash and restart, the same way unplugging a desktop computer shuts it down. A loose outlet, a failing adapter, or a damaged cord can all cause these micro power losses that you'd never notice with a lamp or other simple appliance.
+
+![A hand unplugging a router's power adapter from a wall outlet, with the voltage label on the adapter clearly visible](PLACEHOLDER)
+
+> **Common mistake:** People plug the router into a different outlet on the same power strip or the other socket of the same wall plate. If the original outlet has a wiring problem, both sockets on the same plate usually share it. Test an outlet in a different room — ideally one on a different circuit (different circuit breaker).
+
+## Fix 2: Stop the Router From Overheating
+
+Routers are small computers that run 24 hours a day, 7 days a week. They generate heat. When they get too hot, they automatically shut down and restart to protect their internal components — just like a laptop that turns itself off when it overheats.
+
+1. **Touch the top of your router.** Is it hot? Not just warm — actually hot, like a mug of coffee that's been sitting for 10 minutes? If yes, overheating is likely the problem
+2. **Look at where your router is placed.** Is it:
+   - Inside a cabinet or closed entertainment center?
+   - Stacked on top of your modem or another electronic device?
+   - Wedged behind a TV or computer that also runs hot?
+   - Sitting on a soft surface like carpet, a couch, or a stack of papers?
+   - In direct sunlight from a window?
+3. **Relocate your router immediately:**
+   - Move it to an open, flat surface with at least 6 inches of clear space on all sides
+   - Stand it vertically if it has a built-in stand — this exposes more surface area to air
+   - Never stack anything on top of the router
+   - Keep it away from heat sources: radiators, sunny windows, other electronics
+4. **Dust the vents.** Turn the router off, unplug it, and use a can of compressed air (or a vacuum cleaner with a brush attachment) to clean dust out of the ventilation slots. Dust acts like a blanket and traps heat inside
+5. Plug the router back in and test for a few hours
+
+> **What's happening:** Routers have no fans — they rely entirely on passive cooling through ventilation slots. When those slots are blocked by dust, covered by another device, or trapped inside a cabinet, heat builds up. Every router has a thermal safety cutoff (usually around 70-80°C / 158-176°F). When the internal temperature hits that limit, the router's CPU shuts itself down to prevent permanent damage. That's your "random restart."
+
+![A router sitting in open space with plenty of ventilation, contrasted with a router wedged inside a cramped cabinet](PLACEHOLDER)
+
+> **Common mistake:** People move the router to a slightly better spot — from under a pile of papers to on top of the papers — and think they've fixed the ventilation problem. The router still can't breathe. Place it somewhere with actual open air on all sides. If you have to ask "is this enough airflow?", it probably isn't.
+
+> **Warning:** Never cover the router's ventilation slots with anything — not a cloth, not a decorative cover, not a piece of furniture. Some people try to "hide" their ugly router by putting it in a drawer or behind a curtain. This is the fastest way to overheat it. If you must hide your router, use a decorative box with large cutouts for airflow, or place it behind something with at least 12 inches of clearance.
+
+## Fix 3: Update Your Router's Firmware
+
+Router manufacturers regularly release firmware updates — the router's internal software — to fix bugs, improve stability, and patch security holes. A known firmware bug that causes random restarts is one of the most common reasons manufacturers release updates.
+
+1. Find your router's brand and **model number**. It's printed on a sticker on the bottom or back of the router (for example: "TP-Link Archer AX20" or "Netgear R7000")
+2. Connect a computer or phone to the router's WiFi network
+3. Open a web browser and type your router's IP address into the address bar. The most common addresses are:
+   - **192.168.0.1**
+   - **192.168.1.1**
+   - **192.168.1.254**
+   
+   (If none of these work, check the sticker on the router — it's usually printed there as "Router Login" or "Default Gateway")
+4. Log in with your router's admin username and password. The defaults are often:
+   - Username: **admin**, Password: **password**
+   - Username: **admin**, Password: (blank — just press Enter)
+   
+   Check the router's sticker if these don't work
+5. Once logged in, look for a section called:
+   - **Firmware Update** or **Router Update**
+   - **Administration** → **Firmware Upgrade**
+   - **System Tools** → **Firmware Upgrade**
+   - **Advanced** → **Administration** → **Router Update**
+6. Click **Check for Updates** or **Check**. If an update is available, follow the on-screen instructions to download and install it
+7. The router will restart during the update — this is normal. Wait for it to fully reboot (usually 3-5 minutes)
+8. After the update, test your internet for several hours to see if the restarts stop
+
+> **What's happening:** Router firmware is software that runs constantly on the router's internal processor. Like any software, it can have bugs — memory leaks, crashes, or infinite loops — that force the router to restart. Firmware updates patch these bugs. They also sometimes include driver updates for the WiFi chips and improved power management that makes the router run cooler.
+
+![A browser window showing a router's admin page with the Firmware Update section and a "Check" button](PLACEHOLDER)
+
+> **Common mistake:** People search for their router model on Google, download a firmware file from a random website, and try to manually install it. Never do this. ONLY use the "Check for Updates" button inside your router's settings page — this pulls the correct, safe firmware directly from the manufacturer. Wrong firmware can permanently damage (brick) your router.
+
+> **Warning:** Do NOT unplug the router or close the browser during a firmware update. Interrupting the update can corrupt the router's internal storage and make it unusable. The router will restart on its own when the update is complete. If the update seems stuck for more than 10 minutes, wait another 5 minutes before touching anything — firmware updates can take longer than expected.
+
+## Fix 4: Disable the Auto Reboot Feature
+
+Many modern routers have a feature called **Auto Reboot** or **Scheduled Reboot**. When enabled, it automatically restarts the router on a schedule — for example, every night at 3:00 AM, or every 6 hours. The idea is to "keep things fresh," but on some routers this feature is buggy and triggers far more often than intended. It can also be enabled by default without you ever knowing.
+
+1. Log into your router's settings page (same address as Fix 3: 192.168.0.1, 192.168.1.1, etc.)
+2. Look for settings under:
+   - **System Tools** → **Reboot** or **Reboot Schedule**
+   - **Advanced** → **System** → **Scheduled Reboot**
+   - **Management** → **Auto Reboot**
+   - **Administration** → **Scheduled Tasks**
+3. If an **Auto Reboot** or **Scheduled Reboot** is enabled, **turn it OFF** or **disable it**
+4. If there's a schedule set (like "Reboot every 4 hours" or "Reboot daily at 3:00 AM"), delete or disable the schedule
+5. Save your settings and exit
+
+After disabling Auto Reboot, test your internet for 2-3 hours. If the random restarts stop and your internet stays stable, the Auto Reboot feature was the culprit.
+
+> **What's happening:** Auto Reboot is intended to be a maintenance feature — the router restarts itself once a day to clear memory and prevent performance slowdowns. But on some routers (especially older firmware versions), this feature has bugs that cause it to trigger repeatedly, or to reset its own schedule after every manual restart, creating a loop where the router restarts every hour or two because the schedule keeps re-triggering.
+
+![A router settings page showing the Auto Reboot or Scheduled Reboot feature with a toggle set to OFF](PLACEHOLDER)
+
+> **Common mistake:** People assume their router doesn't have this feature because they never turned it on. Many routers ship with Auto Reboot enabled from the factory, or an internet provider pushes a configuration update that turns it on remotely. Always check — even if you're sure you never set it up.
+
+> **Also check:** Some internet service providers (ISPs) push automatic reboots to your modem/router combination device as part of "network maintenance." If you rent your equipment from your ISP (Comcast/Xfinity, Spectrum, AT&T, Verizon, etc.), call them and ask: "Is there a scheduled reboot on my modem? My internet cuts out at the same times every day." They can disable this remotely.
+
+## Fix 5: Factory Reset the Router (Last Resort)
+
+If none of the above fixes stopped the restarts, the router's internal configuration may be corrupted. A factory reset wipes everything — all settings, passwords, WiFi names, and custom configurations — and returns the router to the exact state it was in when you first took it out of the box. This clears any corrupted settings that might be causing the restart loop.
+
+**Before you reset, write down:**
+- Your WiFi network name (SSID) and password
+- Your router's admin password
+- Any custom settings you've changed (DNS servers, port forwarding, parental controls)
+
+1. Find the **Reset button** on your router. It's usually a tiny hole labeled "Reset" on the back or bottom. You'll need a paperclip or SIM card ejector tool to press it
+2. With the router powered ON, use a paperclip to **press and hold** the Reset button
+3. Keep holding for **10-15 seconds**. The router's lights will blink or change pattern — this is the signal that the reset has started
+4. Release the button and wait. The router will restart automatically. This can take 3-5 minutes — the lights will flash and eventually stabilize
+5. After the router is fully back online, reconnect to the default WiFi network. The network name and password are printed on the sticker on the bottom/back of the router
+6. Log into the router settings (192.168.0.1 or 192.168.1.1) using the default username and password (also on the sticker)
+7. Set up your WiFi network again:
+   - Change the network name (SSID) to whatever you want
+   - Set a new WiFi password (make it strong — at least 12 characters)
+   - Set a new admin password (different from the WiFi password)
+8. Reconnect all your devices to the new WiFi network
+
+After the factory reset, use your internet normally for at least 24 hours. If the restarts stop completely, corrupted settings were the cause. If they continue, the router itself has a hardware problem and needs to be replaced.
+
+> **What's happening:** Over time, a router's settings file can become corrupted — especially if the router has experienced multiple unexpected power losses or incomplete firmware updates. Corrupted settings can cause the router's software to crash in specific situations, triggering a restart. A factory reset deletes the entire settings file and creates a fresh, clean one.
+
+![A paperclip being inserted into the small Reset hole on the back of a router](PLACEHOLDER)
+
+> **Common mistake:** People press the Reset button for only 2-3 seconds and think they've done a factory reset. A short press usually just restarts the router — it does NOT clear the settings. You MUST hold the button for the full 10-15 seconds (check your router's manual for the exact time — some require 30 seconds). The lights will change to indicate the reset has actually started.
+
+> **Warning:** A factory reset deletes EVERYTHING you've configured. Your WiFi name, WiFi password, admin password, port forwarding rules, parental controls, guest networks, and custom DNS settings will all be gone. You will need to set up your WiFi network from scratch. Every device in your house will need to reconnect using the new (or re-entered) WiFi password.
+
+If you rent your router/modem from your internet provider, they may have locked some settings. After a factory reset, the ISP's default configuration should automatically reload when the router reconnects. If you're not sure whether you own or rent your equipment, call your ISP before doing a factory reset.
+
+## Still Stuck?
+
+- **Router still restarting after all 5 fixes?** The router likely has a hardware failure — a failing capacitor on the circuit board, a broken solder joint, or a damaged WiFi chip. Consumer routers typically last 3-5 years. If yours is older than that, or if it's been through power surges or lightning storms, it's time to replace it. Look for routers with good ventilation design (vertical stands, large vents) and check reviews for overheating complaints before buying.
+
+- **Restarts happen at the same time every day?** This usually means either an Auto Reboot schedule (Fix 4) or your ISP doing maintenance. Call your ISP and ask them to check. If you own your own modem, check for a Scheduled Reboot in the modem's settings too — modems have the same feature.
+
+- **Restarts only happen when you're doing something specific?** Like streaming 4K video, gaming online, or when multiple people are using the internet at once? This suggests the router is overheating under heavy load (Fix 2), or your router is simply not powerful enough for your household's internet usage. Consider upgrading to a higher-end router designed for heavy traffic, a mesh system, or a gaming router with better cooling.
+
+- **Router is very old (5+ years)?** Older routers have older WiFi standards, less efficient processors (more heat), and capacitors that degrade over time. If your router is more than 5 years old and keeps restarting, a replacement is almost certainly the right call. Modern routers are faster, run cooler, and cost as little as $40-60.
+
+- **Power keeps going out in your home (even briefly)?** If the lights in your house flicker when the router restarts, you have a home electrical problem, not a router problem. Consider plugging your router and modem into a **UPS (Uninterruptible Power Supply)** — a battery backup that keeps your network equipment running through short power drops. A small UPS costs $40-60 and also protects against power surges.
+
+- **Want to confirm it's the router, not the modem?** If you have a separate modem and router, connect a computer directly to the modem with an Ethernet cable (bypassing the router entirely). If your internet is stable when connected directly to the modem, the router is the problem. If the modem also drops the connection, the problem is either the modem or your ISP.
