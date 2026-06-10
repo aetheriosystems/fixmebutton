@@ -1,0 +1,243 @@
+---
+title: "How to Fix Microphone Not Working on Your Computer"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 6
+---
+
+## Before You Start
+
+You join a Zoom meeting, jump into a Discord call, or try to record a voice note — and nobody can hear you. Your microphone is dead. You see the muted mic icon. Windows says "No input device detected." Your Mac's input level meter shows flat bars no matter how loud you speak. Or worse: the mic is technically working, but your voice comes through so quiet or distorted that it's useless.
+
+Microphone problems are surprisingly common — and they tend to strike at the worst possible moments. The good news: the vast majority of mic issues are software problems, not hardware failures. A privacy setting got toggled off after an update, the wrong input device is selected, an app grabbed exclusive control of the mic, or a driver needs a restart.
+
+This guide covers built-in microphones (on laptops and all-in-one desktops) and external USB or 3.5mm microphones on both Windows and Mac. Work through the steps in order — Fixes 1-3 solve the problem for over 85% of people.
+
+**What you'll need:**
+- Your computer
+- If using an external mic: the microphone and its cable
+- About 15 minutes
+- Administrator access (for driver and service changes on Windows)
+
+> **Work through the steps in order.** Each fix solves the problem for most people — you probably won't need all six. Skip ahead only if you know a specific step doesn't apply (for example, you've already verified the correct input device).
+
+![A person looking frustrated at their laptop during a video call, with a muted microphone icon visible on screen](PLACEHOLDER)
+
+## Step 1: Check the Obvious Stuff First
+
+Before diving into settings menus and driver updates, eliminate the simple causes that account for a surprising number of "my mic doesn't work" reports.
+
+**Fix 1a — Is your mic physically muted?**
+
+1. **External microphones:** Many USB and 3.5mm mics have a physical mute button or switch on the mic body or cable. Check for a button with a mic icon — if it's glowing red or switched to mute, press or slide it to unmute.
+2. **Headsets:** Gaming headsets and call-center headsets often have a mute switch on the cord or earcup. Flip the switch or press the mute button.
+3. **Laptop built-in mic:** Some laptops have a dedicated microphone mute key on the top row of the keyboard (look for a mic icon with a line through it or an X). If you accidentally pressed it, press it again to unmute.
+
+**Fix 1b — Is the mic plugged in all the way?**
+
+1. If you use a USB microphone, unplug it and plug it back in firmly. Try a different USB port — some ports don't deliver enough power for certain mics.
+2. If you use a 3.5mm microphone (the round headphone-style plug), make sure it's in the **pink** jack on desktop computers, or the **headset** jack on laptops (usually marked with a headset icon). Accidentally plugging a mic into the green headphone/speaker jack is a very common mistake.
+3. After plugging in, give Windows or macOS 10 seconds to detect the new device before testing.
+
+**Fix 1c — Restart your computer**
+
+A simple restart clears temporary glitches in the audio system. If your mic was working yesterday and suddenly isn't today, restart before trying anything else. It takes two minutes and fixes a surprising number of problems.
+
+> **Common mistake:** On laptops with a combined headphone/microphone jack, a standard mic plug (with two black rings on the connector) won't work — you need a **TRRS** plug (three black rings) that carries both audio and mic signals. If you're using a splitter cable, make sure the mic end goes to the pink port. Many people swap the green and pink plugs without realizing it.
+
+## Step 2: Pick the Right Input Device
+
+Your computer may have multiple microphones to choose from: the built-in mic, a USB mic, a webcam mic, a headset mic. If the wrong one is selected, your computer is listening to a mic that isn't there — or isn't the one you're speaking into.
+
+**Windows 11:**
+
+1. Right-click the **speaker icon** in the bottom-right corner of the taskbar and select **Sound settings**.
+2. Scroll down to the **Input** section. Under **Choose a device for speaking or recording**, click the dropdown menu.
+3. You'll see all available microphones. Select the one you want to use.
+4. Speak into the correct mic. You should see the **Input volume** test bar move as you talk. If it doesn't move, the mic isn't picking up sound — move to Step 3.
+5. If the bar moves but the volume is low, drag the **Input volume** slider to at least 80%.
+
+**Windows 10:**
+
+1. Right-click the speaker icon → **Open Sound settings**.
+2. Under **Input**, use the **Choose your input device** dropdown to select the correct microphone.
+3. Click **Device properties** under the dropdown. Use the **Volume** slider to adjust input level. Click **Start test** and speak to see if the mic picks up sound.
+
+![The Windows 11 Sound settings page showing the Input section with the device dropdown menu](PLACEHOLDER)
+
+**Mac:**
+
+1. Click the **Apple menu** (top-left) → **System Settings** → **Sound**.
+2. Click the **Input** tab at the top.
+3. You'll see a list of available microphones. Click the one you want to use.
+4. Speak at a normal volume. The **Input level** meter should show bars moving. If nothing moves, the selected mic isn't catching your voice.
+5. Drag the **Input volume** slider to at least 75%. If it's all the way to the left, the mic is effectively muted.
+
+> **Common mistake:** Many external webcams have built-in microphones. If you plugged in a webcam and your computer automatically switched to the webcam's mic, you might be speaking to your laptop but the computer is listening through the webcam (which could be across the room). Always check which input device is selected, especially after plugging in new hardware.
+
+> **Tip:** If you see the input level bar move but others still can't hear you in a specific app (like Zoom or Discord), the problem is in that app's settings, not your computer. Skip ahead to Step 4.
+
+## Step 3: Check Microphone Privacy Settings
+
+Both Windows and macOS have privacy controls that can block apps from accessing your microphone — even if the mic itself is working perfectly. These settings often get changed after a system update, or were never enabled in the first place.
+
+**Windows 11:**
+
+1. Open **Settings** (press **Windows key + I**).
+2. Go to **Privacy & security** → **Microphone**.
+3. Make sure **Microphone access** is turned **On**.
+4. Below that, make sure **Let apps access your microphone** is turned **On**.
+5. Scroll down to the list of apps. For each app you want to use your mic with (Zoom, Discord, Chrome, etc.), make sure the toggle is **On**.
+6. Also check **Let desktop apps access your microphone** — this controls older, non-Store apps like Skype desktop, OBS Studio, and many games. It must be On for those apps to use the mic.
+
+**Windows 10:**
+
+1. Open **Settings** → **Privacy** → **Microphone**.
+2. Turn on **Allow apps to access your microphone**.
+3. Scroll through the app list and enable the toggle for any app that needs mic access.
+
+![Windows 11 Microphone privacy settings page showing the access toggles](PLACEHOLDER)
+
+**Mac:**
+
+1. Click the **Apple menu** → **System Settings** → **Privacy & Security**.
+2. In the sidebar, scroll down and click **Microphone**.
+3. You'll see a list of apps that have requested microphone access. Make sure the toggle is **On** for any app that needs to use the mic (your browser, Zoom, Discord, FaceTime, etc.).
+4. If an app you need isn't listed, open the app and try to use the microphone. macOS should prompt you to grant permission. Click **Allow**.
+5. You may need to quit and reopen the app after granting permission for the change to take effect.
+
+> **Common mistake:** On Mac, if you previously clicked "Don't Allow" when an app asked for microphone permission, the app won't appear in the Microphone list and it won't ask again. To fix this: go to **System Settings → Privacy & Security → Microphone**, and if the app is listed but toggled Off, switch it On. If it's not listed at all, you may need to reset the app's permissions. The nuclear option: open **Terminal** and type `tccutil reset Microphone` to reset all microphone permissions (every app will ask again next time).
+
+> **Tip:** Windows updates (especially major feature updates) occasionally reset microphone privacy settings. If your mic worked yesterday and a Windows update installed overnight, check these privacy toggles first — they're the #1 post-update cause of microphone problems.
+
+## Step 4: Check the App's Own Microphone Settings
+
+If the mic works in one app but not another, the problem is in the app — not your computer. Every conferencing, recording, and voice chat app has its own microphone settings, and they don't always auto-detect correctly.
+
+**Fix 4a — Select the mic inside the app:**
+
+1. **Zoom:** Click the **gear icon** (Settings) → **Audio**. Under **Microphone**, use the dropdown to select the correct mic. Use the **Test Mic** button to confirm it works.
+2. **Discord:** Click the **gear icon** (User Settings) → **Voice & Video**. Under **Input Device**, select the correct mic. Speak and watch the input sensitivity meter — it should light up green when you talk.
+3. **Microsoft Teams:** Click the **three-dot menu** (⋯) → **Settings** → **Devices**. Under **Microphone**, pick the correct device. Use the **Make a test call** button.
+4. **Google Meet / Web apps:** In your browser, click the **padlock icon** (or site settings icon) in the address bar. Make sure the microphone permission is set to **Allow** and the correct microphone is selected from the dropdown.
+5. **OBS Studio / recording software:** Go to **Settings → Audio → Mic/Auxiliary Audio** and select the correct mic device. Check that the mic volume slider in the main OBS window (the audio mixer) isn't at zero or muted.
+
+**Fix 4b — Close other apps that might be hogging the mic:**
+
+Some apps grab exclusive control of the microphone and won't share it with other programs. Close any of these before your call or recording:
+
+1. Other video conferencing apps (Zoom, Teams, Meet, Skype, FaceTime)
+2. Voice chat apps (Discord, TeamSpeak, Mumble)
+3. Recording software (OBS, Audacity, Voice Recorder)
+4. Gaming platforms with voice chat (Steam, Xbox Game Bar, PlayStation app)
+5. Virtual assistant software (Cortana, Alexa for PC)
+
+After closing them, restart the app you actually want to use and test again.
+
+> **Common mistake:** Discord launches automatically on startup on most computers and sits in the system tray. Even if you're not actively using Discord, it can hold onto your microphone in the background. Check the system tray (the ^ arrow near the clock on Windows, or the menu bar on Mac) and fully quit any communication apps you're not using.
+
+> **Tip:** If your mic is too quiet in a specific app but fine elsewhere, look for a **"Automatically adjust microphone volume"** or **"Auto gain control"** setting inside the app. Turn it OFF and manually adjust the input volume instead. Auto-gain often overcorrects and makes your voice quieter than it should be.
+
+## Step 5: Restart Audio Services and Update Drivers (Windows)
+
+If Steps 1-4 didn't fix it and you're on Windows, the problem is likely deeper in the audio system: a stuck Windows Audio service, a corrupted driver, or a disabled device.
+
+**Fix 5a — Restart the Windows Audio service:**
+
+1. Press the **Windows key**, type **Services**, and open the Services app.
+2. Scroll down and find **Windows Audio** in the list.
+3. Right-click **Windows Audio** and select **Restart**. Wait 5 seconds.
+4. Right-click **Windows Audio Endpoint Builder** and select **Restart**. Wait 5 seconds.
+5. Test your microphone again.
+
+**Fix 5b — Check if the microphone is disabled in Device Manager:**
+
+1. Right-click the **Start button** → **Device Manager**.
+2. Expand **Audio inputs and outputs**.
+3. Look for your microphone in the list. If it has a small **down-arrow** icon, it's disabled. Right-click it and select **Enable device**.
+4. If you don't see your mic at all, click **View** in the menu bar → **Show hidden devices**. Then look again under Audio inputs and outputs.
+5. If it's still not there, your microphone hardware may not be detected at all — check physical connections (Step 1), try a different USB port, or the mic itself may be broken.
+
+**Fix 5c — Update or reinstall the microphone driver:**
+
+1. In Device Manager, under **Audio inputs and outputs**, right-click your microphone.
+2. Select **Update driver** → **Search automatically for drivers**.
+3. If Windows doesn't find a new driver, right-click again and select **Uninstall device**.
+4. **Do NOT check** the box that says "Delete the driver software" — just uninstall.
+5. Restart your computer. Windows will reinstall the driver automatically on startup.
+
+For external USB microphones: visit the manufacturer's website (Blue, Rode, Audio-Technica, HyperX, etc.) and download their latest driver or firmware. Windows' generic driver works for basic functionality, but manufacturer drivers unlock full features and sometimes fix bugs.
+
+![Device Manager showing Audio inputs and outputs with a microphone device highlighted](PLACEHOLDER)
+
+> **Common mistake:** People sometimes see "High Definition Audio Device" or "Realtek Audio" in Device Manager and assume that's their microphone. These are audio controller entries — your actual microphone is listed under **Audio inputs and outputs**, a separate section further down. Only modify devices in that section when troubleshooting microphone issues.
+
+> **Tip:** After updating or reinstalling drivers, check Windows Update (**Settings → Windows Update → Advanced options → Optional updates**) for any pending driver updates. Microsoft sometimes distributes audio driver fixes through Windows Update that don't show up in Device Manager's automatic search.
+
+## Step 6: Reset the Mac Audio System and Check Hardware
+
+If you're on a Mac and the previous steps didn't work, try these Mac-specific resets.
+
+**Fix 6a — Reset CoreAudio (the Mac sound engine):**
+
+CoreAudio handles all audio input and output on macOS. Restarting it clears audio glitches without restarting your whole computer.
+
+1. Open **Terminal** (find it in Applications → Utilities, or press **Cmd+Space** and type "Terminal").
+2. Type this command exactly and press Enter:
+   ```
+   sudo killall coreaudiod
+   ```
+3. Type your Mac password (you won't see the letters — that's normal) and press Enter.
+4. Wait 10 seconds. The audio system restarts itself.
+5. Test your microphone again.
+
+**Fix 6b — Reset NVRAM (Intel Macs only):**
+
+NVRAM stores low-level audio settings. Resetting it can fix hardware-detection issues on Intel-based Macs. (Apple Silicon Macs — M1, M2, M3, M4 — manage NVRAM automatically and don't need this step.)
+
+1. Shut down your Mac completely.
+2. Press the **power button**, then immediately press and hold **Option + Command + P + R**.
+3. Keep holding all four keys for about 20 seconds. Your Mac may restart during this process — keep holding until you hear the startup chime a second time (or until the Apple logo appears and disappears twice).
+4. Release the keys and let your Mac boot normally.
+5. Test your microphone.
+
+**Fix 6c — Check for physical obstructions on MacBook built-in mics:**
+
+On MacBook laptops, the built-in microphones are hidden in tiny grilles. Dirt, dust, or debris can block them.
+
+1. Look at the left side of your MacBook's keyboard — on recent models, the mic grille is a thin perforated strip between the keyboard and the screen hinge (on the left speaker grille area).
+2. Use a soft, dry brush (a clean makeup brush or camera lens brush works great) to gently clean the grille. Don't use liquids.
+3. On older MacBook models, the mic is located on the left side of the chassis near the headphone jack.
+
+**Fix 6d — Check dictation settings conflict (Mac):**
+
+Sometimes the built-in dictation feature can interfere with other apps trying to use the mic.
+
+1. Go to **System Settings → Keyboard**.
+2. Scroll down to **Dictation**. If it's On, try turning it Off.
+3. Also check **System Settings → Control Center → Siri** — if "Listen for 'Hey Siri'" is enabled, turn it off temporarily and test your mic in other apps.
+
+![The Mac Terminal window with the sudo killall coreaudiod command typed in](PLACEHOLDER)
+
+> **Common mistake:** On MacBooks, people sometimes cover the microphone grille with a sticker, webcam cover, or case that wraps around the edge. The mic grille is tiny and easy to accidentally cover. Remove any case, cover, or sticker near the top-left edge of the keyboard and test again.
+
+> **Tip:** If you're using an external microphone with a Mac that only has USB-C ports (recent MacBook Air and Pro models), you need a USB-C adapter or hub. Not all adapters pass through audio properly — cheap, unpowered adapters are a common source of microphone problems. Try a different adapter or a direct USB-C microphone if you suspect the adapter is the issue.
+
+## Still Stuck?
+
+- **Mic works in some apps but not others?** The problem is app-specific. Revisit Step 4 for that specific app. Also check if the app has been updated recently — a buggy update can break microphone support. Try reinstalling the app.
+
+- **Mic works but you sound robotic, tinny, or glitchy?** This is usually a bandwidth or driver issue, not a broken mic. For USB mics, try a different USB port (preferably one directly on the computer, not a USB hub). For Bluetooth mics, move closer to your computer and reduce wireless interference (turn off other Bluetooth devices nearby). Also check that your audio format isn't set too low: in **Sound settings → Input → Device properties → Additional device properties → Advanced**, try 16-bit, 48000 Hz (DVD Quality) or higher.
+
+- **Mic is too quiet even at 100% volume?** In Windows, go to the same **Additional device properties → Levels** tab and check if there's a **Microphone Boost** slider. Boosting adds +10 to +30 dB of gain. In macOS, third-party apps like **Audio Hijack** or **Loopback** can add software gain. For external mics, check if the mic itself has a gain knob.
+
+- **Using Bluetooth headphones with a built-in mic?** Bluetooth audio has two modes: high-quality stereo output (A2DP) and lower-quality two-way headset mode (HSP/HFP). When the mic activates, Bluetooth switches to headset mode and audio quality drops significantly. This is a Bluetooth limitation, not a defect. Try using your computer's built-in mic for calls and your Bluetooth headphones only for listening, or get a dedicated USB microphone for better call quality.
+
+- **External mic not detected at all?** Try these: (a) plug the mic into a different computer to confirm the mic itself works; (b) try a different USB cable — the cable is often the failure point, not the mic; (c) for 3.5mm mics, try a USB audio adapter (a small USB dongle with mic/headphone jacks, about $10) that bypasses your computer's internal sound card.
+
+- **Internal laptop mic stopped working after a drop or liquid spill?** Physical damage is likely. Laptop microphones are tiny components soldered to the motherboard. If cleaning the grille and all software fixes fail, you may need professional repair. In the meantime, an inexpensive USB microphone ($15-30) will work around the problem and give you better audio quality than any built-in laptop mic.
+
+- **Tried absolutely everything and the mic still doesn't work?** As a last resort on Windows, use the built-in audio troubleshooter: go to **Settings → System → Troubleshoot → Other troubleshooters → Recording Audio → Run**. On Mac, run **Apple Diagnostics**: shut down, then press and hold the **power button** (Apple Silicon) or press **D** during startup (Intel) to check for hardware issues.
