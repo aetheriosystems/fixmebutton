@@ -1,0 +1,284 @@
+---
+title: "How to Fix a Laptop Keyboard That's Not Working or Keys Not Responding"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 7
+---
+
+## Before You Start
+
+You're typing an email, a password, or a search — and nothing appears on screen. Or maybe just a few keys are dead: the "e" won't type, the spacebar does nothing, or the number row spits out symbols instead of numbers. Sometimes the whole keyboard freezes. Other times it types the wrong characters — you press "s" and get "5," or press "a" and get nothing.
+
+A laptop keyboard that stops working feels like a catastrophe. Without it, you can't log in, can't search for help, and can't get anything done. But before you panic and order an external keyboard or book a repair, know this: the vast majority of laptop keyboard problems are software glitches, driver hiccups, or dirt under the keys — all things you can fix yourself in minutes.
+
+This guide walks you through seven fixes, starting with the fastest 30-second checks and working up to deeper Windows and macOS solutions. It covers built-in laptop keyboards on both Windows laptops and MacBooks.
+
+**What you'll need:**
+- Your laptop with the keyboard that's not working
+- A can of compressed air (available at any office supply or electronics store for $5–$10)
+- A functioning external USB or Bluetooth keyboard (helpful for navigating while your built-in keyboard is dead — borrow one if you need to)
+- Administrator access on your laptop (for driver and system-level fixes)
+
+> **Work through the steps in order.** Fixes 1–3 solve the problem for roughly 80% of people. Skip to Fix 5 only if you've tried everything else and suspect a deeper Windows or macOS system issue.
+
+> **Can't type at all?** You can navigate without a physical keyboard. On Windows, press **Windows key + Ctrl + O** to open the On-Screen Keyboard — you can click keys with your mouse or touchpad. On Mac, go to **System Settings → Accessibility → Keyboard** and turn on the **Accessibility Keyboard**. Both let you type and navigate until you fix the real keyboard.
+
+![A laptop with a stuck or unresponsive keyboard — the user tries to type but nothing appears on screen, looking frustrated](PLACEHOLDER)
+
+## Fix 1: Check the Obvious Physical Stuff (Clean Under the Keys, Restart, Check for Lock Keys)
+
+Before you touch a single setting, rule out the physical causes. A surprising number of "dead keyboard" problems turn out to be crumbs, a stuck key, or a setting you toggled by accident.
+
+**Fix 1a — Restart your laptop (yes, really):**
+
+1. Save any open work (use your mouse/touchpad and the On-Screen Keyboard if needed — press **Windows key + Ctrl + O** on Windows or enable the Accessibility Keyboard on Mac)
+2. Click the **Start** menu (Windows) or **Apple menu** (Mac) and select **Restart** — do NOT choose "Shut down" and then turn it back on. A full restart clears temporary glitches that a shutdown-and-power-on cycle sometimes preserves (Windows Fast Startup keeps some driver states across shutdowns)
+3. After restarting, open a text document or Notepad and try typing. If the keyboard works now, you're done — it was a temporary software glitch
+
+**Fix 1b — Clean under the keys with compressed air:**
+
+Dust, crumbs, pet hair, and other debris are the #1 cause of individual keys that don't work. A single crumb under a key can block the mechanism entirely.
+
+1. Turn off your laptop completely — not just sleep. Hold the power button for 10 seconds if you have to
+2. Hold your laptop at a roughly 75-degree angle (almost vertical, screen tilted back)
+3. Take your can of compressed air and aim the nozzle at the keys that aren't working. Spray in short 1–2 second bursts, moving the nozzle back and forth across the affected keys
+4. **Critical:** Keep the can upright. Tilting it sideways or upside-down shoots freezing liquid propellant onto your keyboard, which can permanently damage the electronics
+5. After spraying, tap the sides and bottom of the laptop gently with your palm to dislodge anything that's stuck
+6. Turn the laptop back on and test the keys
+
+> **Common mistake:** Using a vacuum cleaner instead of compressed air. Vacuums generate static electricity that can fry your laptop's internal components. Never use a vacuum on or near your laptop. Compressed air only. Also, do NOT shake the laptop upside-down like a ketchup bottle — the violent motion can damage the hard drive or internal components. Gentle tapping is enough.
+
+**Fix 1c — Check for stuck modifier keys and toggle keys:**
+
+Sometimes the keyboard isn't broken — a modifier key is stuck or a toggle feature is turned on.
+
+1. Press each of these keys firmly 5–6 times to unstick them: **Shift** (both left and right), **Ctrl**, **Alt** (Windows) / **Option** (Mac), **Windows key** / **Command key**, and **Caps Lock**
+2. Check if **Caps Lock** is on — look for the Caps Lock indicator light on your keyboard (usually near the top-right corner). If Caps Lock is on, everything you type will be IN UPPERCASE and number keys may produce symbols
+3. Check if **Num Lock** is on — many laptops overlay a numeric keypad onto the letter keys (look closely at your keys: letters like U, I, O, J, K, L often have small numbers printed on them). Press the **Num Lock** key (usually **Fn + NumLk** or just the NumLk key) to toggle it off. Test by pressing the U, I, O keys — if they type numbers instead of letters, Num Lock is on
+4. Check if **Filter Keys** is turned on — this is a Windows accessibility feature that makes the keyboard ignore brief or repeated keystrokes. To check: open Settings → **Accessibility → Keyboard**, and make sure **Filter keys** is turned **Off**. If it's on, Windows may be deliberately ignoring your keystrokes, making the keyboard seem dead
+5. Check if **Sticky Keys** is on — if you press and release the Shift key and hear a beep, Sticky Keys is active. Press both Shift keys at once to turn it off, or go to Settings → **Accessibility → Keyboard** and turn off **Sticky keys**
+
+![A hand holding a can of compressed air, spraying between the keys of a laptop keyboard held at a 75-degree angle](PLACEHOLDER)
+
+> **Common mistake:** Pressing the Num Lock key and not realizing your laptop has a numeric overlay. This is especially common on 15-inch and larger laptops from Dell, HP, Lenovo, and ASUS. Look at your keys — if you see small numbers on the right side of the U, I, O, J, K, L keys, your laptop has a numeric overlay and Num Lock is the culprit. Press **Fn + NumLk** and the letters should return to normal. Also: Filter Keys and Sticky Keys can turn themselves on via a keyboard shortcut (holding Shift for 8 seconds activates Sticky Keys; holding the right Shift key for 8 seconds activates Filter Keys). If they keep turning on by themselves, disable the shortcut: go to Settings → Accessibility → Keyboard → Sticky Keys (or Filter Keys), click the setting, and uncheck "Allow the shortcut key to start."
+
+## Fix 2: Reinstall the Keyboard Driver (Windows)
+
+When Windows loads the wrong driver — or the right driver gets corrupted — your keyboard can stop working entirely, or individual keys can behave erratically. Reinstalling the keyboard driver forces Windows to load a fresh copy.
+
+**Step 1 — Open Device Manager:**
+
+1. Right-click the **Start** button (or press **Windows key + X**) and select **Device Manager** from the menu
+2. In the Device Manager window, find and expand the **Keyboards** category by clicking the small arrow (>) next to it
+
+**Step 2 — Uninstall the keyboard driver:**
+
+1. Under Keyboards, you'll see one or more entries. The built-in laptop keyboard is usually listed as **"Standard PS/2 Keyboard"** or **"HID Keyboard Device."** You may also see entries for external keyboards if you've connected any
+2. Right-click the entry for your laptop's built-in keyboard and select **Uninstall device**
+3. A confirmation window will appear. Check the box that says **"Attempt to remove the driver for this device"** if it's available (it's not always there — that's fine), then click **Uninstall**
+4. If you see multiple keyboard entries and you're not sure which is the built-in one, uninstall all of them. Windows will reinstall the correct ones automatically
+5. Do NOT restart yet — uninstall any other keyboard entries first, then restart once
+
+**Step 3 — Restart and let Windows reinstall:**
+
+1. Restart your computer (Start → Power → Restart)
+2. When Windows boots back up, it will automatically detect the keyboard and reinstall the correct driver. This takes about 30 seconds — you'll know it's done when the keyboard backlight (if your laptop has one) turns on
+3. Open Notepad or any text field and test your keyboard
+
+![The Windows Device Manager window, with the Keyboards category expanded and the right-click menu showing "Uninstall device" on the Standard PS/2 Keyboard entry](PLACEHOLDER)
+
+> **Common mistake:** Only uninstalling one keyboard entry when there are several. If Device Manager shows multiple keyboard devices — for example, "Standard PS/2 Keyboard," "HID Keyboard Device," and "Razer Huntsman" (if you once connected a gaming keyboard) — uninstall ALL of them. A conflicting driver from an old external keyboard is a surprisingly common reason the built-in keyboard stops working. Windows will reinstall only the drivers for devices that are currently connected.
+
+> **Keyboard-only tip:** If your keyboard is partially working (some keys respond), you can open Device Manager by pressing **Windows key + R**, typing `devmgmt.msc`, and pressing Enter. Use **Tab** to move between entries, arrow keys to navigate within a category, the **right-click menu key** (between the right Alt and right Ctrl on full-size keyboard layouts) or **Shift + F10** to open the right-click menu, and **Enter** to select.
+
+> **Mac users:** macOS doesn't have Device Manager. Skip to Fix 3 and Fix 6, which cover the equivalent macOS steps (NVRAM/SMC reset and keyboard settings).
+
+## Fix 3: Check Your Keyboard Language, Layout, and Region Settings
+
+If your keyboard works but types the wrong characters — you press the "/" key and get "é," or the "@" key types quotation marks — your keyboard layout or language settings have been changed. This happens surprisingly often: a Windows or macOS update can switch your layout, or you might have accidentally pressed a keyboard shortcut (like **Windows key + Space** or **Ctrl + Shift**) that changes the input language.
+
+**On Windows:**
+
+1. Look at the bottom-right corner of your taskbar, next to the clock. You'll see a language abbreviation — usually **ENG** for English. If it says something else (like **FRA** for French or **ESP** for Spanish), your keyboard layout has been switched
+2. Click that language abbreviation. A menu will appear showing all installed keyboard layouts. Select the correct one for your keyboard (for most US/Canada laptops, that's **English (United States)** — look for "US" in the keyboard icon)
+3. To prevent accidental switching in the future: open **Settings → Time & language → Language & region**. Under **Preferred languages**, click the three dots (…) next to your language and select **Language options**. Under **Keyboards**, remove any keyboard layouts you don't use (keep only the one that matches your physical keyboard)
+4. Also disable the shortcut that switches layouts: go to **Settings → Time & language → Typing → Advanced keyboard settings → Input language hot keys**. Select **Between input languages** and click **Change Key Sequence**. Set both options to **Not Assigned** and click OK on both windows. Now Ctrl+Shift and Windows+Space won't accidentally switch your layout
+
+**On Mac:**
+
+1. Look at the top-right corner of your screen, in the menu bar. If you see a flag icon or a language abbreviation (like "US"), click it and make sure the correct layout is selected
+2. To check all installed layouts: open **System Settings → Keyboard → Text Input → Input Sources**. Make sure only the layout that matches your physical keyboard is listed (usually "U.S." for American keyboards). Remove any extras by selecting them and clicking the minus (–) button
+3. To disable the shortcut that switches layouts: in the same Input Sources settings, click **Edit** or look for a keyboard shortcut setting and disable **"Select the previous input source"**
+
+![The Windows taskbar showing the language abbreviation "ENG" next to the system clock, with the keyboard layout menu expanded](PLACEHOLDER)
+
+> **Common mistake:** Installing a new language for spell-checking (like "English (United Kingdom)" for British spelling) and accidentally adding its keyboard layout. In Windows, adding a language often also adds its keyboard layout. If you see multiple entries under your language in Settings → Language & region → Language options → Keyboards, and one of them is a layout you don't recognize (like "United Kingdom" when you have a US keyboard, or "Canadian Multilingual Standard"), remove it. The spell-checking language and the keyboard layout are separate settings — you can use British English spell-check with a US keyboard layout.
+
+> **Tip:** Not sure what physical keyboard layout you have? Look at the key immediately to the left of the **Enter/Return** key. On a US keyboard, it's the double-quote/apostrophe key (`" '`). On a UK keyboard, it's the hash/tilde key (`# ~`). Also check the key above Enter: on a US keyboard it's the backslash/pipe key (`\ |`); on a UK keyboard the Enter key is taller and that key is moved to the left of Enter. Match your Windows/macOS layout setting to your physical keyboard.
+
+## Fix 4: Disable Fast Startup and Update Your BIOS/UEFI (Windows)
+
+Fast Startup is a Windows feature that saves your system state to disk when you shut down, so your computer boots faster next time. But it's known to cause keyboard problems — especially after Windows updates. Disabling it often fixes keyboards that work after a restart but stop working after a shut-down-and-power-on.
+
+**Fix 4a — Disable Fast Startup:**
+
+1. Open the **Control Panel** (search for "Control Panel" in the Start menu)
+2. Go to **Hardware and Sound → Power Options**
+3. In the left sidebar, click **"Choose what the power buttons do"**
+4. Click the **"Change settings that are currently unavailable"** link at the top (you need administrator access for this)
+5. Scroll down to the **Shutdown settings** section. Uncheck **"Turn on fast startup (recommended)"**
+6. Click **Save changes**
+7. Shut down your computer completely (Start → Power → Shut down, not Restart). Wait 30 seconds. Turn it back on and test the keyboard
+
+**Fix 4b — Check for a BIOS/UEFI update:**
+
+A BIOS or UEFI firmware update (the low-level software that starts your laptop before Windows loads) can fix keyboard problems that drivers can't reach. This is especially true for newer laptops where the keyboard connects through an internal USB or I2C controller that the BIOS manages.
+
+1. Find your laptop's model number — it's usually printed on a sticker on the bottom of the laptop, or you can find it by typing "System Information" in the Start menu and looking at "System Model"
+2. Go to your laptop manufacturer's support website and search for your model number:
+   - **Dell:** [dell.com/support](https://www.dell.com/support)
+   - **HP:** [support.hp.com](https://support.hp.com)
+   - **Lenovo:** [support.lenovo.com](https://support.lenovo.com)
+   - **ASUS:** [asus.com/support](https://www.asus.com/support)
+   - **Acer:** [acer.com/support](https://www.acer.com/support)
+3. Look for the **Drivers & Downloads** or **Software & Drivers** section. Find **BIOS** or **UEFI** in the category list
+4. If a newer BIOS version is available than what you currently have (you can check your version by typing "System Information" in Start and looking at "BIOS Version/Date"), download and install it. Most manufacturers provide a Windows installer — just download, double-click, and follow the prompts. Your laptop will restart several times during the update. **Plug in your charger during a BIOS update — if the battery dies mid-update, your laptop may become unusable.**
+5. After the update, test your keyboard
+
+![The Windows Control Panel Power Options page, showing the "Choose what the power buttons do" screen with the Fast Startup checkbox unchecked](PLACEHOLDER)
+
+> **Common mistake:** Disabling Fast Startup but not doing a full shutdown afterward. Fast Startup only takes effect on shutdown — if you click "Restart," the feature isn't used. After unchecking the box, you MUST do Start → Power → Shut down, then manually turn the laptop back on. A restart won't apply the change. Also: if your keyboard works after a restart but stops working after a shutdown-and-power-on, Fast Startup is almost certainly the culprit. This pattern is the #1 diagnostic clue for Fast Startup keyboard issues.
+
+> **Warning for BIOS updates:** Interrupting a BIOS update can permanently damage your laptop's motherboard. Plug in your charger, close all other programs, and don't touch the laptop until the update is completely finished (including any automatic restarts). If your laptop seems frozen during the update, wait at least 30 minutes before assuming it's stuck — BIOS updates can appear frozen when they're actually working.
+
+## Fix 5: Check for Windows Update-Related Keyboard Problems
+
+Windows updates — especially major feature updates — are notorious for breaking laptop keyboards. The 2024 Windows 11 24H2 update, in particular, caused widespread keyboard failures on certain laptop models. If your keyboard stopped working right after a Windows update installed, this fix is for you.
+
+**Fix 5a — Install the latest updates (yes, the fix is often another update):**
+
+Microsoft usually releases follow-up patches within days or weeks after a problematic update breaks things. If your keyboard died after an update, a newer update may already have the fix.
+
+1. Open **Settings → Windows Update**
+2. Click **Check for updates** and install everything available — including optional updates
+3. Restart when prompted
+4. If the keyboard still doesn't work, go to **Settings → Windows Update → Update history → Uninstall updates**, find the most recent update (the one right before your keyboard stopped working), and uninstall it. This temporarily removes the problematic update and restores keyboard function
+
+**Fix 5b — Roll back the keyboard driver:**
+
+Windows Update sometimes installs a driver that doesn't work with your specific laptop keyboard.
+
+1. Open **Device Manager** (right-click Start → Device Manager)
+2. Expand **Keyboards**
+3. Right-click your laptop's built-in keyboard and select **Properties**
+4. Go to the **Driver** tab
+5. If the **Roll Back Driver** button is clickable (not grayed out), click it. This restores the previous driver version that worked
+6. Follow the prompts and restart your computer
+
+**Fix 5c — Uninstall recent Windows updates (if nothing else works):**
+
+1. Go to **Settings → Windows Update → Update history**
+2. Scroll down and click **Uninstall updates**
+3. Look for the most recent updates — sort by "Installed On" date
+4. Find updates installed right before your keyboard stopped working. Focus on updates labeled "Update for Microsoft Windows," "Security Update," or "Cumulative Update"
+5. Click **Uninstall** next to each suspect update, starting with the most recent. Restart after each uninstall and test your keyboard
+6. Once your keyboard works again, pause Windows Updates temporarily so the broken update doesn't reinstall: go to **Settings → Windows Update** and use the "Pause for 1 week" option. By then, Microsoft will likely have released a fix
+
+![Windows Settings open to the Windows Update page, showing the "Update history" link and recent updates listed by date](PLACEHOLDER)
+
+> **Common mistake:** Uninstalling a security update and leaving your system vulnerable for weeks. If you uninstall a problematic update, pause Windows Update for only 1 week (the minimum). Then check for new updates — the problematic update will likely have been replaced with a patched version. If not, install any other available updates (they may be unrelated security fixes) and pause again. Don't leave updates uninstalled indefinitely.
+
+> **Tip:** If a specific Windows update is widely known to break keyboards (search "[your laptop model] keyboard not working after Windows update" on Google or Reddit), you can block that specific update using Microsoft's Show or Hide Updates tool. Download it from [support.microsoft.com](https://support.microsoft.com/en-us/topic/how-to-temporarily-prevent-a-driver-update-from-reinstalling-in-windows-10-7d4f39b9-7f0b-4e26-a1a1-f8e15e8fb16e), run it, select **Hide updates**, and check the problematic update to prevent it from reinstalling.
+
+## Fix 6: Reset Your Mac's NVRAM, SMC, and Keyboard Settings (Mac)
+
+MacBooks have their own set of keyboard fixes that don't exist on Windows. These target the low-level system controllers that manage the keyboard hardware. If you have a Mac, start here before trying anything else beyond Fix 1.
+
+**Fix 6a — Reset NVRAM/PRAM (Intel Macs only):**
+
+NVRAM (non-volatile RAM) stores settings like keyboard preferences, screen resolution, and startup disk selection. Corrupted NVRAM can cause keyboard problems. Note: This fix only applies to Intel-based Macs — Apple Silicon Macs (M1/M2/M3/M4) manage NVRAM automatically and don't need this step.
+
+1. Shut down your Mac completely (Apple menu → Shut Down)
+2. Turn it on and **immediately** press and hold these four keys simultaneously: **Option + Command + P + R**
+3. Keep holding all four keys for about 20 seconds. Your Mac may restart or you may hear the startup chime twice — that's the signal that NVRAM has been reset
+4. Release the keys and let your Mac boot normally. Test the keyboard
+
+**Fix 6b — Reset the SMC (Intel Macs with a T2 chip or non-removable battery):**
+
+The System Management Controller (SMC) manages hardware functions including the keyboard. A corrupted SMC can cause the keyboard to stop responding. Note: Apple Silicon Macs don't have an SMC — the equivalent functions are managed by the chip itself and reset automatically during a restart. If you have an M-series Mac, skip to Fix 6c.
+
+1. Shut down your Mac completely
+2. Press and hold these three keys on the **left side** of the built-in keyboard: **Control + Option + Shift**
+3. While holding those three keys, also press and hold the **power button** (or Touch ID button). You're now holding four keys/buttons total
+4. Keep holding all four for 7 seconds. Your Mac may turn on and off — that's expected
+5. Release all keys, wait a few seconds, then press the power button normally to turn on your Mac
+6. Test the keyboard
+
+**Fix 6c — Check macOS Keyboard Settings:**
+
+1. Open **System Settings → Keyboard**
+2. Check the **Key repeat rate** and **Delay until repeat** sliders. If they're set to the far left (slowest), your keyboard may feel unresponsive even though it's working. Move them to the middle
+3. Click **Keyboard Shortcuts** and check if any custom shortcuts might be intercepting your keystrokes. Look for shortcuts assigned to keys that aren't working
+4. Go to **System Settings → Accessibility → Keyboard** and turn off **Slow Keys** (which adds a delay before keystrokes register) and **Sticky Keys** (which lets you press modifier keys one at a time)
+5. Also check if **Mouse Keys** is enabled in Accessibility settings — this lets you control the cursor using the keyboard number pad and can interfere with normal typing
+
+![macOS System Settings open to the Keyboard preferences pane, showing the Key Repeat and Delay Until Repeat sliders](PLACEHOLDER)
+
+> **Common mistake:** Thinking Apple Silicon Macs (M1/M2/M3/M4) need an SMC or NVRAM reset. They don't — and there's no way to do it even if you try. Apple Silicon Macs automatically reset these controllers during a normal restart. If your M-series MacBook keyboard isn't working, skip directly to Fix 6c (check macOS keyboard settings) and Fix 7 (test with an external keyboard). A simple full shutdown (Apple menu → Shut Down, wait 30 seconds, then power on) is the Apple Silicon equivalent of an SMC reset.
+
+> **Tip:** You can use the **Keyboard Viewer** to diagnose stuck keys on macOS. Go to System Settings → Keyboard → Input Sources → Edit, and turn on "Show Input menu in menu bar." Then click the Input menu (flag icon) in the menu bar and select **Show Keyboard Viewer**. Press keys on your physical keyboard — the on-screen keyboard highlights pressed keys. If a key lights up orange and stays orange without you touching it, that key is physically stuck. This is the fastest way to diagnose "phantom keystrokes."
+
+## Fix 7: Test with an External Keyboard — and Know When It's a Hardware Problem
+
+If you've tried everything and your laptop keyboard still doesn't work, it's time to determine whether the problem is software or hardware. The fastest way to know: plug in an external keyboard.
+
+**Step 1 — Connect an external keyboard:**
+
+1. Borrow or buy any USB keyboard (a basic one costs $10–$15). Plug it into a USB port on your laptop
+2. If your laptop only has USB-C ports (common on newer ultrabooks and MacBooks), you'll need a USB-C to USB adapter or a USB-C keyboard
+3. Wait 10–15 seconds for Windows or macOS to recognize it. The external keyboard should work immediately — no driver installation needed
+4. Open a text document and type on the external keyboard. Does it work?
+
+**Step 2 — Interpret the results:**
+
+- **If the external keyboard works perfectly:** Your laptop's built-in keyboard has a hardware problem. The drivers, Windows/macOS settings, and USB controller are all working fine — the issue is physically inside your laptop keyboard. You have two options:
+  - Use the external keyboard as a permanent solution (many people use a laptop stand and external keyboard as a desktop setup)
+  - Get the built-in keyboard repaired — contact your laptop manufacturer or a local repair shop. For most laptops, a keyboard replacement costs $50–$150 depending on the model. Check if your laptop is still under warranty first (most manufacturers offer a 1-year warranty)
+- **If the external keyboard also doesn't work:** The problem is software or system-level — not the keyboard hardware itself. Go back through Fixes 2–5 (Windows) or Fix 6 (Mac) and try again. If nothing works, your operating system may need repair. On Windows, try a repair install (search for "Reset this PC" in Settings — choose "Keep my files"). On Mac, try reinstalling macOS from Recovery (restart and hold Command+R — choose "Reinstall macOS," which keeps your files)
+
+**Step 3 — Boot into BIOS/UEFI to confirm hardware vs. software:**
+
+This is the definitive test. The BIOS/UEFI runs before Windows or macOS loads, so if the keyboard works there, the hardware is fine and your operating system is the problem.
+
+1. Shut down your laptop completely
+2. Turn it on and immediately start pressing the BIOS entry key repeatedly — it's usually **F2**, **F10**, **Del**, or **Esc** (check your laptop manufacturer's website if you're not sure)
+3. If you successfully enter the BIOS/UEFI setup screen, try using the arrow keys to navigate through the menus
+4. **If the keyboard works in BIOS/UEFI:** The keyboard hardware is fine. The problem is in Windows or macOS. Go back to the software fixes (Fix 2 for Windows, Fix 6 for Mac)
+5. **If the keyboard doesn't work in BIOS/UEFI:** The keyboard has a hardware failure. It needs physical repair or replacement
+
+![An external USB keyboard plugged into a laptop, with the laptop's built-in keyboard clearly not responding while the external keyboard works fine](PLACEHOLDER)
+
+> **Common mistake:** Assuming the keyboard is permanently broken because it doesn't work in Windows, when it actually works fine in BIOS. Always do the BIOS test before spending money on repairs. A keyboard that works in BIOS but not Windows has a 100% software-fixable problem — usually a driver issue (Fix 2). This alone has saved countless people from unnecessary repair bills.
+
+> **Keyboard shortcut to enter BIOS:** Can't remember which key enters BIOS? Here are the most common ones by brand: **Dell:** F2; **HP:** F10 or Esc; **Lenovo:** F1 or F2 (or the small Novo button on the side); **ASUS:** F2 or Del; **Acer:** F2; **MSI:** Del; **Microsoft Surface:** Hold Volume Up while pressing Power; **MacBooks:** No traditional BIOS — hold Command+R for Recovery, or hold D at startup for Apple Diagnostics.
+
+## Still Stuck?
+
+- **Only specific keys don't work (like "e" or "space")?** This is almost always physical — something is stuck under those specific keys. Try Fix 1b (compressed air) again, focusing only on the dead keys. Hold the laptop at a steep angle (75–85 degrees) so gravity helps dislodge debris while you spray. If a key still won't work, the key mechanism itself may be broken — individual keycap replacements are available online for most laptop models ($5–$15 per key).
+
+- **Keyboard types the wrong characters but only in certain programs?** Some programs (especially older or specialized software) override your system keyboard layout. Check the program's own language or input settings. Also, if you use a VPN that routes through another country, some programs may auto-detect your "location" and switch keyboard layouts.
+
+- **Keyboard backlight stopped working but keys still type?** This is a separate issue from key function. Check your laptop's keyboard backlight shortcut (usually **Fn + Space** or **Fn + F5/F6/F7** — look for a key with a keyboard glow icon). If the shortcut doesn't work, check your BIOS/UEFI settings for a "Keyboard Illumination" option. On some laptops, the backlight only works when the ambient light sensor detects low light — cover the sensor (usually near the webcam) and try again.
+
+- **Keyboard works in BIOS but nowhere else — even after reinstalling drivers?** Try booting into Windows Safe Mode. Restart your computer, and as it boots, press **F4** (or hold Shift while clicking Restart, then choose Troubleshoot → Advanced options → Startup Settings → Restart → press 4). If the keyboard works in Safe Mode, a third-party program is interfering — likely an antivirus, keyboard customization software (Razer Synapse, Logitech G Hub, Corsair iCUE), or a system utility. Uninstall recently added programs one by one and test after each removal.
+
+- **Liquid spilled on the keyboard?** Turn the laptop off **immediately** — hold the power button for 10 seconds. Unplug the charger. Turn the laptop upside-down (like an open tent) to let liquid drain out. Do NOT use a hairdryer — the heat can warp keys and melt internal components. Do NOT try to turn it on for at least 48 hours — let it dry completely. Place it in a dry, well-ventilated area with a fan blowing across it (not directly into it). Rice doesn't work and leaves dust inside — don't do it. After 48 hours, try turning it on. If any keys don't work, you'll likely need a keyboard replacement — liquid damage corrodes the contacts under the keys and is rarely fixable with software.
+
+- **Keyboard works intermittently — works sometimes, stops working other times?** This is the most frustrating pattern and is often caused by a loose internal keyboard ribbon cable. Over time, the cable connecting the keyboard to the motherboard can work slightly loose from repeated opening/closing of the laptop lid. This requires opening the laptop to reseat the cable — if you're comfortable doing that, search "[your laptop model] keyboard ribbon cable reseat" for a guide. Otherwise, a repair shop can do it in 15 minutes for a minimal labor charge.
+
+- **Nothing works and you need to use your laptop right now?** You have three immediate options to keep working while you figure out a permanent fix: (1) Use the On-Screen Keyboard (**Windows key + Ctrl + O** on Windows, or enable the Accessibility Keyboard in macOS System Settings → Accessibility → Keyboard). (2) Plug in a USB keyboard (Fix 7). (3) Connect a Bluetooth keyboard if your laptop still has functioning Bluetooth and you can navigate settings with your mouse/touchpad.
+
+- **Considering a keyboard replacement?** For most laptops, replacing the built-in keyboard means replacing the entire top case (the palm rest and keyboard assembly). This costs $50–$150 in parts plus labor. Check your warranty first — most manufacturers cover keyboard failures for 1 year. Some credit cards also extend the manufacturer warranty by an additional year. Before paying for a repair, also consider whether an external keyboard meets your needs — a quality external keyboard costs $20–$50 and avoids any repair risk.
