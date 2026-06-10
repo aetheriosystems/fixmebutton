@@ -1,0 +1,156 @@
+---
+title: "How to Fix WiFi That Keeps Disconnecting"
+category: internet-wifi
+devices: ["Windows 10", "Windows 11", "macOS", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+Your WiFi connects fine, then drops out of nowhere. Maybe it happens every few minutes, maybe once an hour. Your video call freezes, your game kicks you out, or a webpage stops loading halfway through. Then — just as suddenly — it reconnects on its own. Or you have to manually reconnect every time.
+
+This is different from slow internet (everything loads, just slowly) and different from "no internet at all" (connected but nothing works). This guide is for **connections that come and go.**
+
+**What you'll need:**
+- Access to your WiFi router
+- Your WiFi password
+- The device that keeps disconnecting
+
+> **Work through the steps in order.** Start with Step 1 — it tells you whether the problem is with your device or your whole network. That changes everything that follows.
+
+![A laptop screen showing the WiFi icon switching from connected to disconnected](PLACEHOLDER)
+
+## Step 1: Figure Out If It's One Device or All Devices
+
+This is the most important step. If every device in your house is disconnecting, the problem is your router or internet provider. If only one device drops out, the problem is that device.
+
+**Fix 1 — Test another device**
+1. Grab a second device — a phone, tablet, or another computer on the same WiFi
+2. Use it for 5-10 minutes doing normal things (browsing, streaming a video)
+3. Watch carefully: does the WiFi drop on that device too?
+4. If the second device **also** disconnects → the problem is your router or network. Go to Step 2
+5. If the second device **never** disconnects → the problem is with your original device only. Skip to Step 3
+
+> **Common mistake:** People skip this step and spend an hour updating drivers on their laptop, only to discover their phone drops WiFi too. Always test a second device first — it saves you from fixing the wrong thing.
+
+![Two phones side by side with one showing WiFi connected and the other showing it dropping](PLACEHOLDER)
+
+## Step 2: Restart Your Modem and Router
+
+If more than one device is disconnecting, your router or modem is almost certainly the cause. Routers are tiny computers — they get confused over time, especially if they've been running for weeks without a break.
+
+1. Unplug the power cable from both your **modem** (the box connected to the cable or phone line in your wall) and your **router** (the box with antennas)
+2. Wait **a full 60 seconds.** Set a timer. This matters — the modem's internal memory takes time to clear
+3. Plug the **modem** back in first. Wait until all its lights stop blinking and settle into a steady pattern — usually 1-2 minutes
+4. Plug the **router** back in. Wait another 1-2 minutes for it to boot up completely
+5. Reconnect your device and use the internet normally for 10-15 minutes. Did the disconnects stop?
+
+> **What's happening:** Over time, routers accumulate small errors — a bad IP assignment here, a memory leak there. These build up until the router starts dropping connections to "catch its breath." A full power cycle clears everything and gives you a clean start.
+
+> **Common mistake:** People unplug and immediately plug back in. The capacitors inside a modem hold power for 30+ seconds. If you don't wait, the modem never fully resets — and the problem often survives the restart.
+
+![Person unplugging the power cable from a modem with a timer showing 60 seconds](PLACEHOLDER)
+
+If restarting helped but the problem comes back after a few days, jump to Step 5 — your router may need a firmware update or a WiFi channel change.
+
+## Step 3: Check for Signal Interference (and Power Saving, If You're on Windows)
+
+If only one device is disconnecting, two things cause most cases: a weak WiFi signal at your device's location, or your device's power-saving settings that turn off WiFi to save battery.
+
+**Fix 3A — Check your signal strength**
+1. Look at the WiFi icon on your device. How many bars? One or two bars means a weak connection
+2. Move your device to the same room as your router. Use it there for 10 minutes
+3. If the disconnects stop, your problem is **distance or obstacles** between you and the router
+
+For a permanent fix:
+- Place the router in a central, elevated spot — not on the floor, not in a closet, not behind the TV
+- Keep the router away from: microwave ovens, baby monitors, cordless phones, thick concrete walls, large metal objects (fridges, filing cabinets), and fish tanks (water absorbs WiFi signals)
+- If you can't move the router, consider a **WiFi extender** or **mesh WiFi system** (like Google WiFi, Eero, or TP-Link Deco)
+
+![A diagram showing a router placed in an open central location vs hidden behind a TV](PLACEHOLDER)
+
+**Fix 3B — Disable WiFi power saving (Windows only)**
+Windows has a power-saving feature that can turn off your WiFi adapter to save energy. This is the #1 cause of random disconnects on Windows laptops.
+
+1. Right-click the **Start button** (or press **Windows key + X**) and select **Device Manager**
+2. Expand the **Network adapters** section by clicking the arrow next to it
+3. Right-click your WiFi adapter (it usually has "Wireless," "WiFi," or "WLAN" in the name — Intel, Realtek, Qualcomm, or MediaTek) and select **Properties**
+4. Click the **Power Management** tab
+5. **Uncheck** the box that says "Allow the computer to turn off this device to save power"
+6. Click **OK**
+7. Restart your computer and test
+
+> **Common mistake:** People pick the wrong adapter in Device Manager. Your WiFi adapter has "Wireless" or "WiFi" in its name — not "Ethernet," not "Bluetooth," not "WAN Miniport." If you uncheck power saving on the wrong one, nothing changes.
+
+![Windows Device Manager showing the Power Management tab with the checkbox unchecked](PLACEHOLDER)
+
+**Fix 3C — Disable WiFi auto-switching (iPhone/Android/Windows)**
+Your device might be hopping between different WiFi networks or between 2.4 GHz and 5 GHz bands because it thinks one signal is slightly better.
+
+- **iPhone:** Go to **Settings → Wi-Fi**, tap the blue **ⓘ** next to your network, and turn OFF **Auto-Join** for any nearby networks you don't want it switching to. Also, turn OFF **Wi-Fi Assist** at the very bottom of the Wi-Fi settings page — this switches to cellular data when WiFi is weak, which can feel like a disconnect.
+- **Android:** Go to **Settings → Connections → Wi-Fi**, tap the gear icon (⚙) next to your network, and look for **Auto reconnect** or **Switch to mobile data** — turn those off temporarily to test.
+- **Windows:** Go to **Settings → Network & internet → Wi-Fi → Manage known networks**, click your network, and make sure **Connect automatically when in range** is ON (so it at least tries to reconnect), but also remove any old networks you don't use anymore so Windows doesn't jump to them.
+
+## Step 4: Update Your WiFi Adapter Driver (Windows)
+
+If you're on Windows and the disconnects started after a recent update — or only happen on one Windows PC — an outdated or buggy WiFi driver is very often the cause. Microsoft's Windows updates sometimes install generic drivers that don't work well with your specific WiFi hardware.
+
+1. Right-click the **Start button** and select **Device Manager**
+2. Expand **Network adapters**
+3. Right-click your WiFi adapter and select **Update driver**
+4. Choose **Search automatically for drivers.** Let Windows check for a newer version
+5. If Windows says "The best drivers are already installed," don't stop there — Windows often misses newer drivers. Do this instead:
+   - Note the exact name of your WiFi adapter (for example: "Intel Wi-Fi 6 AX200" or "Realtek RTL8822CE")
+   - Open a browser and search for: `[adapter name] driver download` (for example: "Intel Wi-Fi 6 AX200 driver download")
+   - Download the driver directly from the manufacturer's website (Intel, Realtek, Qualcomm, or MediaTek)
+   - Install it, restart your computer, and test
+6. After updating, go back to the adapter's **Properties → Power Management** tab and make sure the power saving checkbox is still unchecked (Windows updates sometimes re-enable it)
+
+> **Common mistake:** People trust Windows Update when it says "The best drivers are already installed." Windows Update's driver database is often months behind the manufacturer's website. If your disconnects started right after a Windows update, the update almost certainly installed a generic driver — you need the manufacturer's version, not Microsoft's.
+
+**For Mac users:** Apple includes WiFi drivers in macOS updates. Go to **Apple menu () → System Settings → General → Software Update** and install any available updates. If you're already up to date and still disconnecting, move to Step 5.
+
+![Device Manager showing the right-click menu on a WiFi adapter with "Update driver" highlighted](PLACEHOLDER)
+
+## Step 5: Change Your Router's WiFi Channel
+
+Your router broadcasts on a specific WiFi "channel" — think of it like a radio station frequency. If many of your neighbors' routers are broadcasting on the same channel, the signals collide and your devices disconnect. This is especially common in apartment buildings and dense neighborhoods.
+
+1. Find your router's IP address. It's usually printed on a sticker on the bottom or back of the router — look for "Default Gateway," "Router IP," or a number like **192.168.0.1** or **192.168.1.1**
+2. Open a web browser and type that number into the address bar. Press Enter
+3. Log in. The username and password are usually on that same sticker — often **admin** and **password**. If you changed them and forgot, you'll need to factory reset the router (there's a tiny reset button you press with a paperclip)
+4. Once logged in, look for a section called **Wireless**, **WiFi Settings**, or **Advanced Wireless**
+5. Find the **Channel** setting. It's probably set to **Auto**. Note what channel it's currently using
+6. Change the channel manually:
+   - For **2.4 GHz** WiFi: channels 1, 6, and 11 don't overlap with each other. Pick one of these three — ideally a different one from what it's currently on
+   - For **5 GHz** WiFi: you have many more channels (36, 40, 44, 48, 149, 153, 157, 161). Pick any channel different from the current one
+7. Click **Save** or **Apply**. The router may restart briefly
+8. Reconnect your devices and test for 15-30 minutes
+
+> **What's happening:** Most routers default to "Auto" channel selection, which sounds smart but often picks crowded channels. Manually picking a less-crowded channel gives your WiFi a clear lane with no interference from neighbors.
+
+> **Warning:** Different router brands use different menu layouts. If you can't find the channel setting, search on Google for: `"[your router brand] change wifi channel"` (for example: "Netgear change wifi channel" or "TP-Link change wifi channel").
+
+![A router settings page showing the WiFi channel dropdown with channel 6 selected](PLACEHOLDER)
+
+## Still Stuck?
+
+- **Still disconnecting after all steps?** Try a **factory reset of your router**. There's usually a tiny recessed button on the back labeled "Reset." Press and hold it with a paperclip for 10-15 seconds until the lights flash. This wipes ALL settings — you'll need to set up your WiFi name and password again from scratch. But a factory reset often fixes stubborn router glitches that a simple restart can't.
+
+- **Only one Windows device keeps dropping?** Open Command Prompt as administrator (Windows key, type **cmd**, right-click → **Run as administrator**) and run these two commands:
+  ```
+  netsh winsock reset
+  netsh int ip reset
+  ```
+  Restart your computer afterward. This resets Windows' entire networking stack — deeper than a regular network reset.
+
+- **Disconnects happen at the same time every day?** This could be your internet provider doing maintenance, or a device in your home causing interference on a schedule (like a smart sprinkler system, security camera backup, or automatic cloud sync). Try to note the exact times and look for patterns.
+
+- **Using a mesh WiFi system (Eero, Google WiFi, Orbi, Deco)?** Mesh systems sometimes cause devices to disconnect when the system switches your device between mesh nodes. Try turning off "Fast Roaming," "Band Steering," or "Client Steering" in the mesh system's app settings — these features try to optimize your connection but can backfire.
+
+- **Consider replacing your router.** If your router is more than 4-5 years old, it may simply be failing. Routers run 24/7 and their components wear out. Newer routers also support WiFi 6 or WiFi 6E, which handle interference and multiple devices much better than older WiFi 5 (802.11ac) or WiFi 4 (802.11n) routers.
+
+- **For advanced users:** You can use a free app like **WiFi Analyzer** (Android, Windows) or **NetSpot** (Mac, Windows) to scan all WiFi networks in your area and see exactly which channels are crowded. This takes the guesswork out of Step 5.
