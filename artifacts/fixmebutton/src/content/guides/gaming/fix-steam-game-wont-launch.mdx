@@ -1,0 +1,243 @@
+---
+title: "How to Fix a Steam Game That Won't Launch"
+category: gaming
+devices: ["Windows 10", "Windows 11"]
+difficulty: beginner
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You've waited all day to play. You click the big green **Play** button in Steam. The little window pops up that says **"Preparing to Launch..."** — and then... nothing. The window disappears, the button goes back to green, and the game never opens. Or maybe the game flashes a black screen for half a second and then vanishes. Either way, you're staring at your Steam library instead of playing.
+
+This is one of the most common problems PC gamers face, and it happens for lots of reasons — a corrupted game file, a background app getting in the way, a driver that needs updating, or Steam's own download cache getting clogged up. The good news: almost every Steam game that won't launch can be fixed without reinstalling Windows or buying new hardware.
+
+This guide walks you through five fixes, from fastest to most thorough. Start at Fix 1 and work your way down. Most people solve the problem by Fix 2 or 3.
+
+**What you'll need:**
+- Your Windows PC (Windows 10 or Windows 11)
+- Your Steam username and password (in case you get logged out)
+- About 20 minutes
+
+> **Work through the fixes in order.** Each fix builds on the last. Don't skip ahead — the early fixes solve the majority of cases and take under two minutes each.
+
+> **Before you do anything else:** Check if the game itself is having problems. Go to [downdetector.com](https://downdetector.com) and search for your game. If you see a massive spike in outage reports, the game's servers might be down — and no amount of fixing on your PC will help. Also check the game's official X (Twitter) account or subreddit to see if other players are reporting the same issue.
+
+![A person sitting at a gaming PC, looking frustrated at a Steam library screen where a game won't launch](PLACEHOLDER)
+
+## Fix 1: Fully Restart Steam and Your Computer
+
+This sounds too simple to work — but it fixes more Steam launch problems than any other single step. Here's why: Steam runs several background processes that stay active even after you close the main window. Over time, these processes can glitch, freeze, or fight with each other. A full restart wipes everything clean and gives both Steam and your game a fresh start.
+
+**Fix 1a — Fully close Steam (not just the window)**
+
+1. Look at the bottom-right corner of your screen near the clock. You'll see a small upward arrow **(^)** — click it to show hidden icons.
+2. Find the **Steam icon** (a gray circle with a curved shape inside). Right-click it and select **Exit** (or **Close Window**).
+3. Now press **Ctrl + Shift + Esc** on your keyboard to open **Task Manager**.
+4. In Task Manager, click the **Processes** tab. Scroll through the list and look for anything with "Steam" in the name — **Steam Client Bootstrapper**, **Steam Client Service**, or **steamwebhelper**.
+5. If you find any Steam processes still running, right-click each one and select **End Task**.
+6. Wait 10 seconds, then open Steam again from your desktop shortcut or Start menu.
+
+**Fix 1b — Restart your entire computer**
+
+If fully closing Steam didn't fix it (or if you want to do the most thorough version of this fix):
+
+1. Click the **Start** button (Windows icon, bottom-left corner).
+2. Click the **Power** icon.
+3. Select **Restart** — NOT "Shut down." Windows 10 and 11 have a feature called "Fast Startup" that makes Shut Down act more like a deep sleep. Only **Restart** does a full, clean boot.
+4. Wait for your computer to fully restart. Don't rush to open Steam the moment you see your desktop — give it 30 seconds to finish loading everything in the background.
+5. Open Steam, find your game, and click **Play**. Test if it launches now.
+
+![The Windows Task Manager showing Steam processes being ended](PLACEHOLDER)
+
+> **Common mistake:** People click the **X** in the top-right corner of the Steam window and assume they've closed Steam. That just minimizes Steam to the system tray — it keeps running in the background with all its glitches intact. You must right-click the Steam icon in the system tray (near the clock) and select **Exit**, then check Task Manager to make sure every Steam process is actually gone. Also, pressing your computer's power button to turn the screen off and on is NOT a restart — you need to click Start → Power → Restart for a real reboot.
+
+## Fix 2: Verify the Integrity of the Game Files
+
+When a game installs or updates, sometimes a file gets corrupted — it might be a missing texture, a broken sound file, or a damaged piece of game code. Even one bad file can cause the entire game to crash on launch. Steam has a built-in tool that scans every file in the game, compares it to what it's supposed to look like, and automatically re-downloads anything that's broken or missing.
+
+This is the official #1 fix recommended by Steam Support for launch problems — and it works about half the time.
+
+1. Open Steam and click the **Library** tab at the top.
+2. In your list of games on the left, find the game that won't launch. **Right-click** its name.
+3. In the menu that appears, click **Properties** (at the very bottom).
+4. In the Properties window, click **Installed Files** from the list on the left.
+5. Click the button that says **Verify integrity of game files**.
+6. A small progress window will appear. Steam will scan every file in the game — this can take anywhere from 30 seconds for small games to 10+ minutes for massive ones like Call of Duty or Baldur's Gate 3.
+7. When it finishes, you'll see a message like "X files failed to validate and will be reacquired." This means Steam found broken files and is downloading fresh copies. Let the download finish.
+8. Once the download is complete, close the Properties window and click **Play** to test the game.
+
+If the verify tool finds NO broken files (it says "All files successfully validated"), the game files themselves are fine — move on to Fix 3.
+
+![The Steam game Properties window with Installed Files selected and the Verify integrity button highlighted](PLACEHOLDER)
+
+> **Common mistake:** People run the verify tool, see that files are being re-downloaded, but click Play before the download actually finishes. Look at the bottom of the Steam window — there's a download progress bar. Wait for it to say "Download complete" before you test the game. Also, if the verify tool keeps finding broken files EVERY time you run it (even right after a fresh verification), your hard drive or SSD might be failing and corrupting files as they're saved. Try installing the game on a different drive (Steam > Settings > Storage > Add Drive) to see if that resolves it.
+
+## Fix 3: Clear Steam's Download Cache and Repair Library Folders
+
+Steam keeps a hidden "download cache" on your computer — a stash of temporary files that help games download and install faster. When this cache fills up with old data or gets corrupted, it can block games from launching properly. Think of it like a clogged pipe: water (your game) can't flow through because something is stuck in the middle.
+
+Steam also has a "Library Folder" on your hard drive where all your games live. If the folder itself gets damaged (which happens more often than you'd think — especially after a power outage or a forced shutdown), Steam might not be able to read the game files correctly.
+
+**Fix 3a — Clear the download cache**
+
+1. Open Steam and click **Steam** in the top-left corner of the window (next to "View," "Friends," etc.).
+2. In the dropdown menu, click **Settings**.
+3. In the Settings window, click **Downloads** from the list on the left.
+4. Scroll down to the very bottom of the Downloads page. You'll see a button that says **Clear Download Cache**.
+5. Click **Clear Download Cache**. A warning box will pop up explaining that this will clear the cache and you'll need to log in again. Click **Confirm** (or **OK**).
+6. Steam will close and restart automatically. When it reopens, you'll need to sign in with your Steam username and password.
+7. Once you're signed in, try launching your game again.
+
+**Fix 3b — Repair the Steam library folder**
+
+1. Open Steam and click **Steam** (top-left corner) → **Settings**.
+2. Click **Storage** from the list on the left.
+3. You'll see your drives listed at the top. Under each drive, you'll see a bar showing how much space is used. Click the **three dots (⋯)** next to the drive where your game is installed.
+4. In the menu that appears, click **Repair Folder**.
+5. Steam will scan the library folder and fix any structure problems it finds. This usually takes 10–20 seconds.
+6. When it's done, try launching your game again.
+
+If you have your games installed on an **external hard drive** or a **second internal drive**, also check that the drive letter hasn't changed. Windows sometimes reassigns drive letters (like changing D: to E:) after a system update. Steam remembers the OLD drive letter and can't find the game anymore. To check: open File Explorer → **This PC** and look at the drive letter. If it's different from what Steam expects, you can change it back: right-click the **Start** button → **Disk Management** → right-click the drive → **Change Drive Letter and Paths**.
+
+![The Steam Downloads settings page showing the Clear Download Cache button at the bottom](PLACEHOLDER)
+
+> **Common mistake:** People clear the download cache and then panic when Steam asks them to log in again. This is normal — clearing the cache logs you out. Just sign back in with your Steam username and password. Your games, friends list, and everything else are still there — the cache only holds temporary download data, not your account info or installed games. Also, some people try to delete the cache manually by going into Steam's folder and deleting random files. Don't do this — use the built-in **Clear Download Cache** button instead. Deleting the wrong file manually can break Steam entirely.
+
+## Fix 4: Disable Overlays, Antivirus, and Background Software
+
+Sometimes the problem isn't the game or Steam — it's another program on your computer that's getting in the way. Overlays (those little pop-up windows that appear in-game), antivirus software, and even RGB keyboard controllers can accidentally block a game from starting. This is especially common after an update to one of these programs.
+
+**Fix 4a — Disable the Steam Overlay**
+
+The Steam Overlay is the menu that appears when you press **Shift + Tab** in-game. It's useful (you can chat with friends, browse the web, and take screenshots), but it injects itself into every game you launch — and sometimes that injection crashes the game before it even opens.
+
+1. Open Steam and right-click the game that won't launch in your Library.
+2. Click **Properties**.
+3. In the **General** tab (the first one that opens), find the checkbox labeled **Enable the Steam Overlay while in-game**.
+4. **Uncheck** this box to turn the overlay off for this specific game.
+5. Close the Properties window and try launching the game.
+
+If the game still doesn't launch, try disabling the overlay globally: go to **Steam → Settings → In Game** and uncheck **Enable the Steam Overlay while in-game**. This turns it off for every game. If your game launches now, you've found the culprit. You can re-enable the overlay globally and only disable it for the specific game that had trouble.
+
+**Fix 4b — Disable Discord Overlay, GeForce Experience Overlay, and Other Overlays**
+
+Steam isn't the only program that adds overlays. Discord's Game Overlay, NVIDIA GeForce Experience, and even some mouse/keyboard software (like Logitech G Hub or Razer Synapse) inject overlays into games:
+
+1. **Discord:** Open Discord → click the **gear icon (⚙️)** next to your username → scroll down to **Game Overlay** in the left sidebar → toggle **Enable in-game overlay** to OFF.
+2. **NVIDIA GeForce Experience:** Open GeForce Experience → click the **gear icon (⚙️)** → in the **General** tab, scroll to **In-Game Overlay** → toggle it OFF.
+3. **Xbox Game Bar (built into Windows):** Open **Settings** (Windows key + I) → **Gaming** → **Game Bar** → toggle **Open Xbox Game Bar using this button on a controller** to OFF.
+4. **AMD Software: Adrenalin Edition:** Open AMD Software → click the **gear icon (⚙️)** → **Preferences** → disable **In-Game Overlay**.
+
+After disabling ALL overlays, restart your computer and test the game.
+
+**Fix 4c — Temporarily Disable Antivirus (for testing only)**
+
+Antivirus programs — especially third-party ones like Norton, McAfee, Bitdefender, and Kaspersky — sometimes see a game's launch process as suspicious and block it:
+
+1. Open your antivirus software and look for a **Real-Time Protection**, **Game Mode**, or **Auto-Protect** setting.
+2. Temporarily disable this feature. Do NOT fully uninstall your antivirus — just pause the real-time protection.
+3. Try launching your game. If it works, you've found the problem.
+4. **Immediately re-enable your antivirus protection.** Then add the game's folder as an **exception** or **exclusion** in your antivirus settings so it won't be blocked again.
+5. The game's folder is usually in one of these locations:
+   - `C:\Program Files (x86)\Steam\steamapps\common\[Game Name]`
+   - The drive you chose when installing the game
+
+> **Warning:** Only disable antivirus for a few minutes while testing. Do not leave it disabled, and never disable Windows Defender's firewall permanently. Just add the game as an exception and turn protection back on.
+
+**Fix 4d — Close Unnecessary Background Apps**
+
+Some programs that have nothing to do with gaming can still interfere. Try closing these before launching your game:
+
+1. Press **Ctrl + Shift + Esc** to open Task Manager.
+2. In the **Processes** tab, look for these common troublemakers and end them (click the app, then click **End Task**):
+   - **MSI Afterburner** and **RivaTuner Statistics Server** (framerate monitors)
+   - **Razer Cortex**, **Razer Synapse**, **Logitech G Hub** (gaming peripheral software)
+   - **Wallpaper Engine** (animated wallpapers)
+   - **Any web browser** (Chrome, Edge, Firefox — they eat up RAM even with no tabs open)
+   - **Spotify**, **Discord**, **Slack**
+3. After closing everything unnecessary, try launching the game.
+
+![The Discord settings window showing the Game Overlay toggle being turned off](PLACEHOLDER)
+
+> **Common mistake:** People disable the Steam Overlay for one game and assume it'll fix the problem — but Discord, GeForce Experience, and the Xbox Game Bar are all still running their own overlays. You need to disable ALL overlays from ALL programs to rule them out. Also, some people add their game to their antivirus exception list but add the wrong folder — you need to add the actual game folder inside `steamapps\common\`, not just the main Steam folder.
+
+> **Tip:** If you're not sure which program is causing the problem, try a "Clean Boot" — this starts Windows with only the bare minimum of programs. Press **Windows key + R**, type `msconfig`, press Enter, click the **Services** tab, check **Hide all Microsoft services**, then click **Disable all**. Click **OK** and restart. If your game launches now, one of the disabled programs was the culprit. Re-enable them in small groups until you find the troublemaker. (When you're done testing, go back into msconfig, click **Normal startup**, and restart to return everything to normal.)
+
+## Fix 5: Update Drivers, Run as Administrator, and Check Compatibility
+
+If none of the previous fixes worked, the problem is likely at the system level — your graphics driver, Windows permissions, or a compatibility issue between the game and your version of Windows.
+
+**Fix 5a — Update your graphics driver**
+
+Old or buggy graphics drivers are one of the top causes of game launch failures. Even if your driver is only a few months old, a specific game might require a newer version:
+
+1. Right-click the **Start** button (Windows icon) and select **Device Manager**.
+2. Expand the **Display adapters** category by clicking the little arrow next to it.
+3. You'll see your graphics card — usually **NVIDIA GeForce**, **AMD Radeon**, or **Intel UHD/Iris**.
+4. Right-click the name and select **Update driver**.
+5. Choose **Search automatically for drivers**. If Windows finds a newer driver, let it install and restart your computer.
+6. If Windows says "The best drivers are already installed," don't trust it — Windows Update often has old versions. Go directly to the manufacturer's website:
+   - **NVIDIA:** Go to [nvidia.com/download](https://www.nvidia.com/download) or open **GeForce Experience** → **Drivers** tab → **Download**.
+   - **AMD:** Go to [amd.com/support](https://www.amd.com/support) or open **AMD Software: Adrenalin Edition** → **Home** → **Check for Updates**.
+   - **Intel:** Go to [intel.com/support](https://www.intel.com/support) and use the **Intel Driver & Support Assistant** tool.
+7. After installing the latest driver, restart your computer and test the game.
+
+**Fix 5b — Run the game as Administrator**
+
+Some games need extra permissions to access certain files or hardware. Running the game as Administrator gives it those permissions:
+
+1. First, find where the game is actually installed. In Steam, right-click the game → **Properties** → **Installed Files** → **Browse**. A File Explorer window will open to the game's folder.
+2. In that folder, find the game's main `.exe` file (it's usually named after the game, like `Civ6.exe` or `Witcher3.exe`).
+3. **Right-click** the `.exe` file and select **Properties**.
+4. Click the **Compatibility** tab.
+5. Check the box that says **Run this program as an administrator**.
+6. Click **OK** to save.
+7. Now try launching the game from Steam again.
+
+If this fixes the problem, you can also try running Steam itself as Administrator: right-click the Steam shortcut on your desktop → **Properties** → **Compatibility** → check **Run this program as an administrator** → **OK**. Some users find this helps with stubborn launch problems.
+
+**Fix 5c — Check compatibility mode and disable fullscreen optimizations**
+
+Older games (especially anything from before 2015) can have trouble running on Windows 10 and 11. Compatibility mode tricks the game into thinking it's running on an older version of Windows:
+
+1. In the game's folder (found via Fix 5b above), right-click the game's `.exe` file and select **Properties**.
+2. Click the **Compatibility** tab.
+3. Check the box that says **Run this program in compatibility mode for:** and select **Windows 7** or **Windows 8** from the dropdown menu. (Try Windows 7 first — it fixes the most games.)
+4. Below that, check **Disable fullscreen optimizations**. This turns off a Windows 10/11 feature that sometimes breaks older games.
+5. Click **OK** and test the game.
+
+> **Important:** Do NOT set Steam itself (steam.exe) to run in compatibility mode. This can cause more problems than it solves and will trigger a "Compatibility mode" warning from Steam. Only set individual games to compatibility mode — never the Steam client.
+
+**Fix 5d — Update Windows and install missing dependencies**
+
+Games often need specific Windows components to run. If those components are missing, the game silently fails:
+
+1. Open **Settings** (press **Windows key + I**) → **Windows Update** → click **Check for updates**. Install ALL available updates — especially any labeled "cumulative update."
+2. After updating, also click **Advanced options** → **Optional updates**. Look for anything under **Driver updates** — especially graphics or chipset drivers — and install them.
+3. Many games require **DirectX** and **Visual C++ Redistributables**. These are supposed to install automatically when you first run a game, but sometimes that installation fails silently. Download and install them manually:
+   - **DirectX End-User Runtime:** Search for "DirectX End-User Runtime Web Installer" on [microsoft.com](https://www.microsoft.com) and download the official installer. Run it and let it install.
+   - **Visual C++ Redistributables:** Search for "Visual C++ Redistributable for Visual Studio 2015-2022" on microsoft.com. Download both the **x64** (64-bit) and **x86** (32-bit) versions and install both. Restart your computer afterward.
+4. Test the game again.
+
+![The Windows 11 Optional Updates screen showing driver updates available for download](PLACEHOLDER)
+
+> **Common mistake:** People update their graphics driver through Windows Update and assume they have the latest version. Windows Update often has drivers that are several months old. For the newest version — which might contain a fix specific to the game you're trying to play — always go directly to NVIDIA, AMD, or Intel's website. Also, some people set BOTH the game's .exe AND Steam.exe to compatibility mode. Don't do this — Steam itself should never be in compatibility mode. Only set the individual game's .exe file.
+
+## Still Stuck?
+
+- **The game launches but shows a black screen?** This is a different problem from "won't launch at all." Try pressing **Alt + Enter** to switch between fullscreen and windowed mode — this often wakes the screen up. If that doesn't work, add a launch option: right-click the game in Steam → **Properties** → **General** → in the **Launch Options** box at the bottom, type `-windowed` and try launching again. If the game runs in windowed mode but not fullscreen, your graphics driver or resolution settings are the issue — update your driver (Fix 5a).
+
+- **Only ONE specific game won't launch, but all other Steam games work fine?** The problem is with that specific game, not Steam or your system. Google the game's name plus "won't launch" plus your graphics card brand (for example, "Cyberpunk 2077 won't launch NVIDIA"). Game-specific launch problems often have known fixes on the game's Steam Community Hub, subreddit, or official support forums. Also check the game's store page to make sure your computer meets the minimum system requirements — a game that requires 16 GB of RAM won't launch on a computer with only 8 GB, and it usually won't give you a helpful error message either.
+
+- **Getting a specific error message?** Write down the exact text of the error. Common ones include "The application was unable to start correctly (0xc000007b)," "MSVCP140.dll is missing," "DX11 feature level 10.0 is required," or "Failed to initialize graphics device." These errors are specific and well-documented — Google the exact error message to find the fix. The "0xc000007b" error almost always means you need to install or repair your Visual C++ Redistributables (see Fix 5d above).
+
+- **The game started crashing after a recent GPU driver update?** Roll back your driver. Open **Device Manager** → expand **Display adapters** → right-click your GPU → **Properties** → **Driver** tab → click **Roll Back Driver**. If the button is grayed out, you'll need to download an older driver version from NVIDIA, AMD, or Intel's website manually. As a general rule: don't update your GPU driver unless a new game requires it or you're having problems. The saying in the PC gaming community is true: "If it ain't broke, don't fix it."
+
+- **Tried EVERYTHING and the game still won't launch?** There are two last-resort options. First, uninstall and reinstall the game: right-click the game in Steam → **Manage** → **Uninstall**. Then reinstall it. If even a fresh install doesn't work, try installing the game on a completely different hard drive or SSD (Steam → Settings → Storage → Add Drive). A failing drive can silently corrupt game files. If the game works on a different drive, your original drive may be failing — back up your important files and consider replacing it.
+
+- **Does the game work on a different computer?** If you have access to another PC or laptop, install Steam and the game there. If it launches fine on the other computer, the problem is definitely something on your main PC — keep working through the fixes with fresh eyes. If the game won't launch on ANY computer, the game itself might have a bug — check the game's recent reviews on Steam. A flood of recent negative reviews mentioning "won't launch" means a bad update broke the game, and you need to wait for the developer to patch it.
+
+- **For advanced users — check the Windows Event Viewer:** Press **Windows key + X** and select **Event Viewer**. In the left panel, expand **Windows Logs** and click **Application**. Look for any **Error** entries (marked with a red exclamation mark) that happened at the exact time you tried to launch the game. The error details often include an "Exception code" (like 0xc0000005) that tells you exactly what went wrong. Google the exception code plus your game's name for highly specific solutions.

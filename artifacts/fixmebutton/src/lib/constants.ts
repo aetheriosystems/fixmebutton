@@ -34,6 +34,24 @@ export const CATEGORIES = [
     description: "Gmail, Outlook, account recovery",
     icon: "📧",
   },
+  {
+    slug: "smart-home",
+    name: "Smart Home",
+    description: "Alexa, Google Home, smart devices",
+    icon: "🏠",
+  },
+  {
+    slug: "gaming",
+    name: "Gaming",
+    description: "Steam, Roblox, console game fixes",
+    icon: "🎮",
+  },
+  {
+    slug: "social-media",
+    name: "Social Media",
+    description: "Instagram, TikTok, Facebook fixes",
+    icon: "💬",
+  },
 ] as const;
 
 export const DIFFICULTIES = ["beginner", "intermediate", "advanced"] as const;
