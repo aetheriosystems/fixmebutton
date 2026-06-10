@@ -1,0 +1,218 @@
+---
+title: "How to Fix Google Chrome When It Keeps Crashing or Freezing"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 7
+---
+
+## Before You Start
+
+Google Chrome freezes, shows "Not Responding," or crashes to a blank screen — right when you're in the middle of something important. You've probably already tried restarting your computer (and it didn't help). The good news: Chrome crashes are almost never a Chrome bug. They're usually caused by extensions, graphics drivers, or corrupted cache files — and all of them are fixable.
+
+**What you'll need:**
+- Your computer with Chrome installed
+- About 15 minutes to work through the steps
+
+> **Work through the steps in order.** The first few steps fix the problem for most people. You probably won't need all seven.
+
+![A person looking frustrated at a frozen Google Chrome browser window](PLACEHOLDER)
+
+## Step 1: Check What's Actually Causing the Freeze
+
+Before you start changing settings, figure out what's going wrong. Chrome has built-in tools that show you exactly what's hogging resources or crashing silently.
+
+**Fix 1 — Open Chrome's own Task Manager**
+1. With Chrome in focus, press **Shift + Esc** (Windows) or **Search + Esc** (Mac with Chrome open)
+2. A window opens showing every tab, extension, and background process Chrome is running
+3. Click the **CPU** column header to sort by processor usage, highest first
+4. Anything using more than 50% CPU or marked "Not Responding" is the likely culprit
+5. Select it and click **End Process** — this kills just that one tab or extension, not all of Chrome
+
+![Chrome Task Manager window sorted by CPU usage, showing a hung process](PLACEHOLDER)
+
+**Fix 2 — Check Chrome's crash log**
+1. In Chrome's address bar, type **chrome://crashes** and press Enter
+2. This page shows every crash Chrome has logged, with timestamps
+3. If you see recent crashes listed, Chrome already knows something is wrong — the steps below will address it
+4. You can click "Send to Google" on any crash report to help improve Chrome, but this won't fix your problem
+
+> **Common mistake:** Closing the whole Chrome window instead of killing just the problem tab. Use Chrome Task Manager (Shift+Esc) to end only the frozen tab — your other tabs stay open and you don't lose work.
+
+## Step 2: Test in Incognito Mode to Rule Out Extensions
+
+Extensions are the #1 cause of Chrome freezes. A single bad extension can block Chrome's entire operation. Incognito mode disables all extensions by default, making it the perfect test.
+
+**Fix 1 — Browse in Incognito and compare**
+1. Press **Ctrl + Shift + N** (Windows) or **Cmd + Shift + N** (Mac) to open an Incognito window
+2. Do whatever normally makes Chrome freeze — open lots of tabs, use YouTube, Gmail, etc.
+3. Use it for 5–10 minutes. Does it still freeze?
+
+If Chrome works perfectly in Incognito but freezes in normal mode, **one of your extensions is the problem.**
+
+**Fix 2 — Find the bad extension**
+1. In a normal Chrome window, type **chrome://extensions** in the address bar and press Enter
+2. You'll see a list of all installed extensions, each with a blue toggle switch
+3. Turn **all of them off** (toggle switches turn gray)
+4. Turn them back on **one at a time**, testing Chrome for a few minutes after each one
+5. When Chrome starts freezing again, the last extension you turned on is the culprit
+6. Click **Remove** on that extension to delete it permanently
+
+![Chrome Extensions page showing all extensions with toggle switches off](PLACEHOLDER)
+
+> **Common mistake:** Skipping the "one at a time" step and re-enabling all extensions at once. You'll never find which one is broken. Be methodical — turn them on one by one.
+
+## Step 3: Disable Hardware Acceleration
+
+Hardware acceleration lets Chrome use your computer's graphics card (GPU) to render pages faster. But after a Windows or Mac update, your GPU driver and Chrome can stop getting along — causing freezes, black screens, or pages that won't scroll.
+
+**Fix 1 — Turn off hardware acceleration**
+1. In Chrome, click the **three-dot menu** (⋮) in the top-right corner, then click **Settings**
+2. Scroll to the bottom and click **System** (in the left sidebar on desktop)
+3. Find the toggle for **"Use graphics acceleration when available"**
+4. Turn it **off** (the toggle turns gray)
+5. Click the **Relaunch** button that appears next to the toggle
+6. Chrome restarts. Test it for 30 minutes — do the freezes stop?
+
+![Chrome Settings System page with hardware acceleration toggle turned off](PLACEHOLDER)
+
+**Fix 2 — Update your graphics drivers (Windows)**
+If turning off hardware acceleration fixed the freezes, your GPU driver is out of date. Chrome needs recent drivers to use your graphics hardware safely.
+1. Right-click the **Start** button → **Device Manager**
+2. Expand the **Display adapters** section
+3. Right-click your graphics card (NVIDIA, AMD, or Intel) → **Update driver → Search automatically for drivers**
+4. Install any updates found and restart your computer
+5. Go back to **chrome://settings/system** and turn hardware acceleration **back on** — with updated drivers it should work fine now
+
+**Fix 2 — Update macOS (Mac)**
+On Mac, graphics drivers come bundled with macOS updates.
+1. Click the **Apple menu** → **System Settings** → **General** → **Software Update**
+2. Install any available macOS updates
+3. Restart, then try re-enabling hardware acceleration in Chrome
+
+> **Common mistake:** Leaving hardware acceleration permanently off. Video playback will use significantly more battery and CPU without it. The real fix is updating your drivers so you can turn it back on.
+
+## Step 4: Clear Chrome's Cache and Corrupted Data
+
+Chrome stores website data (cache) to load pages faster. But if that data gets corrupted — which happens more often than you'd think — it causes crashes and freezes, especially on the same websites over and over.
+
+**Fix 1 — Clear browsing data**
+1. In Chrome, press **Ctrl + Shift + Delete** (Windows) or **Cmd + Shift + Delete** (Mac)
+2. A "Delete browsing data" window pops up
+3. At the top, change the **Time range** dropdown to **"All time"**
+4. Check these three boxes:
+   - **Browsing history**
+   - **Cookies and other site data**
+   - **Cached images and files**
+5. Click the **Delete data** button
+6. Chrome may pause briefly while it clears everything. Restart Chrome when it's done.
+
+> **Note:** Deleting cookies will sign you out of most websites. You'll need to log back in to Gmail, Facebook, etc. This is normal and expected.
+
+![Chrome Delete Browsing Data dialog with all time selected and three boxes checked](PLACEHOLDER)
+
+**Fix 2 — Delete the GPU cache folder (Windows only)**
+Sometimes the regular cache clear isn't enough. Corrupted GPU shader files cause repeated freezes on the same websites.
+1. Close Chrome completely — check Task Manager (Ctrl+Shift+Esc) to make sure no `chrome.exe` process is still running
+2. Press **Win + R**, type or paste this exactly, and press Enter:
+   ```
+   %localappdata%\Google\Chrome\User Data
+   ```
+3. Find the folder called **GPUCache** and delete it
+4. Also open the **Default** folder and delete **ShaderCache** if you see it
+5. Reopen Chrome. The first load of pages may be slightly slower while Chrome rebuilds the cache — that's normal
+
+> **Common mistake:** Using a third-party "cleaner" app that claims to clear Chrome cache. These often miss the GPU cache and sometimes delete data Chrome actually needs. Always clear cache from inside Chrome.
+
+## Step 5: Check for Conflicting Software
+
+Some programs on your computer can interfere with Chrome — especially antivirus software, VPNs, and outdated browser toolbars. This step is quick and rules out a whole category of problems.
+
+**Fix 1 — Temporarily pause your VPN**
+If you use a VPN (NordVPN, ExpressVPN, Surfshark, etc.):
+1. Disconnect or pause the VPN
+2. Browse in Chrome for 5–10 minutes without it
+3. If the freezes stop, your VPN is the problem — try switching VPN protocols in the VPN app's settings, or contact your VPN's support
+
+**Fix 2 — Check your antivirus isn't scanning Chrome**
+Some antivirus programs (especially third-party ones like McAfee, Norton, Avast) aggressively scan Chrome's activity and cause it to hang.
+1. Open your antivirus program
+2. Look for a setting called "Web Shield," "Browser Protection," "Real-Time Scanning," or "HTTPS Scanning"
+3. Temporarily turn it off and test Chrome
+4. If that fixes it, add Chrome as an exception in your antivirus settings (look for "Exclusions" or "Exceptions")
+
+**Fix 3 — Uninstall suspicious programs**
+Old browser toolbars, coupon extensions, and "PC optimizer" programs are notorious for crashing Chrome.
+1. **Windows:** Open **Settings → Apps → Installed apps**. Look for anything you don't recognize — especially toolbars and "optimizers." Uninstall them.
+2. **Mac:** Open **Finder → Applications**. Drag suspicious apps to the Trash. Then go to **System Settings → General → Login Items** and remove anything you don't need starting up.
+
+> **Common mistake:** Running two antivirus programs at once. Having both Windows Defender and a third-party antivirus active causes conflicts that freeze browsers. Pick one and uninstall the other.
+
+## Step 6: Reset Chrome to Its Original Settings
+
+If nothing above has worked, it's time for a clean slate. Resetting Chrome fixes deeper problems without deleting your bookmarks, history, or saved passwords.
+
+**What the reset does:**
+- Disables all extensions (you can re-enable the ones you trust later)
+- Resets your startup page, new tab page, and default search engine to Google
+- Clears temporary site data and cookies
+- **Does NOT delete** your bookmarks, browsing history, or saved passwords
+
+**Fix 1 — Reset Chrome settings**
+1. In Chrome, type **chrome://settings/reset** in the address bar and press Enter
+2. Click **"Restore settings to their original defaults"**
+3. A confirmation box appears — click **Reset settings**
+4. Chrome restarts fresh. Test it for a while to see if the freezes stop.
+
+![Chrome Reset Settings page with the Reset button highlighted](PLACEHOLDER)
+
+**Fix 2 — The nuclear option: reinstall Chrome**
+If even the reset didn't work, your Chrome installation itself may be damaged.
+1. **First, back up your bookmarks:** Click the three-dot menu → **Bookmarks → Bookmark Manager**. Click the three-dot menu inside Bookmark Manager → **Export bookmarks**. Save the file somewhere safe.
+2. **Uninstall Chrome:**
+   - **Windows:** Settings → Apps → Installed apps → find Google Chrome → Uninstall. Also check "Delete browsing data" if asked.
+   - **Mac:** Open Finder → Applications → drag Google Chrome to the Trash. Then empty the Trash.
+3. Restart your computer
+4. Download and install a fresh copy from **[google.com/chrome](https://google.com/chrome)**
+5. Import your bookmarks: Bookmark Manager → three-dot menu → **Import bookmarks** and select the file you saved
+
+> **Common mistake:** Skipping the bookmark backup before uninstalling. If you don't export first, you lose them permanently. The export file is your insurance.
+
+## Step 7: Free Up System Resources
+
+Chrome uses more memory (RAM) than almost any other program. If your computer only has 4 GB or 8 GB of RAM and you keep 20+ tabs open, Chrome runs out of breathing room and freezes.
+
+**Fix 1 — Enable Memory Saver**
+Chrome has a built-in feature that frees up memory from tabs you're not using.
+1. Go to **chrome://settings/performance**
+2. Turn on **Memory Saver**
+3. Chrome now automatically releases memory from tabs you haven't looked at in a while. When you click back to them, they reload. This can dramatically reduce freezes on computers with less memory.
+
+**Fix 2 — Close tabs you don't need**
+1. Look at your tab bar. How many tabs are open right now?
+2. Right-click any tab and select **Close other tabs** to close everything except the current one
+3. For tabs you want to come back to, right-click the tab → **Add to reading list** (or just bookmark them with Ctrl+D / Cmd+D)
+4. Try to keep your open tab count under 15–20 if you have 8 GB or less of RAM
+
+**Fix 3 — Check your computer's total memory**
+1. **Windows:** Press Ctrl+Shift+Esc → **Performance** tab. Look at the **Memory** section — the total amount is shown at the top-right (e.g., "8.0 GB")
+2. **Mac:** Click the Apple menu → **About This Mac**. Look at the **Memory** line.
+3. If you have only 4 GB, Chrome will always struggle with more than a few tabs. Consider upgrading to at least 8 GB if possible, or use a lighter browser like Microsoft Edge for heavy browsing sessions.
+
+![Chrome Performance settings page with Memory Saver enabled](PLACEHOLDER)
+
+> **Common mistake:** Confusing disk space with memory (RAM). Freeing up hard drive space does NOT make Chrome run faster. Chrome cares about RAM — close tabs or use Memory Saver to free it up.
+
+## Still Stuck?
+
+- **Chrome crashes immediately when you open it?** There may be a corrupted user profile. Close Chrome, then press **Win + R** (Windows) or open Terminal (Mac) and navigate to `%localappdata%\Google\Chrome\User Data\` (Windows) or `~/Library/Application Support/Google/Chrome/` (Mac). Rename the **Default** folder to **Default.old**. When you restart Chrome, it creates a fresh profile. Your bookmarks and passwords are gone from this profile — but your old one is preserved in the Default.old folder if you want to recover things later.
+
+- **Chrome only freezes on one specific website?** The problem might be the website itself, not Chrome. Try the site in a different browser (Edge, Firefox, Safari). If it freezes there too, the website has a problem — wait a few hours and try again. If it only freezes in Chrome, your Chrome data for that site is corrupted. Go to **chrome://settings/content/all**, find the site in the list, and click **Delete displayed data** (the trash icon).
+
+- **Freezes started after a recent Windows update?** Windows updates frequently break GPU drivers (Fix 3 above). Run Windows Update again — Microsoft often releases a follow-up patch within a week. You can also roll back the driver: Device Manager → Display adapters → right-click your GPU → Properties → Driver tab → Roll Back Driver.
+
+- **Prefer using Microsoft Edge instead?** Edge is built on the same engine as Chrome (Chromium) and behaves almost identically. Most of the fixes above — clearing cache, disabling extensions, resetting settings — work the same way in Edge. The settings pages are at `edge://settings/` instead of `chrome://settings/`.
+
+- **Nothing helped and Chrome is still unusable?** As a last resort, switch to a different browser. Firefox and Edge are both excellent, free alternatives. Import your bookmarks from Chrome during setup and you'll be up and running in minutes.
