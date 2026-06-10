@@ -1,0 +1,195 @@
+---
+title: "How to Fix a Phone That Won't Connect to Wi-Fi"
+category: smartphones
+devices: ["iPhone", "Samsung Galaxy", "Google Pixel", "Any Android phone"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+Your phone sees the Wi-Fi network, you type in the password, and then… nothing. Or maybe it says "Connected" but apps won't load. Or it keeps dropping the connection every few minutes. Wi-Fi problems are frustrating because there's no single obvious cause — the issue could be your phone, your router, or something in between.
+
+The good news? Most Wi-Fi problems on phones are fixed with a few taps in Settings. You rarely need a repair shop. This guide walks you through five real fixes that work for iPhones, Samsung Galaxy, Google Pixel, and any other Android phone. Start with Fix 1 and test after each step.
+
+**What you'll need:**
+- Your phone
+- Access to your Wi-Fi router (to restart it)
+- Your Wi-Fi password (you'll need to re-enter it)
+- Another device that can connect to Wi-Fi (a family member's phone, tablet, or laptop — to test if the problem is your phone or the network)
+
+> **Warning:** Skip this guide and go straight to Fix 5 (Reset Network Settings) if your phone won't connect to ANY Wi-Fi network — not just your home one. That usually means a deeper software problem has corrupted your phone's network settings.
+
+![Smartphone with a Wi-Fi icon showing an exclamation mark — connected but no internet](/images/guides/smartphones/wifi-not-connecting-hero.jpg)
+
+## Fix 1: Restart Your Phone and Router (Fastest Fix)
+
+This sounds too simple to work, but it solves roughly half of all Wi-Fi problems. Your phone and router both run tiny computers that can get confused over time. A quick restart clears out whatever glitch is blocking the connection.
+
+**Restart your phone first:**
+
+1. **iPhone X and newer:** Press and hold the **right side button** and either **volume button** until the power slider appears. Slide to power off. Wait 30 seconds, then hold the right side button to turn it back on.
+2. **iPhone SE / iPhone 8 and older:** Press and hold the **top (or side) button** until the power slider appears. Slide to power off, wait 30 seconds, then turn on.
+3. **Most Android phones (Google Pixel, OnePlus, Motorola):** Press and hold the **power button**, then tap **Restart**.
+4. **Samsung Galaxy:** Press and hold the **power button and volume down button**, then tap **Restart**.
+
+**Then restart your router and modem:**
+
+1. Unplug the power cable from BOTH your router AND your modem (they might be the same box, or two separate boxes)
+2. Wait a full **60 seconds** — don't skip the wait. This lets the electronics inside fully discharge
+3. Plug in the modem first (if you have a separate one). Wait until all the lights stop blinking and settle into a steady pattern
+4. Plug in the router. Wait until the Wi-Fi lights come on (about 1-2 minutes)
+5. On your phone, turn Wi-Fi off and back on, then try connecting
+
+![A hand unplugging a Wi-Fi router's power cable from the wall outlet](/images/guides/smartphones/restarting-router.jpg)
+
+> **Tip:** If your router has a small reset button (a pinhole you press with a paperclip), don't press it — that factory-resets the router and erases all your settings. Just unplug the power cable.
+
+**Common mistake:** Restarting only the phone or only the router. Do both. If you restart your phone but the router is still glitching, you'll have the same problem when you reconnect.
+
+## Fix 2: Forget the Network and Reconnect
+
+When your phone remembers a Wi-Fi network, it stores a little "profile" — the password, security settings, and other details. If any of that info gets corrupted (which happens more often than you'd think), your phone can't connect properly even though the password is right.
+
+"Forgetting" the network wipes that profile clean, so your phone starts fresh.
+
+**iPhone:**
+
+1. Open **Settings → Wi-Fi**
+2. Tap the blue **ⓘ** icon next to your Wi-Fi network's name
+3. Tap **Forget This Network**, then tap **Forget** to confirm
+4. Turn Wi-Fi off using the toggle at the top, wait 10 seconds, turn it back on
+5. Tap your network name, type in the password carefully (Wi-Fi passwords are case-sensitive!), and tap **Join**
+
+**Android:**
+
+1. Open **Settings → Wi-Fi** (or **Settings → Network & Internet → Internet** on Pixel)
+2. Tap the **gear icon** (⚙️) next to your Wi-Fi network's name
+3. Tap **Forget** (on some Android phones this is a trash can icon at the top or bottom of the screen)
+4. Turn Wi-Fi off, wait 10 seconds, turn it back on
+5. Tap your network name, enter the password, and tap **Connect**
+
+![Phone screen showing the "Forget This Network" option in Wi-Fi settings](/images/guides/smartphones/forget-wifi-network.jpg)
+
+> **Tip:** If you're not sure about the password, check the bottom of your router — most routers have a sticker with the default Wi-Fi name and password. If someone changed it and you forgot, connect a computer that's already on the network and look it up in its Wi-Fi settings, or ask whoever set up your internet.
+
+**Common mistake:** Typing the password on the wrong keyboard language or with Caps Lock on. On iPhones, the password field shows each character briefly as you type — watch for uppercase letters. Many Wi-Fi passwords use mixed case, and a single wrong character blocks the connection.
+
+## Fix 3: Turn Off Private/Random MAC Address for Your Home Network
+
+Starting with iOS 14 and Android 10, phones use something called a "Private Wi-Fi Address" (Apple) or "Randomized MAC Address" (Android). This is a privacy feature — it gives your phone a fake hardware ID for each network so you can't be tracked across different Wi-Fi hotspots.
+
+Great for coffee shop Wi-Fi. Terrible for home networks. Some routers get confused by the changing address and block or limit the connection — especially mesh Wi-Fi systems (Eero, Google Nest Wifi, Orbi) and networks with "MAC filtering" turned on.
+
+**iPhone:**
+
+1. Open **Settings → Wi-Fi**
+2. Tap the blue **ⓘ** icon next to your home network
+3. Find **Private Wi-Fi Address** — if it's on, tap the toggle to turn it **Off**
+4. A warning will pop up about privacy — tap **Continue** (this is safe for your home network)
+5. Your phone will briefly disconnect and reconnect with its real address
+
+**Android (Google Pixel and most Androids):**
+
+1. Open **Settings → Wi-Fi** (or **Network & Internet → Internet** on Pixel)
+2. Tap the **gear icon** (⚙️) next to your home network
+3. Tap **Privacy** (you might need to tap **Advanced** or scroll down to find it)
+4. Change from **Use randomized MAC** to **Use device MAC**
+5. Your phone will reconnect with its real hardware address
+
+**Samsung Galaxy:**
+
+1. Open **Settings → Connections → Wi-Fi**
+2. Tap the **gear icon** (⚙️) next to your network
+3. Tap **MAC address type**
+4. Change from **Randomized MAC** to **Phone MAC**
+5. Tap the back arrow and reconnect
+
+![Phone Wi-Fi settings showing the Private Address / Randomized MAC toggle](/images/guides/smartphones/private-mac-address-setting.jpg)
+
+> **Warning:** Only turn this off for networks you own and trust (your home, a family member's house). Leave Private Address ON for public Wi-Fi (cafes, airports, hotels) — that's what protects your privacy.
+
+**Common mistake:** Assuming this is only a "guest network" or "corporate network" problem. Even basic home routers can reject randomized MAC addresses, especially if you have a mesh system or if you set up your router years ago with stricter security settings. Try this fix even on simple home setups.
+
+## Fix 4: Switch Between 2.4 GHz and 5 GHz (Stop the Dropping)
+
+Most modern routers broadcast TWO Wi-Fi signals at the same time:
+- **2.4 GHz:** Slower, but reaches farther and passes through walls better
+- **5 GHz:** Much faster, but has shorter range and struggles through walls
+
+Your phone is supposed to automatically pick the best one. In reality, many phones bounce back and forth between them constantly — especially when you're moving around the house. Every time it switches, your connection drops for a few seconds. If your Wi-Fi seems to cut out when you walk from room to room, this is likely the culprit.
+
+**The permanent fix — give each band a different name:**
+
+1. Log into your router's settings (usually by typing `192.168.1.1` or `192.168.0.1` into a browser on a connected device)
+2. Look for the Wi-Fi or Wireless settings section
+3. Find where both 2.4 GHz and 5 GHz are listed — they probably have the SAME name right now
+4. Rename one of them — for example, keep "MyHomeWifi" for 2.4 GHz and change 5 GHz to "MyHomeWifi-5G"
+5. Save the settings. Your router will restart briefly
+6. On your phone, go to Wi-Fi settings — you'll now see BOTH networks listed separately
+7. Connect to the 5 GHz one when you're close to the router (for speed), and the 2.4 GHz one when you're far away (for range)
+
+**If you can't access your router settings — the quick version:**
+
+1. On your phone, go to **Settings → Wi-Fi**
+2. Tap your network and choose **Forget** (same steps as Fix 2)
+3. When you reconnect, your phone picks one band and sticks with it at first
+4. If it picks the wrong one (too slow or keeps dropping), forget and reconnect again from a different spot in the house — where you are when you reconnect influences which band it picks
+
+![Two Wi-Fi network names shown in phone settings — one 2.4 GHz and one 5 GHz](/images/guides/smartphones/wifi-2g-5g-networks.jpg)
+
+> **Tip:** If you live in an apartment building or dense neighborhood, 2.4 GHz is often crowded with interference from dozens of nearby routers. Switching to 5 GHz can give you a dramatically more stable connection even if the signal looks "weaker" — because there's way less competition for that frequency.
+
+**Common mistake:** Thinking stronger signal = better connection. The 2.4 GHz band often shows "full bars" but performs terribly because of interference from neighbors, Bluetooth devices, microwaves, and baby monitors. A 5 GHz connection with "two bars" can be faster and more reliable than a 2.4 GHz connection with "full bars."
+
+## Fix 5: Reset Network Settings (Nuclear Option)
+
+If nothing above fixed your problem — and especially if your phone can't connect to ANY Wi-Fi network, not just your home one — the network settings on your phone itself are likely corrupted. This can happen after a software update, after installing certain VPN apps, or seemingly for no reason at all.
+
+Resetting network settings wipes ALL saved Wi-Fi networks, Bluetooth pairings, cellular settings, and VPN configurations. Your photos, apps, messages, and accounts are NOT affected. You WILL need to re-enter your Wi-Fi passwords and re-pair Bluetooth devices afterward.
+
+**iPhone:**
+
+1. Open **Settings → General → Transfer or Reset iPhone**
+2. Tap **Reset**
+3. Tap **Reset Network Settings**
+4. Enter your passcode if asked, then confirm
+5. Your iPhone will restart automatically
+6. After restart, go to **Settings → Wi-Fi**, find your network, and enter the password
+
+**Android (Google Pixel and most Androids):**
+
+1. Open **Settings → System → Reset options**
+2. Tap **Reset Wi-Fi, mobile & Bluetooth** (on some phones: **Reset network settings**)
+3. Tap **Reset settings**
+4. Enter your PIN, pattern, or password to confirm
+5. Your phone will restart
+6. After restart, reconnect to your Wi-Fi network
+
+**Samsung Galaxy:**
+
+1. Open **Settings → General management → Reset**
+2. Tap **Reset network settings**
+3. Tap **Reset settings**, then confirm
+4. Enter your PIN or password
+5. Your phone will restart — reconnect to Wi-Fi afterward
+
+![Phone screen showing the Reset Network Settings option in General settings](/images/guides/smartphones/reset-network-settings.jpg)
+
+> **Warning:** This erases ALL saved Wi-Fi passwords — your home, work, friends' houses, everywhere. If you don't know a particular Wi-Fi password, write it down or look it up before you reset. Also, if a company or school IT department set up your phone, check with them before doing this — you might need them to reconfigure work profiles or certificates afterward.
+
+**Common mistake:** Doing a full factory reset instead of just network settings. A factory reset wipes your ENTIRE phone — apps, photos, messages, everything. "Reset Network Settings" only clears network-related data. Make sure you're tapping the right button.
+
+## Still Stuck?
+
+- **Wi-Fi works on other devices but not your phone, even after all 5 fixes?** Your phone's Wi-Fi antenna or chip may be physically damaged. This can happen after a drop or water exposure. If your phone is under warranty (AppleCare+, Samsung Care+), contact the manufacturer. Out of warranty, a local repair shop can replace the Wi-Fi antenna — it typically costs $50–$100.
+
+- **Phone connects to Wi-Fi but internet is extremely slow?** Run a speed test on another device connected to the same network. If that device is also slow, the problem is your internet connection — call your internet provider. If only your phone is slow, check if a VPN is running (VPNs route your traffic through a faraway server, slowing everything down). Go to **Settings → VPN** and turn off any active VPN to test.
+
+- **Wi-Fi works everywhere except one specific place (school, office, hotel)?** That network probably uses a "captive portal" — the page that pops up asking you to accept terms or enter a room number before you can use the internet. Sometimes this page doesn't appear automatically. Open your phone's browser and try going to `neverssl.com` or `captive.apple.com` — this usually forces the login page to appear.
+
+- **iPhone specifically — Wi-Fi toggle is grayed out and can't be turned on?** This is a known hardware issue on some iPhone models. Apple has a service program for certain iPhone models. Go to **Settings → General → About** and check what model you have, then search "Apple Wi-Fi grayed out service program [your model]" to see if you qualify for a free repair.
+
+- **Android specifically — keeps showing "Saved / Secured" but won't connect?** This usually means the phone has the wrong password saved. Even if you're sure the password is correct, the saved version might be corrupted. Follow Fix 2 to forget the network, restart the phone, and reconnect with the password typed carefully. Double-check that you're selecting the WPA2 or WPA3 security type that matches your router — mismatched security types cause this exact error.
