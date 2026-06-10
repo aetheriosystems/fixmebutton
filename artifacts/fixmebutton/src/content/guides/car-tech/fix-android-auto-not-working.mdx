@@ -1,0 +1,336 @@
+---
+title: "How to Fix Android Auto Not Working or Not Connecting"
+category: car-tech
+devices: ["Android phone (Android 9.0 or later)", "Any car with Android Auto support", "Honda", "Toyota", "Ford", "Chevrolet", "BMW", "Hyundai", "Kia", "Volkswagen", "Subaru", "Nissan", "Mazda", "Jeep", "Audi", "Mercedes-Benz"]
+difficulty: beginner
+time_estimate: "25 minutes"
+last_verified: "2026-06-10"
+steps: 7
+---
+
+## Before You Start
+
+You plug your Android phone into your car, ready for Google Maps and Spotify — and the screen stays black. Or Android Auto keeps connecting and disconnecting every few seconds. Or the icon on your car's screen is grayed out and won't respond no matter how many times you tap it. You're not alone — Android Auto connection problems are some of the most-reported tech issues among drivers, and they spiked dramatically after the Android 16 update in late 2025.
+
+The good news: almost every Android Auto problem is fixable without a trip to the dealership or a new phone. Like Apple CarPlay, Android Auto relies on a chain of connections — your phone's USB port, a data-capable cable, your car's infotainment system, and several software settings that all need to work together. When one link breaks, the whole system goes down. But the fix is usually one of the things below.
+
+**What you'll need:**
+- Your Android phone
+- A high-quality USB cable (preferably the one that came with your phone, or a USB-IF certified cable under 3 feet / 1 meter)
+- Your car keys — you'll need to start and restart the car
+- A spare USB cable to test with (just in case)
+- A few minutes parked safely — do NOT troubleshoot while driving
+
+> **Work through the fixes in order.** Each fix builds on the last. The first two fixes solve more than half of all Android Auto problems and take under two minutes.
+
+![An Android phone connected to a car's USB port with the Android Auto home screen displayed on the car's dashboard screen](PLACEHOLDER)
+
+## Fix 1: Check Your USB Cable and Try a Different Port (Wired Android Auto)
+
+If you connect Android Auto with a USB cable, the cable is the single most common point of failure — by a wide margin. Even if your cable charges your phone, it may not be capable of data transfer, and Android Auto requires data transfer. A charge-only cable will power your phone but never activate Android Auto. Google's own support documentation says: "If Android Auto had worked properly before and no longer works now, replace your USB cable and that will likely fix the issue."
+
+**Fix 1a — Inspect and reseat your cable**
+
+1. Unplug the USB cable from BOTH ends — from your phone and from the car's USB port.
+2. Look at the metal connectors on both ends. Check for bent pins, rust, lint, or visible damage. Lint packed into your phone's USB-C port is extremely common — every plug/unplug cycle compresses pocket lint until the cable can't seat fully.
+3. If you see lint or debris in your phone's USB-C port, use a wooden toothpick or plastic dental pick to GENTLY scoop it out. Do NOT use metal — metal can short the pins and permanently damage the port. A plastic flosser pick works well for this.
+4. Plug the cable back in firmly on both ends. On the phone side, push until you feel it click and the connector sits flush against the phone body. On the car side, make sure it's fully inserted.
+5. Unlock your phone — Android Auto sometimes won't start if the phone is locked on the first connection.
+6. Check if Android Auto activates.
+
+![Close-up of hands plugging a USB cable into a car's USB port, with the car's dashboard screen showing the Android Auto logo in the background](PLACEHOLDER)
+
+**Fix 1b — Try a different USB cable**
+
+Not all USB cables carry data. Many cheap cables, gas station cables, and even some "fast charging" cables are charge-only — they have just two internal wires for power and lack the data wires that Android Auto needs. There is NO way to tell a charge-only cable from a data cable just by looking at the outside.
+
+1. Find a different USB cable. Google specifically recommends:
+   - The original cable that came with your phone (Pixel cable for Pixel phones, Samsung cable for Galaxy phones)
+   - A cable that is **under 3 feet (1 meter)** long — shorter cables have less signal degradation
+   - A cable with **USB-IF certification** — you can verify this at [usb.org/products](https://www.usb.org/products)
+2. Avoid USB extension cables and USB hubs. Plug the cable directly from the car's USB port to your phone.
+3. If your car has a USB-A port (the rectangular one) and your phone uses USB-C, you need a **USB-A to USB-C cable** that explicitly says "data transfer," "sync," or "480 Mbps" or higher on the packaging.
+4. Swap the cable and test. If Android Auto works with the new cable, the old cable was charge-only or damaged — throw it away.
+
+> **For Samsung Galaxy users:** Samsung phones are particularly picky about USB cables for Android Auto. Even cables that work fine for data transfer with a computer sometimes fail with Android Auto. Samsung's own cables are the most reliable; Anker PowerLine and Belkin BoostCharge cables are the most consistently compatible third-party options.
+
+**Fix 1c — Try a different USB port in your car**
+
+Most cars have multiple USB ports — but NOT all of them support data. Many cars have one "data" USB port (sometimes marked with a phone icon or an Android Auto / CarPlay logo) and additional "charge-only" ports. If you've been plugging into the wrong one, Android Auto will never work.
+
+1. Look at the USB ports in your car. The data port is often in the center console, under the armrest, or in a compartment below the dashboard. It may have a small phone icon, "USB + data," or a smartphone projection logo next to it.
+2. Try EVERY USB port in the car, one at a time, waiting 10 seconds on each.
+3. If Android Auto suddenly works on a different port, you found the data port — use that one going forward.
+4. Some cars (especially newer models) support Android Auto on all USB ports, but many budget and mid-range cars only enable it on one specific port.
+
+![A car's center console showing multiple USB ports — one marked with a phone icon (the data port) and others unmarked (charge-only)](PLACEHOLDER)
+
+> **Common mistake:** People buy a cheap USB cable at a convenience store, see that it charges their phone, and assume it works for Android Auto. Charging and data use completely different wires inside the cable. A charge-only cable has two wires; a data cable has four. The only way to know is to test it — or buy a cable that explicitly says "data transfer" or "USB 2.0 data" on the packaging. Also, cables wear out. A cable that worked perfectly for Android Auto last year may have developed an internal break from being bent, twisted, or shut in a car door. If Android Auto suddenly stops working after months of working fine, the cable is suspect #1.
+
+> **Common mistake #2:** People use long cables (6 feet or more) because they want to use their phone while it's plugged in. Long cables have higher electrical resistance, which degrades the data signal. Google explicitly recommends cables **under 3 feet (1 meter)** for Android Auto. If you need a longer reach, get a high-quality, USB-IF certified 3-foot cable and keep your phone in the center console — you shouldn't be handling your phone while driving anyway.
+
+## Fix 2: Check Android Auto Settings on Your Phone
+
+Android Auto has its own dedicated settings panel that most people never open. If certain settings are wrong — or if your car was accidentally added to the rejected cars list — Android Auto will silently fail to connect.
+
+**Fix 2a — Open Android Auto settings and verify basics**
+
+1. Open your phone's **Settings** app.
+2. Go to **Connected devices → Connection preferences → Android Auto**. (On Samsung: **Settings → Connected devices → Android Auto**. On some phones, you can also search "Android Auto" in the Settings search bar.)
+3. Make sure these settings are correct:
+   - **Start Android Auto automatically:** Set to **Always**. If it's set to "If used on the last drive" or "Default (set by the car)," the car may not trigger the connection.
+   - **Start Android Auto while locked:** Set to **ON**. If this is off, you'll need to manually unlock your phone every time you get in the car before Android Auto will connect.
+   - **Wireless Android Auto:** If your car supports wireless Android Auto, turn this **ON**. If your car only supports wired, leave it off.
+4. Tap **Previously connected cars** at the top of the screen. You'll see a list of cars your phone has connected to.
+5. Look for a **"Rejected cars"** section. If your car appears under "Rejected cars," tap it and select **Accept** or **Allow**.
+6. If the list has old cars you no longer drive, tap the menu (three dots, top right) and select **Forget all cars** to start fresh.
+
+![Android phone Settings screen showing the Android Auto settings page with "Start Android Auto automatically" set to Always, "Start Android Auto while locked" toggled on, and Wireless Android Auto enabled](PLACEHOLDER)
+
+**Fix 2b — Check Bluetooth and WiFi (Wireless Android Auto)**
+
+Wireless Android Auto uses Bluetooth for the initial handshake and WiFi to stream the actual screen, audio, and data to your car. Both must be on.
+
+1. Swipe down twice from the top of your screen to open **Quick Settings**.
+2. Make sure **Bluetooth** is ON. Tap and hold the Bluetooth icon to open Bluetooth settings, and verify your car is listed under "Paired devices" and shows as "Connected" (or at least "Previously connected").
+3. Make sure **WiFi** is ON — even if you're not near any WiFi network. Wireless Android Auto creates its own private WiFi connection between your phone and your car.
+4. Make sure **Airplane Mode** is OFF.
+
+**Fix 2c — Check for battery optimization blocking Android Auto**
+
+Android's aggressive battery optimization can silently kill Android Auto's background processes, preventing the app from launching when you connect to your car.
+
+1. Go to **Settings → Apps → Android Auto**.
+2. Tap **App battery usage** (or **Battery** on Samsung).
+3. Set it to **Unrestricted** — NOT "Optimized" or "Restricted." This allows Android Auto to run freely in the background.
+4. Also check **Google Play Services**: Go to **Settings → Apps → Google Play Services → App battery usage** and set it to **Unrestricted** as well. Google Play Services handles the core communication between your phone and car.
+
+> **Common mistake:** On Samsung phones, the battery optimization for Android Auto is often set to "Optimized" by default, and Samsung's One UI battery management is more aggressive than stock Android. After every system update, Samsung sometimes silently resets this back to "Optimized," so you may need to check this setting again after updates. Go to **Settings → Apps → Android Auto → Battery → Unrestricted**, and also go to **Device Care → Battery → Background usage limits** and make sure Android Auto is not in the "Sleeping apps" or "Deep sleeping apps" list.
+
+> **Common mistake #2:** People disable Bluetooth or WiFi to save battery, then forget to turn them back on before driving. Wireless Android Auto needs BOTH. No WiFi = no Android Auto on your car screen. If your phone connects to the car's Bluetooth for calls and music but Android Auto doesn't appear on the car screen, WiFi is the problem.
+
+## Fix 3: Clear Cache and Data, Update the Android Auto App
+
+Over time, Android Auto accumulates cached files that can become corrupted. A corrupted cache can cause crashes, failed connections, or the infamous "Android Auto keeps stopping" error. Clearing the cache is safe and doesn't delete any of your settings or saved cars.
+
+**Fix 3a — Clear Android Auto cache**
+
+1. Go to **Settings → Apps → Android Auto**.
+2. Tap **Storage & cache** (or just **Storage** on some phones).
+3. Tap **Clear Cache**. This removes temporary files only — your settings and saved cars are safe.
+4. Do NOT tap "Clear Storage" or "Clear Data" yet — that's the nuclear option that deletes all your settings. Try cache first.
+5. Restart your phone (hold power button → Restart) and test Android Auto.
+
+**Fix 3b — Clear Android Auto storage (more aggressive)**
+
+If clearing the cache didn't work, clearing storage is the next step. This deletes all Android Auto settings, saved cars, and preferences — essentially resetting the app to factory defaults.
+
+1. Go to **Settings → Apps → Android Auto → Storage & cache**.
+2. Tap **Clear Storage** (or **Clear Data**). Confirm on the popup.
+3. Restart your phone.
+4. Reopen Android Auto from your app drawer or by searching for it. It will walk you through the initial setup again — grant the permissions it asks for (Location, Notifications, Phone, SMS, Calendar, etc.).
+5. Plug into your car and set up Android Auto fresh.
+
+**Fix 3c — Update Android Auto and Google Play Services**
+
+An outdated Android Auto app or outdated Google Play Services is a common cause of connection failures, especially after an Android system update.
+
+1. Open the **Google Play Store** app.
+2. Search for **Android Auto**. If an **Update** button appears instead of "Open," tap it to install the latest version.
+3. Also check Google Play Services: In the Play Store, tap your profile icon (top right) → **Manage apps & device → Updates available**. Look for **Google Play Services** in the list and update it if available.
+4. If Android Auto was pre-installed on your phone and doesn't appear in the Play Store as a separate app, it's built into the OS. Go to **Settings → Apps → Android Auto**, tap the three-dot menu (top right), and select **Uninstall updates**. This rolls it back to the factory version. Then check the Play Store for updates and reinstall the latest version. This "uninstall updates → reinstall" workaround has been widely reported to fix Android 16-related connection issues.
+
+![Google Play Store showing the Android Auto app page with an Update button highlighted](PLACEHOLDER)
+
+> **Common mistake:** People clear the cache, see it didn't fix the problem, and give up. The correct order is: clear cache → restart phone → test. If still broken: clear storage → restart phone → set up fresh → test. If still broken: uninstall updates → restart phone → reinstall updates from Play Store → test. Each step is more aggressive than the last. Jumping straight to the most aggressive step means you lose your settings unnecessarily. Work through them in order.
+
+> **Common mistake #2:** After clearing Android Auto storage, the app will ask for a long list of permissions on first launch (Location, Notifications, Phone, SMS, Calendar, Contacts, Nearby Devices). People sometimes deny the Location permission thinking "why does Android Auto need my location?" — but then Google Maps shows a blank screen and navigation doesn't work. Android Auto requires Location permission for Maps, Waze, and any navigation app. Grant ALL the permissions it asks for; you can revoke them later if you change your mind, but denying them during setup breaks core functionality.
+
+## Fix 4: Restart Your Phone and Your Car's Infotainment System
+
+Both your phone and your car's infotainment system are computers — and like any computer, they can glitch. Restarting BOTH is critical, because if you only restart one, the other may still be holding onto a bad state.
+
+**Fix 4a — Restart your Android phone**
+
+1. Press and hold the **power button** (and volume up or down, depending on your phone) until the power menu appears.
+2. Tap **Restart** — do NOT just tap "Power off." A restart clears the system cache and memory; powering off and on again doesn't always do that.
+3. Wait for the phone to fully restart (1–2 minutes). Don't open any other apps — go straight to testing Android Auto.
+
+**Fix 4b — Restart your car's infotainment system**
+
+Now restart the car's computer. Find your car brand below:
+
+| Car Brand | How to Restart the Infotainment System |
+|-----------|--------------------------------------|
+| **Honda / Acura** | Press and hold the **audio system power/volume knob** for 5–10 seconds. A menu may appear asking "Do you want to reboot?" — select **Yes**. On newer models (2023+), the system restarts automatically after holding the knob |
+| **Toyota / Lexus** | Press and hold the **audio power/volume knob** for 10–12 seconds until the screen goes black, then release. The Toyota logo will appear as it restarts. On some models, hold the **"Setup"** button and the **volume knob** simultaneously |
+| **Ford / Lincoln** | **SYNC 4 (2018+):** Press and hold the **seek forward (>>)** button AND the **audio power** button for 10 seconds. **SYNC 4A (2021+):** On the STEERING WHEEL, press and hold the **seek forward (>>)** AND **volume down** buttons for 10 seconds |
+| **Chevrolet / GMC / Cadillac / Buick** | **2019+ (without Google built-in):** Turn the car completely off, open and close the driver's door, wait 5 minutes, restart the car. **2022+ (with Google built-in):** While in Park, press and hold the **phone hang-up button** on the steering wheel for 10 seconds |
+| **BMW** | **iDrive 7 and 8 (2018+):** Press and hold the **volume knob** for 20–30 seconds until the screen goes black and restarts |
+| **Hyundai / Kia / Genesis** | **2014–2019:** Press and hold the **audio power button** for 10+ seconds. **2020+:** Look for a small, unmarked pinhole near the volume knob (labeled "RESET"). Use a paperclip or pen tip to press it for 2–3 seconds. **2021+ Genesis:** Press and hold **Map** and **Setup** buttons together for 6–8 seconds |
+| **Volkswagen / Audi** | Press and hold the **volume/power knob** for 10–15 seconds until the screen goes black and the system restarts |
+| **Subaru** | **Starlink (2017+):** Press and hold the **power/volume knob**, the **Tune/Scroll knob**, and the **CD Eject button** — all three simultaneously — for 10+ seconds |
+| **Nissan / Infiniti** | Press and hold the **audio power/volume knob** for 10 seconds |
+| **Mazda** | **Mazda Connect (2014+):** Press and hold **Back + Nav + Volume knob** (all three simultaneously) for 10 seconds until the screen restarts |
+| **Jeep / Dodge / Chrysler / Ram** | **Uconnect 5 (2020+):** Press and hold the **power button** for 5 seconds. **Uconnect (2013–2019):** Put the car in accessory mode (press start without foot on brake), then hold **temperature up + temperature down** together for 8+ seconds, then select **Reset Radio** |
+
+**If your car brand isn't listed or the above doesn't work:**
+1. Search YouTube for: "[your car model year] infotainment reset" or "[your car] reboot radio."
+2. As a brute-force method: turn the car off completely, open the driver's door (so the electronics fully power down), close the door, lock the car, and wait 15 minutes. Then unlock, start, and test.
+3. Disconnecting the car battery for 10 minutes forces a full reset on almost any car, but also resets radio presets, clock, and sometimes power window settings — only do this if you're comfortable with basic car maintenance.
+
+After the car system restarts, wait 30–60 seconds for it to fully boot, then test Android Auto again.
+
+![A finger pressing and holding the audio power/volume knob on a car's center console, with the infotainment screen going black for a reboot](PLACEHOLDER)
+
+> **Common mistake:** People restart their phone, see it doesn't fix Android Auto, and assume the phone is the problem. The car's infotainment system has its own CPU, memory, and software — and it can glitch independently of your phone. If BOTH devices haven't been restarted, you haven't ruled out a car-side problem. Always restart both, and always wait the full 30–60 seconds for the car system to fully boot before testing.
+
+> **Common mistake #2:** Turning the car off and immediately back on does NOT restart the infotainment system on most modern cars. Modern cars keep the infotainment system powered for several minutes after the engine is off (so the radio and Bluetooth don't cut out at every stoplight with auto start-stop). To truly restart the car's computer, you either need to use the button-hold method above, or turn the car off, OPEN THE DOOR, and wait long enough for the system to power down — typically 5–15 minutes.
+
+## Fix 5: Forget Your Car and Re-Pair the Connection
+
+When your phone pairs with your car, both devices store connection settings. Over time — especially after system updates — those stored settings can become corrupted. Deleting the connection from BOTH sides and starting fresh forces a clean handshake.
+
+**Fix 5a — Forget your car on your phone**
+
+1. Go to **Settings → Connected devices → Connection preferences → Android Auto**.
+2. Tap **Previously connected cars**.
+3. Tap the three-dot menu (top right) and select **Forget all cars**. Confirm on the popup.
+4. Also go to **Settings → Connected devices → Bluetooth**, find your car in the paired devices list, tap the gear icon (⚙️) next to it, and select **Forget** or **Unpair**.
+
+**Fix 5b — Delete your phone from your car's system**
+
+This step is just as important — the car remembers your phone too, and those settings can also be corrupted.
+
+1. On your car's infotainment screen, go to **Settings → Bluetooth**, **Phone Connections**, or **Device List** (varies by brand).
+2. Find your phone in the list of paired devices.
+3. Select it and choose **Delete**, **Forget**, **Remove**, or **Unpair**.
+4. If your car has a separate **"Android Auto"** or **"Smartphone Integration"** section in Settings, check there too and remove your phone if listed.
+
+**Fix 5c — Restart both and re-pair**
+
+1. Restart your phone (hold power button → Restart).
+2. Restart your car's infotainment system (use the method for your brand from Fix 4b).
+3. Wait for both to fully boot (30–60 seconds each).
+
+**For wired Android Auto:**
+4. Unlock your phone.
+5. Plug the USB cable into your phone first, then into the car's data USB port.
+6. If a prompt appears asking "Allow access to phone data?" or "Allow Android Auto?" — tap **Allow** or **Yes**.
+7. If a prompt appears on the car screen asking to enable Android Auto — select **Enable** or **Yes**.
+8. The Android Auto home screen should appear on the car's display.
+
+**For wireless Android Auto:**
+4. Make sure Bluetooth and WiFi are ON.
+5. On your car's infotainment screen, go to **Settings → Bluetooth → Add New Device** or **Pair New Phone**.
+6. On your phone, go to **Settings → Connected devices → Bluetooth → Pair new device**.
+7. Tap your car's name when it appears. A pairing code may appear on both screens — confirm they match, then tap **Pair**.
+8. After Bluetooth pairs, your car should prompt: "Use Android Auto with this device?" — select **Yes** or **Enable**.
+9. The Android Auto home screen should appear wirelessly.
+
+![Android phone screen showing the "Previously connected cars" list with the "Forget all cars" option visible, and a car screen showing the "Enable Android Auto?" prompt](PLACEHOLDER)
+
+> **Common mistake:** People forget the car from their phone's Android Auto settings but don't delete the phone from the car's Bluetooth list. Both sides store information about each other. If the car still remembers a corrupted pairing, forgetting it on the phone side alone won't fix the problem — the car will try to reconnect using the old, broken settings. Delete from BOTH sides, restart BOTH devices, then pair fresh.
+
+> **Common mistake #2:** Some cars have a maximum number of saved Bluetooth devices — typically 5 to 10. If you've paired multiple phones over the years but never deleted the old ones, the car's Bluetooth memory may be full and unable to accept new pairings. Delete ALL old phones from the car's Bluetooth list before trying to add your phone again.
+
+## Fix 6: Check Developer Options and USB Configuration
+
+This is an Android-specific fix that has no equivalent on iPhone. Android has a hidden "Developer Options" menu that controls how the USB port behaves when you plug into a computer or car. If the USB configuration is wrong, your car won't recognize your phone as an Android Auto device.
+
+**Fix 6a — Enable Developer Options (if not already enabled)**
+
+1. Go to **Settings → About phone**.
+2. Find **Build number** (on Samsung, it's under **Software information**).
+3. Tap **Build number** SEVEN times rapidly. You'll see a countdown: "You are now 3 steps away from being a developer," then "You are now a developer!"
+4. Enter your phone's PIN or password if prompted.
+
+**Fix 6b — Set default USB configuration**
+
+1. Go to **Settings → System → Developer options** (on Samsung: **Settings → Developer options**, at the very bottom of the Settings menu).
+2. Scroll down to the **Networking** section.
+3. Find **Default USB configuration**.
+4. Tap it and select **File Transfer / Android Auto** (not "Charging only," not "MIDI," not "PTP"). On some phones this option is labeled **"File transfer"** or **"Transferring files"** — choose that one.
+5. Also look for **"USB debugging"** — it should be OFF for normal Android Auto use. Having USB debugging ON can sometimes interfere with the car's connection.
+
+**Fix 6c — Check for "Select USB Configuration" popup when plugging in**
+
+When you plug your phone into the car, Android may show a notification: "Charging this device via USB — tap for more options." This is critical.
+
+1. After plugging into the car, swipe down from the top of your phone screen to see notifications.
+2. Look for a USB notification. Tap it.
+3. Select **File transfer / Android Auto** (NOT "Charging only" and NOT "No data transfer").
+4. If your phone keeps defaulting to "Charging only" every time you plug in, go back to Fix 6b and set the Default USB configuration — this makes "File transfer" the permanent default.
+
+![Android Developer Options screen with "Default USB configuration" set to "File Transfer / Android Auto" highlighted](PLACEHOLDER)
+
+> **Common mistake:** People enable Developer Options, change the USB configuration, and then go back to using their phone normally. But Developer Options is a power-user menu — many of its settings can cause problems if changed accidentally. If you enabled Developer Options just for this fix, you can disable it afterward: go to **Settings → Developer options** and toggle the master switch at the top to OFF. The Default USB configuration setting you chose will remain in effect even after Developer Options is turned off.
+
+> **Common mistake #2:** "Transferring files" and "Transferring images (PTP)" look similar, but they're completely different protocols. Android Auto needs MTP (Media Transfer Protocol), which is the "File transfer" option. If you accidentally select "PTP," the car will see your phone as a camera, not an Android Auto device, and the connection will fail. Always choose "File Transfer / Android Auto."
+
+## Fix 7: Reset Network Settings and Check Compatibility (Last Resort)
+
+If you've tried everything above and Android Auto still won't work, there may be a deeper conflict in your phone's network configuration or a fundamental compatibility issue. This last fix covers both.
+
+**Fix 7a — Reset network settings**
+
+Resetting network settings wipes ALL saved WiFi networks, Bluetooth pairings, and cellular settings — giving Android Auto a completely clean slate.
+
+> **⚠️ Warning:** Resetting network settings erases ALL saved WiFi networks and passwords, ALL Bluetooth pairings (headphones, smartwatch, speakers must be re-paired), and cellular/APN settings. You will have to re-enter your home WiFi password and re-pair every Bluetooth device. Only do this when nothing else has worked.
+
+1. Go to **Settings → System → Reset options** (on Samsung: **Settings → General management → Reset**).
+2. Tap **Reset Wi-Fi, mobile & Bluetooth** (or **Reset network settings**).
+3. Enter your PIN or password to confirm.
+4. Your phone will restart immediately.
+5. After restarting, rejoin your WiFi network and re-pair Bluetooth devices.
+6. Follow Fix 5 to pair Android Auto with your car from scratch.
+
+**Fix 7b — Verify your car and phone are compatible**
+
+Not all cars have Android Auto, and not all Android phones support it.
+
+1. **Car compatibility:** Check [android.com/auto/compatibility/](https://www.android.com/auto/compatibility/) for the official list. Android Auto was introduced in 2015 but didn't become widely available until 2017–2018. Many cars made before 2017 don't have it, and some budget cars as late as 2020 also lack it. If your car's screen doesn't show any Android Auto icon or menu option, it may simply not be supported.
+2. **Phone compatibility:** Your phone must run **Android 9.0 (Pie) or later** with an active cellular data plan. Phones running Android 8 or older cannot use Android Auto on a car screen. Google Pixel, Samsung Galaxy, OnePlus, Motorola, and most major Android brands support it — but some ultra-budget phones, Android Go edition phones, and phones sold in China without Google Play Services do not.
+3. **Aftermarket stereos:** If your car didn't come with Android Auto, aftermarket stereos from Pioneer, Kenwood, Alpine, Sony, and JVC can add it. These cost $300–$700 installed and work with almost any car made after 2005.
+
+**Fix 7c — Test with a different phone and a different car**
+
+This is the fastest way to isolate whether the problem is your phone or your car.
+
+1. Borrow a friend's or family member's Android phone and plug it into your car. If Android Auto works with their phone, the problem is YOUR phone — consider a factory reset (back up your data first) or contact your phone manufacturer's support.
+2. Plug your phone into a different car that has Android Auto. If it works in another car, the problem is YOUR car — contact your dealer for a diagnostic.
+3. If Android Auto fails in multiple cars with multiple phones, your USB cable is almost certainly the problem. Try a brand-new, USB-IF certified cable.
+
+**If Android Auto still doesn't work after everything:**
+
+- **Android Auto was working and suddenly stopped after the Android 16 update?** This is a widely reported issue since October 2025. Go to **Settings → Apps → Android Auto**, tap the three-dot menu, and select **Uninstall updates**. Then open the Play Store and reinstall the latest Android Auto update. This workaround has restored functionality for many users, though it may need to be repeated after future updates until Google releases a permanent fix. Also check the [Android Auto Help Community](https://support.google.com/androidauto/community) for the latest status on the Android 16 issue.
+
+- **Consider a wireless Android Auto adapter.** If your car only supports wired Android Auto and the USB port has failed, a wireless Android Auto adapter (like Motorola MA1, AAWireless, or Carsifi) bypasses the broken port entirely. These cost $60–$90 on Amazon and plug into a DIFFERENT USB port (or a 12V cigarette lighter for power).
+
+- **Check if your car needs a firmware update.** Unlike phone updates, car firmware updates often require a USB drive or a dealership visit. Go to your car manufacturer's owners website (e.g., owners.honda.com, support.toyota.com) and search for "infotainment update" for your model and year.
+
+![Android phone Settings showing the "Reset Wi-Fi, mobile & Bluetooth" option highlighted](PLACEHOLDER)
+
+> **Common mistake:** People confuse "Reset network settings" with a full factory reset. The "Reset Wi-Fi, mobile & Bluetooth" option only clears networking data: WiFi passwords, Bluetooth pairings, and cellular settings. Your photos, apps, contacts, and messages are completely safe. The "Erase all data (factory reset)" option is the one that wipes everything — do NOT choose that unless you've backed up and are prepared to set up your phone from scratch. Read the description under each reset option carefully before tapping.
+
+## Still Stuck?
+
+- **Android Auto icon is grayed out on the car screen?** This usually means the car detects a USB connection but can't negotiate the Android Auto handshake. Try a different cable (Fix 1), make sure Android Auto is enabled in the car's settings (some cars let you disable it per-device), and verify your phone's USB configuration is set to "File Transfer / Android Auto" (Fix 6). Also, make sure your phone is UNLOCKED — many cars won't activate the Android Auto icon until the phone screen is on and unlocked.
+
+- **Android Auto connects but disconnects after a few seconds or minutes?** This is often a cable problem or a loose USB port. The vibration of driving can wiggle a loose connection. Try a different, snug-fitting cable (Fix 1), and try supporting the cable so the weight of the cable isn't pulling on the connector. Also turn off battery optimization for Android Auto (Fix 2c) — if the system kills Android Auto to save power, it will disconnect mid-drive. On Samsung phones, check that "Put unused apps to sleep" is not automatically sleeping Android Auto.
+
+- **Android Auto works with other Android phones but not yours?** Your phone has a specific problem. Factory reset the Android Auto app (Fix 3b). If that doesn't work, check Developer Options USB configuration (Fix 6). If it still doesn't work, reset network settings (Fix 7a). As a last resort, back up your phone and perform a factory reset, then test Android Auto BEFORE restoring your apps and data — if it works on a clean install, something you installed was causing the conflict.
+
+- **"Android Auto keeps stopping" or "Android Auto has stopped" error message?** This is almost always a corrupted cache or a conflicting app. Clear Android Auto's cache and storage (Fix 3), uninstall updates and reinstall (Fix 3c), and check if any recently installed apps might be interfering — particularly battery savers, task killers, antivirus apps, and some VPN apps.
+
+- **Wired Android Auto works but wireless doesn't?** Wireless requires both Bluetooth and WiFi to be ON and working. Restart both the phone and car (Fix 4), forget and re-pair (Fix 5), and check that your car actually supports wireless Android Auto — many cars only support wired, especially models before 2021. Also check that your phone is connected to your car's WiFi hotspot. On some cars, wireless Android Auto must be manually enabled in the car's Settings menu.
+
+- **Google Maps shows a blank screen in Android Auto?** Make sure Location permission is granted to both Android Auto and Google Maps. Go to **Settings → Apps → Android Auto → Permissions → Location** and set it to **"Allow all the time"** (not "Allow only while using the app"). Also go to **Settings → Apps → Maps → Permissions → Location** and set it to **"Allow all the time."** Then restart your phone.
+
+- **Music or media apps play but navigation apps don't show on the screen?** This can happen when the phone and car partially connect. Forget the car from both sides (Fix 5), restart both devices, and re-pair. Also check that Android Auto has all necessary permissions — go to **Settings → Apps → Android Auto → Permissions** and make sure every permission is granted, especially Location and Nearby Devices.
+
+- **Samsung phone specifically having problems after an update?** Samsung's One UI is notoriously aggressive with background app management. Go to **Settings → Apps → Android Auto → Battery → Unrestricted**. Go to **Settings → Device Care → Battery → Background usage limits → Never sleeping apps** and ADD Android Auto to the list. Also go to **Settings → Apps → Android Auto → Mobile data** and make sure "Allow background data usage" is ON. Samsung phones also need the "Nearby devices" permission granted to Android Auto.
+
+- **Using a foldable phone (Galaxy Z Flip, Z Fold, Moto Razr, etc.)?** Some foldables have been reported to fail Android Auto connections unless the phone is fully UNFOLDED and UNLOCKED before starting the car. If you keep your phone folded in your pocket and start the car, the Android Auto service may not initialize properly. Unfold your phone, unlock it, and THEN start the car. This appears to be a bug in how Android handles the foldable screen state — Google is aware of it.
+
+- **Car is more than 7–8 years old and Android Auto never worked?** Check your owner's manual or [android.com/auto/compatibility/](https://www.android.com/auto/compatibility/) to confirm your car supports Android Auto. If it doesn't, aftermarket stereos from Pioneer, Alpine, Kenwood, Sony, and JVC can add Android Auto to almost any car made after 2005. Installation costs $300–$700 total, including parts and labor, at most car audio shops.
