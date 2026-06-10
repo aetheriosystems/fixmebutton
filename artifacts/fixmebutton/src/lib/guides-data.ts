@@ -870,6 +870,274 @@ If nothing above worked, a factory reset wipes the Echo completely and lets you 
 
 - **Still nothing after a factory reset?** The device may be physically broken — most commonly the power port, microphones, or internal WiFi chip. If it's more than 3-4 years old, it might be time for a replacement. A new Echo Dot costs around $25-30 when on sale.`,
   },
+  {
+    meta: {
+      slug: "fix-bluetooth-not-working",
+      category: "smartphones",
+      title: "How to Fix Bluetooth Not Working / Won't Turn On or Pair",
+      devices: ["iPhone", "Samsung Galaxy", "Google Pixel", "Any Android phone", "Windows PC", "Mac"],
+      difficulty: "beginner",
+      time_estimate: "10 minutes",
+      last_verified: "2026-06-10",
+      steps: 7,
+    },
+    content: `## Before You Start
+
+Bluetooth won't turn on. Or it's on, but your headphones, speaker, car, or other device won't connect. Maybe it was working yesterday and suddenly stopped. Bluetooth problems are one of the most common tech frustrations — and they affect iPhones, Android phones, Windows PCs, and Macs alike.
+
+The fixes are the same across almost all devices. This guide walks you through them in order, from quick checks to deeper resets.
+
+**What you'll need:**
+- Your phone or computer
+- The Bluetooth device you're trying to connect (charged!)
+- A few minutes of patience
+
+> **Work through the steps in order.** The first two fix the problem for most people. Save the network reset for last.
+
+## Step 1: Do the Quick Checks First
+
+Before diving into deeper fixes, check these three things that people overlook all the time.
+
+**Fix 1 — Is Bluetooth actually turned on?**
+It sounds obvious, but it's the #1 reason Bluetooth "doesn't work."
+
+**iPhone:** Swipe down from the top-right corner to open Control Center. Look for the Bluetooth icon (looks like a jagged "B"). If it's gray, tap it to turn it blue. Note: tapping the Bluetooth icon in Control Center only disconnects current devices for 24 hours — it does NOT fully turn Bluetooth off. To fully toggle Bluetooth on/off, go to **Settings → Bluetooth** and flip the switch.
+
+**Android:** Swipe down twice from the top of the screen. Find the Bluetooth icon. If it's grayed out, tap it so it's highlighted. Or go to **Settings → Connections → Bluetooth** and flip the switch on.
+
+**Windows:** Click the network/sound/battery icon on the taskbar (bottom-right). Look for the Bluetooth tile. If it's not blue, click it to turn on. Or go to **Settings → Bluetooth & devices** and flip the Bluetooth switch.
+
+**Mac:** Click the Bluetooth icon in the menu bar (top-right). If the icon has a diagonal line through it, click **Turn Bluetooth On**. Or go to **System Settings → Bluetooth** and click the toggle.
+
+**Fix 2 — Is Airplane Mode on?**
+Airplane Mode turns off Bluetooth along with WiFi and cellular. On most phones, you can re-enable Bluetooth while Airplane Mode is on — but sometimes it glitches and stays off.
+
+1. Swipe into Control Center (iPhone) or Quick Settings (Android)
+2. If the airplane icon is highlighted orange/blue, tap it to turn Airplane Mode **off**
+3. Wait 5 seconds, then try Bluetooth again
+
+**Fix 3 — Is the device charged and in pairing mode?**
+Your headphones, speaker, or other Bluetooth device won't connect if the battery is dead — or if it's not in pairing mode.
+
+1. Charge the device for at least 10 minutes before troubleshooting
+2. Check the device's manual: most enter pairing mode by holding the power button for 5-10 seconds until a light flashes blue (or blue and red alternately)
+3. If the device was previously paired with another phone or computer nearby, turn Bluetooth OFF on those other devices — Bluetooth devices can only connect to one thing at a time
+
+> **Common mistake:** People try to pair Bluetooth headphones while the headphones are still connected to their laptop in the next room. Your headphones can't connect to your phone if they're already talking to your computer. Turn off Bluetooth on every device except the one you're trying to connect.
+
+## Step 2: Turn Bluetooth Off and On, Then Restart
+
+A surprising number of Bluetooth problems are caused by temporary software glitches. Toggling Bluetooth and restarting clears them.
+
+**Fix 1 — Toggle Bluetooth off and on**
+1. Go to your Bluetooth settings (Settings → Bluetooth on iPhone; Settings → Connections → Bluetooth on Android; Settings → Bluetooth & devices on Windows)
+2. Turn Bluetooth **completely off**
+3. Wait **10 full seconds** — don't rush this
+4. Turn Bluetooth back on
+5. Wait another 10 seconds for it to fully initialize
+6. Try connecting again
+
+**Fix 2 — Restart your phone or computer**
+If toggling didn't help, a full restart clears deeper glitches.
+
+**iPhone (Face ID models):**
+1. Press and hold the **side button** and **volume up button** until the "slide to power off" slider appears
+2. Slide to power off, wait 30 seconds
+3. Press and hold the side button until the Apple logo appears
+
+**Android:**
+1. Press and hold the **power button** until the power menu appears
+2. Tap **Restart**
+3. Wait 60 seconds for the phone to fully restart
+
+**Windows:**
+1. Click **Start → Power → Restart**
+
+**Mac:**
+1. Click **Apple menu → Restart**
+
+**Fix 3 — Restart the Bluetooth device too**
+1. Turn the Bluetooth device completely off (not just disconnected)
+2. Wait 30 seconds
+3. Turn it back on and put it in pairing mode
+4. Try connecting again
+
+> **Common mistake:** People "restart" by just locking and unlocking their phone screen. That doesn't count. You need to fully power the phone off and back on. If your phone hasn't been restarted in weeks, Bluetooth glitches are almost guaranteed.
+
+## Step 3: Forget the Device and Pair Again
+
+Sometimes the saved pairing information gets corrupted. Your phone thinks it knows how to connect to the device, but the connection data is wrong. "Forgetting" the device wipes that stale data so you can start fresh.
+
+**iPhone:**
+1. Go to **Settings → Bluetooth**
+2. Find the problematic device in the list (under "My Devices")
+3. Tap the blue ⓘ icon next to its name
+4. Tap **Forget This Device → Forget Device**
+5. Turn Bluetooth off and back on (Step 2)
+6. Put your device in pairing mode and look for it under "Other Devices"
+7. Tap it to pair fresh
+
+**Android:**
+1. Go to **Settings → Connections → Bluetooth**
+2. Find the problematic device in the "Paired devices" list
+3. Tap the gear icon ⚙️ next to its name
+4. Tap **Forget** or **Unpair**
+5. Tap **Pair new device** and reconnect
+
+**Windows:**
+1. Go to **Settings → Bluetooth & devices → Devices**
+2. Find the device, click the three dots (…) next to it
+3. Click **Remove device → Yes**
+4. Click **Add device → Bluetooth** and re-pair
+
+**Mac:**
+1. Go to **System Settings → Bluetooth**
+2. Hover over the device and click the ⓘ icon
+3. Click **Forget This Device → Forget Device**
+4. Re-pair by putting the device in pairing mode and clicking **Connect**
+
+> **Common mistake:** People tap the device name to reconnect without forgetting it first. If the pairing data is corrupted, reconnecting without forgetting will just fail again. Always forget first, then pair fresh.
+
+## Step 4: Check for Interference and Range
+
+Bluetooth has a limited range — about 30 feet (10 meters) in open air. Walls, furniture, and even your own body can cut that range significantly. Other electronics can also interfere with the signal.
+
+**Fix 1 — Move closer**
+1. Bring your phone and the Bluetooth device within 3-5 feet of each other (no walls between them)
+2. Try connecting again
+3. If it works at close range but not from across the room, range was the problem
+
+**Fix 2 — Remove sources of interference**
+Bluetooth uses the same 2.4 GHz frequency as many other devices. Common culprits that interfere:
+- WiFi routers (especially 2.4 GHz networks)
+- Microwave ovens (when running)
+- USB 3.0 devices (hard drives, hubs — they emit radio noise)
+- Wireless game controllers
+- Baby monitors
+- Thick walls, metal furniture, or large mirrors between devices
+
+Try moving away from these sources, or turn them off temporarily to test.
+
+**Fix 3 — Check for too many connected Bluetooth devices**
+Most phones can only connect to a limited number of Bluetooth devices at once (usually 3-7 depending on the phone).
+
+1. Go to Bluetooth settings and look at how many devices are currently connected
+2. Disconnect any you're not actively using
+3. Try pairing the new device again
+
+> **Common mistake:** People put their phone in their back pocket while wearing Bluetooth earbuds. The human body is mostly water, which absorbs the 2.4 GHz Bluetooth signal. If your earbuds cut out when you put your phone in your back pocket, that's why — your body is blocking the signal. Keep your phone in a front pocket or hold it in your hand.
+
+## Step 5: Check for Too Many Saved Bluetooth Devices
+
+Phones remember every Bluetooth device you've ever paired with. Over time, a long list of old devices can confuse the Bluetooth system — especially if you've paired with rental cars, friend's speakers, or hotel room gadgets.
+
+**Fix 1 — Clear out old Bluetooth devices**
+1. Go to Bluetooth settings
+2. Look through the list of saved/paired devices
+3. For any device you no longer use (old cars, speakers you sold, hotel TVs, printers you don't own), tap **Forget** or **Unpair**
+4. Clear out everything you don't actively use
+
+**Fix 2 — If Bluetooth won't turn on at all (stuck off)**
+On Android, sometimes a buggy app or a full Bluetooth cache prevents Bluetooth from turning on.
+
+1. Go to **Settings → Apps → See all apps**
+2. Tap the three-dot menu → **Show system apps**
+3. Find **Bluetooth** (or **Bluetooth Share** / **Bluetooth MIDI Service**) in the list
+4. Tap **Storage & cache → Clear cache**
+5. Go back and also find **Settings**, clear its cache too
+6. Restart your phone and try turning Bluetooth on
+
+**iPhone — if the Bluetooth toggle is grayed out:**
+A grayed-out Bluetooth toggle usually means a hardware problem, but try these first:
+1. Force restart your iPhone:
+   - Quickly press and release **Volume Up**, then **Volume Down**, then press and hold the **side button** until the Apple logo appears (don't slide to power off — keep holding)
+2. If Bluetooth is still grayed out after a force restart, the Bluetooth chip inside the phone may have failed and needs repair
+
+> **Common mistake:** Some people accumulate 30+ saved Bluetooth devices over the years. Each saved device takes a small slot in the Bluetooth controller's memory. While modern phones handle this better than older ones, a huge list of saved devices can still cause pairing glitches. Clean house once a year.
+
+## Step 6: Update Your Phone or Computer
+
+Bluetooth problems are often caused by bugs in the operating system — bugs that updates fix. If your phone is running an old version, or your computer has outdated Bluetooth drivers, updating can solve persistent Bluetooth issues.
+
+**iPhone — Update iOS:**
+1. Go to **Settings → General → Software Update**
+2. If an update is available, tap **Update Now**
+3. Your phone will restart during the update
+
+**Android — Check for system updates:**
+1. Go to **Settings → System → System update** (on Samsung: **Settings → Software update**)
+2. Tap **Check for updates**
+3. Install any available updates
+
+**Windows — Update Bluetooth drivers:**
+1. Right-click the **Start button → Device Manager**
+2. Expand the **Bluetooth** category
+3. Right-click your Bluetooth adapter (it may say "Intel Wireless Bluetooth" or similar)
+4. Click **Update driver → Search automatically for drivers**
+5. If Windows doesn't find any, go to your PC manufacturer's website (Dell, HP, Lenovo, etc.), search for your model, and download the latest Bluetooth driver from their support page
+
+**Windows — Also run Windows Update:**
+1. Go to **Settings → Windows Update**
+2. Click **Check for updates** and install everything available (especially optional driver updates)
+
+**Mac — Update macOS:**
+1. Click **Apple menu → System Settings → General → Software Update**
+2. Install any available updates
+
+> **Common mistake:** People update their phone but ignore optional driver updates on Windows. Bluetooth and WiFi drivers are often listed under "Optional updates" in Windows Update. Go to **Settings → Windows Update → Advanced options → Optional updates** and check for any driver updates there — installing them fixes many Bluetooth problems.
+
+## Step 7: Reset Network Settings (Last Resort)
+
+If nothing above has worked, resetting your phone's network settings clears ALL Bluetooth, WiFi, and cellular settings — giving Bluetooth a completely clean slate. This is the nuclear option, but it works.
+
+> **⚠️ Warning:** Resetting network settings will erase ALL saved WiFi networks and passwords, ALL Bluetooth pairings, and your cellular settings (APN, VPN). You'll have to re-enter your WiFi password and re-pair every Bluetooth device. Only do this as a last resort.
+
+**iPhone — Reset Network Settings:**
+1. Go to **Settings → General → Transfer or Reset iPhone → Reset**
+2. Tap **Reset Network Settings**
+3. Enter your passcode to confirm
+4. Your iPhone will restart
+5. After it restarts, go to Settings → Bluetooth, turn it on, and try pairing again
+
+**Android — Reset Network Settings:**
+1. Go to **Settings → System → Reset options** (on Samsung: **Settings → General management → Reset**)
+2. Tap **Reset Wi-Fi, mobile & Bluetooth** (or **Reset network settings**)
+3. Tap **Reset settings** and confirm with your PIN/password
+4. Your phone will restart
+5. Set up Bluetooth again from scratch
+
+**Windows — Full Bluetooth Reset:**
+1. Open **Device Manager** (right-click Start → Device Manager)
+2. Expand **Bluetooth**
+3. Right-click your Bluetooth adapter → **Uninstall device → Uninstall**
+4. Restart your computer — Windows will automatically reinstall the Bluetooth driver
+5. If Bluetooth still doesn't work after restart, download the latest driver from your PC manufacturer's website
+
+**Mac — Reset Bluetooth Module (hidden debug menu):**
+1. Hold **Shift + Option** and click the Bluetooth icon in the menu bar
+2. You'll see a hidden debug menu appear
+3. Click **Reset the Bluetooth module**
+4. Your Mac will disconnect all Bluetooth devices and restart the Bluetooth service
+5. Wait 30 seconds, then try connecting again
+
+> **Common mistake:** On iPhone, people confuse "Reset Network Settings" with "Erase All Content and Settings." The second one wipes your entire phone — don't choose that! "Reset Network Settings" only clears network-related data (WiFi, Bluetooth, cellular). Your photos, apps, and accounts are safe.
+
+## Still Stuck?
+
+- **Bluetooth turns on but turns itself off immediately?** On Android, this is often caused by a buggy app. Boot into **Safe Mode** (press and hold the power button, then long-press "Power off" → "Safe Mode") and see if Bluetooth stays on. If it does, a third-party app is the cause — uninstall recently downloaded apps one by one until you find the culprit.
+
+- **Bluetooth works but audio quality is terrible / keeps cutting out?** Make sure your Bluetooth device supports the right audio codec. In Android Developer Options (Settings → About phone → tap "Build number" 7 times), you can change Bluetooth audio codec settings. Also, some devices struggle with simultaneous WiFi and Bluetooth — try turning off WiFi to see if audio improves (this confirms interference).
+
+- **Can't pair with your car?** Cars are notorious for having limited Bluetooth memory. Your car may have a maximum number of saved phones (often 5-10). Delete old phones from the car's Bluetooth menu (check your car's manual — usually under Settings → Phone → Bluetooth → Delete/Forget), then try pairing again.
+
+- **Bluetooth disappeared completely from Settings?** On Windows, this usually means the Bluetooth driver crashed or was disabled. Open Device Manager, expand Bluetooth — if the adapter has a yellow triangle or red X, right-click it and select **Enable device** or **Update driver**. If it's not listed at all, Bluetooth may be disabled in the BIOS — restart and enter BIOS setup (usually F2 or Del during startup), find Bluetooth settings, and enable it.
+
+- **iPhone Bluetooth still grayed out after force restart?** This is almost certainly a hardware failure of the Bluetooth/WiFi chip. On iPhones, the Bluetooth and WiFi chips are on the same physical component — so if both are acting up, the chip may need replacement. Contact Apple Support or visit an Apple Store. If your iPhone is under warranty (1 year) or you have AppleCare+, the repair may be free.
+
+- **Android phone is more than 4 years old?** Older Bluetooth versions (4.2 and earlier) have more limited range and struggle with modern Bluetooth 5.0+ accessories. Check your phone's Bluetooth version in Settings → About phone. If your phone has Bluetooth 4.2 or older, compatibility issues with newer devices are common. A Bluetooth 5.0 USB adapter (for computers) or upgrading your phone may be the only fix.
+
+- **Still nothing after resetting network settings?** The Bluetooth radio inside your phone or computer may have physically failed. For computers, a USB Bluetooth adapter costs $10-15 and bypasses the internal Bluetooth entirely. For phones, contact the manufacturer or a repair shop.`,
+  },
 ];
 
 export function getAllGuides(): GuideMeta[] {
