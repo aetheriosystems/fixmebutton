@@ -25,10 +25,9 @@ router.post("/stripe/checkout", async (req, res) => {
   }
 
   const { priceId, userEmail } = req.body || {};
-  const stripePriceId = PRICES[String(priceId)] || String(priceId || "");
-
+  const stripePriceId = PRICES[String(priceId)];
   if (!stripePriceId) {
-    res.status(400).json({ error: "Invalid price ID" });
+    res.status(400).json({ error: "Invalid price ID. Use 'monthly' or 'yearly'." });
     return;
   }
 
