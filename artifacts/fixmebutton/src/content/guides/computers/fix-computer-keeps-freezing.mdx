@@ -1,0 +1,188 @@
+---
+title: "How to Fix a Computer That Keeps Freezing"
+category: computers
+devices: ["Windows 10", "Windows 11", "macOS"]
+difficulty: beginner
+time_estimate: "15 minutes"
+last_verified: "2026-06-10"
+steps: 6
+---
+
+## Before You Start
+
+Your computer freezes — the screen locks up, the mouse won't move, and nothing responds. It's frustrating, but most freezes are fixable without paying for repairs. This guide walks you through the most common causes, starting with what to do the moment it happens.
+
+**What you'll need:**
+- Your computer
+- A bit of patience (some scans take a few minutes)
+
+> **Work through the steps in order.** The first step helps you get unstuck right now. The later steps prevent freezes from happening again.
+
+![A person looking frustrated at a frozen computer screen with a spinning cursor](PLACEHOLDER)
+
+## Step 1: What to Do When It Freezes Right Now
+
+When your computer freezes, don't panic. Try these in order — you usually won't need the last one.
+
+**Fix 1 — Give it a minute**
+Sometimes a program is just thinking hard. Wait 30–60 seconds. If your mouse starts moving again or the screen changes, the computer recovered on its own. Save your work right away!
+
+**Fix 2 — Close the frozen program (Windows)**
+1. Press **Ctrl + Alt + Delete** on your keyboard
+2. Click **Task Manager** from the menu that appears
+3. Look for any program that says "Not Responding" next to its name
+4. Click it, then click the **End Task** button (bottom-right)
+5. Wait about 30 seconds for it to close
+
+![The Windows Task Manager showing a "Not Responding" program highlighted](PLACEHOLDER)
+
+**Fix 2 — Force quit the frozen app (Mac)**
+1. Press **Option + Command + Esc** (all three keys at once)
+2. A window pops up listing open apps. Frozen apps often say "Not Responding" next to them
+3. Click the frozen app and click **Force Quit**
+4. The app closes immediately — you'll lose any unsaved work in that app
+
+> **Common mistake:** Pressing the power button once puts your computer to sleep — it does NOT turn it off. To force a shutdown you need to hold it down.
+
+**Fix 3 — Force a restart (if nothing else works)**
+If even Task Manager or Force Quit won't open:
+1. Press and **hold** the power button for about 10 seconds, until the screen goes black and the computer is completely off
+2. Wait 30 seconds
+3. Press the power button normally to turn it back on
+
+> **Tip:** Enable autosave in apps you use often (Word, Google Docs, Photoshop). That way, if your computer does freeze, you won't lose much work.
+
+## Step 2: Close Unnecessary Programs and Browser Tabs
+
+Freezes often happen when your computer runs out of working memory (RAM). Every open program and browser tab takes a slice of that memory.
+
+**Fix 1 — Check what's using your memory**
+
+**Windows:**
+1. Press **Ctrl + Shift + Esc** to open Task Manager
+2. Click the **Processes** tab (you may need to click "More details" at the bottom first)
+3. Click the **Memory** column header to sort by memory usage, highest first
+4. Look at the top of the list — any program using a huge amount of memory (like over 1,000 MB) might be the problem
+5. Right-click any program you don't need right now and select **End task**
+
+![Windows Task Manager sorted by memory usage, showing high RAM usage](PLACEHOLDER)
+
+**Mac:**
+1. Open **Activity Monitor** (find it with Spotlight — press **Cmd + Space**, type "Activity Monitor")
+2. Click the **Memory** tab at the top
+3. Look at the **Memory Pressure** graph at the bottom. If it's red, your Mac is running out of memory
+4. Click the **Memory** column header to sort by memory, highest first
+5. Select any app using lots of memory that you don't need and click the **X button** (top-left) to quit it
+
+**Fix 2 — Close browser tabs**
+Web browsers are the biggest memory hogs on most computers. Each open tab can use 100–300 MB of memory. If you have 30+ tabs open, that alone can freeze a computer with 4 GB or 8 GB of RAM.
+- Close tabs you're not actively using
+- Bookmark pages you want to come back to later instead of leaving them open
+
+> **Common mistake:** Clicking the X on a program's window does NOT always close it — many programs keep running in the background (look for small icons near the clock on Windows, or a dot under the app in the Mac Dock). Use Task Manager or right-click → Quit to fully close them.
+
+## Step 3: Check If Your Computer Is Overheating
+
+Computers slow down and eventually freeze when they get too hot — it's a built-in safety feature. If your computer feels hot to the touch or the fan is loud, overheating might be the cause.
+
+**Fix 1 — Feel and listen**
+1. Touch the bottom of your laptop or the side of your desktop case. Is it unusually hot?
+2. Listen for the fan. Is it running loudly all the time, even when you're not doing much?
+
+**Fix 2 — Clear blocked vents**
+1. **Laptops**: Make sure you're using your laptop on a hard, flat surface — NOT on a bed, blanket, pillow, or your lap. Soft surfaces block the air vents on the bottom.
+2. **Desktops**: Check that nothing is pressed against the vents (usually on the back and sides). The computer needs at least a few inches of open space on all vented sides.
+
+**Fix 3 — Clean dust from fans (with adult help)**
+Dust builds up inside computers over time and acts like a blanket, trapping heat.
+1. Turn off and unplug the computer
+2. For desktops: open the side panel and use a can of **compressed air** (costs about $5 at any office supply store) to blow dust out of the fans and vents. Do this outside!
+3. For laptops: spray compressed air into the vents on the bottom and sides with short bursts
+4. Never use a vacuum cleaner — it creates static electricity that can damage parts
+
+![A person using compressed air to clean dust from a computer's internal fan](PLACEHOLDER)
+
+> **Common mistake:** Using a laptop on a pillow or blanket is one of the most common causes of overheating freezes. Always use a hard surface — a book or cutting board works great in a pinch.
+
+## Step 4: Repair Corrupted System Files
+
+Sometimes the files your operating system needs to run properly get damaged. This can cause random freezes. Windows and Mac both have built-in repair tools.
+
+**Windows — Run System File Checker and DISM:**
+1. Click **Start**, type **cmd**, right-click **Command Prompt**, and select **Run as administrator**. Click **Yes** on the pop-up.
+2. First, run this command to repair the system image (this needs an internet connection):
+   ```
+   DISM.exe /Online /Cleanup-image /Restorehealth
+   ```
+3. Wait patiently — the progress bar may look stuck for several minutes. That's normal!
+4. After DISM finishes, run the System File Checker:
+   ```
+   sfc /scannow
+   ```
+5. Wait for it to complete (5–15 minutes). If it finds and fixes problems, restart your computer.
+
+![Windows Command Prompt showing the DISM repair scan in progress](PLACEHOLDER)
+
+**Mac — Run First Aid in Disk Utility:**
+1. Open **Disk Utility** (find it with Spotlight: **Cmd + Space**, type "Disk Utility")
+2. In the left sidebar, select your startup disk (usually called "Macintosh HD")
+3. Click the **First Aid** button at the top
+4. Click **Run** and let the scan complete
+5. If First Aid finds and fixes problems, restart your Mac
+
+> **Common mistake:** Closing the Command Prompt window while DISM is running because "nothing is happening." DISM pauses for long stretches during repairs and looks frozen — but it's still working. Just let it finish.
+
+## Step 5: Check Your Hard Drive for Errors
+
+A failing or damaged hard drive causes freezes when the computer can't read important files. This step checks your drive for problems.
+
+**Windows:**
+1. Open **Command Prompt as administrator** (same as Step 4)
+2. Type this command and press Enter:
+   ```
+   chkdsk C: /f /r
+   ```
+3. It will say the drive is in use and ask if you want to schedule it for the next restart. Type **Y** and press Enter.
+4. Restart your computer. The scan runs automatically before Windows loads — it may take 20 minutes to over an hour depending on your drive size.
+
+**Mac:**
+If you already ran First Aid in Step 4, you've done this! But also check how full your drive is:
+1. Click the **Apple menu** → **System Settings** → **General** → **Storage**
+2. Look at the colored bar. If it's mostly full (over 85%), your Mac may freeze because it has no breathing room.
+3. Delete old downloads, large videos, or unused apps to free up space. **Aim for at least 20 GB free.**
+
+![Mac Storage settings showing a nearly full drive with the colored usage bar](PLACEHOLDER)
+
+> **Common mistake:** Skipping the Y/N prompt in CHKDSK and wondering why nothing happened. You must type Y and restart for the scan to actually run.
+
+## Step 6: Update Drivers and Your Operating System
+
+Old or buggy software is a common cause of freezes. Updates often fix these problems.
+
+**Windows — Update drivers and Windows:**
+1. Open **Settings** → **Windows Update**
+2. Click **Check for updates** and install everything available
+3. After updating, also check for driver updates:
+   - Right-click the **Start** button → **Device Manager**
+   - Expand **Display adapters** (for graphics drivers — these cause many freezes)
+   - Right-click your graphics card → **Update driver** → **Search automatically for drivers**
+   - Do the same for anything with a yellow warning triangle icon
+
+**Mac — Update macOS:**
+1. Click the **Apple menu** → **System Settings** → **General** → **Software Update**
+2. If an update is available, click **Update Now**
+3. Also check your **App Store** updates for any apps that need updating
+
+> **Common mistake:** People update Windows but forget graphics drivers. Graphics drivers are one of the top causes of freezes and crashes. If your computer freezes during games or when watching videos, outdated graphics drivers are the likely culprit.
+
+## Still Stuck?
+
+- **Computer freezes at startup?** Try starting in **Safe Mode**. For Windows: restart and repeatedly press F8 (or Shift+F8) before Windows loads. For Mac: restart and hold **Shift** until the login screen appears. In Safe Mode, only essential programs load — if the freeze stops, a third-party program is the cause.
+
+- **Freezes only happen in one specific program?** Try reinstalling that program. If it's a game, check that your computer meets the game's minimum requirements (especially RAM and graphics card).
+
+- **Computer is more than 5–7 years old?** Older hardware may struggle with modern software. Upgrading your RAM (to at least 8 GB) or switching from an old-style hard drive to an SSD can breathe new life into an older machine.
+
+- **Still freezing after all these steps?** The problem might be failing hardware — specifically the RAM or hard drive. A computer repair shop can run deeper diagnostics. If your computer is under warranty, contact the manufacturer.
+
+- **Using a work or school computer?** Ask your IT department before running system repair tools like DISM or CHKDSK — they may have their own repair process.
