@@ -1,0 +1,248 @@
+---
+title: "How to Fix WiFi Network Not Showing Up on Your Device"
+category: internet-wifi
+devices: ["Windows 10", "Windows 11", "macOS", "iPhone", "Android"]
+difficulty: beginner
+time_estimate: "12 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You open your WiFi list, ready to connect — and your network isn't there. Or worse, NO networks show up at all. Other devices in the house connect fine. Your phone shows full bars. But on this one device, the network you need is simply missing from the list.
+
+This is a surprisingly common problem, and in most cases it's not your router's fault. The issue is almost always with your device's ability to *discover* the network — not the network itself.
+
+**What's happening:** Your device scans for nearby WiFi networks by listening for "beacon" signals that routers broadcast. If your device's WiFi scanner gets stuck, if the router is hiding its name, or if the WiFi driver is glitching, those networks won't appear in your list — even though they're broadcasting perfectly fine.
+
+This guide walks you through five fixes, ordered from fastest to most involved. Most people have their network back by Fix 2 or Fix 3.
+
+**What you'll need:**
+- Your device (computer or phone)
+- Access to your WiFi router (for Fix 3)
+- Administrator access on Windows (for Fixes 4 and 5)
+- About 12 minutes
+
+> **Before you start — is it EVERY network or just YOURS?** If NO WiFi networks appear at all (the list is completely empty), skip to Fix 4 — your WiFi adapter or service has likely stopped working. If you can see OTHER networks (your neighbor's WiFi, a coffee shop network) but YOUR home network is missing, start from Fix 1.
+
+![A laptop screen showing an empty WiFi network list with no networks available](PLACEHOLDER)
+
+## Fix 1: Check the Basics — WiFi Toggle, Airplane Mode, and Router
+
+Before diving into settings menus, rule out the three most common causes. One of these fixes the problem for about half of all people.
+
+**Fix 1 — Make sure WiFi is actually ON:**
+
+On every device, there's a WiFi on/off switch. It's surprisingly easy to bump it off without noticing.
+
+- **Windows:** Click the WiFi/network icon in the bottom-right corner of the taskbar. Look at the WiFi button — if it's grey or shows "WiFi Off," click it to turn WiFi on. The button should turn blue or highlight.
+- **Mac:** Click the WiFi icon in the top-right menu bar. If it says "WiFi: Off," click **Turn WiFi On.**
+- **iPhone/iPad:** Swipe down from the top-right corner to open Control Center. The WiFi icon (three curved lines) should be blue. If it's white or grey, tap it to turn it on. Also go to **Settings → Wi-Fi** and make sure the toggle at the top is green.
+- **Android:** Swipe down twice from the top of the screen to open Quick Settings. The WiFi icon should be highlighted. Tap it if it's dimmed. Also go to **Settings → Network & internet → Internet** and confirm WiFi is toggled on.
+
+![A close-up of a Windows taskbar showing the WiFi toggle button in the off/greyed-out position](PLACEHOLDER)
+
+**Fix 1 — Check Airplane Mode:**
+
+Airplane Mode turns off ALL wireless connections — WiFi, Bluetooth, and cellular. If it's on, no WiFi networks will appear even if WiFi is individually toggled on.
+
+- **Windows:** Click the network icon in the taskbar. If **Airplane mode** is highlighted, click it to turn it off.
+- **Mac:** Look for an airplane icon in the menu bar. If present, click it and turn Airplane Mode off (or go to **System Settings → Wi-Fi** and disable it).
+- **iPhone/iPad:** Swipe down from the top-right. The airplane icon should NOT be highlighted orange.
+- **Android:** Swipe down for Quick Settings. The airplane icon should be dimmed, not highlighted.
+
+**Fix 1 — Restart your router:**
+
+Even if other devices connect fine, a router glitch can sometimes make your network invisible to one specific device. A quick router restart clears this.
+
+1. Unplug the router's power cable from the wall
+2. Wait a full 60 seconds (set a timer on your phone — the wait is important)
+3. Plug the router back in
+4. Wait 2-3 minutes for all the lights to stabilize
+5. Check your WiFi list again
+
+![A person unplugging a WiFi router from the wall outlet](PLACEHOLDER)
+
+> **Warning:** Do NOT press the reset button (the tiny pinhole button) on your router. That's a factory reset — it erases your WiFi name, password, and all custom settings. You only want to unplug the power cable and plug it back in. These are two completely different things that people often confuse.
+
+**Common mistake:** People flip the WiFi toggle off and on so fast the device doesn't have time to fully disconnect and reconnect. When you toggle WiFi off, wait 10 full seconds before turning it back on. Also, on some laptops there's a physical WiFi switch on the side or front edge — a tiny sliding switch that can get bumped to the "off" position entirely by accident. Run your finger along all edges of your laptop to check for one.
+
+If you've checked all three — WiFi is on, Airplane Mode is off, and the router has been restarted — and your network still doesn't appear, move to Fix 2.
+
+## Fix 2: Toggle WiFi and Restart Your Device
+
+Sometimes your device's WiFi scanner gets "stuck" — it stops looking for new networks and only shows whatever was cached from the last scan. A WiFi toggle combined with a device restart clears that stuck state.
+
+**Windows & Mac:**
+1. Turn WiFi OFF (using the toggle from Fix 1)
+2. Wait 15 seconds
+3. **Restart your computer** — don't just turn WiFi back on. On Windows: **Start → Power → Restart.** On Mac: **Apple menu () → Restart.**
+4. After the computer boots up, turn WiFi back ON and check the network list
+
+**iPhone & iPad:**
+1. Go to **Settings → Wi-Fi** and toggle WiFi OFF
+2. Wait 15 seconds
+3. Do a proper restart: press and hold the power button and either volume button until the "slide to power off" slider appears. Slide it, wait 30 seconds, then press and hold the power button to turn the phone back on.
+4. Turn WiFi back ON and check the network list
+
+**Android:**
+1. Swipe down and turn WiFi OFF
+2. Wait 15 seconds
+3. Restart your phone: press and hold the power button, then tap **Restart** (if available) or **Power off**, wait 30 seconds, then turn it back on.
+4. Turn WiFi back ON and check
+
+![A smartphone showing the "slide to power off" screen with a finger on the slider](PLACEHOLDER)
+
+**Common mistake:** People toggle WiFi off and on without restarting the device. The WiFi toggle alone isn't always enough — the device restart is the part that actually clears the stuck scanner state. Skip the restart and you may be stuck in the same loop. Also, on iPhones, the Control Center WiFi toggle (the swipe-down shortcut) only DISCONNECTS from the current network — it doesn't actually turn the WiFi radio off. To fully turn WiFi off and on, you must use the toggle in **Settings → Wi-Fi**, not the Control Center shortcut.
+
+If a full restart didn't bring your network back, the problem might be on the router side — move to Fix 3.
+
+## Fix 3: Check If Your Network Is Hidden (SSID Broadcast)
+
+Routers have a privacy setting called "Hide SSID" or "SSID Broadcast" that makes the network name invisible. When this is turned on, your WiFi network won't appear in anyone's list — you have to type the name manually to connect.
+
+If your network was working before and suddenly disappeared, this setting may have been turned on accidentally (sometimes router updates enable it without asking). Or someone else in your household might have changed it.
+
+**How to check and fix:**
+
+1. **Log into your router's settings page.** Open a web browser on ANY device that's connected to the internet (even a phone). In the address bar, type your router's IP address. Common addresses are:
+   - `192.168.1.1`
+   - `192.168.0.1`
+   - `192.168.1.254`
+   
+   If none of those work, check the sticker on the bottom or back of your router — it usually lists the exact address, username, and password.
+
+2. Enter the router's **username and password.** If you never changed them, they're usually:
+   - Username: `admin` / Password: `admin`
+   - Username: `admin` / Password: `password`
+   - Or printed on the router's sticker
+
+3. Look for the **Wireless** or **Wi-Fi Settings** section. The exact menu name varies by brand:
+   - **TP-Link:** Wireless → Wireless Settings
+   - **Netgear:** Advanced → Wireless Settings
+   - **Linksys:** Wireless → Basic Wireless Settings
+   - **ASUS:** Wireless → General
+   - **Xfinity/ISP routers:** Gateway → Connection → Wi-Fi
+
+4. Find the setting called **"Enable SSID Broadcast,"** **"Broadcast network name,"** or **"Hide SSID."** If **Hide SSID** is checked, UNCHECK it. If **Enable SSID Broadcast** is unchecked, CHECK it.
+
+5. Scroll to the bottom and click **Save** or **Apply.**
+
+6. Wait 30 seconds, then refresh the WiFi list on your device.
+
+![A router settings page showing the Wireless Settings section with the "Hide SSID" checkbox highlighted](PLACEHOLDER)
+
+> **Tip:** If you intentionally want to keep your SSID hidden (some people do for security), you can still connect — you just have to add the network manually. On Windows, click the WiFi icon → **Add a new network** → type the exact network name and password. On iPhone/Android, go to Wi-Fi settings and look for **Other Network** or **Add Network.** Type the exact network name (it's case-sensitive!) and password to connect.
+
+**Common mistake:** People enter the wrong router IP address and give up. If the common addresses don't work, here's how to find the real one:
+- **Windows:** Open Command Prompt (type `cmd` in the Start menu), type `ipconfig`, and press Enter. Look for **Default Gateway** — that's your router's IP address.
+- **Mac:** Go to **System Settings → Wi-Fi**, click **Details** next to your network, and look for **Router** under the TCP/IP tab.
+- **iPhone/Android:** Go to Wi-Fi settings, tap the (i) or gear icon next to your connected network, and look for **Router** or **Gateway.**
+
+If your network is NOT hidden (SSID broadcast is enabled) and it still doesn't appear, move to Fix 4.
+
+## Fix 4: Restart WiFi Services and Reset Network Settings
+
+Your device has background services that handle WiFi discovery. If these services crash or get stuck — which happens after updates, after the computer wakes from sleep, or just randomly — WiFi networks stop appearing even though your WiFi is technically "on." This fix restarts those services.
+
+**Windows — Restart WLAN AutoConfig:**
+
+The WLAN AutoConfig service is the Windows program responsible for finding and connecting to WiFi networks. If it stops, no networks show up.
+
+1. Press the **Windows key + R** on your keyboard. A small "Run" box appears.
+2. Type `services.msc` and click **OK** (or press Enter).
+3. A window opens with a long list of services. Scroll down and find **WLAN AutoConfig.**
+4. Right-click **WLAN AutoConfig** and select **Restart.**
+5. If **Restart** is greyed out, right-click and choose **Properties.** Set **Startup type** to **Automatic**, click **Apply**, then click **Start.**
+6. Close the window and check your WiFi list.
+
+![The Windows Services window with WLAN AutoConfig right-clicked showing the Restart option](PLACEHOLDER)
+
+**Mac — Restart the Wi-Fi interface:**
+
+1. Click the **Apple menu ()** → **System Settings** → **Wi-Fi**
+2. Turn Wi-Fi **OFF**
+3. Open **Terminal** (press **Cmd+Space**, type "Terminal", press Enter)
+4. Type this command and press Enter:
+   ```
+   sudo ifconfig awdl0 down
+   ```
+5. Type your Mac password (you won't see letters appear — normal) and press Enter
+6. Wait 5 seconds, then type:
+   ```
+   sudo ifconfig awdl0 up
+   ```
+7. Go back to System Settings and turn Wi-Fi **ON**
+
+**iPhone & iPad — Reset Network Settings:**
+
+⚠️ **Warning:** This erases ALL saved WiFi networks and passwords from your device. After this reset, you'll need to re-enter the password for every WiFi network you use — at home, work, school, everywhere. Only do this if other fixes have failed.
+
+1. Go to **Settings → General → Transfer or Reset iPhone/iPad**
+2. Tap **Reset**
+3. Tap **Reset Network Settings**
+4. Enter your device passcode if asked
+5. Tap **Reset Network Settings** again to confirm
+6. Your device restarts automatically. When it turns back on, go to **Settings → Wi-Fi**, find your network, and enter the password
+
+**Android — Reset Network Settings:**
+
+⚠️ **Warning:** This also erases saved WiFi networks, Bluetooth pairings, and mobile data settings. You'll need to reconnect to everything.
+
+1. Go to **Settings → System → Reset options** (on Samsung: **Settings → General management → Reset**)
+2. Tap **Reset Wi-Fi, mobile & Bluetooth** (or **Reset network settings**)
+3. Tap **Reset settings** to confirm
+4. Enter your PIN or password if asked
+5. After the reset, go to **Settings → Network & internet → Internet**, find your network, and enter the password
+
+![An iPhone Settings screen showing the "Reset Network Settings" option with a warning message](PLACEHOLDER)
+
+**Common mistake:** In the Windows Services window, people accidentally stop or disable other services while looking for WLAN AutoConfig. The Services window lists dozens of critical system services — only touch **WLAN AutoConfig.** Changing other services can cause serious computer problems. If you accidentally changed something else, don't panic — just set its Startup type back to whatever it was (usually "Manual" or "Automatic").
+
+If restarting WiFi services didn't help, your WiFi driver or router channel may be the issue — proceed to Fix 5.
+
+## Fix 5: Update Your WiFi Driver and Check Router Channel
+
+Two deeper issues can make WiFi networks invisible: an outdated or corrupted WiFi driver on Windows, and a router broadcasting on a channel your device can't see.
+
+**Part A — Update your WiFi driver (Windows):**
+
+Windows uses "drivers" — small pieces of software — to communicate with your WiFi hardware. After a Windows update, these drivers sometimes break or become outdated.
+
+1. Right-click the **Start button** (Windows logo, bottom-left) and select **Device Manager**
+2. Find **Network adapters** and click the arrow to expand the list
+3. Look for your WiFi adapter. It usually has "Wireless," "WiFi," "WLAN," "Intel," "Realtek," "Qualcomm," or "MediaTek" in the name. (Do NOT touch anything labeled "Bluetooth," "Ethernet," or "WAN Miniport.")
+4. Right-click your WiFi adapter and select **Update driver**
+5. Choose **Search automatically for drivers.** Windows will check online for a newer version and install it if found
+6. If Windows says "The best driver is already installed," try this instead: right-click the adapter again → **Uninstall device** → (do NOT check "Delete the driver software") → **Uninstall** → then restart your computer. Windows will reinstall the driver automatically on startup
+7. After updating or reinstalling, check your WiFi list
+
+![Windows Device Manager with Network adapters expanded and a WiFi adapter right-clicked showing the Update driver option](PLACEHOLDER)
+
+**Part B — Check router channel compatibility:**
+
+WiFi routers broadcast on numbered channels (like TV channels). In North America, the standard 2.4 GHz channels are 1 through 11. But some routers — especially ones configured for other countries — can use channels 12 and 13. Many devices sold in North America CANNOT see networks on channels 12 or 13.
+
+If your router is set to channel 12 or 13, your device literally can't see the network — even though it's broadcasting.
+
+1. Log into your router's settings page (same steps as Fix 3)
+2. Find the **Wireless** or **Wi-Fi** settings section
+3. Look for **Channel** (under 2.4 GHz settings). If it's set to **12**, **13**, or **Auto**, change it to **1**, **6**, or **11** (these are the best non-overlapping channels)
+4. For 5 GHz networks: try channels **36-48** or **149-165** — avoid channels 52-144, which some devices can't use
+5. Click **Save** or **Apply**
+6. Wait 30 seconds, then check your WiFi list
+
+![Router settings page showing the 2.4 GHz channel dropdown set to a channel between 1-11](PLACEHOLDER)
+
+> **Tip:** If your router is older than 5-6 years and uses only 2.4 GHz, consider upgrading. Modern routers broadcast on both 2.4 GHz AND 5 GHz. The 5 GHz band has more channels, less interference from neighbors, and is visible to almost all devices made after 2015. If your router only does 2.4 GHz, your device might not see it in a crowded area (apartment buildings especially) because all the 2.4 GHz channels are jammed with interference from dozens of nearby networks.
+
+**Common mistake:** People use the Windows "Search automatically for drivers" option and assume it found nothing because the search finishes in 2 seconds. Windows only checks Microsoft's driver database — it does NOT check the manufacturer's website. If Windows can't find a driver, go to your laptop or WiFi adapter manufacturer's website (Dell, HP, Lenovo, Intel, etc.), search for your model, and download the latest WiFi driver manually. This is especially important after a major Windows update, which often breaks older WiFi drivers.
+
+## Still Stuck?
+
+- **Tried all five fixes and still nothing?** Try connecting a DIFFERENT device to your WiFi network. If no device can see or connect to the network, the problem is almost certainly your router. Contact your internet service provider (ISP) — they can check the router remotely and often fix configuration issues without sending a technician.
+- **Only one specific device can't see the network after all fixes?** The device's WiFi hardware may be failing. Try connecting the device to a completely different WiFi network (at a friend's house, a coffee shop, or a phone hotspot). If the device can't see ANY networks anywhere — not just yours — the WiFi card inside the device may need to be replaced. On laptops, this is usually a $20-50 repair at a computer shop.
+- **Using a VPN or security software?** Some VPNs and antivirus programs interfere with WiFi discovery. Try temporarily disabling or uninstalling any VPN or third-party antivirus software, restart your device, and check if networks appear. If they do, that software was the problem — contact the software's support team for a fix.
+- **Your network appears but you can't connect to it?** That's a different problem than the network not showing up at all. If the network IS visible but won't connect, you likely have a password issue (you're typing the wrong password) or a MAC address filtering setting on your router that's blocking your device. Search for a guide on "Can't connect to WiFi even with correct password."
+- **Networks appear and disappear repeatedly (flickering list)?** Your WiFi adapter may be failing, or your device may be right at the edge of the router's range. Move closer to the router. If the problem persists, the WiFi hardware may need repair.
