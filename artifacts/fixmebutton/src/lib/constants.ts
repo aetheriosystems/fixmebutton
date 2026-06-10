@@ -52,6 +52,12 @@ export const CATEGORIES = [
     description: "Instagram, TikTok, Facebook fixes",
     icon: "💬",
   },
+  {
+    slug: "tablets",
+    name: "Tablets",
+    description: "iPad & Android tablet guides",
+    icon: "📋",
+  },
 ] as const;
 
 export const DIFFICULTIES = ["beginner", "intermediate", "advanced"] as const;

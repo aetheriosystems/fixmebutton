@@ -1408,6 +1408,91 @@ NVRAM stores hardware settings including mouse and trackpad preferences.
 
 - **Nothing has worked — should you replace the mouse?** If you've tested the mouse on a different computer (and it doesn't work), tested a different mouse on your computer (and it does work), and gone through every software fix in this guide, yes — your mouse has a hardware fault. The good news: a basic wired mouse costs $10–15, and a decent wireless mouse costs $20–30. But make sure you've done the "different mouse" test in Fix 3b before spending money — replacing a mouse won't help if your computer's USB port is the real problem.`,
   },
+  {
+    meta: {
+      slug: "fix-ipad-wont-turn-on-or-charge",
+      category: "tablets",
+      title: "How to Fix iPad Won't Turn On or Charge",
+      devices: ["iPad Pro", "iPad Air", "iPad Mini", "iPad (10th generation)", "iPad (9th generation)", "All iPad models"],
+      difficulty: "beginner",
+      time_estimate: "20 minutes",
+      last_verified: "2026-06-10",
+      steps: 7,
+    },
+    content: `## Before You Start
+
+You press the power button — nothing. You plug it in — no charging icon, no Apple logo, no sign of life. A dead iPad is scary, but a completely black, unresponsive iPad is almost never permanently dead. Most "dead iPad" cases are caused by a deeply drained battery, a software freeze, a dirty charging port, or a failed cable — none of which require a repair shop.
+
+**What you'll need:**
+- Your iPad and its charging cable
+- The USB power adapter that came with your iPad
+- Access to a wall outlet (NOT a computer USB port)
+- A computer (Mac or Windows PC) for Step 6
+- A flashlight and optional wooden toothpick
+
+> **Don't panic!** Force restarting while charging fixes this in 80% of cases.
+
+## Step 1: Force Restart Your iPad
+
+**For iPads WITHOUT a Home button (Face ID models):**
+1. Press and quickly release the **Volume Up** button.
+2. Press and quickly release the **Volume Down** button.
+3. Press and **hold the top button** for 10–15 seconds until the Apple logo appears.
+
+**For iPads WITH a Home button:**
+1. Press and hold **BOTH the top button and the Home button** simultaneously.
+2. Keep holding for 10–15 seconds until the Apple logo appears.
+
+> **Common mistake:** Not holding the button(s) long enough. Count to 15 slowly before releasing.
+
+## Step 2: Charge the iPad — The Right Way
+
+1. Use a **wall outlet** with the USB power adapter — NOT a computer USB port.
+2. Leave the iPad charging **undisturbed for at least 30 minutes**. Do not press any buttons.
+3. After 30 minutes, check for the red battery icon or Apple logo.
+
+> **Common mistake:** Using a laptop USB port to charge a dead iPad. Laptop ports can't provide enough power — always use a wall adapter rated 12W or higher.
+
+## Step 3: Inspect and Clean the Charging Port
+
+1. Use a **flashlight** to inspect the charging port.
+2. If you see lint or debris, clean GENTLY with a **wooden toothpick** — never metal.
+3. The cable should click firmly and sit flush against the iPad body.
+
+> **Common mistake:** Using metal tools to clean the port. Metal can short the charging pins and permanently destroy the port.
+
+## Step 4: Check Your Cable and Power Adapter
+
+1. Try a **different charging cable** — ideally one you know works.
+2. Try a **different power adapter** rated at 12W or higher.
+3. Test your cable and adapter on another device to confirm they work.
+
+> **Common mistake:** Using an iPhone 5W charger. An iPad battery is 3–5 times larger — use a 12W, 18W, or 20W adapter.
+
+## Step 5: Check for Temperature Issues
+
+If the iPad was left in a hot car or cold environment, it may refuse to charge as a safety measure.
+- **Too hot:** Move to a cool area, wait 15–30 minutes.
+- **Too cold:** Warm to room temperature gradually, wait 20–30 minutes.
+
+## Step 6: Recovery Mode via Computer
+
+1. Connect iPad to computer (Mac with Finder, PC with iTunes/Apple Devices).
+2. Force restart but keep holding button(s) until the **Recovery Mode** screen (computer icon with cable) appears.
+3. On the computer, click **Update** (NOT Restore — Update keeps your data).
+
+## Step 7: DFU Restore (Last Resort)
+
+DFU (Device Firmware Update) mode is the lowest-level recovery. The screen stays BLACK — but the computer detects the iPad.
+Click **Restore** when prompted. This erases all data and reinstalls iPadOS fresh.
+
+## Still Stuck?
+
+- **Charging port damaged?** Look for bent pins, corrosion, or loose connectors. Needs professional repair.
+- **Battery needs replacement?** If iPad is 4+ years old, Apple battery replacement costs $99–$119.
+- **Water damage?** Do NOT charge. Bring to a repair shop immediately.
+- **Screen failure?** If you hear sounds or Siri responds but screen stays black, the display needs replacement ($199–$699 depending on model).`,
+  },
 ];
 
 export function getAllGuides(): GuideMeta[] {
