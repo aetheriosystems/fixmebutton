@@ -1,0 +1,143 @@
+---
+title: "How to Fix Outlook Not Sending Emails"
+category: email-accounts
+devices: ["Windows PC", "Mac"]
+difficulty: beginner
+time_estimate: "10 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You click **Send** in Outlook and nothing happens. The email sits in your Outbox with a "stuck" status. Or maybe Outlook says "Working Offline" and won't connect at all. You've been waiting for that important message to go through, but the person on the other end says they never got it.
+
+This is one of the most frustrating Outlook problems, but it's almost always fixable in under 10 minutes. The most common causes are: Outlook is in Offline mode, your internet dropped, the attachment is too big, or your account password needs to be re-entered.
+
+**What you'll need:**
+- Your computer with Outlook installed
+- Your email address and password
+- An internet connection
+
+> **Work through the steps in order.** Start with Step 1 — it's the quickest fix and solves the problem for most people. If it doesn't work, keep going.
+
+![A computer screen showing Microsoft Outlook with an email stuck in the Outbox folder](PLACEHOLDER)
+
+## Step 1: Turn Off "Work Offline" Mode
+
+Outlook has a "Work Offline" button that disconnects it from the internet. This is useful when you're on a plane or don't want to be disturbed, but it's easy to turn on by accident. When Work Offline is active, emails sit in your Outbox forever and never actually send.
+
+**Fix 1 — Check and disable Work Offline mode**
+
+1. Open Outlook on your computer
+2. Look at the **bottom-right corner** of the Outlook window. If it says **"Working Offline"** or **"Disconnected"**, that's your problem
+3. Go to the **Send / Receive** tab in the ribbon at the top
+4. Click the **Work Offline** button (it looks like a power plug icon). This toggles it OFF — the button should no longer be highlighted
+5. Look at the bottom-right corner again. It should now say **"Connected"** or **"Connected to: Microsoft Exchange"**
+6. Go to your **Outbox** folder (in the left sidebar). If emails were stuck there, they should start sending automatically
+
+If the emails still don't send, click **Send / Receive** → **Send All** (or press F9 on your keyboard).
+
+![Outlook window with the Send/Receive tab open and the Work Offline button highlighted](PLACEHOLDER)
+
+> **Common mistake:** People click the Work Offline button and see it become highlighted, thinking they "turned it on." But the button is a toggle — if it's highlighted, Work Offline is ON. You want it NOT highlighted. Look at the bottom-right corner to confirm: if it says "Connected," you're good.
+
+## Step 2: Delete and Recreate Stuck Emails
+
+Sometimes an email gets "stuck" due to a glitch — especially if it has a large attachment or was composed while Outlook was briefly disconnected. One stuck email can block ALL outgoing messages behind it.
+
+**Fix 2 — Clear the Outbox and resend**
+
+1. In Outlook, click the **Outbox** folder in the left sidebar
+2. Look at the emails waiting to be sent. Start with the **oldest one first** (the one at the top)
+3. **Option A:** Drag the email out of the Outbox and into your **Drafts** folder. Open it from Drafts, make a small change (like adding a space somewhere), and click **Send** again
+4. **Option B:** If dragging doesn't work, right-click the stuck email and select **Delete**. Then go to your **Deleted Items** folder, find the email, right-click it, and select **Move → Inbox** or **Move → Drafts**
+5. Check if your other emails in the Outbox now send. If one email was the blocker, everything behind it should go through immediately
+
+**Fix 3 — Check attachment sizes**
+
+Most email providers limit attachments to **20-25 MB**. If your attachment is bigger than that, the email will never send.
+
+1. Open the stuck email from your Outbox or Drafts
+2. Look at the attachment size listed next to the file name
+3. If it's over 20 MB, you need to shrink it or use a different way to send it:
+   - **For photos:** Right-click the image file on your computer → **Open with → Photos** → click the **... (three dots)** → **Resize** → choose **Medium (1024px)** or smaller
+   - **For documents:** Compress the file into a ZIP. Right-click the file → **Send to → Compressed (zipped) folder**
+   - **For anything else:** Upload the file to Google Drive, OneDrive, or Dropbox, then paste the share link into your email instead of attaching the file
+
+4. After shrinking or linking the attachment, click **Send** again
+
+> **Tip:** If you're attaching multiple photos, send them in batches of 3-4 per email instead of all at once. Most phones and cameras take photos that are 3-8 MB each, so 5 photos can easily exceed the 25 MB limit.
+
+## Step 3: Check Your Internet and Restart Outlook
+
+Sometimes the problem isn't Outlook at all — it's your internet connection, or Outlook's connection to the email server got "stuck."
+
+**Fix 4 — Verify your internet and restart**
+
+1. Open a web browser (Chrome, Edge, Firefox) and go to any website you don't normally visit — like **wikipedia.org**. If it doesn't load, your internet is down. Restart your router or connect to a different Wi-Fi network
+2. If your internet works, close Outlook completely (click the **X** in the top-right corner — make sure it's not just minimized to the taskbar)
+3. On **Windows**: Press **Ctrl + Shift + Esc** to open Task Manager. Look for "Microsoft Outlook" in the list. If it's still there, click it and click **End task**
+4. On **Mac**: Press **Cmd + Option + Esc**, select "Microsoft Outlook," and click **Force Quit**
+5. Wait 10 seconds, then reopen Outlook
+6. Go to your Outbox. The stuck emails should either send automatically or show an error message that tells you what's wrong
+
+![Task Manager on Windows showing Microsoft Outlook in the process list with End task button](PLACEHOLDER)
+
+> **Common mistake:** People click the X to close Outlook but it's still running in the background (you can see its icon in the system tray next to the clock). A stuck background process can prevent Outlook from reconnecting properly. Use Task Manager (Windows) or Force Quit (Mac) to make sure it's fully closed before reopening.
+
+## Step 4: Re-enter Your Email Password
+
+If your email password changed recently — or if your email provider (Gmail, Yahoo, Microsoft, or your workplace) requires you to re-authenticate periodically — Outlook can't send emails because it's using an outdated password. Outlook doesn't always tell you this clearly. Instead, emails just sit in the Outbox.
+
+**Fix 5 — Update your account password in Outlook**
+
+**On Windows:**
+
+1. In Outlook, click **File** in the top-left corner of the ribbon
+2. Click **Account Settings** → **Account Settings** again from the dropdown
+3. In the window that opens, select your email account from the list (it's usually the only one there)
+4. Click **Repair** (or **Change**, depending on your Outlook version)
+5. Re-enter your email password when prompted. Make sure Caps Lock is OFF
+6. Click **Next**. Outlook will test the connection — you should see green checkmarks for both "Log onto incoming mail server" and "Send test email message"
+7. Click **Close** → **Finish** → close the Account Settings window
+8. Go to your Outbox — stuck emails should now send
+
+**On Mac:**
+
+1. In Outlook, click **Outlook** in the top menu bar → **Settings** (or **Preferences**)
+2. Click **Accounts**
+3. Select your email account from the left sidebar
+4. If the password field is empty or has dots, delete everything and type your current password
+5. Close the Settings window. Outlook will test the connection
+6. Check your Outbox
+
+> **Warning:** If you use Gmail with Outlook, you may need an "App Password" instead of your regular Gmail password. Go to **myaccount.google.com/apppasswords** (sign in), select "Mail" and "Windows Computer" (or "Mac"), and use the 16-character password Google generates. This is required if you have 2-Step Verification turned on for your Google account.
+
+![Outlook Account Settings window showing the Repair button for an email account](PLACEHOLDER)
+
+## Step 5: Check Your Send/Receive Settings
+
+Outlook has a setting that controls how often it checks for new mail and sends outgoing messages. If this is misconfigured, your Outbox may not be set to send automatically.
+
+**Fix 6 — Verify Send/Receive group settings**
+
+1. In Outlook, click the **Send / Receive** tab in the ribbon
+2. Click **Send/Receive Groups** → **Define Send/Receive Groups**
+3. In the window that opens, make sure the **"All Accounts"** group is selected
+4. Check that **"Send mail items"** has a checkmark next to it
+5. Under **"Schedule an automatic send/receive every"**, make sure the box is checked and the time is set to something reasonable (like **5-10 minutes**) — NOT 1440 minutes (which is once per day!)
+6. Click **Close**
+7. Back on the Send/Receive tab, click **Send/Receive All Folders** (or press F9) to force an immediate send/receive
+
+![Outlook Send/Receive Groups dialog showing the schedule settings](PLACEHOLDER)
+
+> **Common mistake:** People set the send/receive interval to a very high number (like 999 minutes) thinking it will "save battery" or "reduce distractions." But this means Outlook only checks for new mail and sends your Outbox once every 16 hours. If you send an important email, it could sit in the Outbox all day. Keep this setting between 5-30 minutes.
+
+## Still Stuck?
+
+- **Emails send but the recipient says they never got them?** Ask the recipient to check their Spam or Junk folder. Your email might be getting filtered on their end. Also check if you received a "bounce back" or "delivery failed" email — it contains the exact reason the email couldn't be delivered.
+- **Using Outlook with a work or school account?** Contact your IT department. Company email servers sometimes block sending from certain locations, devices, or outside the office network. Your IT admin can check the server logs.
+- **Outlook asks for a password over and over but won't accept it?** Your account may require "Modern Authentication" or "OAuth2." In Account Settings (Step 4), look for an option to sign in with a web browser instead of typing your password. Choose that option and complete the sign-in in your browser.
+- **Tried everything and Outlook still won't send?** Try sending email from your provider's website instead (gmail.com, outlook.com, mail.yahoo.com). If that works, the problem is with the Outlook app — not your email account. You may need to completely remove and re-add your account in Outlook, or reinstall Outlook entirely.
+- **Need to send an urgent email NOW while you troubleshoot?** Open your email in a web browser (gmail.com, outlook.com, mail.yahoo.com), log in, and send the message from there. Webmail works independently of the Outlook app and almost never has sending problems.

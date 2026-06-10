@@ -1,0 +1,159 @@
+---
+title: "How to Fix Email Not Syncing on iPhone"
+category: email-accounts
+devices: ["iPhone"]
+difficulty: beginner
+time_estimate: "10 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You open the Mail app on your iPhone and something is wrong. The inbox looks old — messages you read and deleted on your computer are still showing as unread on your phone. Or worse, new emails aren't appearing at all. You send a test email to yourself and it never arrives.
+
+Email not syncing is one of the most common iPhone complaints. The good news: your emails aren't lost. They're safely stored on your email provider's servers (Gmail, Yahoo, Outlook, iCloud, etc.). The problem is that your iPhone has stopped communicating with those servers. This guide walks you through fixing that connection — whether you use the built-in Mail app, the Gmail app, or the Yahoo Mail app.
+
+**What you'll need:**
+- Your iPhone
+- Your email address and password
+- A working internet connection (Wi-Fi or cellular data)
+
+> **Work through the steps in order.** Most people solve this by Step 1 or Step 3. If one fix doesn't work, move to the next.
+
+![An iPhone showing the Mail app with no new emails and a loading spinner](PLACEHOLDER)
+
+## Step 1: Check Your Internet and Refresh
+
+Before digging into settings, rule out the simplest causes: your phone doesn't have internet, or the Mail app just needs a manual refresh.
+
+**Fix 1 — Verify your internet connection**
+
+1. Open **Safari** on your iPhone and go to **google.com**
+2. If the page loads, your internet works. Go to Fix 2
+3. If it doesn't load, your internet is the problem:
+   - Make sure **Wi-Fi** is on: Swipe down from the top-right corner (or up from the bottom on older iPhones) to open **Control Center**. The Wi-Fi icon should be blue. If it's gray, tap it
+   - If you're on **cellular data**: Go to **Settings → Cellular** and make sure **Cellular Data** is toggled ON. Scroll down and check that **Mail** is allowed to use cellular data (the toggle next to Mail should be green)
+   - Try moving closer to your Wi-Fi router or toggling Airplane Mode ON for 10 seconds, then OFF (this forces your phone to reconnect)
+
+**Fix 2 — Manually refresh your inbox**
+
+1. Open the **Mail** app
+2. Go to your inbox (tap **Mailboxes** in the top-left corner if you're not already there)
+3. Pull down from the top of the screen with your finger and release — you should see a spinning wheel as Mail fetches new messages
+4. Wait 30 seconds. If new emails appear, the sync was just delayed
+
+**Fix 3 — Pull down to refresh all inboxes**
+
+If Fix 2 didn't help, refresh at the top level:
+
+1. In the Mail app, tap **Mailboxes** (top-left) until you see the main screen with all your accounts listed
+2. Pull down from the top of this screen and release — this forces ALL your email accounts to sync at once
+3. Wait 30-60 seconds and check if emails appear
+
+![iPhone Mail app showing the pull-down-to-refresh gesture on the inbox screen](PLACEHOLDER)
+
+> **Common mistake:** People think the Mail app syncs instantly like a text message. Email sync depends on your settings — it can be set to push (instant), fetch every 15 minutes, or fetch only when you open the app. If your emails sync only when you manually pull down, your Fetch schedule is probably set to "Manually." See Step 4 to fix this.
+
+## Step 2: Check Your Fetch and Push Settings
+
+Your iPhone can get new emails in two ways: **Push** (the email server sends new messages to your phone instantly) or **Fetch** (your phone checks for new messages on a schedule). If these settings are wrong, emails can be delayed by hours.
+
+**Fix 4 — Set Push and Fetch correctly**
+
+1. Open your iPhone **Settings** app
+2. Scroll down and tap **Mail** → **Accounts** → **Fetch New Data**
+3. At the top, make sure the **Push** toggle is ON (green)
+4. Now look at the list of your email accounts below. Tap each one and check its setting:
+   - **Fetch:** The account checks for new mail on a schedule (every 15, 30, or 60 minutes)
+   - **Push:** New emails arrive instantly (only available for iCloud, Outlook, Yahoo, and some work accounts)
+   - **Manual:** The account only checks for mail when you open the Mail app and pull down to refresh
+5. For each account, select **Push** if available. If Push isn't an option (Gmail doesn't support Push in the built-in Mail app), select **Fetch**
+6. At the bottom of the Fetch New Data screen, under **"Fetch"**, choose how often your phone checks for mail:
+   - **Automatically:** Only checks when your phone is on Wi-Fi and plugged into power (most battery-friendly but slowest)
+   - **Every 15 Minutes:** A good balance. New emails arrive within 15 minutes
+   - **Every 30 Minutes:** Okay if you don't need instant email
+   - **Hourly:** Only choose this if you rarely check email on your phone
+   - **Manually:** Avoid this unless you're trying to save every drop of battery
+7. Go back to the Mail app and pull down to refresh. New emails should appear
+
+> **Tip:** Gmail accounts in the built-in iPhone Mail app can only use Fetch, not Push. If you want instant Gmail notifications, download the **Gmail app** from the App Store instead — it supports Push and is generally more reliable on iPhone than Apple's Mail app for Gmail accounts.
+
+![iPhone Settings showing the Fetch New Data screen with Push toggle and schedule options](PLACEHOLDER)
+
+## Step 3: Delete and Re-Add Your Email Account
+
+If your sync settings are correct but emails still won't load, the account connection itself may be broken. Removing and re-adding the account forces a fresh connection to the email server. **Your emails will NOT be deleted** — they live on the email provider's servers, not on your phone.
+
+**Fix 5 — Remove and re-add your email account**
+
+1. Open your iPhone **Settings** app
+2. Scroll down and tap **Mail** → **Accounts**
+3. Tap the email account that isn't syncing (e.g., "Gmail," "Yahoo," "Outlook")
+4. Scroll to the bottom and tap **Delete Account** (red text)
+5. Tap **Delete Account** again to confirm. Don't panic — this only removes the account from your phone. Your emails are still on Google/Yahoo/Microsoft's servers
+6. Now go back to **Settings → Mail → Accounts** → tap **Add Account**
+7. Select your email provider (Google, Yahoo, Outlook, iCloud, etc.)
+8. Sign in with your email address and password. Follow the on-screen prompts
+9. Make sure the **Mail** toggle is ON (green) on the next screen. You can also enable Notes, Contacts, and Calendars if you want those to sync too
+10. Tap **Save** in the top-right corner
+11. Open the Mail app. It will download your emails from the server — this may take a few minutes if you have thousands of emails
+
+> **Common mistake:** People see "Delete Account" and panic, thinking all their emails will be permanently erased. The Delete Account button in iPhone Settings only removes the account from your phone — it does NOT delete any emails from the server. When you add the account back, everything reappears. Your emails are safe in the cloud.
+
+> **Warning:** Before deleting an account, make sure you KNOW YOUR PASSWORD. You'll need it to add the account back. If you don't remember your password, use the "How to Recover a Forgotten Email Password" guide on this site before proceeding with this step.
+
+![iPhone Settings showing the Delete Account option at the bottom of the email account settings screen](PLACEHOLDER)
+
+## Step 4: Update iOS and the Mail App
+
+Email sync problems are sometimes caused by bugs in iOS or the Mail app itself. Apple regularly fixes these in software updates, but only if you install them.
+
+**Fix 6 — Update your iPhone software**
+
+1. Open **Settings** → **General** → **Software Update**
+2. If an update is available, tap **Update Now** (or **Download and Install**)
+3. Your iPhone needs to be connected to Wi-Fi and have at least 50% battery (or be plugged in)
+4. The update takes 10-20 minutes. Your phone will restart during the process
+5. After updating, open the Mail app and check if sync works
+
+**Fix 7 — Restart your iPhone**
+
+A simple restart clears temporary glitches that can break email sync:
+
+1. **iPhone X and newer:** Press and hold the **side button** and **volume up** button at the same time until the "slide to power off" slider appears. Slide to turn off. Wait 30 seconds, then press and hold the side button until the Apple logo appears
+2. **iPhone SE, 8, and older:** Press and hold the **top** (or side) button until the slider appears. Slide to turn off, wait 30 seconds, then press and hold the button until the Apple logo appears
+3. After restarting, open the Mail app. It should begin syncing automatically
+
+> **Tip:** If you're using the Gmail app, Yahoo Mail app, or Outlook app instead of Apple's built-in Mail, update those apps separately. Open the **App Store** → tap your profile picture (top-right) → scroll down to see available updates → tap **Update** next to your email app.
+
+## Step 5: Check Mail App Notification and Background Settings
+
+If emails sync but you don't get notified about them, or if sync stops working when you close the Mail app, your notification and background refresh settings need adjusting.
+
+**Fix 8 — Enable Mail notifications**
+
+1. Open **Settings** → **Notifications** → **Mail**
+2. Make sure **Allow Notifications** is ON (green)
+3. Under **Alerts**, make sure **Lock Screen**, **Notification Center**, and **Banners** are all checked
+4. Tap **Sounds** and pick an alert sound you'll notice
+5. Tap **Customize Notifications** at the bottom. Tap each email account and make sure **Alerts** is ON for the accounts you care about
+
+**Fix 9 — Enable Background App Refresh for Mail**
+
+1. Open **Settings** → **General** → **Background App Refresh**
+2. Make sure the toggle at the top is ON (green)
+3. Scroll down and find **Mail** — make sure its toggle is also ON
+4. If Background App Refresh was OFF at the top level, turn it on and wait 5-10 minutes for Mail to catch up
+
+> **Common mistake:** People turn off Background App Refresh globally to save battery, not realizing this prevents the Mail app from checking for new messages unless the app is open on screen. With Background App Refresh off, you won't see new emails until you manually open Mail and pull down to refresh.
+
+![iPhone Settings notifications screen for the Mail app showing alert options](PLACEHOLDER)
+
+## Still Stuck?
+
+- **Mail app says "Account Error" or "Password Incorrect"?** Your email password may have changed. Tap the error message, re-enter your current password, and tap **Sign In**. If you don't know your password, use the "How to Recover a Forgotten Email Password" guide on this site.
+- **Emails sync on Wi-Fi but not on cellular data?** Go to **Settings → Cellular** and scroll down to find **Mail**. Make sure the toggle next to Mail is ON. If it's off, Mail can only sync when connected to Wi-Fi.
+- **Specific folders (Sent, Drafts, Trash) aren't syncing?** This is usually a setting in your email provider, not your iPhone. For Gmail, go to **Settings → Mail → Accounts → your Gmail → Account → Advanced** and check which folders are set to sync. You can also go to Gmail settings on a computer (Settings → Labels) and make sure IMAP access is enabled for each folder you want to sync.
+- **Using a work or school email (Exchange)?** Work account sync issues are often caused by security policies set by your IT department. Contact your IT help desk — they may need to re-authorize your device or update a security certificate.
+- **Nothing works and you need email NOW?** Download your email provider's dedicated app from the App Store (Gmail app, Yahoo Mail app, or Outlook app). These apps manage their own connections and often work when Apple's built-in Mail app doesn't. You can use both apps side by side.
