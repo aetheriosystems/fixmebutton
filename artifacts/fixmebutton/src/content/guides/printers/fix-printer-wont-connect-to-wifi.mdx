@@ -1,0 +1,273 @@
+---
+title: "How to Fix a Printer That Won't Connect to Wi-Fi"
+category: printers
+devices: ["HP DeskJet", "HP Envy", "HP OfficeJet", "HP LaserJet", "Canon PIXMA", "Canon imageCLASS", "Epson EcoTank", "Epson WorkForce", "Brother MFC", "Brother HL", "All wireless printers"]
+difficulty: beginner
+time_estimate: "20 minutes"
+last_verified: "2026-06-10"
+steps: 5
+---
+
+## Before You Start
+
+You bought a wireless printer so you could print from your laptop in the living room, your phone in the bedroom, or your tablet in the kitchen. But when you go to print, your computer says "Printer Offline" or "Printer Not Found." The printer's Wi-Fi light is blinking, or it's solid but nothing can find it on the network.
+
+Getting a printer onto Wi-Fi is the single most frustrating part of owning one — and it's not your fault. Printers use older, simpler Wi-Fi technology than your phone or laptop, and they often get confused by modern routers that combine 2.4 GHz and 5 GHz networks under one name. The good news: once a printer is successfully connected, it usually stays connected. You just need to get through the setup.
+
+This guide works for all major printer brands — HP, Canon, Epson, Brother, and others. The exact button names on your printer's screen might be slightly different, but the steps are the same. Work through the fixes in order. Most people solve the problem by Fix 2 or 3.
+
+**What you'll need:**
+- Your printer, plugged into power and turned on
+- Your Wi-Fi network name (SSID) and password
+- Access to your router (the box your internet comes from)
+- Your computer or phone (for testing the connection afterward)
+- About 20 minutes
+
+> **Work through the steps in order.** Fix 1 takes under 2 minutes and solves more problems than you'd think. If your printer has a screen, it's much easier — if it doesn't, you'll use buttons and lights, and we'll cover that too.
+
+![A person standing next to a wireless printer, looking at a blinking Wi-Fi light on the printer's control panel](PLACEHOLDER)
+
+## Step 1: Power Cycle Everything — Printer, Router, and Computer
+
+This sounds too simple to be a real fix, but it works for a huge number of Wi-Fi printer problems. Printers, routers, and computers all keep small bits of network information in their temporary memory. Over time, that information can get scrambled. A full power cycle clears everything and forces all three devices to find each other again from scratch.
+
+**Fix 1 — Power cycle in the correct order**
+
+The order matters. You're rebuilding the chain from the ground up:
+
+1. **Turn off your printer.** Press the power button to turn it off, then unplug the power cord from the back of the printer (or from the wall). Wait a full 60 seconds. This is important — the printer's internal Wi-Fi radio needs time to fully discharge.
+2. **Unplug your router and modem.** If you have a separate modem (the box that connects to the cable from your wall) and router (the box with antennas), unplug both. Wait 60 seconds.
+3. **Restart your computer.** Don't just close the lid — do a full restart (Start → Power → Restart on Windows, or Apple menu → Restart on Mac).
+4. **Plug the modem back in first.** Wait until all its lights come back on and stabilize (usually 1–2 minutes).
+5. **Plug the router back in next.** Wait until its lights stabilize.
+6. **Plug the printer back in.** Turn it on and wait for it to fully start up — it may make some clicking or whirring noises as it initializes.
+7. **Try to print.** Send a test page from your computer or phone.
+
+**Fix 2 — Print a Network Configuration Page**
+
+After the power cycle, check if the printer even knows it's supposed to be on Wi-Fi. Most printers can print a report that shows their Wi-Fi status:
+
+1. On the printer's screen, look for a **Setup**, **Settings**, or **Tools** menu (usually a gear icon or a wrench icon).
+2. Navigate to **Network Setup**, **Wireless Settings**, or **Network Configuration**.
+3. Look for an option called **Print Network Configuration Page**, **Print Wireless Test Report**, or **Print Network Settings**.
+4. The printed page will show:
+   - Whether Wi-Fi is **enabled** or **disabled**
+   - The network name (SSID) the printer thinks it's connected to
+   - The printer's IP address (a number like 192.168.1.105)
+   - Whether the connection is **active** or **failed**
+5. If the page says Wi-Fi is **disabled**, Wi-Fi was turned off somehow — go to Step 4 to set it up fresh.
+6. If it shows the wrong network name, the printer is trying to connect to a neighbor's Wi-Fi or an old network — go to Step 5 to reset and reconnect.
+7. If it has an IP address that starts with **169.254** (like 169.254.x.x), the printer couldn't get a real network address from your router. This usually means the Wi-Fi password is wrong, the signal is too weak, or the router isn't giving out addresses. Go to Step 5.
+
+> **Common mistake:** People restart only the printer and the computer, but skip the router. The router is the middleman — if it's holding onto a corrupted connection to the printer, restarting the printer alone won't fix anything. The router still treats the printer as "already connected but broken." You MUST restart the router too. Think of it as clearing the introductions: all three devices need to introduce themselves again from scratch.
+
+![A person unplugging a Wi-Fi router from the wall outlet, with a printer visible in the background](PLACEHOLDER)
+
+## Step 2: Make Sure Your Printer Can Actually See Your Wi-Fi Network
+
+Most modern routers broadcast two Wi-Fi networks (bands) — 2.4 GHz and 5 GHz — and many combine them under a single network name (this is called **band steering**). That's great for phones and laptops, which can use either band. But it's terrible for printers, because the vast majority of wireless printers can ONLY use the slower 2.4 GHz band. If your router is trying to force the printer onto 5 GHz, or if the printer gets confused by the combined signal, it will never connect.
+
+**Fix 1 — Check if your printer supports 5 GHz**
+
+Almost all home printers made before 2023 are 2.4 GHz only. Even some printers sold today are still 2.4 GHz only — especially budget models. If your printer's box or manual doesn't specifically say "dual-band" or "5 GHz," assume it's 2.4 GHz only.
+
+**Fix 2 — Separate your 2.4 GHz and 5 GHz networks**
+
+This is the #1 fix for printers that won't connect to modern mesh or dual-band routers. You need to give your 2.4 GHz network a different name so the printer can find it and lock onto it:
+
+1. Open a web browser on a computer or phone that's already connected to your Wi-Fi.
+2. Type your router's IP address into the address bar. Common addresses are **192.168.1.1**, **192.168.0.1**, or **10.0.0.1**. (If none of these work, check the sticker on the bottom of your router — it usually lists the admin address.)
+3. Log in. The default username and password are often printed on the router sticker too — common defaults are "admin" / "password" or "admin" / "admin." If you changed it and forgot, you'll need to factory reset the router (there's usually a small pinhole button on the back — press and hold with a paperclip for 10 seconds).
+4. Look for **Wireless Settings**, **Wi-Fi Settings**, or **Advanced Wireless**. The exact wording depends on your router brand.
+5. Find the 2.4 GHz network settings. It might be called "Wireless 2.4GHz," "2.4 GHz Band," or just "Wireless." Change its network name (SSID) to something you can identify — like adding "-2.4" to the end of your current network name. For example, if your network is "SmithFamily," change the 2.4 GHz name to "SmithFamily-2.4."
+6. Do the same for the 5 GHz band — give it a distinct name like "SmithFamily-5G."
+7. Save your changes. The router will restart and your devices will briefly disconnect. Reconnect your phone or computer to the 2.4 GHz network (since you'll need to be on 2.4 GHz to set up the printer).
+8. Now go to your printer and connect it to the newly separate "SmithFamily-2.4" network using the setup wizard (see Step 4).
+
+**Fix 3 — Move the printer closer to the router (for setup only)**
+
+Printer Wi-Fi antennas are small and weak compared to the antennas in your phone or laptop. If there's a wall, floor, or large appliance between the printer and the router, the signal may be too weak for the printer to complete the connection — even if your phone shows full bars in the same spot.
+
+1. During setup only, physically move the printer into the same room as the router, with a clear line of sight between them. Once the printer is connected, you can move it back to its normal spot — most printers hold onto a connection better than they create one.
+2. Avoid placing the printer near microwave ovens, cordless phones, baby monitors, or large metal objects (filing cabinets, refrigerators). These all interfere with 2.4 GHz signals.
+
+> **Common mistake:** People don't realize their "fancy new mesh Wi-Fi system" (like Google Nest Wi-Fi, Eero, or Netgear Orbi) automatically combines 2.4 GHz and 5 GHz into one network name with no easy way to separate them. Mesh systems often don't let you create separate network names from the app — you may need to log into the router's web interface (the IP address method above) to find the option, or you may need to temporarily disable the 5 GHz band entirely during printer setup. If your mesh system truly won't let you separate the bands, check the manufacturer's app for a "pause 5 GHz" or "legacy mode" option — some systems have a temporary toggle specifically for connecting 2.4 GHz-only devices.
+
+![A close-up of a router's admin page showing separate 2.4GHz and 5GHz network names](PLACEHOLDER)
+
+## Step 3: Connect Using the WPS Button (The Easiest Method)
+
+If your router has a **WPS button** (Wi-Fi Protected Setup), this is the fastest and most reliable way to connect your printer. WPS lets the router and printer talk directly to each other without typing in a password. You press a button on the router, press a button (or menu option) on the printer, and they handle the rest automatically — no typing, no password mistakes, no band confusion.
+
+**Fix 1 — Find the WPS button on your router**
+
+1. Look at your router. The WPS button is usually on the back or side. It may be labeled **"WPS,"** or it may have an icon that looks like two arrows forming a circle: ↻ or ⟳. Some routers combine the WPS button with other functions — on some models, the WPS button is the same as a button labeled "Wi-Fi On/Off" and you need to press it briefly (not hold it) to trigger WPS.
+2. If you can't find a physical WPS button, your router might have a **virtual WPS button** in its settings. Log into the router (see Step 2, Fix 2 for IP address instructions) and look for WPS in the wireless settings menu. You can trigger WPS from the web interface.
+3. Important: Some internet service providers (ISPs) disable WPS on their routers for security reasons. If you can't find a WPS button or option, your ISP may have locked it — move to Step 4 instead.
+
+**Fix 2 — Start WPS on the printer**
+
+The exact steps depend on your printer brand, but the pattern is the same:
+
+**HP printers:**
+1. On the printer's screen, go to **Setup** (gear icon) → **Network Setup** → **Wireless Settings** → **Wi-Fi Protected Setup**.
+2. Select **Push Button** (not PIN).
+3. The printer will say "Press the WPS button on your router." You now have about 2 minutes to complete the next step.
+
+**Canon printers:**
+1. Press the **Menu** or **Setup** button → **Wireless LAN setup** → **WPS (Push button)** or **WPS**.
+2. The printer screen will show "Press the WPS button on the access point."
+
+**Epson printers:**
+1. Press the **Home** button (if available) → **Wi-Fi Setup** → **Wi-Fi Setup Wizard** → select **WPS (Push Button Setup)**.
+2. Some Epson models have a dedicated **Wi-Fi button** on the control panel — press and hold it until the light flashes, then quickly press the WPS button on your router.
+
+**Brother printers:**
+1. Press **Menu** → **Network** → **WLAN** → **WPS** or **WPS/AOSS**.
+2. The printer will display "WLAN Enable?" — select **Yes** or **On**.
+
+**Printers without a screen:**
+If your printer has no display, look for a **Wireless button** (an antenna icon or Wi-Fi symbol) and a **WPS button** (two arrows). You'll typically press and hold the Wi-Fi button until the light starts blinking, then press the WPS button on the router within 2 minutes.
+
+**Fix 3 — Press the WPS button on your router**
+
+1. Once the printer is searching for WPS, go to your router and press the **WPS button** once. Do NOT hold it — a quick press is all you need. Holding it for too long may factory reset the router.
+2. The WPS light on the router should start blinking. The printer and router will negotiate the connection — this can take up to 2 minutes.
+3. Watch the printer's screen. It should show "Connected" or a similar success message. The Wi-Fi light on the printer should turn solid (stop blinking).
+4. Print a Network Configuration Page (see Step 1, Fix 2) to confirm the printer has a valid IP address (one that does NOT start with 169.254).
+
+> **WPS PIN method:** Some printers also offer a "WPS PIN" option where the printer generates an 8-digit PIN that you enter into your router's settings page. This is an alternative if push-button WPS doesn't work, but it's more complicated and less reliable. Try push-button first.
+
+> **Common mistake:** Not pressing the WPS button fast enough. WPS mode on both the printer and router only stays active for about 2 minutes. If you wait too long, the printer gives up and you have to start over. Start WPS on the printer first (so it's waiting), then immediately walk to your router and press the button. If it fails, try again — it sometimes takes 2–3 attempts.
+
+![A hand pressing the WPS button on the back of a Wi-Fi router, with an HP printer in the background showing a WPS connection screen](PLACEHOLDER)
+
+## Step 4: Connect Using the Printer's Built-in Wireless Setup Wizard
+
+If WPS isn't available (or didn't work), you'll need to connect the printer manually using its own setup wizard. This is the method where you select your Wi-Fi network from a list on the printer's screen and type in the password. It's more steps than WPS, but it works on every wireless printer.
+
+**Fix 1 — Navigate to the wireless setup wizard**
+
+Every brand calls it something slightly different, but the path is always the same idea: Settings → Network → Wireless Setup Wizard.
+
+**HP printers:**
+1. On the printer screen, tap **Setup** (gear icon) → **Network Setup** → **Wireless Settings** → **Wireless Setup Wizard**.
+2. The printer will scan for nearby Wi-Fi networks. This takes about 30 seconds.
+
+**Canon printers:**
+1. Press **Menu** or **Setup** → **Wireless LAN setup** → **Easy setup** or **Standard setup**.
+2. If asked to choose between "Easy" and "Standard," choose **Easy** — it scans and shows available networks.
+
+**Epson printers:**
+1. Press the **Home** button → **Wi-Fi Setup** → **Wi-Fi Setup Wizard**.
+2. The printer displays "Searching for wireless networks…"
+
+**Brother printers:**
+1. Press **Menu** → **Network** → **WLAN** → **Setup Wizard**.
+2. The printer scans for available networks.
+
+**Printers without a screen:**
+If there's no display, you'll usually use the **HP Smart app**, **Canon PRINT app**, **Epson Smart Panel**, or **Brother iPrint&Scan** app on your phone to set up the Wi-Fi. Download the correct app from the App Store (iPhone) or Google Play Store (Android), open it, and follow the on-screen instructions to connect your printer.
+
+**Fix 2 — Select your network and enter the password**
+
+1. When the list of networks appears, scroll through and find YOUR network name — the exact one you separated in Step 2 (e.g., "SmithFamily-2.4"). The list may show dozens of networks if you live in an apartment or city — scroll carefully.
+2. Select your network. The printer will ask for the **password** (also called the network key, security key, or passphrase).
+3. Enter the password EXACTLY. Wi-Fi passwords are case-sensitive — "Password123" is not the same as "password123." Capital letters, lowercase letters, numbers, and symbols all matter.
+4. Most printer screens show the last character you typed for a moment before turning it into a dot (for security). Type slowly and double-check each character.
+5. If you're not sure what your Wi-Fi password is, check the sticker on the bottom of your router (it's often printed there as "Wireless Password," "Network Key," or "WPA Key"). If the sticker password doesn't work, someone may have changed it — ask the person who set up your internet.
+6. After entering the password, select **OK**, **Done**, **Connect**, or **Apply**. The printer will attempt to connect — this can take 30–60 seconds.
+7. When it succeeds, you'll see a confirmation message and the Wi-Fi light will go solid. Print a Network Configuration Page to confirm (Step 1, Fix 2).
+
+**Fix 3 — What to do if your network doesn't appear in the list**
+
+1. Make sure the printer is close enough to the router (move it to the same room for setup).
+2. Make sure the router's 2.4 GHz band is turned ON (log into the router — some routers let you disable each band separately).
+3. Make sure the router isn't set to "hide" the network name (a setting called "Hide SSID" or "SSID Broadcast" — this should be ENABLED/broadcasting for printer setup).
+4. If your network STILL doesn't appear, try entering it manually: look for an option called **Manual Setup**, **Enter SSID**, or **Other Network** on the printer. You'll need to type the network name exactly, then enter the password.
+
+> **Common mistake:** Typing the Wi-Fi password wrong. Printer screens are small, and the letter-by-letter entry is tedious. It's very easy to accidentally capitalize a letter or add an extra character. If the printer says "Connection failed" or "Incorrect password," try entering the password again — but this time, type it EXTREMELY slowly, checking each character before moving to the next. If you're on the second or third attempt and still failing, the password itself may have been changed from the one on the router sticker — check with whoever manages your internet.
+
+> **Tip:** Most printers use an on-screen keyboard layout like an old phone — you use arrow buttons to navigate around the letters. If your printer has a touchscreen, you can tap the letters directly. Either way, the Wi-Fi password field is usually hidden behind dots as you type. If your printer has a "Show Password" checkbox (or an eye icon), tap it to reveal what you've typed so you can verify it.
+
+![A Canon printer screen displaying the Wireless LAN Setup wizard, showing a list of detected Wi-Fi networks](PLACEHOLDER)
+
+## Step 5: Restore Network Settings and Start Completely Fresh
+
+If you've tried everything above and the printer still won't connect — or it says it's connected but your computer can't find it — the printer's network settings may be corrupted. Restoring (resetting) the network settings wipes out all old Wi-Fi information and returns the printer to the state it was in when you first took it out of the box. You'll then set up Wi-Fi fresh using one of the methods above.
+
+> **Warning:** Restoring network settings will erase the current Wi-Fi name, password, and any custom IP settings from the printer. It will NOT erase your printer's ink levels, page counts, or other non-network settings. However, if you want to be extra careful, check your printer's manual — some models offer both a "Restore Network Settings" (network only) and a "Factory Reset" (everything). You want the network-only reset. If your printer only has a full factory reset option, be aware it will wipe ALL settings.
+
+**Fix 1 — Restore network settings on the printer**
+
+**HP printers:**
+1. On the printer screen, go to **Setup** → **Network Setup** → **Restore Network Settings** or **Restore Network Defaults**.
+2. Confirm when prompted. The printer will restart.
+3. After restarting, run the **Wireless Setup Wizard** (Step 4) or use **WPS** (Step 3) to reconnect.
+
+**Canon printers:**
+1. Press **Menu** or **Setup** → **Device Settings** → **Reset Settings** → **Reset LAN settings** or **Network settings only**.
+2. Confirm and let the printer restart.
+
+**Epson printers:**
+1. Press **Home** → **Settings** → **Restore Default Settings** → **Reset Network Settings**.
+2. Confirm. The printer restarts.
+
+**Brother printers:**
+1. Press **Menu** → **Network** → **Network Reset** → **Yes** or **OK**.
+2. The printer restarts.
+
+**Printers without a screen (HP, Canon, Epson, Brother):**
+If your printer has no display, the reset is usually done with a button combination:
+- **HP:** Press and hold the **Wireless button** and the **Cancel button** (red X or circle) together for about 5 seconds until the power light blinks.
+- **Canon:** Press and hold the **Wi-Fi button** for about 10 seconds until the power light flashes.
+- **Epson:** Press and hold the **Wi-Fi button** and the **Network Status button** together until the lights flash.
+- **Brother:** Press and hold the **Go button** while turning the printer on — keep holding until all lights flash, then release.
+
+Check your printer's manual for the exact combination if these don't work — the key words to search are "[your printer model] reset network settings."
+
+**Fix 2 — Reconnect the printer using the app (easiest after reset)**
+
+After resetting the network settings, the easiest way to reconnect is through your printer's mobile app:
+
+1. **HP:** Download **HP Smart** from the App Store or Google Play. Open it, tap the plus sign (+), and follow the setup instructions. The app will find your printer and walk you through Wi-Fi setup.
+2. **Canon:** Download **Canon PRINT Inkjet/SELPHY** (for home printers) or **Canon PRINT Business** (for office printers). Tap **Add Printer** and follow the setup.
+3. **Epson:** Download **Epson Smart Panel**. Tap **Start setup** and follow the instructions.
+4. **Brother:** Download **Brother Mobile Connect** or **Brother iPrint&Scan**. Tap **Add Machine** and follow setup.
+
+These apps handle the Wi-Fi setup much more smoothly than the printer's built-in screen — they use your phone's camera to read a QR code from the printer, or use Bluetooth to transfer the Wi-Fi details. If you've struggled with the on-printer setup, the app route is worth trying.
+
+**Fix 3 — Assign a static (fixed) IP address to the printer**
+
+After reconnecting, some printers have trouble keeping their connection because the router keeps changing the printer's IP address. If your printer works for a few hours and then goes offline again, give it a fixed IP:
+
+1. After successfully reconnecting, print a Network Configuration Page and note the printer's **IP address** (like 192.168.1.105).
+2. Log into your router's settings (see Step 2, Fix 2 for how).
+3. Look for a section called **DHCP Reservation**, **Address Reservation**, **Static DHCP**, or **Fixed IP**. It's usually under LAN settings or Advanced network settings.
+4. Find your printer in the list of connected devices (it may show up by its hostname, like "HP-OfficeJet-Pro," or by its MAC address, which is printed on your Network Configuration Page).
+5. Select the printer and assign it a fixed/reserved IP address. This tells the router: "Always give this printer THIS address and never change it."
+6. Save the settings. The router may briefly restart.
+7. On your computer, remove and re-add the printer so it picks up the fixed IP (see the "Still Stuck?" section for how).
+
+> **Common mistake:** People skip the "Restore Network Settings" step and go straight to a full factory reset. A factory reset wipes EVERYTHING — ink settings, page counters, custom paper sizes, scan-to-email contacts — not just the network. Restoring network settings is a lighter touch that fixes 90% of stubborn connection problems without destroying your other settings. Always try network-only reset first.
+
+![An HP printer screen showing the "Restore Network Defaults" confirmation dialog](PLACEHOLDER)
+
+## Still Stuck?
+
+- **Printer connects to Wi-Fi but your computer still says "Offline"?** This is a different problem from "won't connect" — the printer IS on the network, but your computer doesn't know how to reach it. Try these:
+  1. On Windows: go to **Settings → Bluetooth & devices → Printers & scanners**. Find your printer, click it, and click **Remove**. Then click **Add device** — Windows will re-discover the printer on the network and install a fresh connection.
+  2. On Mac: go to **Apple menu → System Settings → Printers & Scanners**. Click your printer, then click the **minus (–)** button to remove it. Then click the **plus (+)** button to re-add it — your Mac should find it on the network automatically.
+  3. Run the **Windows Printer Troubleshooter**: go to **Settings → System → Troubleshoot → Other troubleshooters** (Windows 11) or **Settings → Update & Security → Troubleshoot → Additional troubleshooters** (Windows 10). Find **Printer** and click **Run**.
+
+- **"Printer Not Found" or "No Printer Detected" on your computer even though the printer says it's connected?** The printer and computer may be on different networks. This happens when you have a guest Wi-Fi network, or when your router creates separate networks for 2.4 GHz and 5 GHz. Both the printer AND your computer need to be on the EXACT same network. Check your computer's Wi-Fi name and compare it to the network shown on the printer's Network Configuration Page — they must match.
+
+- **Printer was working fine until you changed your internet provider or got a new router?** The printer is still looking for the OLD network. Restore the printer's network settings (Step 5) and reconnect it to the new network from scratch. This is normal — printers don't automatically switch to new networks the way phones do.
+
+- **Network Configuration Page shows "Filtered" or "Blocked" MAC address?** Your router may have **MAC address filtering** enabled — a security feature that only allows specific devices to connect. Log into your router, find the MAC filtering settings (usually under Wireless Security or Access Control), and add your printer's MAC address (found on the Network Configuration Page) to the allowed list.
+
+- **Printer connects but drops off the network after a few hours or overnight?** This is often caused by your printer going into deep sleep mode and not waking up fully for Wi-Fi. On the printer screen, go to **Settings → Power Management** or **Eco Settings** and look for a "Sleep" or "Auto-Off" timer. Set it to a longer period (like 4 hours instead of 15 minutes), or disable it entirely. Also, look for a setting called **"Keep Wi-Fi connected during sleep"** or **"Maintain network connection"** and make sure it's turned ON.
+
+- **Using a 5 GHz-only Wi-Fi network (like some newer mesh systems or apartment Wi-Fi)?** Some routers — especially in apartments or newer internet setups — have the 2.4 GHz band turned off entirely. Printers cannot connect to 5 GHz-only networks. Log into your router and look for a way to enable the 2.4 GHz band. If you can't (for example, if you're on shared apartment Wi-Fi managed by the building), you have a few options: (1) use a USB cable to connect the printer directly to your computer instead of Wi-Fi, (2) get a small, inexpensive 2.4 GHz Wi-Fi extender or travel router that creates a 2.4 GHz network specifically for your printer, or (3) if your printer has an Ethernet port, connect it to the router with a cable.
+
+- **Still can't get the printer on Wi-Fi after every step?** Try connecting the printer directly to your computer with a USB cable first (most printers come with one, and you can buy one for under $10 if you don't have it). Once connected by USB, install the full printer driver from the manufacturer's website (not the Windows default driver) — the full driver package often includes a Wi-Fi setup tool that can configure the wireless connection through the USB cable. After the Wi-Fi is set up through the tool, you can disconnect the USB cable.
